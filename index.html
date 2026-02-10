@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrantOtter — AI-Powered Grant Discovery for Researchers</title>
+  <meta name="description" content="GrantOtter uses AI to build researcher profiles, match grants from Grants.gov, brainstorm proposal concepts, and generate NIH biosketches.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">
+      <img src="logo.png" alt="GrantOtter">
+      GrantOtter
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#waitlist">Early Access</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <img src="logo.png" alt="GrantOtter logo" class="hero-logo">
+    <h1>AI-Powered <span>Grant Discovery</span> for Researchers</h1>
+    <p class="subtitle">
+      From researcher profile to matched grants in minutes. GrantOtter uses AI to search the web,
+      build your profile, and find the best funding opportunities on Grants.gov.
+    </p>
+    <div class="hero-cta">
+      <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+      <a href="#features" class="btn btn-secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Demo Video -->
+  <section class="demo-video" id="demo">
+    <h2 class="section-title">See GrantOtter in Action</h2>
+    <p class="section-subtitle">
+      Watch how GrantOtter helps researchers discover and match grants in minutes.
+    </p>
+    <div class="video-container">
+      <video controls preload="metadata" poster="logo.png" width="1920" height="1080">
+        <source src="GrantOtterPromo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <h2 class="section-title">Everything You Need to Find Funding</h2>
+    <p class="section-subtitle">
+      Five powerful tools that take you from profile to proposal.
+    </p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon teal">&#128269;</div>
+        <h3>Generate Profile</h3>
+        <p>AI searches the web and builds a comprehensive researcher profile from your publications, grants, and expertise — automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">&#127919;</div>
+        <h3>Match Grants</h3>
+        <p>Find your top 10 grant matches from Grants.gov, ranked by fit to your research profile and scored with detailed rationale.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon teal">&#128101;</div>
+        <h3>Profile Repository</h3>
+        <p>Manage your team's researcher profiles in one place. Build a pool of collaborators ready for multi-PI proposals.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">&#128161;</div>
+        <h3>Concept Brainstorming</h3>
+        <p>Generate AI-powered proposal concepts with innovation scoring. Explore new research directions aligned with funding priorities.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon teal">&#128196;</div>
+        <h3>Create Biosketch</h3>
+        <p>Auto-generate NIH Biographical Sketches in the required format, pulling from your profile's publications and accomplishments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">
+      Three simple steps to find your next grant.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Create Profile</h3>
+        <p>Enter your name and institution. Our AI searches the web to build your researcher profile in minutes.</p>
+      </div>
+      <div class="step-arrow">&#10132;</div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Match Grants</h3>
+        <p>We compare your profile against thousands of open opportunities on Grants.gov to find your best fits.</p>
+      </div>
+      <div class="step-arrow">&#10132;</div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Get Results</h3>
+        <p>Review ranked matches, brainstorm concepts, and generate your biosketch — all in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section class="waitlist" id="waitlist">
+    <h2 class="section-title">Get Early Access</h2>
+    <p class="section-subtitle">
+      GrantOtter is currently in beta. Join the waitlist to be among the first researchers to try it.
+    </p>
+    <div class="waitlist-form-container">
+      <iframe name="hidden-iframe" id="hidden-iframe" style="display:none;"></iframe>
+      <form
+        class="waitlist-form"
+        id="waitlist-form"
+        action="https://docs.google.com/forms/d/e/1FAIpQLScPDw8SwVFgXxysQGoZ4h3gR7KkXzQu9BsFAaRLtRbltVlutw/formResponse"
+        method="POST"
+        target="hidden-iframe"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="entry.162081911" required placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="entry.367622069" required placeholder="jane@university.edu">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="institution">Institution</label>
+            <input type="text" id="institution" name="entry.1001996644" required placeholder="University of …">
+          </div>
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="entry.665198468" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="Faculty">Faculty</option>
+              <option value="Research Staff">Research Staff</option>
+              <option value="Postdoc">Postdoc</option>
+              <option value="Graduate Student">Graduate Student</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Join the Waitlist</button>
+      </form>
+      <div class="form-success" id="form-success" style="display:none;">
+        <p>You're on the list!</p>
+        <p class="form-success-sub">We'll be in touch when GrantOtter is ready for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://github.com/yukelab/find-my-grant">GitHub</a>
+      <a href="#features">Features</a>
+      <a href="#waitlist">Waitlist</a>
+    </div>
+    <p>&copy; 2025 GrantOtter. Built for researchers, by researchers.</p>
+  </footer>
+
+  <script>
+    document.getElementById('waitlist-form').addEventListener('submit', function() {
+      var form = this;
+      setTimeout(function() {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }, 500);
+    });
+  </script>
+</body>
+</html>
