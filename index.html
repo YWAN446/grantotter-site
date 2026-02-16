@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXHCC1YX85"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TXHCC1YX85');
-  </script>
-  <!-- End Google Analytics -->
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GrantOtter — AI-Powered Grant Discovery for Researchers</title>
   <meta name="description" content="GrantOtter uses AI to build researcher profiles, match grants from Grants.gov, brainstorm proposal concepts, and generate NIH biosketches.">
   <link rel="icon" href="logo.png" type="image/png">
+  <link rel="alternate" type="application/rss+xml" title="GrantOtter Weekly Feed" href="feed.xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,6 +20,7 @@
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="feed.html">Weekly Feed</a></li>
       <li><a href="#waitlist">Early Access</a></li>
     </ul>
   </nav>
@@ -65,7 +57,7 @@
   <section class="features" id="features">
     <h2 class="section-title">Everything You Need to Find Funding</h2>
     <p class="section-subtitle">
-      Five powerful tools that take you from profile to proposal.
+      Six powerful tools that take you from profile to proposal.
     </p>
     <div class="features-grid">
       <div class="feature-card">
@@ -92,6 +84,11 @@
         <div class="feature-icon teal">&#128196;</div>
         <h3>Create Biosketch</h3>
         <p>Auto-generate NIH Biographical Sketches in the required format, pulling from your profile's publications and accomplishments.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">&#128225;</div>
+        <h3>Weekly Funding Feed</h3>
+        <p>Stay current with a <a href="feed.html">weekly aggregated feed</a> of grant opportunities from NIH, NSF, DOE, DARPA, NASA, and Grants.gov.</p>
       </div>
     </div>
   </section>
@@ -177,8 +174,9 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-links">
-      <a href="https://github.com/yukelab/find-my-grant">GitHub</a>
+      <a href="https://github.com/YWAN446/grantotter">GitHub</a>
       <a href="#features">Features</a>
+      <a href="feed.html">Weekly Feed</a>
       <a href="#waitlist">Waitlist</a>
     </div>
     <p>&copy; 2025 GrantOtter. Built for researchers, by researchers.</p>

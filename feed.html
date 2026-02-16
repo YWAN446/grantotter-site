@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Funding Feed — GrantOtter</title>
+  <meta name="description" content="Weekly aggregated feed of federal grant opportunities from NIH, NSF, DOE, DARPA, NASA, and Grants.gov.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="alternate" type="application/rss+xml" title="GrantOtter Weekly Feed" href="feed.xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Feed page styles */
+    .feed-hero {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+      background: linear-gradient(160deg, var(--teal-light) 0%, #fff 100%);
+    }
+
+    .feed-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .feed-hero h1 span {
+      color: var(--teal);
+    }
+
+    .feed-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .rss-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .rss-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    }
+
+    .rss-badge svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+    }
+
+    .feed-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .feed-meta {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .feed-loading {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--gray-600);
+    }
+
+    .feed-loading .spinner {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--gray-100);
+      border-top-color: var(--teal);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .feed-error {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--gray-600);
+    }
+
+    .feed-error h3 {
+      color: var(--gray-800);
+      margin-bottom: 0.5rem;
+    }
+
+    .feed-item {
+      background: #fff;
+      border: 1px solid var(--gray-100);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feed-item:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .feed-item-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feed-item h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0;
+    }
+
+    .feed-item h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .feed-item h3 a:hover {
+      color: var(--teal);
+    }
+
+    .feed-item-source {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+    }
+
+    .feed-item-date {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+    }
+
+    .feed-item p {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .feed-item-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .feed-item-categories span {
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      background: var(--orange-light);
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    .source-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .source-filter button {
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      border: 1px solid var(--gray-100);
+      background: #fff;
+      color: var(--gray-600);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .source-filter button:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .source-filter button.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    @media (max-width: 768px) {
+      .feed-hero {
+        padding: 6rem 1.5rem 2rem;
+      }
+
+      .feed-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .feed-container {
+        padding: 1.5rem 1rem;
+      }
+
+      .feed-item-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="GrantOtter">
+      GrantOtter
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="#" class="active" style="color: var(--teal);">Weekly Feed</a></li>
+      <li><a href="index.html#waitlist">Early Access</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="feed-hero">
+    <h1>Weekly <span>Funding Feed</span></h1>
+    <p class="subtitle">
+      Aggregated grant opportunities and agency news from NIH, NSF, DOE, DARPA, NASA, and Grants.gov — updated every Monday.
+    </p>
+    <a href="feed.xml" class="rss-badge">
+      <svg viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+      Subscribe via RSS
+    </a>
+  </section>
+
+  <!-- Feed Content -->
+  <div class="feed-container">
+    <div class="feed-meta" id="feed-meta"></div>
+    <div class="source-filter" id="source-filter"></div>
+    <div id="feed-content">
+      <div class="feed-loading">
+        <div class="spinner"></div>
+        <p>Loading this week's funding updates...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://github.com/YWAN446/grantotter">GitHub</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#waitlist">Waitlist</a>
+      <a href="feed.xml">RSS Feed</a>
+    </div>
+    <p>&copy; 2025 GrantOtter. Built for researchers, by researchers.</p>
+  </footer>
+
+  <script>
+    const feedContent = document.getElementById('feed-content');
+    const feedMeta = document.getElementById('feed-meta');
+    const sourceFilter = document.getElementById('source-filter');
+
+    let allItems = [];
+    let activeSource = 'All';
+
+    async function loadFeed() {
+      try {
+        const response = await fetch('feed.xml');
+        if (!response.ok) throw new Error('Feed not available');
+
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'application/xml');
+
+        if (xml.querySelector('parsererror')) throw new Error('Invalid XML');
+
+        const lastBuild = xml.querySelector('channel > lastBuildDate');
+        if (lastBuild) {
+          const date = new Date(lastBuild.textContent);
+          feedMeta.textContent = 'Last updated: ' + date.toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+          });
+        }
+
+        const items = xml.querySelectorAll('item');
+        allItems = Array.from(items).map(item => ({
+          title: item.querySelector('title')?.textContent || 'Untitled',
+          link: item.querySelector('link')?.textContent || '#',
+          description: item.querySelector('description')?.textContent || '',
+          pubDate: item.querySelector('pubDate')?.textContent || '',
+          source: item.querySelector('source')?.textContent || 'Unknown',
+          categories: Array.from(item.querySelectorAll('category')).map(c => c.textContent),
+        }));
+
+        buildSourceFilter();
+        renderItems(allItems);
+      } catch (err) {
+        feedMeta.style.display = 'none';
+        feedContent.innerHTML =
+          '<div class="feed-error">' +
+            '<h3>Feed not yet available</h3>' +
+            '<p>The weekly feed is generated every Monday at 8:00 AM UTC.<br>' +
+            'Check back soon or <a href="feed.xml">subscribe via RSS</a> to get notified.</p>' +
+          '</div>';
+      }
+    }
+
+    function buildSourceFilter() {
+      const sources = ['All', ...new Set(allItems.map(i => i.source))];
+      sourceFilter.innerHTML = '';
+      sources.forEach(source => {
+        const btn = document.createElement('button');
+        btn.textContent = source;
+        btn.className = source === activeSource ? 'active' : '';
+        btn.addEventListener('click', () => {
+          activeSource = source;
+          document.querySelectorAll('.source-filter button').forEach(b => b.className = '');
+          btn.className = 'active';
+          const filtered = source === 'All' ? allItems : allItems.filter(i => i.source === source);
+          renderItems(filtered);
+        });
+        sourceFilter.appendChild(btn);
+      });
+    }
+
+    function renderItems(items) {
+      if (items.length === 0) {
+        feedContent.innerHTML = '<div class="feed-error"><h3>No entries found</h3><p>Try selecting a different source filter.</p></div>';
+        return;
+      }
+
+      feedContent.innerHTML = items.map(item => {
+        const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-US', {
+          month: 'short', day: 'numeric', year: 'numeric'
+        }) : '';
+
+        const cats = item.categories.map(c => '<span>' + escapeHtml(c) + '</span>').join('');
+
+        return (
+          '<div class="feed-item">' +
+            '<div class="feed-item-header">' +
+              '<h3><a href="' + escapeHtml(item.link) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a></h3>' +
+              '<span class="feed-item-source">' + escapeHtml(item.source) + '</span>' +
+            '</div>' +
+            (date ? '<div class="feed-item-date">' + date + '</div>' : '') +
+            '<p>' + escapeHtml(item.description) + '</p>' +
+            (cats ? '<div class="feed-item-categories">' + cats + '</div>' : '') +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
+    loadFeed();
+  </script>
+</body>
+</html>
