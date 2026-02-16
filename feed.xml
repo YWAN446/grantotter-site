@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
+  <channel>
+    <title>GrantOtter — Federal Funding Updates</title>
+    <link>https://ywan446.github.io/grantotter-site/</link>
+    <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, DOE, DARPA, NASA, and Grants.gov.</description>
+    <lastBuildDate>Mon, 16 Feb 2026 20:37:00 +0000</lastBuildDate>
+    <item>
+      <title>NSF launches $100M National Quantum and Nanotechnology Research Infrastructure program</title>
+      <link>https://www.nsf.gov/news/nsf-launches-100m-national-quantum-nanotechnology-research</link>
+      <description>The U.S. National Science Foundation is investing up to $100 million to establish a nationwide network of open-access research facilities for quantum and nanoscale technologies, innovation, and workforce training. Through the new NSF National Quantum…</description>
+      <pubDate>Fri, 13 Feb 2026 15:00:08 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+    <item>
+      <title>Transitioning NCAR-Wyoming Supercomputing Center operations</title>
+      <link>https://www.nsf.gov/news/transitioning-ncar-wyoming-supercomputing-center-operations</link>
+      <description>The U.S. National Science Foundation has informed the NSF National Center for Atmospheric Research (NCAR) that management and operations of the NCAR-Wyoming Supercomputing Center are expected to transition to a third-party operator consistent with…</description>
+      <pubDate>Thu, 12 Feb 2026 21:19:42 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+    <item>
+      <title>NSF announces first AI-ENGAGE awards to modernize global agriculture</title>
+      <link>https://www.nsf.gov/news/nsf-announces-first-ai-engage-awards-modernize-global</link>
+      <description>The U.S. National Science Foundation, in coordination with partner agencies from Australia, India and Japan, today announced the first cohort of awards made under the Advancing Innovations for Empowering NextGen AGriculturE (AI-ENGAGE) initiative…</description>
+      <pubDate>Thu, 12 Feb 2026 15:00:07 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+  </channel>
+</rss>
