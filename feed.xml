@@ -3,8 +3,15 @@
   <channel>
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
-    <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, DOE, DARPA, NASA, and Grants.gov.</description>
-    <lastBuildDate>Mon, 16 Feb 2026 21:01:01 +0000</lastBuildDate>
+    <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
+    <lastBuildDate>Mon, 16 Feb 2026 23:29:01 +0000</lastBuildDate>
+    <item>
+      <title>Notice of Change to Key Dates for RFA-NS-25-017 and RFA-NS-25-018: BRAIN Initiative Technologies for Recording and Modulation in the Nervous System.</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-NS-26-005.html</link>
+      <description>Notice NOT-NS-26-005 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 13 Feb 2026 17:07:41 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
     <item>
       <title>NSF launches $100M National Quantum and Nanotechnology Research Infrastructure program</title>
       <link>https://www.nsf.gov/news/nsf-launches-100m-national-quantum-nanotechnology-research</link>
@@ -20,11 +27,62 @@
       <source>NSF News</source>
     </item>
     <item>
+      <title>Protean</title>
+      <link>https://www.darpa.mil/work-with-us/opportunities</link>
+      <description>&lt;p&gt;This Research Announcement represents a solicitation for a research thrust, entitled Protean, that will focus on identifying novel ways to restore protein function to targets of chemical threat agents. | &lt;a href="https://www.darpa.mil/research/programs/protean"&gt;See Program&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Thu, 12 Feb 2026 20:03:10 +0000</pubDate>
+      <source>DARPA Opportunities</source>
+    </item>
+    <item>
+      <title>Planning an NIH Application involving Basic Experimental Studies with Humans (BESH)?</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/planning-an-nih-application-involving-basic-experimental-studies-with-humans-besh</link>
+      <description>NIH announced that Basic Experimental Studies with Humans (BESH) will no longer be considered clinical trials by the NIH.&amp;nbsp;</description>
+      <pubDate>Thu, 12 Feb 2026 18:00:40 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Top Stories&gt;</category>
+    </item>
+    <item>
       <title>NSF announces first AI-ENGAGE awards to modernize global agriculture</title>
       <link>https://www.nsf.gov/news/nsf-announces-first-ai-engage-awards-modernize-global</link>
       <description>The U.S. National Science Foundation, in coordination with partner agencies from Australia, India and Japan, today announced the first cohort of awards made under the Advancing Innovations for Empowering NextGen AGriculturE (AI-ENGAGE) initiative…</description>
       <pubDate>Thu, 12 Feb 2026 15:00:07 +0000</pubDate>
       <source>NSF News</source>
+    </item>
+    <item>
+      <title>Notice of Extension of the Expiration Date for PAR-23-059 "National Cancer Institute Program Project Applications for the Years 2023, 2024, and 2025 (P01 Clinical Trial Optional)"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-CA-26-010.html</link>
+      <description>Notice NOT-CA-26-010 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Thu, 12 Feb 2026 06:54:41 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>NIH Support for Early Stage Investigators in FYs 2024 and 2025</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/nih-support-for-early-stage-investigators-in-fys-2024-and-2025</link>
+      <description>We are reporting on the number of early stage investigators (ESIs) supported on R01-equivalent awards in fiscal years (FYs) 2024 and 2025. ESIs are those who are within 10 years of their terminal degree or completion of clinical training and who have not yet been awarded a substantial NIH grant (R01-equivalent or more).&amp;nbsp;</description>
+      <pubDate>Tue, 10 Feb 2026 18:11:24 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Top Stories&gt;</category>
+    </item>
+    <item>
+      <title>Notice of Change to Key Dates for PAR-23-209, PAR-23-204, PAR-23-201 NEI Collaborative Clinical Vision Research Grants (UG1 Clinical Trial Required)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-EY-26-001.html</link>
+      <description>Notice NOT-EY-26-001 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Feb 2026 06:50:03 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of NCI's Participation in PA-25-302, NIH Small Research Grant Program (Parent R03 Clinical Trial Not Allowed)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-CA-26-003.html</link>
+      <description>Notice NOT-CA-26-003 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Feb 2026 06:29:21 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>NIH No Longer Requires Advanced Permission for Conference Grant Applications</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-040.html</link>
+      <description>Notice NOT-OD-26-040 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Feb 2026 06:20:25 +0000</pubDate>
+      <source>NIH Guide</source>
     </item>
   </channel>
 </rss>
