@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help &amp; Support — GrantOtter</title>
+  <meta name="description" content="Frequently asked questions, support contact, and live demo scheduling for GrantOtter.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="GrantOtter">
+      GrantOtter
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tutorial.html">Get Started</a></li>
+      <li><a href="feed.html">Weekly Feed</a></li>
+      <li><a href="help.html" class="nav-active">Help</a></li>
+      <li><a href="https://grantotter.streamlit.app" target="_blank" rel="noopener">Launch App</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="tut-hero">
+    <div class="tut-hero-inner">
+      <span class="tut-badge">Support</span>
+      <h1>Help &amp; <span>Support</span></h1>
+      <p class="subtitle">
+        Frequently asked questions, contact options, and live demo scheduling — all in one place.
+      </p>
+      <nav class="tut-toc">
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#demo">Schedule a Demo</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────────────────── -->
+  <section class="tut-step" id="faq">
+    <div class="tut-step-inner">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>How do I create an account?</summary>
+          <p>
+            Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener">grantotter.streamlit.app</a>,
+            click the <strong>Sign Up</strong> tab, enter your email and a password (minimum 6 characters),
+            and click <strong>Create Account</strong>. You may receive a confirmation email — click the link
+            to verify your address, then sign in. See the
+            <a href="tutorial.html#step0">Step 0 of the tutorial</a> for full details.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>I forgot my password. How do I reset it?</summary>
+          <p>
+            Password reset is not self-service at this time. Email us at
+            <a href="mailto:grantotter42@gmail.com">grantotter42@gmail.com</a> and we'll reset it for you promptly.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What information does GrantOtter need to generate my profile?</summary>
+          <p>
+            Only your <strong>name</strong> and <strong>institution</strong> are required. Providing additional
+            details — your Google Scholar URL, ORCID iD, department, and a link to your faculty or personal
+            website with an up-to-date CV — significantly improves profile quality, especially if your name
+            is common. We also recommend filling in <strong>Developing Research Interests</strong> and
+            <strong>Areas to Avoid</strong> to get better-targeted grant recommendations.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does the generated researcher profile include?</summary>
+          <p>
+            The profile goes beyond a publication list. It includes scored research expertise areas,
+            financial parameters (estimated salary, F&amp;A rates, fringe rates), grant suitability
+            as PI or co-investigator, active and past grant history, collaborator network, and
+            publication impact metrics. It's the knowledge base that powers every other GrantOtter feature.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What types of grants does GrantOtter search?</summary>
+          <p>
+            The grant matching and brainstorming features currently cover <strong>federal funding
+            opportunities</strong> — primarily NIH, NSF, and DARPA opportunities listed on Grants.gov.
+            For non-federal grants (foundations, private funders, international agencies), you can paste
+            the full grant information as plain text in the grant document field of the Concept
+            Brainstorming tab.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How often is the grant database updated?</summary>
+          <p>
+            The grant database is refreshed regularly to include newly posted and updated funding
+            opportunities. The <a href="feed.html">Weekly Funding Feed</a> aggregates new announcements
+            from NIH, NSF, and DARPA every Monday.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does grant matching work?</summary>
+          <p>
+            Grant matching runs a three-stage pipeline: (1) <strong>Hard filters</strong> eliminate
+            ineligible grants based on your eligibility, deadline, budget, and mechanism preferences.
+            (2) <strong>Rule-based scoring</strong> ranks the remaining grants across dimensions like
+            expertise match, agency preference, career stage, and budget fit. (3) <strong>LLM
+            evaluation</strong> reads your profile and each top candidate in depth, producing a ranked
+            top 10 with plain-language rationale for each recommendation.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I use GrantOtter for collaborators or team proposals?</summary>
+          <p>
+            Yes. The <strong>Profile Repository</strong> lets you manage your own profile, build a
+            preferred collaborators list, and search an institution-wide faculty pool (currently RSPH
+            at Emory University). When brainstorming concepts or generating biosketches, you can select
+            any profile from your repository as the PI or co-investigator — it doesn't have to be you.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the Power User workflow?</summary>
+          <p>
+            Download your GrantOtter documents (researcher profiles, brainstorming report, biosketch draft)
+            and upload them into a general-purpose AI assistant like Claude, ChatGPT, or Gemini. These
+            files give the AI a rich knowledge base to work from, so you can develop concepts into full
+            proposals through natural language conversation — drafting a Specific Aims page, writing
+            recruitment emails to potential co-investigators, and more. See the
+            <a href="tutorial.html#power-user">Power User section</a> of the tutorial.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the NIH biosketch output used for?</summary>
+          <p>
+            The biosketch tab generates a draft NIH Biographical Sketch covering all four required
+            sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research
+            Support). Use it as a reference to populate your biosketch on
+            <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener">SciENcv</a>,
+            the official NIH tool for creating and maintaining biosketches.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is my data secure? How does GrantOtter handle my privacy?</summary>
+          <div class="faq-privacy">
+            <p>GrantOtter is built on three pillars of trust:</p>
+
+            <div class="privacy-pillar">
+              <div class="privacy-pillar-header">
+                <span class="privacy-icon">&#128275;</span>
+                <strong>1. Open Data Sources Only</strong>
+              </div>
+              <p>We build researcher profiles exclusively from publicly available sources. Your private files never touch our system.</p>
+              <ul class="privacy-list">
+                <li>&#10003;&nbsp; Uses only public sources — PubMed, Google Scholar, ORCID, faculty pages, NIH RePORTER, and more</li>
+                <li>&#10003;&nbsp; No manual CV uploads or private document sharing required</li>
+                <li>&#10003;&nbsp; Your private files stay entirely in your hands</li>
+              </ul>
+            </div>
+
+            <div class="privacy-pillar">
+              <div class="privacy-pillar-header">
+                <span class="privacy-icon">&#128274;</span>
+                <strong>2. Platform-Level Security</strong>
+              </div>
+              <p>Account security is handled by <strong>Supabase</strong>, an industry-standard backend trusted by thousands of applications worldwide.</p>
+              <ul class="privacy-list">
+                <li>&#10003;&nbsp; All user credentials and passwords are fully encrypted</li>
+                <li>&#10003;&nbsp; Secure login protocols protect your account</li>
+                <li>&#10003;&nbsp; Industry-standard encryption at rest and in transit</li>
+              </ul>
+            </div>
+
+            <div class="privacy-pillar">
+              <div class="privacy-pillar-header">
+                <span class="privacy-icon">&#128065;&#65039;</span>
+                <strong>3. Zero-Access Privacy</strong>
+              </div>
+              <p>This is the most important one. GrantOtter operates on a <strong>zero-access privacy model</strong> for your generated content — your research ideas and intellectual property stay entirely within your control.</p>
+              <ul class="privacy-list">
+                <li>&#10003;&nbsp; The platform <strong>cannot see</strong> your generated concept notes</li>
+                <li>&#10003;&nbsp; Your matching lists and biosketches are never stored on our servers</li>
+                <li>&#10003;&nbsp; Your intellectual property is never used for AI training or shared externally</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ──────────────────────────────────────────────────────────── -->
+  <section class="tut-step tut-step-alt" id="contact">
+    <div class="tut-step-inner">
+      <h2>Contact Us</h2>
+      <p>
+        Have a question not covered here, a feature request, or running into an issue?
+        Reach out — we typically respond within one business day.
+      </p>
+      <div class="help-contact-card">
+        <div class="help-contact-icon">&#128233;</div>
+        <div>
+          <strong>Support Email</strong>
+          <p>
+            <a href="mailto:grantotter42@gmail.com">grantotter42@gmail.com</a>
+          </p>
+          <p style="font-size:0.85rem; color: var(--gray-600); margin-top: 0.25rem;">
+            Use this address for account issues, password resets, bug reports, and general questions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Schedule a Demo ───────────────────────────────────────────────────── -->
+  <section class="tut-step" id="demo">
+    <div class="tut-step-inner">
+      <h2>Schedule a Live Demo</h2>
+      <p>
+        Want a guided walkthrough of GrantOtter for yourself or your department?
+        We offer 30-minute live demo sessions where we walk through the full workflow,
+        answer questions, and help you get set up with your own profile.
+      </p>
+      <p>
+        Department demos are a great way to introduce the tool to your faculty — we can
+        cover the end-to-end workflow from profile generation to brainstorming a proposal
+        concept live, using a real grant relevant to your group.
+      </p>
+      <div class="help-contact-card">
+        <div class="help-contact-icon">&#128197;</div>
+        <div>
+          <strong>Book a 30-Minute Demo</strong>
+          <p style="margin: 0.4rem 0 0.75rem;">
+            Pick a time that works for you directly on our calendar.
+          </p>
+          <a href="https://calendly.com/ywan446-emory/30min" class="btn btn-primary"
+             target="_blank" rel="noopener">Book a Demo Session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://github.com/YWAN446/grantotter">GitHub</a>
+      <a href="index.html">Home</a>
+      <a href="tutorial.html">Get Started</a>
+      <a href="feed.html">Weekly Feed</a>
+      <a href="help.html">Help</a>
+      <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener">Launch App</a>
+    </div>
+    <p>&copy; 2025 GrantOtter. Built for researchers, by researchers.</p>
+  </footer>
+
+</body>
+</html>
