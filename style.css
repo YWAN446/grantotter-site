@@ -430,6 +430,83 @@ section {
   margin-bottom: 1rem;
 }
 
+/* ─── Social Share Bar ───────────────────────────────────────────────────── */
+
+.share-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.share-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.share-bar-dark .share-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.share-buttons {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s;
+  font-family: inherit;
+}
+
+.share-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Platform accent colors on hover */
+.share-x:hover        { background: #000; border-color: #000; }
+.share-linkedin:hover { background: #0a66c2; border-color: #0a66c2; }
+.share-facebook:hover { background: #1877f2; border-color: #1877f2; }
+.share-email:hover    { background: var(--teal-dark); border-color: var(--teal-dark); }
+.share-copy:hover     { background: rgba(255,255,255,0.3); }
+
+/* Copy button state */
+.share-copy .icon-check { display: none; }
+.share-copy.copied .icon-copy  { display: none; }
+.share-copy.copied .icon-check { display: block; }
+.share-copy.copied { background: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.8); }
+
+@media (max-width: 768px) {
+  .share-bar {
+    gap: 0.75rem;
+  }
+  .share-label {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}
+
 /* ─── Tutorial Page ──────────────────────────────────────────────────────── */
 
 .nav-active {
