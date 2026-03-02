@@ -4,106 +4,73 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Mon, 23 Feb 2026 08:44:35 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 08:40:00 +0000</lastBuildDate>
     <item>
-      <title>Learn How Much You Could Receive for a Loan Repayment Award</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/learn-how-much-you-could-receive-for-a-loan-repayment-award</link>
-      <description>Planning to apply for an Extramural Loan Repayment Programs (LRP) Award? NIH has relaunched the LRP Award Calculator, a quick and easy tool that provides an estimate of your potential LRP award amount.&amp;nbsp; Simply enter your total qualifying educational loan debt and your annual income to see what you may be eligible to receive.&amp;nbsp;</description>
-      <pubDate>Thu, 19 Feb 2026 16:55:54 +0000</pubDate>
+      <title>Make a Perfect Pair with NIH Matchmaker</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/make-a-perfect-pair-with-nih-matchmaker</link>
+      <description>Our Matchmaker tool in RePORTER can help you determine which institute or center may be interested in your idea, which NIH program official you may want to contact, and which study section you might suggest for application review.&amp;nbsp;</description>
+      <pubDate>Fri, 27 Feb 2026 16:18:48 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
-      <category>New Resources&gt;</category>
+      <category>Top Stories&gt;</category>
     </item>
     <item>
-      <title>Stay Informed About NIH Grants Policy and Processes</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/stay-informed-about-nih-grants-policy-and-processes</link>
-      <description>Follow these tips to keep tabs on the latest NIH policies, processes, and resources to help as you develop your application or manage your award.&amp;nbsp;&amp;nbsp;</description>
-      <pubDate>Thu, 19 Feb 2026 16:39:43 +0000</pubDate>
+      <title>Notice of Information Encouraging Submission of Pre-Application Consultation Information for RFA-OD-25-008, "Tobacco Regulatory Science Small Grant Program for New Investigators (R03 Clinical Trial Optional)"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-045.html</link>
+      <description>Notice NOT-OD-26-045 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 27 Feb 2026 15:44:48 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>SBIR: ALIAS Missionized Autonomy for Emergency Services - SBIR XL</title>
+      <link>https://www.darpa.mil/work-with-us/opportunities</link>
+      <description>&lt;p&gt;This topic invites submissions of innovative research concepts in the technical domain of Human-Machine Interfaces, Integrated Sensing and Cyber, Trusted AI and Autonomy. | &lt;a href="https://www.darpa.mil/research/programs/alias-missionized-autonomy-for-emergency-services"&gt;See Topic&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Fri, 27 Feb 2026 14:13:19 +0000</pubDate>
+      <source>DARPA Opportunities</source>
+    </item>
+    <item>
+      <title>Highlighted Topics Spotlight: Cancer Research</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/highlighted-topics-spotlight-cancer-research</link>
+      <description>Have you explored the NIH Highlighted Topics recently? If not, now is a great time to take a look and learn more about this centralized list of selected research priority areas within the NIH Institutes, Centers, and Offices (ICOs).&amp;nbsp;&amp;nbsp;</description>
+      <pubDate>Wed, 25 Feb 2026 18:14:25 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>Tips Before You Submit&gt;</category>
     </item>
     <item>
-      <title>Promethean Clay</title>
-      <link>https://www.darpa.mil/work-with-us/opportunities</link>
-      <description>&lt;p&gt;DARPA is soliciting proposals for new and innovative energy storage systems. Proposed research should investigate approaches that enable revolutionary advances in energy storage at scales relevant to systems integration. | &lt;a href="https://www.darpa.mil/research/programs/promethean-clay"&gt;See Program&amp;nbsp;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Thu, 19 Feb 2026 16:06:06 +0000</pubDate>
-      <source>DARPA Opportunities</source>
+      <title>NSF-DOE Vera C. Rubin Observatory launches real-time discovery machine for monitoring the night sky</title>
+      <link>https://www.nsf.gov/news/nsf-doe-vera-c-rubin-observatory-launches-real-time</link>
+      <description>NSF-DOE Rubin Observatory has issued its first scientific alerts, enabling dynamic, real-time observation of the night sky. The alerts are expected to increase to about 7 million per night...</description>
+      <pubDate>Wed, 25 Feb 2026 18:00:11 +0000</pubDate>
+      <source>NSF News</source>
     </item>
     <item>
-      <title>Notice of Change: Expiration of PAR-25-090 -- NIDDK High Risk Multi-Center Clinical Study Implementation Planning Cooperative Agreements (U34 Clinical Trial Optional)</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DK-26-102.html</link>
-      <description>Notice NOT-DK-26-102 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 16:25:34 +0000</pubDate>
+      <title>Updated Elements of an NIH Data Management and Sharing Plan</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-046.html</link>
+      <description>Notice NOT-OD-26-046 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 25 Feb 2026 14:03:13 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Turning proteins into PROSE</title>
-      <link>https://www.darpa.mil/news/2026/protein-sequencing-launches</link>
-      <description>The PROtein SEquencing (PROSE) program launches to build microsystems that directly read and decipher complex proteins.</description>
-      <pubDate>Wed, 18 Feb 2026 16:19:10 +0000</pubDate>
-      <source>DARPA News</source>
+      <title>Survey Results: Reducing Time and Effort in NIH-Supported Laboratory Animal Research, Testing, and Training</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/survey-results-reducing-time-and-effort-in-nih-supported-laboratory-animal-research-testing-and-training</link>
+      <description>These Survey Results help inform NIH’s ongoing efforts to reduce time and effort spent by Institutional Animal Care and Use Committee (IACUC) administrators and principal investigators (PIs) while maintaining the integrity and credibility of research findings and protection of research animals.</description>
+      <pubDate>Tue, 24 Feb 2026 16:49:59 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Top Stories&gt;</category>
     </item>
     <item>
-      <title>Notice of Early Expiration of PAR-25-099, "Planning for Product Development Strategy (R34 Clinical Trial Not Allowed)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AI-26-006.html</link>
-      <description>Notice NOT-AI-26-006 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 16:04:21 +0000</pubDate>
-      <source>NIH Guide</source>
+      <title>NSF to proceed with demolition and site restoration at Sacramento Peak Observatory</title>
+      <link>https://www.nsf.gov/news/nsf-proceed-demolition-site-restoration-sacramento-peak</link>
+      <description>The U.S. National Science Foundation announced today it will proceed with demolition and site restoration at the Sacramento Peak Observatory, also known as Sunspot Solar Observatory, in Sunspot, New Mexico, following years of reduced operations and…</description>
+      <pubDate>Tue, 24 Feb 2026 15:00:07 +0000</pubDate>
+      <source>NSF News</source>
     </item>
     <item>
-      <title>Notice of Early Expiration of PAR-25-330, "Role of Defective Proviruses in HIV Persistence (R01 Clinical Trial Not Allowed)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AI-26-007.html</link>
-      <description>Notice NOT-AI-26-007 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 15:57:25 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Early Expiration of PAR-25-300, "Targeting Cell Surface HIV Envelope for Cell Elimination (R01 Clinical Trial Not Allowed)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AI-26-008.html</link>
-      <description>Notice NOT-AI-26-008 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 15:03:51 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Early Expiration of PAR-25-316 "Elucidating Immunometabolic Responses to HIV Infection that Increase TB or HBV Risk (R21 Clinical Trial Not Allowed)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AI-26-009.html</link>
-      <description>Notice NOT-AI-26-009 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 08:13:20 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Early Expiration of PAR-25-315, "Elucidating Immunometabolic Responses to HIV Infection that Increase TB or HBV Risk (R01 Clinical Trial Not Allowed)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AI-26-010.html</link>
-      <description>Notice NOT-AI-26-010 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 06:48:18 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>NIA Intervention Testing Program (ITP) Announces Annual Call for Compounds to Test for Lifespan Extension in Mice</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AG-25-014.html</link>
-      <description>Notice NOT-AG-25-014 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 06:13:40 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Reminder of Requirement for Certification of IRB Approval</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-043.html</link>
-      <description>Notice NOT-OD-26-043 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 18 Feb 2026 06:12:15 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>National Museum of the U.S. Air Force to host DARPA Lift Challenge</title>
-      <link>https://www.darpa.mil/news/2026/national-museum-united-states-air-force-host-lift-challenge</link>
-      <description>The outdoor competition, including the final flyoff and awards ceremony on Aug. 9, will be open to the public.</description>
-      <pubDate>Tue, 17 Feb 2026 17:14:01 +0000</pubDate>
-      <source>DARPA News</source>
-    </item>
-    <item>
-      <title>Not such a long shot</title>
-      <link>https://www.darpa.mil/news/2026/long-shot-success</link>
-      <description>The X‑68A completed a series of technical milestones, moving its air-launched uninhabited vehicle closer to flight test.</description>
-      <pubDate>Mon, 16 Feb 2026 14:39:13 +0000</pubDate>
-      <source>DARPA News</source>
+      <title>NIH Institute and Center Director Perspectives on Implementing the NIH Unified Funding Strategy</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/nih-institute-and-center-director-perspectives-on-implementing-the-nih-unified-funding-strategy</link>
+      <description>Last November, NIH announced it is implementing steps towards a unified strategy that will help guide clearer and consistent funding decisions across all Institutes and Centers (ICs). The August NIH Director’s statement laid the foundation, and today we are sharing our thoughts on this NIH Unified Funding Strategy (UFS) from a holistic NIH viewpoint first, and then how this approach aligns with our individual Institute or Center (IC) established funding practices.&amp;nbsp;</description>
+      <pubDate>Mon, 23 Feb 2026 17:49:35 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>NIH Funding Blog&gt;</category>
     </item>
   </channel>
 </rss>
