@@ -826,6 +826,19 @@ section {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
+/* Screenshot with caption */
+.tut-screenshot {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.media-caption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  font-style: italic;
+}
+
 /* Swapping placeholders with real media — use these classes */
 .tut-media-gif img,
 .tut-media-video video {
