@@ -4,14 +4,21 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Thu, 05 Mar 2026 22:31:37 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 18:41:11 +0000</lastBuildDate>
     <item>
-      <title>Harassment Reporting by NIH Recipients: What, Who, How, Where, When, and Why</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/harassment-reporting-by-nih-recipients-what-who-how-where-when-and-why</link>
+      <title>Harassment Reporting by NIH Recipients: What, How, Who, When, Where, and Why</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/harassment-reporting-by-nih-recipients-what-how-who-when-where-and-why</link>
       <description>We remain committed to ensuring safe, respectful, and harassment-free research environments wherever NIH-supported research is conducted. NIH grant recipients, through their institution’s leadership, faculty, and Authorized Organizational Representatives (AORs), are essential for sustaining this commitment.</description>
-      <pubDate>Thu, 05 Mar 2026 13:54:15 +0000</pubDate>
+      <pubDate>Fri, 06 Mar 2026 16:51:12 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>Top Stories&gt;</category>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-24-205 -- Research to Advance the Science of Primary Care (R01)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-001.html</link>
+      <description>Notice NOT-HS-26-001 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 06 Mar 2026 06:40:25 +0000</pubDate>
+      <source>NIH Guide</source>
     </item>
     <item>
       <title>Notice of Pre-Application Technical Assistance Webinar on the NIA Expanding Research in AD/ADRD (ERA) R25 Postbaccalaureate and Summer Research Education Programs</title>
@@ -70,21 +77,6 @@
       <description>Notice NOT-NS-26-027 from the NIH Guide for Grants and Contracts</description>
       <pubDate>Tue, 03 Mar 2026 06:09:40 +0000</pubDate>
       <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Make a Perfect Pair with NIH Matchmaker</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/02/make-a-perfect-pair-with-nih-matchmaker</link>
-      <description>Our Matchmaker tool in RePORTER can help you determine which institute or center may be interested in your idea, which NIH program official you may want to contact, and which study section you might suggest for application review.&amp;nbsp;</description>
-      <pubDate>Fri, 27 Feb 2026 16:18:48 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>Top Stories&gt;</category>
-    </item>
-    <item>
-      <title>Upgrading biomass waste into strategic materials</title>
-      <link>https://www.darpa.mil/news/2026/upgrading-biomass-waste-into-strategic-materials</link>
-      <description>The Fleetwood program aims to produce critical chemicals from widely available domestic resources.</description>
-      <pubDate>Fri, 27 Feb 2026 13:46:23 +0000</pubDate>
-      <source>DARPA News</source>
     </item>
   </channel>
 </rss>
