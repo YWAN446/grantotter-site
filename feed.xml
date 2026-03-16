@@ -4,107 +4,101 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Mon, 09 Mar 2026 08:40:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 08:52:59 +0000</lastBuildDate>
     <item>
-      <title>Harassment Reporting by NIH Recipients: What, How, Who, When, Where, and Why</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/harassment-reporting-by-nih-recipients-what-how-who-when-where-and-why</link>
-      <description>We remain committed to ensuring safe, respectful, and harassment-free research environments wherever NIH-supported research is conducted. NIH grant recipients, through their institution’s leadership, faculty, and Authorized Organizational Representatives (AORs), are essential for sustaining this commitment.</description>
-      <pubDate>Fri, 06 Mar 2026 16:51:12 +0000</pubDate>
+      <title>CASTOR</title>
+      <link>https://www.darpa.mil/work-with-us/opportunities</link>
+      <description>&lt;p&gt;DSO seeks innovative basic or applied research for efficient, high-performance, long-lived oxygen-compatible cathodes for use in air-breathing very low earth orbit (VLEO) electric propulsion (EP) systems. | &lt;a href="https://www.darpa.mil/research/opportunities/disruptioneering"&gt;See Disruptioneering&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Fri, 13 Mar 2026 18:14:28 +0000</pubDate>
+      <source>DARPA Opportunities</source>
+    </item>
+    <item>
+      <title>Fiscal Year 2025 By the Numbers: Extramural Grant Investments in Research</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/fiscal-year-2025-by-the-numbers-extramural-grant-investments-in-research</link>
+      <description>To promote transparency, each year we provide information about the NIH’s investments of taxpayer funds in extramural biomedical research and related activities. Today, we are sharing funding data for fiscal years (FYs) 2023 to 2025.</description>
+      <pubDate>Thu, 12 Mar 2026 20:04:56 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
-      <category>Top Stories&gt;</category>
+      <category>NIH Funding Blog&gt;</category>
     </item>
     <item>
-      <title>Notice to Rescind NOT-NS-24-060 "NINDS' Policy on Special Council Review of Research Applications"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-NS-26-033.html</link>
-      <description>Notice NOT-NS-26-033 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Fri, 06 Mar 2026 07:34:41 +0000</pubDate>
+      <title>Notice of Change: Early Expiration of PAR-25-326 Ultra-Rare Gene-based Therapy (URGenT) Network Resource Access (X01, Clinical Trial Not Allowed)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-NS-26-032.html</link>
+      <description>Notice NOT-NS-26-032 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Thu, 12 Mar 2026 16:50:45 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Notice of Early Expiration PA-23-196 -- AHRQ Health Services Research Dissertation Program (R36).</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-004.html</link>
-      <description>Notice NOT-HS-26-004 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Fri, 06 Mar 2026 07:11:15 +0000</pubDate>
-      <source>NIH Guide</source>
+      <title>Translate your bio-attribution research into national security impact</title>
+      <link>https://www.darpa.mil/news/2026/bio-attribution-challenge</link>
+      <description>Register for the DARPA Bio-Attribution Challenge to win a share of $180,000 in prizes.</description>
+      <pubDate>Wed, 11 Mar 2026 16:15:53 +0000</pubDate>
+      <source>DARPA News</source>
     </item>
     <item>
-      <title>Notice of Early Expiration PA-24-156 -- - AHRQ Health Services Research Demonstration and Dissemination Grants (R18) .</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-003.html</link>
-      <description>Notice NOT-HS-26-003 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Fri, 06 Mar 2026 07:04:26 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Early Expiration PA-23-115-- AHRQ Small Research Projects to Advance the Science of Primary Care (R03).</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-002.html</link>
-      <description>Notice NOT-HS-26-002 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Fri, 06 Mar 2026 07:00:31 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Early Expiration PA-24-205 -- Research to Advance the Science of Primary Care (R01)</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-001.html</link>
-      <description>Notice NOT-HS-26-001 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Fri, 06 Mar 2026 06:40:25 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Pre-Application Technical Assistance Webinar on the NIA Expanding Research in AD/ADRD (ERA) R25 Postbaccalaureate and Summer Research Education Programs</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AG-26-004.html</link>
-      <description>Notice NOT-AG-26-004 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Thu, 05 Mar 2026 08:19:52 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>ICorpsatNIH  An Entrepreneurship Program to Support Commercialization Training for Phase I SBIR/STTR awardees</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-037.html</link>
-      <description>Notice NOT-OD-26-037 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Thu, 05 Mar 2026 08:11:42 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Learn Your Letters (of Reference or Support)</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/learn-your-letters-of-reference-or-support</link>
-      <description>Get an overview of reference letters and letters of support: when to use them, who writes them, and what key information you should include for reviewers and NIH staff.</description>
-      <pubDate>Wed, 04 Mar 2026 19:55:52 +0000</pubDate>
+      <title>Reminder of Requirement for Certification of IRB Approval</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/reminder-of-requirement-for-certification-of-irb-approval</link>
+      <description>NIH would like to remind the extramural research community that NIH requires recipients to submit a certification to NIH that all nonexempt research involving human subjects has been reviewed and approved by an appropriate Institutional Review Board (IRB).</description>
+      <pubDate>Wed, 11 Mar 2026 14:54:26 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>Tips Before You Submit&gt;</category>
     </item>
     <item>
-      <title>Feedback Wanted - Developing the NIH-Wide Strategic Plan for Fiscal Years 2027-2031</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/feedback-wanted-developing-the-nih-wide-strategic-plan-for-fiscal-years-2027-2031</link>
-      <description>NIH seeks community feedback through two webinars on the next agency-wide strategic plan. This plan will guide our work over the next five years to fulfill our mission for the American people. Input from the research community, stakeholders, and the public is essential to ensure transparency in what we do and advance the principles of gold standard science that we all apply to our daily work.&amp;nbsp;</description>
-      <pubDate>Wed, 04 Mar 2026 18:59:11 +0000</pubDate>
+      <title>Notice to Expire PAR-24-298, "Mechanism for Time-Sensitive Substance Use Research (R21 Clinical Trial Optional)"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DA-26-010.html</link>
+      <description>Notice NOT-DA-26-010 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 11 Mar 2026 14:31:23 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Request for Information (RFI): Gathering feedback for the National Eye Institute 2026-2031 Strategic Plan.</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-EY-26-002.html</link>
+      <description>Notice NOT-EY-26-002 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 11 Mar 2026 13:41:10 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-23-291 -- AHRQ Understanding and Improving Diagnostic Safety in Ambulatory Care: Incidence and Contributing Factors (R01).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-005.html</link>
+      <description>Notice NOT-HS-26-005 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Mar 2026 17:31:35 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-24-154 -- AHRQ Health Services Research Projects (R01) is expired.</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-006.html</link>
+      <description>Notice NOT-HS-26-006 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Mar 2026 17:21:44 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-24-155 -- AHRQ Small Health Services Research Grant Program (R03).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-007.html</link>
+      <description>Notice NOT-HS-26-007 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Mar 2026 17:14:28 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-24-266 -- Using Innovative Digital Healthcare Solutions to Improve Quality at the Point of Care (R21/R33 - Clinical Trial Optional).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-008.html</link>
+      <description>Notice NOT-HS-26-008 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 10 Mar 2026 17:10:48 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Streamlined Way to Learn About NIH Institutes, Centers, and Offices: Profile Pages</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/streamlined-way-to-learn-about-nih-institutes-centers-and-offices-profile-pages</link>
+      <description>Explore our new NIH Institute, Center, and Office (ICO) Profiles, a central resource to simplify how applicants and researchers learn about NIH grant and funding information, instead of needing to visit multiple different ICO websites.&amp;nbsp;</description>
+      <pubDate>Mon, 09 Mar 2026 19:29:18 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
-      <category>Top Stories&gt;</category>
+      <category>New Resources&gt;</category>
     </item>
     <item>
-      <title>Notice of Correction to Notice of Temporary Extension of Eligibility for the NIH Pathway to Independence Award (K99/R00) (NOT-OD-26-021)</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-042.html</link>
-      <description>Notice NOT-OD-26-042 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 04 Mar 2026 15:07:11 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Change to PAR-24-272 Clinical and Translational Science Award (UM1 Clinical Trial Optional) in Award Information</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-TR-26-003.html</link>
-      <description>Notice NOT-TR-26-003 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 04 Mar 2026 13:55:22 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Office-wide BAA: MTO</title>
-      <link>https://www.darpa.mil/work-with-us/opportunities</link>
-      <description>&lt;p&gt;This announcement seeks revolutionary research ideas for topics not being addressed by ongoing MTO programs or other published solicitations. | &lt;a href="https://www.darpa.mil/about/offices/mto"&gt;See MTO&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Tue, 03 Mar 2026 16:40:55 +0000</pubDate>
-      <source>DARPA Opportunities</source>
-    </item>
-    <item>
-      <title>Notice of Change to Key Dates for PAR-25-049: NIH SIREN Neurologic Clinical Trials (UG3/UH3 - Clinical Trial Required)</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-NS-26-027.html</link>
-      <description>Notice NOT-NS-26-027 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Tue, 03 Mar 2026 06:09:40 +0000</pubDate>
-      <source>NIH Guide</source>
+      <title>Will My Application Be Withdrawn if I Don’t Use the Common Forms?</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/will-my-application-be-withdrawn-if-i-dont-use-the-common-forms</link>
+      <description>NIH has extended the leniency period for using the new Biographical Sketch and Current and Pending (Other) Support (CPOS) Common Forms through May 2026.</description>
+      <pubDate>Mon, 09 Mar 2026 15:32:23 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>You Ask, We Answer&gt;</category>
     </item>
   </channel>
 </rss>
