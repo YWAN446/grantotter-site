@@ -4,101 +4,192 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Mon, 16 Mar 2026 08:52:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 08:51:14 +0000</lastBuildDate>
     <item>
-      <title>CASTOR</title>
-      <link>https://www.darpa.mil/work-with-us/opportunities</link>
-      <description>&lt;p&gt;DSO seeks innovative basic or applied research for efficient, high-performance, long-lived oxygen-compatible cathodes for use in air-breathing very low earth orbit (VLEO) electric propulsion (EP) systems. | &lt;a href="https://www.darpa.mil/research/opportunities/disruptioneering"&gt;See Disruptioneering&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Fri, 13 Mar 2026 18:14:28 +0000</pubDate>
-      <source>DARPA Opportunities</source>
-    </item>
-    <item>
-      <title>Fiscal Year 2025 By the Numbers: Extramural Grant Investments in Research</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/fiscal-year-2025-by-the-numbers-extramural-grant-investments-in-research</link>
-      <description>To promote transparency, each year we provide information about the NIH’s investments of taxpayer funds in extramural biomedical research and related activities. Today, we are sharing funding data for fiscal years (FYs) 2023 to 2025.</description>
-      <pubDate>Thu, 12 Mar 2026 20:04:56 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>NIH Funding Blog&gt;</category>
-    </item>
-    <item>
-      <title>Notice of Change: Early Expiration of PAR-25-326 Ultra-Rare Gene-based Therapy (URGenT) Network Resource Access (X01, Clinical Trial Not Allowed)</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-NS-26-032.html</link>
-      <description>Notice NOT-NS-26-032 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Thu, 12 Mar 2026 16:50:45 +0000</pubDate>
+      <title>Notice of Early Expiration PA-21-264 -- Large Health Services Research Demonstration and Dissemination Projects for Prevention of Healthcare-Associated Infections (R18).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-019.html</link>
+      <description>Notice NOT-HS-26-019 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 20 Mar 2026 15:50:13 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Translate your bio-attribution research into national security impact</title>
-      <link>https://www.darpa.mil/news/2026/bio-attribution-challenge</link>
-      <description>Register for the DARPA Bio-Attribution Challenge to win a share of $180,000 in prizes.</description>
-      <pubDate>Wed, 11 Mar 2026 16:15:53 +0000</pubDate>
+      <title>Notice of Early Expiration PA-21-165 -- Large Research Projects for Prevention of Healthcare-Associated Infections (R01) .</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-018.html</link>
+      <description>Notice NOT-HS-26-018 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 20 Mar 2026 15:46:46 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-22-047-- Large Research Projects for Combating Antibiotic-Resistant Bacteria (CARB) (R01).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-017.html</link>
+      <description>Notice NOT-HS-26-017 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 20 Mar 2026 15:13:13 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-22-048 -- Large Health Services Research Demonstration and Dissemination Projects for Combating Antibiotic-Resistant Bacteria (CARB)(R18).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-016.html</link>
+      <description>Notice NOT-HS-26-016 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 20 Mar 2026 15:03:40 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-22-051-- AHRQ Mentored Career Enhancement Awards for Established Investigators in Patient-Centered Outcome Research (K18).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-015.html</link>
+      <description>Notice NOT-HS-26-015 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 20 Mar 2026 14:50:36 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-22-168 -- AHRQ Administrative Supplements for Grants in Health Services Research</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-014.html</link>
+      <description>Notice NOT-HS-26-014 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 20 Mar 2026 14:45:14 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>DARPA-developed autonomous helicopter technology transitions to U.S. Army</title>
+      <link>https://www.darpa.mil/news/2026/uh-60mx-black-hawk-army</link>
+      <description>An experimental, fly-by-wire H-60Mx Black Hawk, equipped with DARPA-funded autonomy, has been delivered to the U.S. Army for testing.</description>
+      <pubDate>Thu, 19 Mar 2026 18:42:40 +0000</pubDate>
       <source>DARPA News</source>
     </item>
     <item>
-      <title>Reminder of Requirement for Certification of IRB Approval</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/reminder-of-requirement-for-certification-of-irb-approval</link>
-      <description>NIH would like to remind the extramural research community that NIH requires recipients to submit a certification to NIH that all nonexempt research involving human subjects has been reviewed and approved by an appropriate Institutional Review Board (IRB).</description>
-      <pubDate>Wed, 11 Mar 2026 14:54:26 +0000</pubDate>
+      <title>Notice of Informational Webinar on the NIGMS Predoctoral Basic Biomedical and Medical Scientist Training Programs (T32)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-GM-26-004.html</link>
+      <description>Notice NOT-GM-26-004 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Thu, 19 Mar 2026 16:50:29 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>NSF invests $11M to expand AI professional development for K-12 teachers nationwide</title>
+      <link>https://www.nsf.gov/news/nsf-invests-11m-expand-ai-professional-development-k-12</link>
+      <description>The U.S. National Science Foundation today announced an $11 million award to the Computer Science Teachers Association (CSTA) in furtherance of the executive order on "Advancing Artificial Intelligence Education for American Youth." The award will…</description>
+      <pubDate>Thu, 19 Mar 2026 14:00:08 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+    <item>
+      <title>What Are the Components of a Collaborative International Research Project (PF5) Application and What Should Be Included?</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/what-are-the-components-of-a-collaborative-international-research-project-pf5-application-and-what-should-be-included</link>
+      <description>If you are preparing a Collaborative International Research Project (PF5) application, understanding what belongs in each required and optional component can help ensure your submission is complete, responsive, and clearly structured for review.&amp;nbsp;</description>
+      <pubDate>Thu, 19 Mar 2026 13:51:26 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>Tips Before You Submit&gt;</category>
     </item>
     <item>
-      <title>Notice to Expire PAR-24-298, "Mechanism for Time-Sensitive Substance Use Research (R21 Clinical Trial Optional)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DA-26-010.html</link>
-      <description>Notice NOT-DA-26-010 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 11 Mar 2026 14:31:23 +0000</pubDate>
+      <title>Notice of NIGMS Participation in PA-25-422 "Ruth L. Kirschstein National Research Service Award (NRSA) Individual Predoctoral Fellowship (Parent F31)"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-GM-26-002.html</link>
+      <description>Notice NOT-GM-26-002 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Thu, 19 Mar 2026 06:10:55 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Request for Information (RFI): Gathering feedback for the National Eye Institute 2026-2031 Strategic Plan.</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-EY-26-002.html</link>
-      <description>Notice NOT-EY-26-002 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 11 Mar 2026 13:41:10 +0000</pubDate>
+      <title>What Should I Know About the New Biographical Sketch Common Form?</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/what-should-i-know-about-the-new-biographical-sketch-common-form</link>
+      <description>The Biographical Sketch Common Form must be used for all NIH grant application, Just-in-Time, Research Performance Progress Report (RPPR), and Prior Approval submissions &amp;nbsp;to NIH with due dates on or after January 25, 2026.</description>
+      <pubDate>Wed, 18 Mar 2026 15:06:26 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>You Ask, We Answer&gt;</category>
+    </item>
+    <item>
+      <title>Reminder: Next NIH Fellowship Application Due Date Is Approaching</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/reminder-next-nih-fellowship-application-due-date-is-approaching</link>
+      <description>Have you explored our Fellowship opportunities? We wanted to remind you that NIH fellowships are open to early career scientists, including at the predoctoral and postdoctoral level.</description>
+      <pubDate>Wed, 18 Mar 2026 14:55:48 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Top Stories&gt;</category>
+    </item>
+    <item>
+      <title>Inviting Input on a Proposed Clinical Trial Specific Application Form</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-058.html</link>
+      <description>Notice NOT-OD-26-058 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 18 Mar 2026 14:40:24 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Notice of Early Expiration PA-23-291 -- AHRQ Understanding and Improving Diagnostic Safety in Ambulatory Care: Incidence and Contributing Factors (R01).</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-005.html</link>
-      <description>Notice NOT-HS-26-005 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Tue, 10 Mar 2026 17:31:35 +0000</pubDate>
+      <title>Ruth L. Kirschstein National Research Service Award (NRSA) Stipends, Tuition/Fees and Other Budgetary Levels Effective for Fiscal Year 2026</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-044.html</link>
+      <description>Notice NOT-OD-26-044 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 18 Mar 2026 09:00:03 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Notice of Early Expiration PA-24-154 -- AHRQ Health Services Research Projects (R01) is expired.</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-006.html</link>
-      <description>Notice NOT-HS-26-006 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Tue, 10 Mar 2026 17:21:44 +0000</pubDate>
+      <title>Notice of Fiscal Policies in Effect for FY 2026</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-059.html</link>
+      <description>Notice NOT-OD-26-059 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 18 Mar 2026 08:56:00 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Notice of Early Expiration PA-24-155 -- AHRQ Small Health Services Research Grant Program (R03).</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-007.html</link>
-      <description>Notice NOT-HS-26-007 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Tue, 10 Mar 2026 17:14:28 +0000</pubDate>
+      <title>Notice of Legislative Mandates in Effect for FY 2026</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-060.html</link>
+      <description>Notice NOT-OD-26-060 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 18 Mar 2026 08:51:15 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Notice of Early Expiration PA-24-266 -- Using Innovative Digital Healthcare Solutions to Improve Quality at the Point of Care (R21/R33 - Clinical Trial Optional).</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-008.html</link>
-      <description>Notice NOT-HS-26-008 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Tue, 10 Mar 2026 17:10:48 +0000</pubDate>
+      <title>Request for Information (RFI): Seeking Input on the NIDCD Support of Clinical Trials</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DC-26-026.html</link>
+      <description>Notice NOT-DC-26-026 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 17:03:13 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Streamlined Way to Learn About NIH Institutes, Centers, and Offices: Profile Pages</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/streamlined-way-to-learn-about-nih-institutes-centers-and-offices-profile-pages</link>
-      <description>Explore our new NIH Institute, Center, and Office (ICO) Profiles, a central resource to simplify how applicants and researchers learn about NIH grant and funding information, instead of needing to visit multiple different ICO websites.&amp;nbsp;</description>
-      <pubDate>Mon, 09 Mar 2026 19:29:18 +0000</pubDate>
+      <title>Findings of Research Misconduct</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-041.html</link>
+      <description>Notice NOT-OD-26-041 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 16:34:53 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-22-238--AHRQ Conference Grant Programs (R13).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-013.html</link>
+      <description>Notice NOT-HS-26-013 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 07:27:56 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-22-232--AHRQ Mentored Clinical Scientist Research Career Development Award (K08).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-012.html</link>
+      <description>Notice NOT-HS-26-012 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 07:23:51 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-23-290-- AHRQ Improving Diagnostic Safety in Ambulatory Care: Strategies and Interventions (R18).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-011.html</link>
+      <description>Notice NOT-HS-26-011 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 07:20:30 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration PA-24-093--Systems-Based Approaches to Improve Patient Safety by Improving Healthcare Worker Safety and Well-Being (R01 Clinical Trial Optional) .</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-010.html</link>
+      <description>Notice NOT-HS-26-010 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 07:16:14 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of Early Expiration of PA-24-261-- Examining the Impact of Artificial Intelligence (AI) on Healthcare Safety (R18).</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HS-26-009.html</link>
+      <description>Notice NOT-HS-26-009 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 17 Mar 2026 07:11:08 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>New NIH FAQ for Basic Experimental Studies with Humans (BESH)</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/new-nih-faq-for-basic-experimental-studies-with-humans-besh</link>
+      <description>NIH has developed a Frequently Asked Question (FAQ) for investigators planning applications with Basic Experimental Studies with Humans (BESH) on or after May 25, 2026 to clarify that the information in&amp;nbsp;the latest Guide Notice&amp;nbsp;only applies to basic science studies/BESH.&amp;nbsp;</description>
+      <pubDate>Mon, 16 Mar 2026 19:26:07 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>New Resources&gt;</category>
     </item>
     <item>
-      <title>Will My Application Be Withdrawn if I Don’t Use the Common Forms?</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/03/will-my-application-be-withdrawn-if-i-dont-use-the-common-forms</link>
-      <description>NIH has extended the leniency period for using the new Biographical Sketch and Current and Pending (Other) Support (CPOS) Common Forms through May 2026.</description>
-      <pubDate>Mon, 09 Mar 2026 15:32:23 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>You Ask, We Answer&gt;</category>
+      <title>Request for Information (RFI): Inviting Comments and Suggestions on a Framework for the NIH-Wide Strategic Plan for Fiscal Years 2027-2031</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-047.html</link>
+      <description>Notice NOT-OD-26-047 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Mon, 16 Mar 2026 09:01:08 +0000</pubDate>
+      <source>NIH Guide</source>
     </item>
   </channel>
 </rss>
