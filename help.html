@@ -60,9 +60,8 @@
           <summary>How do I create an account?</summary>
           <p>
             Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener">grantotter.streamlit.app</a>,
-            click the <strong>Sign Up</strong> tab, enter your email and a password (minimum 6 characters),
-            and click <strong>Create Account</strong>. You may receive a confirmation email — click the link
-            to verify your address, then sign in. See the
+            click the <strong>Create Account</strong> tab, enter your email and a password (minimum 6 characters),
+            and click <strong>Create Account</strong>. You will be signed in automatically. See
             <a href="tutorial.html#step0">Step 0 of the tutorial</a> for full details.
           </p>
         </details>
@@ -70,8 +69,9 @@
         <details class="faq-item">
           <summary>I forgot my password. How do I reset it?</summary>
           <p>
-            Password reset is not self-service at this time. Email us at
-            <a href="mailto:grantotter42@gmail.com">grantotter42@gmail.com</a> and we'll reset it for you promptly.
+            On the sign-in screen, click <strong>Forgot password?</strong>, enter your email address,
+            and click <strong>Send Reset Email</strong>. You'll receive an email with a link to set a
+            new password. If you don't see it within a few minutes, check your spam folder.
           </p>
         </details>
 
@@ -99,11 +99,10 @@
         <details class="faq-item">
           <summary>What types of grants does GrantOtter search?</summary>
           <p>
-            The grant matching and brainstorming features currently cover <strong>federal funding
-            opportunities</strong> — primarily NIH, NSF, and DARPA opportunities listed on Grants.gov.
-            For non-federal grants (foundations, private funders, international agencies), you can paste
-            the full grant information as plain text in the grant document field of the Concept
-            Brainstorming tab.
+            GrantOtter covers <strong>federal funding opportunities</strong> (NIH, NSF, DARPA via Grants.gov),
+            <strong>foundation grants</strong>, and <strong>internal institutional grants</strong>. For any
+            other funder — private foundations, international agencies, industry — you can paste the full
+            grant information as plain text in the Draft Concepts tab to run brainstorming against it directly.
           </p>
         </details>
 
@@ -124,28 +123,52 @@
             (2) <strong>Rule-based scoring</strong> ranks the remaining grants across dimensions like
             expertise match, agency preference, career stage, and budget fit. (3) <strong>LLM
             evaluation</strong> reads your profile and each top candidate in depth, producing a ranked
-            top 10 with plain-language rationale for each recommendation.
+            list with plain-language rationale for each recommendation.
           </p>
         </details>
 
         <details class="faq-item">
-          <summary>Can I use GrantOtter for collaborators or team proposals?</summary>
+          <summary>What is My Workspace?</summary>
           <p>
-            Yes. The <strong>Profile Repository</strong> lets you manage your own profile, build a
-            preferred collaborators list, and search an institution-wide faculty pool (currently RSPH
-            at Emory University). When brainstorming concepts or generating biosketches, you can select
-            any profile from your repository as the PI or co-investigator — it doesn't have to be you.
+            <strong>My Workspace</strong> is your central hub in GrantOtter — a single place to manage
+            your researcher profile, preferred collaborators, saved grant opportunities, and previous
+            proposals. It replaces the old Profile Repository tab and consolidates everything you need
+            before diving into a specific application.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is My Applications?</summary>
+          <p>
+            <strong>My Applications</strong> is an end-to-end grant application hub. For each application
+            you're working on, you can link the grant opportunity from the repository, assemble your team
+            (PI + co-investigators with their full profiles), attach draft concepts, biosketches, and
+            supporting documents (budget pages, letters of support, facilities pages), and track every
+            submission task with a color-coded checklist with due dates. When you're ready, a single
+            <strong>Download All as ZIP</strong> button bundles everything — grant document, team profiles,
+            and all attachments — so you can load the full context into any AI platform.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I use GrantOtter for team proposals?</summary>
+          <p>
+            Yes. Use <strong>Find Collaborators</strong> to search an institution-wide faculty pool by
+            research expertise and discover potential team members. Save them to your preferred collaborators
+            list in <strong>My Workspace</strong>, then pull them into any application, brainstorming
+            session, or biosketch. In <strong>My Applications</strong>, you can assemble your full team
+            for each grant and keep all team profiles together for download.
           </p>
         </details>
 
         <details class="faq-item">
           <summary>What is the Power User workflow?</summary>
           <p>
-            Download your GrantOtter documents (researcher profiles, brainstorming report, biosketch draft)
-            and upload them into a general-purpose AI assistant like Claude, ChatGPT, or Gemini. These
-            files give the AI a rich knowledge base to work from, so you can develop concepts into full
-            proposals through natural language conversation — drafting a Specific Aims page, writing
-            recruitment emails to potential co-investigators, and more. See the
+            Use <strong>My Applications</strong> to assemble your full application package, then hit
+            <strong>Download All as ZIP</strong> — this bundles your grant document, team profiles,
+            brainstorming report, and biosketch into a single file. Upload the ZIP contents into Claude,
+            ChatGPT, or Gemini to give the AI full context, then develop your Specific Aims page, write
+            recruitment emails, or refine the proposal through conversation. See the
             <a href="tutorial.html#power-user">Power User section</a> of the tutorial.
           </p>
         </details>
@@ -153,7 +176,7 @@
         <details class="faq-item">
           <summary>What is the NIH biosketch output used for?</summary>
           <p>
-            The biosketch tab generates a draft NIH Biographical Sketch covering all four required
+            The Create Biosketch tab generates a draft NIH Biographical Sketch covering all four required
             sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research
             Support). Use it as a reference to populate your biosketch on
             <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener">SciENcv</a>,
@@ -169,13 +192,13 @@
             <div class="privacy-pillar">
               <div class="privacy-pillar-header">
                 <span class="privacy-icon">&#128275;</span>
-                <strong>1. Open Data Sources Only</strong>
+                <strong>1. Open Data Sources for Profile Generation</strong>
               </div>
-              <p>We build researcher profiles exclusively from publicly available sources. Your private files never touch our system.</p>
+              <p>Researcher profiles are built from publicly available sources — no private data required.</p>
               <ul class="privacy-list">
                 <li>&#10003;&nbsp; Uses only public sources — PubMed, Google Scholar, ORCID, faculty pages, NIH RePORTER, and more</li>
-                <li>&#10003;&nbsp; No manual CV uploads or private document sharing required</li>
-                <li>&#10003;&nbsp; Your private files stay entirely in your hands</li>
+                <li>&#10003;&nbsp; Only your name and institution are required to get started</li>
+                <li>&#10003;&nbsp; Optional CV upload is processed server-side and never shared externally</li>
               </ul>
             </div>
 
@@ -184,24 +207,25 @@
                 <span class="privacy-icon">&#128274;</span>
                 <strong>2. Platform-Level Security</strong>
               </div>
-              <p>Account security is handled by <strong>Supabase</strong>, an industry-standard backend trusted by thousands of applications worldwide.</p>
+              <p>All data is stored and protected by <strong>Supabase</strong>, an industry-standard backend with strict per-user access controls.</p>
               <ul class="privacy-list">
-                <li>&#10003;&nbsp; All user credentials and passwords are fully encrypted</li>
-                <li>&#10003;&nbsp; Secure login protocols protect your account</li>
+                <li>&#10003;&nbsp; Row-level security (RLS) — you can only access your own data; no other user can see yours</li>
+                <li>&#10003;&nbsp; All credentials and passwords are fully encrypted</li>
                 <li>&#10003;&nbsp; Industry-standard encryption at rest and in transit</li>
+                <li>&#10003;&nbsp; Documents uploaded to My Applications are stored in a private, access-controlled storage bucket</li>
               </ul>
             </div>
 
             <div class="privacy-pillar">
               <div class="privacy-pillar-header">
                 <span class="privacy-icon">&#128065;&#65039;</span>
-                <strong>3. Zero-Access Privacy</strong>
+                <strong>3. Your Data Is Never Used for AI Training</strong>
               </div>
-              <p>This is the most important one. GrantOtter operates on a <strong>zero-access privacy model</strong> for your generated content — your research ideas and intellectual property stay entirely within your control.</p>
+              <p>GrantOtter stores your profiles, applications, and documents so you can access them across sessions — but your content is strictly yours.</p>
               <ul class="privacy-list">
-                <li>&#10003;&nbsp; The platform <strong>cannot see</strong> your generated concept notes</li>
-                <li>&#10003;&nbsp; Your matching lists and biosketches are never stored on our servers</li>
-                <li>&#10003;&nbsp; Your intellectual property is never used for AI training or shared externally</li>
+                <li>&#10003;&nbsp; Your data is <strong>never used</strong> to train AI models or shared with third parties</li>
+                <li>&#10003;&nbsp; Grant concepts, biosketches, and application documents are visible only to you</li>
+                <li>&#10003;&nbsp; You can delete your data at any time by contacting <a href="mailto:grantotter42@gmail.com">grantotter42@gmail.com</a></li>
               </ul>
             </div>
           </div>
@@ -245,8 +269,8 @@
       </p>
       <p>
         Department demos are a great way to introduce the tool to your faculty — we can
-        cover the end-to-end workflow from profile generation to brainstorming a proposal
-        concept live, using a real grant relevant to your group.
+        cover the end-to-end workflow from profile generation to managing a full application
+        live, using a real grant relevant to your group.
       </p>
       <div class="help-contact-card">
         <div class="help-contact-icon">&#128197;</div>

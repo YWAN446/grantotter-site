@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GrantOtter — AI-Powered Grant Workflow for Researchers</title>
-  <meta name="description" content="GrantOtter is your end-to-end AI grant workflow — generate researcher profiles from the web and your CV, match best-fit grants from Grants.gov, manage collaborators, brainstorm proposal concepts with your team, and generate NIH biosketches.">
+  <meta name="description" content="GrantOtter is your end-to-end AI grant workflow — generate researcher profiles, match best-fit grants, manage your team and applications, brainstorm proposal concepts, and generate NIH biosketches.">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="alternate" type="application/rss+xml" title="GrantOtter Weekly Feed" href="feed.xml">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
@@ -40,9 +40,9 @@
     <img src="logo.png" alt="GrantOtter logo" class="hero-logo">
     <h1>Your AI-Powered <span>Grant Workflow</span></h1>
     <p class="subtitle">
-      GrantOtter is your end-to-end grant workflow — generate researcher profiles from the web and your CV,
-      match best-fit grants from Grants.gov, manage collaborators, brainstorm proposal concepts with your team,
-      and generate NIH biosketches.
+      GrantOtter is your end-to-end grant workspace — build your researcher profile, match best-fit funding opportunities,
+      assemble your team, manage applications from first draft to submission, and generate NIH biosketches.
+      Everything in one place.
     </p>
     <div class="hero-cta">
       <a href="https://grantotter.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener">Launch App</a>
@@ -54,7 +54,7 @@
   <section class="demo-video" id="demo">
     <h2 class="section-title">The GrantOtter Approach</h2>
     <p class="section-subtitle">
-      A short introduction to how GrantOtter turns your research identity into targeted funding opportunities.
+      A short introduction to how GrantOtter turns your research identity into targeted funding opportunities — and keeps your whole application organized in one place.
     </p>
     <div class="video-container">
       <video controls preload="metadata" poster="logo.png" width="1920" height="1080">
@@ -66,11 +66,21 @@
 
   <!-- Features -->
   <section class="features" id="features">
-    <h2 class="section-title">Everything You Need to Find Funding</h2>
+    <h2 class="section-title">Everything You Need to Win Funding</h2>
     <p class="section-subtitle">
-      Six tools that take you from researcher profile to proposal-ready — in one place.
+      Seven tools that take you from researcher profile to submission-ready — in one place.
     </p>
     <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon teal">&#127968;</div>
+        <h3>My Workspace</h3>
+        <p>Your central hub. Manage your researcher profile, preferred collaborators, saved grant opportunities, and previous proposals — all from one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">&#128214;</div>
+        <h3>My Applications</h3>
+        <p>End-to-end application hub. Link a grant, assemble your team, attach draft concepts and supporting documents, track tasks with a color-coded checklist, and bulk-download everything as a ZIP.</p>
+      </div>
       <div class="feature-card">
         <div class="feature-icon teal">&#128269;</div>
         <h3>Generate Profile</h3>
@@ -79,27 +89,22 @@
       <div class="feature-card">
         <div class="feature-icon orange">&#127919;</div>
         <h3>Match Grants</h3>
-        <p>A three-stage pipeline — hard eligibility filters, rule-based scoring, then AI-powered alignment analysis — ranks your top 10 matches from federal funding opportunities with plain-language rationale for each.</p>
+        <p>A three-stage pipeline — hard eligibility filters, rule-based scoring, then AI-powered alignment analysis — ranks your top matches from federal and foundation funding opportunities with plain-language rationale for each.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon teal">&#128101;</div>
-        <h3>Profile Repository</h3>
-        <p>Manage your own profile, build a preferred collaborators list, and search an institution-wide faculty pool (currently RSPH at Emory) to discover potential team members by research expertise.</p>
+        <h3>Find Collaborators</h3>
+        <p>Search an institution-wide faculty pool by research expertise to discover potential team members. Add collaborators to your preferred list and pull them into any application or brainstorming session.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon orange">&#128161;</div>
-        <h3>Concept Brainstorming</h3>
+        <h3>Draft Concepts</h3>
         <p>Select a grant and a research team, and GrantOtter generates 2–3 tailored proposal concepts — each with a working title, specific aims outline, innovation score, and estimated budget breakdown.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon teal">&#128196;</div>
         <h3>Create Biosketch</h3>
         <p>Generate a draft NIH Biographical Sketch tailored to your target grant, covering all four required sections. Use the output to populate your SciENcv common form before submission.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon orange">&#128225;</div>
-        <h3>Weekly Funding Feed</h3>
-        <p>Stay current with a <a href="feed.html">weekly aggregated feed</a> of new grant opportunities and agency announcements from NIH, NSF, and DARPA — updated every Monday.</p>
       </div>
     </div>
   </section>
@@ -108,7 +113,7 @@
   <section class="how-it-works" id="how-it-works">
     <h2 class="section-title">How It Works</h2>
     <p class="section-subtitle">
-      Four steps from researcher profile to proposal-ready.
+      Five steps from researcher profile to submission-ready application.
     </p>
     <div class="steps">
       <div class="step">
@@ -119,29 +124,35 @@
       <div class="step-arrow">&#10132;</div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Review &amp; Update</h3>
-        <p>Download the profile, correct any inaccuracies — expertise scores, affiliations, grant history — and re-upload. The profile is the foundation for everything downstream.</p>
+        <h3>Match Grants</h3>
+        <p>Set your filters and run the three-stage matching pipeline. Get your top ranked opportunities with AI-written rationale, emailed directly to your inbox.</p>
       </div>
       <div class="step-arrow">&#10132;</div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Match Grants</h3>
-        <p>Set your filters and run the three-stage matching pipeline. Get your top 10 ranked opportunities with AI-written rationale, emailed directly to your inbox.</p>
+        <h3>Build Your Team</h3>
+        <p>Search the institution faculty pool to find collaborators by research expertise. Add preferred team members to your workspace for use across all applications.</p>
       </div>
       <div class="step-arrow">&#10132;</div>
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Brainstorm &amp; Write</h3>
+        <h3>Draft &amp; Write</h3>
         <p>Generate proposal concepts with your team, then produce a draft NIH biosketch tailored to your target grant — ready to fill into SciENcv.</p>
+      </div>
+      <div class="step-arrow">&#10132;</div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>Manage Applications</h3>
+        <p>Organize everything in My Applications — link the grant, attach your documents, track submission tasks with due dates, and download the full package as a ZIP.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="waitlist" id="cta">
-    <h2 class="section-title">Now in Early Access</h2>
+    <h2 class="section-title">Free to Use — No Setup Required</h2>
     <p class="section-subtitle">
-      GrantOtter is available to early access users. Sign in and start finding grants in minutes — no setup required.
+      Sign in and start finding grants in minutes. No installation, no configuration.
     </p>
     <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom: 2.5rem;">
       <a href="https://grantotter.streamlit.app" class="btn btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem; padding: 1rem 2.5rem;">Launch App</a>
@@ -152,7 +163,7 @@
       <div class="share-buttons">
         <!-- X / Twitter -->
         <a class="share-btn share-x" target="_blank" rel="noopener" aria-label="Share on X"
-           href="https://twitter.com/intent/tweet?text=Check%20out%20GrantOtter%20%E2%80%94%20AI-powered%20grant%20discovery%20for%20researchers.%20Find%20your%20best%20funding%20matches%20in%20minutes.%20%23AcademicResearch%20%23GrantFunding&url=https%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
+           href="https://twitter.com/intent/tweet?text=Check%20out%20GrantOtter%20%E2%80%94%20AI-powered%20grant%20workflow%20for%20researchers.%20Find%20your%20best%20funding%20matches%2C%20build%20your%20team%2C%20and%20manage%20applications%20all%20in%20one%20place.%20%23AcademicResearch%20%23GrantFunding&url=https%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
         <!-- LinkedIn -->
@@ -167,7 +178,7 @@
         </a>
         <!-- Email -->
         <a class="share-btn share-email" aria-label="Share by email"
-           href="mailto:?subject=Check%20out%20GrantOtter%20%E2%80%94%20AI%20grant%20discovery%20for%20researchers&body=I%20thought%20you%27d%20find%20this%20useful%20%E2%80%94%20GrantOtter%20is%20a%20free%20AI-powered%20tool%20that%20helps%20researchers%20find%20the%20best%20grant%20matches%20in%20minutes.%20It%20builds%20your%20researcher%20profile%20from%20public%20sources%20and%20matches%20it%20against%20hundreds%20of%20federal%20funding%20opportunities.%0A%0Ahttps%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
+           href="mailto:?subject=Check%20out%20GrantOtter%20%E2%80%94%20AI%20grant%20workflow%20for%20researchers&body=I%20thought%20you%27d%20find%20this%20useful%20%E2%80%94%20GrantOtter%20is%20a%20free%20AI-powered%20tool%20that%20helps%20researchers%20find%20the%20best%20grant%20matches%2C%20build%20their%20team%2C%20and%20manage%20the%20full%20application%20workflow%20in%20one%20place.%0A%0Ahttps%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
         <!-- Copy link -->

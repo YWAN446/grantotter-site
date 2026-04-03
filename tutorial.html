@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutorial — GrantOtter</title>
-  <meta name="description" content="Step-by-step tutorial for GrantOtter: create your researcher profile, match grants, brainstorm proposals, and generate NIH biosketches.">
+  <meta name="description" content="Step-by-step tutorial for GrantOtter: create your researcher profile, match grants, find collaborators, brainstorm proposals, generate NIH biosketches, and manage your full application.">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <!-- Google Analytics -->
@@ -40,16 +40,17 @@
       <h1>GrantOtter <span>Tutorial</span></h1>
       <p class="subtitle">
         A step-by-step walkthrough of every feature — from building your researcher profile
-        to generating a full NIH biosketch in minutes.
+        to managing a full grant application in one place.
       </p>
       <nav class="tut-toc">
         <a href="#step0">Step 0: Sign Up &amp; Log In</a>
-        <a href="#step1">Step 1: Generate Profile</a>
-        <a href="#step2">Step 2: Edit &amp; Upload</a>
+        <a href="#step1">Step 1: My Workspace</a>
+        <a href="#step2">Step 2: Generate Profile</a>
         <a href="#step3">Step 3: Match Grants</a>
-        <a href="#step4">Step 4: Add Collaborators</a>
-        <a href="#step5">Step 5: Brainstorm Concepts</a>
-        <a href="#step6">Step 6: Create Biosketch</a>
+        <a href="#step4">Step 4: Find Collaborators</a>
+        <a href="#step5">Step 5: My Applications</a>
+        <a href="#step6">Step 6: Draft Concepts</a>
+        <a href="#step7">Step 7: Create Biosketch</a>
         <a href="#power-user">&#9889; Power User</a>
       </nav>
     </div>
@@ -60,7 +61,7 @@
     <div class="tut-step-inner">
       <div class="tut-step-label">
         <span class="step-badge" style="background: var(--gray-600);">Before You Begin</span>
-        <span class="step-tag">Early Access</span>
+        <span class="step-tag">Free to Use</span>
       </div>
       <h2>Sign Up &amp; Log In</h2>
       <p>
@@ -71,10 +72,9 @@
 
       <h3>Creating an account</h3>
       <ol class="tut-steps-list">
-        <li>Click the <strong>Sign Up</strong> tab on the welcome screen.</li>
+        <li>Click the <strong>Create Account</strong> tab on the welcome screen.</li>
         <li>Enter your email address and choose a password (minimum 6 characters).</li>
-        <li>Click <strong>Create Account</strong>. You may receive a confirmation email — click the link inside to verify your address before signing in.</li>
-        <li>Once confirmed, return to the app and sign in using the <strong>Sign In</strong> tab with the same email and password.</li>
+        <li>Click <strong>Create Account</strong>. You will be signed in automatically.</li>
       </ol>
 
       <h3>Signing in on return visits</h3>
@@ -88,7 +88,7 @@
       </div>
 
       <div class="tut-tip">
-        <strong>&#128274; Forgot your password?</strong> Password reset is not self-service at this time. Email <a href="mailto:grantotter42@gmail.com">grantotter42@gmail.com</a> and we'll reset it for you.
+        <strong>&#128274; Forgot your password?</strong> On the sign-in screen, click <strong>Forgot password?</strong>, enter your email, and click <strong>Send Reset Email</strong>. A reset link will arrive in your inbox within a few minutes.
       </div>
 
       <div class="tut-screenshot">
@@ -98,11 +98,48 @@
     </div>
   </section>
 
-  <!-- ─── STEP 1: Generate Profile ─────────────────────────────────────── -->
+  <!-- ─── STEP 1: My Workspace ─────────────────────────────────────────── -->
   <section class="tut-step" id="step1">
     <div class="tut-step-inner">
       <div class="tut-step-label">
         <span class="step-badge">Step 1</span>
+        <span class="step-tag">Tab: My Workspace</span>
+      </div>
+      <h2>Meet My Workspace — Your Central Hub</h2>
+
+      <div class="tut-foundation-banner">
+        <span class="foundation-icon">&#127968;</span>
+        <div>
+          <strong>My Workspace is the home base for everything you build in GrantOtter.</strong>
+          Before diving into any feature, it helps to know where things live. Your researcher
+          profile, preferred collaborators, saved grant opportunities, and previous proposals
+          are all managed from this single tab.
+        </div>
+      </div>
+
+      <p>
+        My Workspace has five sections:
+      </p>
+      <ul class="tut-steps-list" style="margin-bottom: 0.75rem;">
+        <li><strong>My Profile</strong> — your AI-generated researcher profile (created in Step 2). Download it, replace it with an edited version, or delete it here. This profile powers grant matching, brainstorming, and biosketch generation.</li>
+        <li><strong>Potential Collaborators</strong> — a discovery shortlist of researchers you're considering. Add anyone interesting from the chatbot or institution pool here while you explore. These are not yet part of your active team.</li>
+        <li><strong>Preferred Collaborators</strong> — profiles of team members you've committed to working with. These appear in team selectors across the app and are used in grant matching and brainstorming. Promote researchers from Potential Collaborators to this list once you've decided to include them on a proposal.</li>
+        <li><strong>Saved Grant Opportunities</strong> — grants you've bookmarked from the Match Grants results for later review.</li>
+        <li><strong>Previous Proposals</strong> — upload specific aims pages, 2-pagers, or full proposals from past applications. These can be used as an alternative starting point for new grant matching.</li>
+      </ul>
+
+      <div class="tut-screenshot">
+        <img src="media/my_workspace.png" alt="My Workspace tab showing My Profile, Potential Collaborators, Preferred Collaborators, Saved Grant Opportunities, and Previous Proposals sections" style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+        <p class="media-caption">My Workspace — your central hub for managing your profile, collaborators, saved grants, and previous proposals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STEP 2: Generate Profile ─────────────────────────────────────── -->
+  <section class="tut-step tut-step-alt" id="step2">
+    <div class="tut-step-inner">
+      <div class="tut-step-label">
+        <span class="step-badge">Step 2</span>
         <span class="step-tag">Tab: Generate Profile</span>
       </div>
       <h2>Generate Your Researcher Profile</h2>
@@ -132,7 +169,7 @@
       </ul>
       <p>
         Your name and institution are the only required fields, but filling in additional
-        fields significantly improves the profile — especially if your name is common
+        details significantly improves the profile — especially if your name is common
         (e.g., "John Smith"). We also strongly recommend completing two fields that
         directly improve your grant recommendations in the <strong>Match Grants</strong> tab:
       </p>
@@ -145,78 +182,66 @@
         </li>
         <li>
           <strong>Areas to Avoid</strong> — research areas you do <em>not</em> want to see in
-          grant recommendations. This filters out irrelevant matches so your top 10 list stays focused.
+          grant recommendations. This filters out irrelevant matches so your ranked list stays focused.
         </li>
       </ul>
 
       <div class="tut-tip">
-        <strong>&#128161; Tip:</strong> The more public information available about you, the richer your profile will be. Before generating, make sure you have:
+        <strong>&#128161; Tip:</strong> The best profile starts with your CV. Upload it directly in the form for the most accurate and complete result. If you don't have a CV ready, make sure these public profiles are up to date so the AI has good sources to draw from:
         <ul style="margin-top: 0.5rem; padding-left: 1.25rem; line-height: 1.8;">
           <li><strong>Google Scholar</strong> — a public profile with your publications and citation counts</li>
           <li><strong>ORCID</strong> — an up-to-date iD with your publications and grants linked</li>
-          <li><strong>Faculty or personal website</strong> — publish your most current CV here so the AI can find your latest work, grants, and affiliations</li>
+          <li><strong>Faculty or personal website</strong> — an up-to-date page with your current role, affiliations, and research areas</li>
         </ul>
       </div>
 
       <h3>How to do it</h3>
       <ol class="tut-steps-list">
-        <li>Open GrantOtter and go to the <strong>Generate Profile</strong> tab (Tab 1).</li>
-        <li>Enter your full name and institution (e.g., <em>"Andrew Wang, Emory University"</em>). These are the only required fields.</li>
+        <li>Open GrantOtter and go to the <strong>Generate Profile</strong> tab.</li>
+        <li>Enter your full name and institution (e.g., <em>"Yuke Wang, Emory University"</em>). These are the only required fields.</li>
         <li>Optionally fill in Department, Rank, ORCID, and Google Scholar URL to improve accuracy — especially important if your name is common.</li>
-        <li>Fill in <strong>Developing Research Interests</strong> (areas you're moving into) and <strong>Areas to Avoid</strong> (topics to exclude from recommendations). These two fields directly shape the grants you'll see in Tab 2.</li>
+        <li>Optionally upload your <strong>CV</strong> (PDF, Word, Markdown, or plain text — up to 10 MB). When provided, the CV is treated as the highest-priority source of truth, and the AI fills gaps with web search. This is the fastest way to get an accurate profile.</li>
+        <li>Fill in <strong>Developing Research Interests</strong> (areas you're moving into) and <strong>Areas to Avoid</strong> (topics to exclude from recommendations). These two fields directly shape the grants you'll see in Match Grants.</li>
         <li>Click <strong>Generate Profile</strong>. The AI will search the web and stream the profile live — this takes 2–3 minutes.</li>
-        <li>Once complete, review the profile and click <strong>Save to Repository</strong> to store it.</li>
+        <li>Once complete, review the profile and save it to your workspace.</li>
       </ol>
 
-      <div class="tut-screenshot">
-        <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-          <source src="media/generate_profile.mp4" type="video/mp4">
-        </video>
-        <p class="media-caption">Enter your name and institution, click <strong>Generate Profile</strong>, and watch your researcher profile stream in live.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── STEP 2: Edit & Upload ─────────────────────────────────────────── -->
-  <section class="tut-step tut-step-alt" id="step2">
-    <div class="tut-step-inner">
-      <div class="tut-step-label">
-        <span class="step-badge">Step 2</span>
-        <span class="step-tag">Tab: Profile Repository</span>
-      </div>
-      <h2>Review &amp; Update Your Profile</h2>
+      <h3>Reviewing and updating your profile</h3>
       <p>
         The AI-generated profile is a strong first draft, but it's not always perfect.
         Before using it for grant matching or brainstorming, take a few minutes to review it
-        and correct anything that doesn't look right. Profiles are plain Markdown files, so
-        any text editor works.
-      </p>
-      <p>
-        Things to look for:
+        and correct anything that doesn't look right. Profiles are plain Markdown files —
+        any text editor works. Things to check:
       </p>
       <ul class="tut-steps-list" style="margin-bottom: 0.75rem;">
-        <li><strong>Expertise scores</strong> — the AI assigns each research area a score from 1–5. If a score feels too high or too low based on your own judgment, simply change the number.</li>
-        <li><strong>Missing or incorrect affiliations</strong> — verify your department, secondary appointments, and collaborating centers are accurate.</li>
+        <li><strong>Expertise scores</strong> — the AI assigns each research area a score from 1–5. Adjust any that feel too high or too low.</li>
+        <li><strong>Missing or incorrect affiliations</strong> — verify your department, secondary appointments, and collaborating centers.</li>
         <li><strong>Publication list</strong> — check that titles, years, and your authorship role are correct.</li>
         <li><strong>Grant history</strong> — confirm listed grants and your role on each (PI, co-I, key personnel).</li>
         <li><strong>Contact identifiers</strong> — make sure your ORCID iD and Google Scholar URL are correct.</li>
       </ul>
 
-      <h3>How to do it</h3>
+      <h3>How to update your profile</h3>
       <ol class="tut-steps-list">
-        <li>In the <strong>Profile Repository</strong> tab (Tab 3), find your saved profile under <em>My Profile</em>.</li>
+        <li>Go to <strong>My Workspace</strong> and find your saved profile under <em>My Profile</em>.</li>
         <li>Click <strong>Download</strong> to save the <code>.md</code> file to your computer.</li>
         <li>Open the file in any text editor (Notepad, VS Code, Obsidian, etc.) and review each section.</li>
-        <li>Make any corrections — for example, adjust an expertise score you disagree with, fix a publication year, or remove an affiliation that is no longer active.</li>
-        <li>Save the file, then return to the <strong>Profile Repository</strong> tab.</li>
-        <li>Click <strong>Upload Profile</strong>, select your edited file, and choose <em>Replace My Profile</em>.</li>
+        <li>Make any corrections, then save the file.</li>
+        <li>Return to <strong>My Workspace</strong>, click <strong>Replace</strong> under My Profile, and upload the edited file.</li>
       </ol>
 
       <div class="tut-screenshot">
         <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
           <source src="media/review_update.mp4" type="video/mp4">
         </video>
-        <p class="media-caption">Download your profile, edit it in any text editor, then re-upload it via the <strong>Profile Repository</strong> tab.</p>
+        <p class="media-caption">Download your profile from <strong>My Workspace</strong>, edit it in any text editor, then re-upload it.</p>
+      </div>
+
+      <div class="tut-screenshot">
+        <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+          <source src="media/generate_profile.mp4" type="video/mp4">
+        </video>
+        <p class="media-caption">Enter your name and institution, click <strong>Generate Profile</strong>, and watch your researcher profile stream in live.</p>
       </div>
     </div>
   </section>
@@ -230,8 +255,9 @@
       </div>
       <h2>Match Grants to Your Profile</h2>
       <p>
-        GrantOtter compares your profile against hundreds of open funding opportunities
-        from Grants.gov using a three-stage pipeline:
+        GrantOtter compares your profile against hundreds of open funding opportunities —
+        federal grants from NIH, NSF, and DARPA, plus foundation and institutional grants —
+        using a three-stage pipeline:
       </p>
 
       <div class="tut-pipeline">
@@ -255,14 +281,20 @@
           <div class="pipeline-num">3</div>
           <div class="pipeline-body">
             <strong>LLM Evaluation</strong>
-            <p>AI reads your profile and each top candidate in depth, ranks the final top 10 by overall alignment, and writes a plain-language rationale for each recommendation.</p>
+            <p>AI reads your profile and each top candidate in depth, ranks them by overall alignment, and writes a plain-language rationale for each recommendation.</p>
           </div>
         </div>
       </div>
 
+      <p>You can match grants in two modes:</p>
+      <ul class="tut-steps-list" style="margin-bottom: 0.75rem;">
+        <li><strong>By Researcher Profile</strong> — matches based on your expertise, grant history, and research interests. Best for general discovery.</li>
+        <li><strong>By Previous Proposal</strong> — paste or upload a previous proposal (specific aims page, 2-pager, or full proposal) and GrantOtter finds new funding opportunities aligned with that research direction. Ideal for finding a new home for a rejected proposal.</li>
+      </ul>
+
       <h3>How to do it</h3>
       <ol class="tut-steps-list">
-        <li>Go to the <strong>Match Grants</strong> tab (Tab 2).</li>
+        <li>Go to the <strong>Match Grants</strong> tab and choose your matching mode: <strong>Researcher Profile</strong> or <strong>Previous Proposal</strong>.</li>
         <li>
           Set your filters:
           <ul>
@@ -271,82 +303,151 @@
             <li><strong>Maximum award</strong> — enter 0 to set no maximum</li>
           </ul>
         </li>
-        <li>Select <strong>My Profile</strong> as your researcher profile.</li>
-        <li>Click <strong>Find My Grants</strong>. Results appear in a minute.</li>
+        <li>
+          Depending on your mode:
+          <ul>
+            <li><strong>Researcher Profile</strong> — select <em>My Profile</em> from the dropdown.</li>
+            <li><strong>Previous Proposal</strong> — select a saved proposal from <strong>My Workspace</strong>, or upload a PDF, Word, Markdown, or text file directly. Proposals saved in My Workspace (Specific Aims, 2-Pagers, Full Proposals) appear automatically in the dropdown.</li>
+          </ul>
+        </li>
+        <li>Click <strong>Find My Grants</strong>. Results appear in about a minute.</li>
         <li>Review the ranked list — each grant shows a fit score, rationale, and deadline.</li>
-        <li>Click <strong>Email Results</strong> to send the full report to your inbox.</li>
+        <li>Click <strong>Email Results</strong> to send the full report to your inbox, or <strong>save</strong> a promising grant directly to My Workspace.</li>
       </ol>
 
       <div class="tut-tip">
-        <strong>&#128161; Tip:</strong> Run grant matching after you review and update your profile (Step 2).
-        Corrected expertise scores and an accurate grant history give the rule-based scorer and the AI more signal to work with, producing noticeably better-ranked results.
+        <strong>&#128161; Tip:</strong> If you have a previously rejected proposal, upload it to <strong>My Workspace → Previous Proposals</strong> before running matching. It will be saved for reuse across sessions, and you can quickly find new funding opportunities aligned with that research direction without re-uploading each time.
       </div>
 
       <div class="tut-screenshot">
         <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
           <source src="media/match_grants.mp4" type="video/mp4">
         </video>
-        <p class="media-caption">Set your filters, select your profile, click <strong>Find My Grants</strong>, and review your ranked top 10 funding matches.</p>
+        <p class="media-caption">Set your filters, select your profile, click <strong>Find My Grants</strong>, and review your ranked funding matches.</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── STEP 4: Add Collaborators ────────────────────────────────────── -->
+  <!-- ─── STEP 4: Find Collaborators ────────────────────────────────────── -->
   <section class="tut-step tut-step-alt" id="step4">
     <div class="tut-step-inner">
       <div class="tut-step-label">
         <span class="step-badge">Step 4</span>
-        <span class="step-tag">Tab: Profile Repository</span>
+        <span class="step-tag">Tab: Find Collaborators</span>
       </div>
       <h2>Find &amp; Add Collaborators</h2>
       <p>
-        Grants with multiple investigators are common. The Profile Repository gives you two
-        ways to build your team: add colleagues you already know, or discover new ones through
-        the institution profile pool.
+        GrantOtter gives you three ways to build your team: use the AI chatbot to discover
+        collaborators through your institution network, search the faculty pool directly by
+        name or keyword, or add colleagues you already know.
       </p>
 
-      <h3>Search the RSPH Profile Pool</h3>
+      <h3>AI Collaborator Chatbot</h3>
       <p>
-        GrantOtter is building a profile pool for faculty at the
-        <strong>Rollins School of Public Health (RSPH) at Emory University</strong>.
-        If you're looking for a collaborator with a specific expertise — say, health economics,
-        behavioral interventions, or biostatistics — you can search the pool by keyword and
-        browse matching faculty profiles, even if you've never met them before.
+        The chatbot is the most powerful way to find collaborators. Describe the expertise
+        you're looking for in plain language, and the AI searches the institution network,
+        identifies the best-matched faculty, and — crucially — tells you <strong>how you're
+        already connected</strong> to each person through shared departments, centers,
+        co-authorships, or institutional affiliations. This makes it easy to make a warm
+        introduction rather than a cold outreach.
       </p>
       <ol class="tut-steps-list">
-        <li>Go to the <strong>Profile Repository</strong> tab (Tab 3) and open the <em>Institution Profile Pool</em> section.</li>
-        <li>Enter a keyword or research area in the search box (e.g., "health disparities" or "causal inference").</li>
+        <li>Go to the <strong>Find Collaborators</strong> tab and use the chatbot at the bottom of the page.</li>
+        <li>Describe what you're looking for in natural language — e.g., <em>"I need a biostatistician with experience in longitudinal data and clinical trials"</em> or <em>"Who works on social determinants of health and has NIH R01 funding?"</em></li>
+        <li>The AI returns a list of faculty matches with expertise summaries and <strong>connection paths</strong> showing how you're linked through your institution network.</li>
+        <li>Save promising matches to your <strong>Potential Collaborators</strong> list in My Workspace — a holding list for people you're considering but haven't committed to yet.</li>
+      </ol>
+
+      <h3>Search the Institution Profile Pool</h3>
+      <p>
+        Prefer to browse directly? The institution profile pool lets you search by faculty
+        name or keyword and read full profiles.
+      </p>
+      <ol class="tut-steps-list">
+        <li>Open the <em>Institution Profile Pool</em> section in the <strong>Find Collaborators</strong> tab.</li>
+        <li>Enter a name or keyword in the search box (e.g., "Lin" or "health disparities").</li>
         <li>Browse the results and click on a profile to read their full expertise summary, publication record, and grant history.</li>
-        <li>Add promising collaborators to your <strong>Preferred Collaborators</strong> list so they appear in team selectors for brainstorming and biosketch generation.</li>
+        <li>Save profiles to your <strong>Potential Collaborators</strong> list for consideration, or directly to <strong>Preferred Collaborators</strong> if you're ready to include them on a proposal.</li>
       </ol>
 
       <h3>Add a Known Collaborator</h3>
       <ol class="tut-steps-list">
         <li>Use the <strong>Generate Profile</strong> tab to auto-generate a colleague's profile (enter their name + institution), or upload a profile file they've shared with you directly.</li>
-        <li>Save the profile to the repository, then mark it as a <strong>Preferred Collaborator</strong>.</li>
+        <li>Save the profile as a <strong>Preferred Collaborator</strong> — preferred collaborators are used in grant matching and appear in team selectors across the app.</li>
       </ol>
 
       <div class="tut-tip">
-        <strong>&#128161; Tip:</strong> Ask your collaborators to sign up for GrantOtter, generate their own
-        profiles, and share with you. This gives you the most accurate and up-to-date version of their
-        expertise — and you can upload it directly without any manual editing.
+        <strong>&#128161; Tip:</strong> Use <strong>Potential Collaborators</strong> as a discovery shortlist — save anyone interesting from the chatbot or profile pool, then promote them to <strong>Preferred Collaborators</strong> in My Workspace once you've decided to include them on a proposal. Only preferred collaborators are used in grant matching and team assembly.
       </div>
 
       <div class="tut-screenshot">
         <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
           <source src="media/add_collaborator.mp4" type="video/mp4">
         </video>
-        <p class="media-caption">Upload a collaborator's profile and mark them as a <strong>Preferred Collaborator</strong> so they appear in team selectors for brainstorming and biosketch generation.</p>
+        <p class="media-caption">Describe the expertise you need in the chatbot, get matched faculty with connection paths through your institution network, and add them to your team.</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── STEP 5: Concept Brainstorming ────────────────────────────────── -->
+  <!-- ─── STEP 5: My Applications ───────────────────────────────────────── -->
   <section class="tut-step" id="step5">
     <div class="tut-step-inner">
       <div class="tut-step-label">
         <span class="step-badge">Step 5</span>
-        <span class="step-tag">Tab: Concept Brainstorming</span>
+        <span class="step-tag">Tab: My Applications</span>
+      </div>
+      <h2>Manage Your Application</h2>
+
+      <div class="tut-foundation-banner">
+        <span class="foundation-icon">&#128214;</span>
+        <div>
+          <strong>My Applications is your end-to-end grant application hub.</strong>
+          Everything GrantOtter generates — profiles, concepts, biosketches — can be assembled
+          into a single application package and downloaded as a ZIP, ready to load into any AI
+          platform for the next stage of writing.
+        </div>
+      </div>
+
+      <div class="tut-tip">
+        <strong>&#128161; Tip:</strong> Create your application as soon as you identify a grant you want to pursue — ideally right after Step 3 (Match Grants). That way, when you generate draft concepts (Step 6) and biosketches (Step 7), the <strong>Save to Application</strong> button will already have a destination to save to.
+      </div>
+
+      <p>
+        Each application in My Applications has five sections:
+      </p>
+      <ul class="tut-steps-list" style="margin-bottom: 0.75rem;">
+        <li><strong>Overview</strong> — application title, status (Not Started / In Progress / Submitted / etc.), submission deadline, and notes for key contacts or internal reminders</li>
+        <li><strong>Grant Opportunity</strong> — link the FOA or RFA from the grant repository so the full document is always at hand</li>
+        <li><strong>Team Members</strong> — select the PI and co-investigators; their profiles are bundled into the ZIP download</li>
+        <li><strong>Documents</strong> — attach draft concepts, biosketches, budget justification, letters of support, facilities pages, and any other files (PDF, Word, Markdown, or plain text)</li>
+        <li><strong>Checklist</strong> — track every submission component with a color-coded due-date badge (red = overdue, orange = due within 7 days, yellow = within 30 days, green = more than 30 days out)</li>
+      </ul>
+
+      <h3>How to do it</h3>
+      <ol class="tut-steps-list">
+        <li>Go to the <strong>My Applications</strong> tab and click <strong>New Application</strong>.</li>
+        <li>Give the application a name (e.g., <em>"NIH R01 — Health Informatics 2026"</em>) and set the submission deadline.</li>
+        <li>In the <strong>Grant Opportunity</strong> section, search for and link the grant from the repository.</li>
+        <li>In the <strong>Team Members</strong> section, select yourself (My Profile) as PI and add co-investigators from your Preferred Collaborators list.</li>
+        <li>In the <strong>Documents</strong> section, upload supporting files or use the <strong>Save to Application</strong> button from the Draft Concepts or Create Biosketch tabs to attach outputs directly.</li>
+        <li>In the <strong>Checklist</strong> section, add each required submission component (specific aims, research strategy, biosketches, budget, letters of support, etc.) and assign due dates.</li>
+        <li>When ready, click <strong>Download All as ZIP</strong> — this bundles the grant document, all team profiles, and every attached file into a single package.</li>
+      </ol>
+
+      <div class="tut-tip">
+        <strong>&#128161; Tip:</strong> Use the ZIP download as the starting point for your AI writing session.
+        Upload it to Claude, ChatGPT, or Gemini — the AI gets full context on the grant, your team, and your
+        draft concepts in one go. See the <a href="#power-user">Power User section</a> below.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STEP 6: Draft Concepts ────────────────────────────────────────── -->
+  <section class="tut-step tut-step-alt" id="step6">
+    <div class="tut-step-inner">
+      <div class="tut-step-label">
+        <span class="step-badge">Step 6</span>
+        <span class="step-tag">Tab: Draft Concepts</span>
       </div>
       <h2>Brainstorm Proposal Concepts</h2>
       <p>
@@ -357,16 +458,16 @@
 
       <h3>How to do it</h3>
       <ol class="tut-steps-list">
-        <li>Go to the <strong>Concept Brainstorming</strong> tab (Tab 4).</li>
+        <li>Go to the <strong>Draft Concepts</strong> tab.</li>
         <li>
-          Select a grant document. The built-in grant repository covers <strong>federal funding opportunities</strong> (NIH, NSF, DARPA, etc.). You have two options:
+          Select a grant document. The built-in grant repository covers <strong>federal, foundation, and institutional funding opportunities</strong>. You have two options:
           <ul>
             <li>Pick from the grant repository list, or enter a federal grant number directly (e.g., <code>PA-25-131</code>), or</li>
-            <li>For any other grant — foundation awards, private funders, international agencies — paste the full grant information as plain text directly into the grant document field.</li>
+            <li>For any other grant — private funders, international agencies — paste the full grant information as plain text directly into the grant document field.</li>
           </ul>
         </li>
         <li>Select the <strong>PI</strong> — this can be your own profile (<em>My Profile</em>) or any preferred collaborator profile. The PI doesn't have to be you.</li>
-        <li>Add <strong>Co-Investigators</strong> — select any additional profiles from your preferred collaborators list.</li>
+        <li>Add <strong>Co-Investigators</strong> — select any additional profiles from your <strong>Preferred Collaborators</strong> list.</li>
         <li>
           Optionally add <strong>Guidance</strong>: a short paragraph describing your angle,
           preliminary data, or any constraints. The more detail you provide, the more
@@ -380,9 +481,8 @@
             <li>Estimated budget breakdown</li>
           </ul>
         </li>
-        <li>Download the brainstorming report as a Markdown file for offline editing.</li>
+        <li>Download the brainstorming report as a Markdown file, or use <strong>Save to Application</strong> to attach it directly to an application. Note: you need to create an application in <strong>My Applications</strong> first (Step 5) before this option appears.</li>
       </ol>
-
 
       <div class="tut-screenshot">
         <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
@@ -393,11 +493,11 @@
     </div>
   </section>
 
-  <!-- ─── STEP 6: Create Biosketch ──────────────────────────────────────── -->
-  <section class="tut-step tut-step-alt" id="step6">
+  <!-- ─── STEP 7: Create Biosketch ──────────────────────────────────────── -->
+  <section class="tut-step" id="step7">
     <div class="tut-step-inner">
       <div class="tut-step-label">
-        <span class="step-badge">Step 6</span>
+        <span class="step-badge">Step 7</span>
         <span class="step-tag">Tab: Create Biosketch</span>
       </div>
       <h2>Generate an NIH Biosketch</h2>
@@ -409,7 +509,7 @@
 
       <h3>How to do it</h3>
       <ol class="tut-steps-list">
-        <li>Go to the <strong>Create Biosketch</strong> tab (Tab 5).</li>
+        <li>Go to the <strong>Create Biosketch</strong> tab.</li>
         <li>Select the <strong>target grant</strong> from the dropdown (the biosketch will be tailored to that FOA's scope).</li>
         <li>Select the <strong>researcher profile</strong> to generate the biosketch for.</li>
         <li>Click <strong>Generate Biosketch</strong>. GrantOtter drafts all four sections:
@@ -420,7 +520,7 @@
             <li>Research Support</li>
           </ul>
         </li>
-        <li>Download the output as a Markdown file and use it as a reference to fill in the NIH Biographical Sketch common form on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener">SciENcv</a>.</li>
+        <li>Download the output as a Markdown file, or use <strong>Save to Application</strong> to attach it directly to an application. Note: you need to create an application in <strong>My Applications</strong> first (Step 5) before this option appears. Use the downloaded file as a reference to fill in the NIH Biographical Sketch common form on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener">SciENcv</a>.</li>
       </ol>
 
       <div class="tut-tip">
@@ -462,17 +562,19 @@
       <h3>How to do it</h3>
       <ol class="tut-steps-list">
         <li>
-          Download your GrantOtter documents:
+          In <strong>My Applications</strong>, assemble your full application package — link the grant, add your team, attach your draft concepts and biosketches.
+        </li>
+        <li>
+          Click <strong>Download All as ZIP</strong>. This bundles everything into a single file:
           <ul>
-            <li>Your researcher profile <code>.md</code></li>
-            <li>Collaborator profiles <code>.md</code></li>
-            <li>The brainstorming report <code>.md</code></li>
-            <li>The biosketch draft <code>.md</code></li>
-            <li>The grant summary (if you saved it)</li>
+            <li>The grant FOA/RFA document</li>
+            <li>Your researcher profile and all team member profiles</li>
+            <li>Draft concept reports and biosketch drafts</li>
+            <li>Any other documents you've attached</li>
           </ul>
         </li>
         <li>Open your AI app of choice — <strong>Claude</strong>, <strong>ChatGPT</strong>, or <strong>Gemini</strong> — and create a new project or conversation.</li>
-        <li>Upload all the downloaded files as context attachments.</li>
+        <li>Upload the ZIP contents as context attachments.</li>
         <li>
           Start the conversation with a clear instruction. For example:
           <ul>
@@ -491,7 +593,7 @@
         <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
           <source src="media/power_user.mp4" type="video/mp4">
         </video>
-        <p class="media-caption">Upload your GrantOtter files into Claude or ChatGPT and use them as context to draft Specific Aims, recruitment emails, and more — in seconds.</p>
+        <p class="media-caption">Download the ZIP from My Applications, upload the contents into Claude or ChatGPT, and use them as context to draft Specific Aims, recruitment emails, and more — in seconds.</p>
       </div>
     </div>
   </section>
@@ -501,15 +603,15 @@
     <div class="tut-next-inner">
       <h2>You're Ready to Go</h2>
       <p>
-        You've seen every major feature. The typical workflow is:
-        <strong>Generate profile → Match grants → Brainstorm concepts → Write biosketch.</strong>
-        Most researchers complete this end-to-end in under 30 minutes.
+        You've seen every major feature. The full workflow is:
+        <strong>Generate profile → Match grants → Find collaborators → Manage your application → Draft concepts → Create biosketches.</strong>
+        Most researchers complete the profile-to-matching step in under 30 minutes.
       </p>
       <div class="tut-next-cards">
         <div class="tut-next-card">
-          <div class="feature-icon teal">&#128101;</div>
-          <h3>Invite a Collaborator</h3>
-          <p>Generate a profile for a colleague and add them as a Preferred Collaborator so they're ready for your next proposal.</p>
+          <div class="feature-icon teal">&#128214;</div>
+          <h3>Start an Application</h3>
+          <p>Open <strong>My Applications</strong>, create your first application, link a grant, and start building your submission package.</p>
         </div>
         <div class="tut-next-card">
           <div class="feature-icon orange">&#128240;</div>
@@ -519,7 +621,7 @@
         <div class="tut-next-card">
           <div class="feature-icon teal">&#128233;</div>
           <h3>Share with Your Department</h3>
-          <p>Run GrantOtter for your whole team in a department demo session — the app is free to try.</p>
+          <p>Run GrantOtter for your whole team in a department demo session — <a href="help.html#demo">book a live walkthrough</a> or share the link with colleagues.</p>
         </div>
       </div>
       <div style="text-align:center; margin-top: 2.5rem; margin-bottom: 2rem;">
@@ -530,7 +632,7 @@
         <span class="share-label">Found this useful? Share GrantOtter with a colleague:</span>
         <div class="share-buttons">
           <a class="share-btn share-x" target="_blank" rel="noopener" aria-label="Share on X"
-             href="https://twitter.com/intent/tweet?text=Check%20out%20GrantOtter%20%E2%80%94%20AI-powered%20grant%20discovery%20for%20researchers.%20Find%20your%20best%20funding%20matches%20in%20minutes.%20%23AcademicResearch%20%23GrantFunding&url=https%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
+             href="https://twitter.com/intent/tweet?text=Check%20out%20GrantOtter%20%E2%80%94%20AI-powered%20grant%20workflow%20for%20researchers.%20Find%20funding%20matches%2C%20build%20your%20team%2C%20and%20manage%20applications%20all%20in%20one%20place.%20%23AcademicResearch%20%23GrantFunding&url=https%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
           <a class="share-btn share-linkedin" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
@@ -542,7 +644,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
           <a class="share-btn share-email" aria-label="Share by email"
-             href="mailto:?subject=Check%20out%20GrantOtter%20%E2%80%94%20AI%20grant%20discovery%20for%20researchers&body=I%20thought%20you%27d%20find%20this%20useful%20%E2%80%94%20GrantOtter%20is%20a%20free%20AI-powered%20tool%20that%20helps%20researchers%20find%20the%20best%20grant%20matches%20in%20minutes.%0A%0Ahttps%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
+             href="mailto:?subject=Check%20out%20GrantOtter%20%E2%80%94%20AI%20grant%20workflow%20for%20researchers&body=I%20thought%20you%27d%20find%20this%20useful%20%E2%80%94%20GrantOtter%20is%20a%20free%20AI-powered%20tool%20that%20helps%20researchers%20find%20the%20best%20grant%20matches%2C%20build%20their%20team%2C%20and%20manage%20the%20full%20application%20workflow%20in%20one%20place.%0A%0Ahttps%3A%2F%2Fywan446.github.io%2Fgrantotter-site%2F">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
           <button class="share-btn share-copy" aria-label="Copy link" onclick="
