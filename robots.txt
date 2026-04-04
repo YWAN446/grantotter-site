@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ywan446.github.io/grantotter-site/sitemap.xml
+Sitemap: https://grantotter.com/sitemap.xml

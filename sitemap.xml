@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ywan446.github.io/grantotter-site/</loc>
+    <loc>https://grantotter.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ywan446.github.io/grantotter-site/tutorial.html</loc>
+    <loc>https://grantotter.com/tutorial.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://ywan446.github.io/grantotter-site/feed.html</loc>
+    <loc>https://grantotter.com/feed.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ywan446.github.io/grantotter-site/help.html</loc>
+    <loc>https://grantotter.com/help.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
