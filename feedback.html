@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrantOtter &mdash; Thank You</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      max-width: 480px;
+      width: 100%;
+    }
+    .card-header {
+      background: #2c6e49;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .card-header h1 {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .card-body {
+      padding: 32px;
+      text-align: center;
+    }
+    .card-body p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .return-btn {
+      display: inline-block;
+      margin-top: 24px;
+      background: #2c6e49;
+      color: #fff;
+      padding: 11px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .return-btn:hover { background: #235c3b; }
+    .card-footer {
+      background: #f0f0f0;
+      border-top: 1px solid #e0e0e0;
+      padding: 14px;
+      text-align: center;
+    }
+    .card-footer p { color: #aaa; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <h1 id="heading">&#128077; Thanks for your feedback!</h1>
+    </div>
+    <div class="card-body">
+      <p id="message">We'll use this to improve your future grant matches.</p>
+      <a href="https://grantotter.com" class="return-btn">Return to GrantOtter</a>
+    </div>
+    <div class="card-footer">
+      <p>Powered by GrantOtter</p>
+    </div>
+  </div>
+
+  <script>
+    const params  = new URLSearchParams(window.location.search);
+    const verdict = params.get("verdict");
+    const heading = document.getElementById("heading");
+    const message = document.getElementById("message");
+
+    if (verdict === "good") {
+      heading.innerHTML = "&#128077; Thanks for your feedback!";
+      message.textContent = "Great! We\u2019ll keep surfacing similar opportunities for you.";
+    } else if (verdict === "bad") {
+      heading.innerHTML = "&#128078; Thanks for your feedback!";
+      message.textContent = "Got it \u2014 we\u2019ll use this to improve your future grant matches.";
+    }
+    // default (no verdict param) shows the thumbs-up version above
+  </script>
+</body>
+</html>
