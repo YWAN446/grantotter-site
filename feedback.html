@@ -82,17 +82,26 @@
   <script>
     const params  = new URLSearchParams(window.location.search);
     const verdict = params.get("verdict");
+    const action  = params.get("action");
+    const error   = params.get("error");
     const heading = document.getElementById("heading");
     const message = document.getElementById("message");
 
-    if (verdict === "good") {
+    if (action === "saved") {
+      heading.innerHTML = "&#128193; Grant Saved!";
+      message.textContent = "This grant has been added to your My Workspace. Open GrantOtter to start your application.";
+    } else if (verdict === "good") {
       heading.innerHTML = "&#128077; Thanks for your feedback!";
       message.textContent = "Great! We\u2019ll keep surfacing similar opportunities for you.";
     } else if (verdict === "bad") {
       heading.innerHTML = "&#128078; Thanks for your feedback!";
       message.textContent = "Got it \u2014 we\u2019ll use this to improve your future grant matches.";
+    } else if (error) {
+      heading.innerHTML = "&#10060; Something went wrong";
+      message.textContent = "This link may be invalid or expired. Please check your email for a fresh link.";
+      document.querySelector(".card-header").style.background = "#c0392b";
+      document.querySelector(".return-btn").style.background = "#c0392b";
     }
-    // default (no verdict param) shows the thumbs-up version above
   </script>
 </body>
 </html>
