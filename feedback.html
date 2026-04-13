@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrantOtter &mdash; Thank You</title>
+  <title>GrantOtter &mdash; Grant Feedback</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -43,6 +43,23 @@
       font-size: 16px;
       line-height: 1.6;
     }
+    .confirm-btn {
+      display: inline-block;
+      margin-top: 24px;
+      background: #2c6e49;
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .confirm-btn:hover:not(:disabled) { background: #235c3b; }
+    .confirm-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .confirm-btn.bad { background: #6b7280; }
+    .confirm-btn.bad:hover:not(:disabled) { background: #4b5563; }
     .return-btn {
       display: inline-block;
       margin-top: 24px;
@@ -56,6 +73,11 @@
       transition: background 0.2s;
     }
     .return-btn:hover { background: #235c3b; }
+    .error-msg {
+      margin-top: 16px;
+      color: #c0392b;
+      font-size: 14px;
+    }
     .card-footer {
       background: #f0f0f0;
       border-top: 1px solid #e0e0e0;
@@ -68,11 +90,11 @@
 <body>
   <div class="card">
     <div class="card-header">
-      <h1 id="heading">&#128077; Thanks for your feedback!</h1>
+      <h1 id="heading">Grant Feedback</h1>
     </div>
     <div class="card-body">
-      <p id="message">We'll use this to improve your future grant matches.</p>
-      <a href="https://grantotter.com" class="return-btn">Return to GrantOtter</a>
+      <p id="message"></p>
+      <div id="confirm-area"></div>
     </div>
     <div class="card-footer">
       <p>Powered by GrantOtter</p>
@@ -80,27 +102,98 @@
   </div>
 
   <script>
+    const EDGE_FN = "https://mrmmlirkwugttukzltts.supabase.co/functions/v1/record-feedback";
+
     const params  = new URLSearchParams(window.location.search);
+    const token   = params.get("token");
     const verdict = params.get("verdict");
     const action  = params.get("action");
-    const error   = params.get("error");
-    const heading = document.getElementById("heading");
-    const message = document.getElementById("message");
 
-    if (action === "saved") {
-      heading.innerHTML = "&#128193; Grant Saved!";
-      message.textContent = "This grant has been added to your My Workspace. Open GrantOtter to start your application.";
-    } else if (verdict === "good") {
-      heading.innerHTML = "&#128077; Thanks for your feedback!";
-      message.textContent = "Great! We\u2019ll keep surfacing similar opportunities for you.";
-    } else if (verdict === "bad") {
-      heading.innerHTML = "&#128078; Thanks for your feedback!";
-      message.textContent = "Got it \u2014 we\u2019ll use this to improve your future grant matches.";
-    } else if (error) {
+    const heading      = document.getElementById("heading");
+    const message      = document.getElementById("message");
+    const confirmArea  = document.getElementById("confirm-area");
+
+    function showThankYou(type) {
+      if (type === "saved") {
+        heading.innerHTML = "&#128193; Grant Saved!";
+        message.textContent = "This grant has been added to your My Workspace. Open GrantOtter to start your application.";
+      } else if (type === "good") {
+        heading.innerHTML = "&#128077; Thanks for your feedback!";
+        message.textContent = "Great! We\u2019ll keep surfacing similar opportunities for you.";
+      } else {
+        heading.innerHTML = "&#128078; Thanks for your feedback!";
+        message.textContent = "Got it \u2014 we\u2019ll use this to improve your future grant matches.";
+      }
+      confirmArea.innerHTML = '<a href="https://grantotter.com" class="return-btn">Return to GrantOtter</a>';
+    }
+
+    function showError(msg) {
       heading.innerHTML = "&#10060; Something went wrong";
-      message.textContent = "This link may be invalid or expired. Please check your email for a fresh link.";
+      message.textContent = msg || "This link may be invalid or expired. Please check your email for a fresh link.";
       document.querySelector(".card-header").style.background = "#c0392b";
-      document.querySelector(".return-btn").style.background = "#c0392b";
+      confirmArea.innerHTML = '<a href="https://grantotter.com" class="return-btn" style="background:#c0392b;">Return to GrantOtter</a>';
+    }
+
+    async function submitFeedback(btn, payload, successType) {
+      btn.disabled = true;
+      btn.textContent = "Submitting\u2026";
+      const errEl = document.getElementById("error-msg");
+      if (errEl) errEl.remove();
+
+      try {
+        const res = await fetch(EDGE_FN, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.error) {
+          throw new Error(data.error || "Server error (" + res.status + ")");
+        }
+        showThankYou(successType);
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = btn.dataset.label;
+        const errDiv = document.createElement("p");
+        errDiv.id = "error-msg";
+        errDiv.className = "error-msg";
+        errDiv.textContent = "Could not record feedback: " + err.message;
+        confirmArea.appendChild(errDiv);
+      }
+    }
+
+    // ── Render confirmation UI ────────────────────────────────────────────────
+    if (!token) {
+      showError("Missing feedback token. Please check your email for a valid link.");
+    } else if (action === "save") {
+      heading.innerHTML = "Save Grant to My Workspace";
+      message.textContent = "Click the button below to add this grant to your My Workspace in GrantOtter.";
+      const btn = document.createElement("button");
+      btn.className = "confirm-btn";
+      btn.textContent = "&#128193; Save to My Workspace";
+      btn.dataset.label = btn.textContent;
+      btn.addEventListener("click", () => submitFeedback(btn, { token, action: "save" }, "saved"));
+      confirmArea.appendChild(btn);
+    } else if (verdict === "good") {
+      heading.innerHTML = "&#128077; This was a good match?";
+      message.textContent = "Confirm your feedback — we\u2019ll use it to surface more opportunities like this for you.";
+      const btn = document.createElement("button");
+      btn.className = "confirm-btn";
+      btn.innerHTML = "&#128077; Yes, good match";
+      btn.dataset.label = btn.innerHTML;
+      btn.addEventListener("click", () => submitFeedback(btn, { token, verdict: "good" }, "good"));
+      confirmArea.appendChild(btn);
+    } else if (verdict === "bad") {
+      heading.innerHTML = "&#128078; This wasn\u2019t a good match?";
+      message.textContent = "Confirm your feedback — we\u2019ll use it to improve your future grant matches.";
+      const btn = document.createElement("button");
+      btn.className = "confirm-btn bad";
+      btn.innerHTML = "&#128078; No, not a good match";
+      btn.dataset.label = btn.innerHTML;
+      btn.addEventListener("click", () => submitFeedback(btn, { token, verdict: "bad" }, "bad"));
+      confirmArea.appendChild(btn);
+    } else {
+      showError("Invalid feedback link. Please check your email for a valid link.");
     }
   </script>
 </body>
