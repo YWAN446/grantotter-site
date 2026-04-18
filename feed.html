@@ -376,15 +376,15 @@
       <div class="rss-dropdown" id="rss-dropdown" role="menu">
         <div class="rss-dropdown-header">Subscribe to weekly updates</div>
 
-        <a href="https://feedly.com" id="feedly-link"
-           target="_blank" rel="noopener" role="menuitem">
+        <a href="https://feedly.com/i/subscription/feed/https%3A%2F%2Fgrantotter.com%2Ffeed.xml"
+           id="feedly-link" target="_blank" rel="noopener" role="menuitem">
           <svg class="rss-option-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="40" height="40" rx="8" fill="#2BB24C"/>
             <path d="M10 28.5l4-4 4 4-4 4-4-4zm4-8l8-8 4 4-8 8-4-4zm8-8l4-4 10 10-4 4L22 12.5z" fill="white"/>
           </svg>
           <span class="rss-option-label" id="feedly-label">
             Add to Feedly
-            <span class="rss-option-sub">RSS link will be copied — paste it in Feedly's search bar</span>
+            <span class="rss-option-sub">Free RSS reader — sign in to Feedly first, then click this</span>
           </span>
         </a>
 
@@ -589,10 +589,6 @@
       });
     });
 
-    // Feedly: copy RSS URL first so user can paste it in Feedly's search bar
-    document.getElementById('feedly-link').addEventListener('click', (e) => {
-      navigator.clipboard.writeText(RSS_URL).catch(() => {});
-    });
   </script>
 </body>
 </html>
