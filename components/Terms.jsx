@@ -98,10 +98,6 @@ function Terms({ setRoute }) {
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, lineHeight:1.6, marginBottom:36}}>
             What you agree to by using GrantOtter — no legalese, just the essentials.
           </p>
-          <div style={{display:'flex', gap:8}}>
-            <button onClick={() => setRoute('privacy')} className="tag teal" style={{cursor:'pointer', background:'none', border:'none', font:'inherit'}}>Privacy Policy →</button>
-            <a href="#terms" className="tag orange" style={{cursor:'pointer', textDecoration:'none'}}>Terms of Service →</a>
-          </div>
         </div>
       </section>
 
@@ -114,8 +110,6 @@ function Terms({ setRoute }) {
             </div>
             <h2>Terms of <em style={{color:'var(--orange-deep)'}}>Service</em></h2>
           </div>
-
-          <div className="mono" style={{fontSize:11, color:'var(--muted)', marginBottom:24}}>Last updated: April 2026</div>
 
           <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:36}}>
             By accessing or using GrantOtter at{' '}

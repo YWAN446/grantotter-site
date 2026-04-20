@@ -83,10 +83,6 @@ function Privacy({ setRoute }) {
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, lineHeight:1.6, marginBottom:36}}>
             Plain-language summary of how GrantOtter collects, uses, and protects your data.
           </p>
-          <div style={{display:'flex', gap:8}}>
-            <a href="#privacy" className="tag teal" style={{cursor:'pointer', textDecoration:'none'}}>Privacy Policy →</a>
-            <button onClick={() => setRoute('terms')} className="tag orange" style={{cursor:'pointer', background:'none', border:'none', font:'inherit'}}>Terms of Service →</button>
-          </div>
         </div>
       </section>
 
@@ -95,12 +91,10 @@ function Privacy({ setRoute }) {
         <div className="container">
           <div className="section-header">
             <div className="left">
-              <span className="bracket-label">01 / privacy</span>
+              <span className="bracket-label">privacy</span>
             </div>
             <h2><em>Privacy</em> Policy</h2>
           </div>
-
-          <div className="mono" style={{fontSize:11, color:'var(--muted)', marginBottom:32}}>Last updated: April 2026</div>
 
           {/* Three pillars — 3-column grid */}
           <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, marginBottom:48}}>
