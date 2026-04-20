@@ -68,6 +68,7 @@ window.__TWEAKS = /*EDITMODE-BEGIN*/{
 <script type="text/babel" src="components/Feed.jsx"></script>
 <script type="text/babel" src="components/Help.jsx"></script>
 <script type="text/babel" src="components/Privacy.jsx"></script>
+<script type="text/babel" src="components/Terms.jsx"></script>
 <script type="text/babel" src="components/Tutorial.jsx"></script>
 <script type="text/babel" src="components/Signup.jsx"></script>
 
@@ -96,6 +97,7 @@ function App() {
     route === 'feed'    ? <Feed /> :
     route === 'help'     ? <Help setRoute={setRoute} /> :
     route === 'privacy'  ? <Privacy setRoute={setRoute} /> :
+    route === 'terms'    ? <Terms setRoute={setRoute} /> :
     route === 'tutorial' ? <Tutorial setRoute={setRoute} /> :
     <Signup setRoute={setRoute} />
   );

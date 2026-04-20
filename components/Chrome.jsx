@@ -225,9 +225,10 @@ function Footer({ setRoute }) {
               { label: 'Weekly Feed', onClick: () => setRoute('feed') },
             ]],
             ['Resources', [
-              { label: 'Get Started', href: 'tutorial.html' },
+              { label: 'Get Started', onClick: () => setRoute('tutorial') },
               { label: 'Help',        onClick: () => setRoute('help') },
               { label: 'Privacy',     onClick: () => setRoute('privacy') },
+              { label: 'Terms',       onClick: () => setRoute('terms') },
             ]],
             ['App', [
               { label: 'Launch App', href: 'https://grantotter.streamlit.app', external: true },
