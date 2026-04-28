@@ -12,8 +12,9 @@ function PrivacyList({ items, accent = 'var(--teal-deep)' }) {
 }
 
 function PolicyBlock({ label, children, accent = 'var(--muted)' }) {
+  const isMobile = useWindowWidth() < 768;
   return (
-    <div style={{display:'grid', gridTemplateColumns:'200px 1fr', gap:32, paddingTop:24, paddingBottom:24, borderTop:'1px dashed var(--line)'}}>
+    <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '200px 1fr', gap: isMobile ? 10 : 32, paddingTop:24, paddingBottom:24, borderTop:'1px dashed var(--line)'}}>
       <div style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:accent, letterSpacing:'0.06em', textTransform:'uppercase', paddingTop:2}}>
         {label}
       </div>
@@ -23,6 +24,7 @@ function PolicyBlock({ label, children, accent = 'var(--muted)' }) {
 }
 
 function Privacy({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
   const pillars = [
     {
       n: '01', label: 'Open data sources',
@@ -74,10 +76,10 @@ function Privacy({ setRoute }) {
   return (
     <>
       {/* Hero */}
-      <section style={{padding:'80px 0 56px', borderBottom:'1px solid var(--line)'}}>
+      <section style={{padding: isMobile ? '48px 0 36px' : '80px 0 56px', borderBottom:'1px solid var(--line)'}}>
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>privacy policy</div>
-          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize:'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
+          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize: isMobile ? 'clamp(44px,12vw,72px)' : 'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
             Your data,<br/><em style={{color:'var(--teal-deep)'}}>your control.</em>
           </h1>
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, lineHeight:1.6, marginBottom:36}}>
@@ -97,7 +99,7 @@ function Privacy({ setRoute }) {
           </div>
 
           {/* Three pillars — 3-column grid */}
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, marginBottom:48}}>
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap:16, marginBottom:48}}>
             {pillars.map(p => (
               <div key={p.n} style={{border:`1px solid var(--line-2)`, background:'var(--paper)', padding:'20px 24px', position:'relative', overflow:'hidden'}}>
                 {/* Top accent bar */}
@@ -136,7 +138,7 @@ function Privacy({ setRoute }) {
             <PolicyBlock label="Third-party services" accent="var(--orange-deep)">
               <div style={{display:'grid', gap:8}}>
                 {thirdParties.map(({ name, color, desc }) => (
-                  <div key={name} style={{display:'grid', gridTemplateColumns:'160px 1fr', gap:16, padding:'10px 14px', background:'var(--bg-2)', fontSize:13}}>
+                  <div key={name} style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '160px 1fr', gap: isMobile ? 4 : 16, padding:'10px 14px', background:'var(--bg-2)', fontSize:13}}>
                     <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color, fontWeight:600}}>{name}</span>
                     <span style={{color:'var(--ink-2)', lineHeight:1.5}}>{desc}</span>
                   </div>
@@ -172,7 +174,7 @@ function Privacy({ setRoute }) {
 
           </div>
 
-          <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+          <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 0, justifyContent:'space-between'}}>
             <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: April 2026</span>
             <button onClick={() => setRoute('terms')} className="tag orange" style={{cursor:'pointer', background:'none', border:'1px solid var(--orange)', font:'inherit'}}>
               Read Terms of Service →

@@ -27,6 +27,7 @@ function FaqItem({ q, children }) {
 }
 
 function Help({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
   const faqs = [
     {
       q: 'How do I create an account?',
@@ -61,7 +62,7 @@ function Help({ setRoute }) {
             ['02 · Rule-based scoring', 'Rank the remaining grants across expertise match, agency preference, career stage, and budget fit.'],
             ['03 · LLM evaluation',     'Read your profile and each top candidate in depth — producing a ranked list with plain-language rationale.'],
           ].map(([label, desc]) => (
-            <div key={label} style={{display:'grid', gridTemplateColumns:'160px 1fr', gap:16, padding:'10px 14px', background:'var(--bg-2)', borderLeft:'2px solid var(--teal-deep)'}}>
+            <div key={label} style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '160px 1fr', gap: isMobile ? 6 : 16, padding:'10px 14px', background:'var(--bg-2)', borderLeft:'2px solid var(--teal-deep)'}}>
               <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--teal-deep)', letterSpacing:'0.02em'}}>{label}</span>
               <span style={{fontSize:13, color:'var(--ink-2)'}}>{desc}</span>
             </div>
@@ -117,10 +118,10 @@ function Help({ setRoute }) {
   return (
     <>
       {/* Hero */}
-      <section style={{padding:'80px 0 56px', borderBottom:'1px solid var(--line)'}}>
+      <section style={{padding: isMobile ? '48px 0 36px' : '80px 0 56px', borderBottom:'1px solid var(--line)'}}>
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>help &amp; support</div>
-          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize:'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
+          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize: isMobile ? 'clamp(44px,12vw,72px)' : 'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
             Questions,<br/><em style={{color:'var(--teal-deep)'}}>answered.</em>
           </h1>
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, lineHeight:1.6, marginBottom:36}}>
@@ -162,7 +163,7 @@ function Help({ setRoute }) {
             </div>
             <h2>Get in touch or <em>see it live.</em></h2>
           </div>
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:24}} id="demo">
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:24}} id="demo">
 
             {/* Contact card */}
             <div style={{border:'1px solid var(--line-2)', background:'var(--bg)', padding:'32px 36px'}}>
