@@ -1,5 +1,16 @@
 const { useState: useStateC, useEffect: useEffectC, useRef: useRefC } = React;
 
+function useWindowWidth() {
+  const [w, setW] = React.useState(() => window.innerWidth);
+  React.useEffect(() => {
+    const h = () => setW(window.innerWidth);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  }, []);
+  return w;
+}
+window.useWindowWidth = useWindowWidth;
+
 function RssSubscribeButton({ label = 'Subscribe', btnClass = 'btn btn-ghost' }) {
   const [open, setOpen]     = useStateC(false);
   const [copied, setCopied] = useStateC(false);
@@ -143,19 +154,25 @@ function OtterMark({ size = 22, showOtter = true }) {
 }
 
 function Nav({ route, setRoute, showOtter }) {
-  const links = [
+  const [menuOpen, setMenuOpen] = useStateC(false);
+  const isMobile = useWindowWidth() < 768;
+
+  const navLinks = [
     ['home',     'Home'],
     ['features', 'Features'],
+    ['feed',     'Weekly Feed'],
+    ['tutorial', 'Get Started'],
   ];
+
   return (
     <nav className="nav">
       <div className="nav-inner">
-        <a className="nav-logo" onClick={() => setRoute('home')} style={{cursor:'pointer'}}>
+        <a className="nav-logo" onClick={() => { setRoute('home'); setMenuOpen(false); }} style={{cursor:'pointer'}}>
           <span className="mark"><OtterMark showOtter={showOtter} /></span>
           <span>GrantOtter</span>
         </a>
         <div className="nav-links">
-          {links.map(([k, label]) => (
+          {navLinks.map(([k, label]) => (
             <a key={k}
                className={`nav-link ${route === k ? 'active' : ''}`}
                onClick={() => setRoute(k)}
@@ -163,14 +180,34 @@ function Nav({ route, setRoute, showOtter }) {
               {label}
             </a>
           ))}
-          <a className={`nav-link ${route === 'feed' ? 'active' : ''}`} onClick={() => setRoute('feed')} style={{cursor:'pointer'}}>Weekly Feed</a>
-          <a className={`nav-link ${route === 'tutorial' ? 'active' : ''}`} onClick={() => setRoute('tutorial')} style={{cursor:'pointer'}}>Get Started</a>
           <span style={{width:12}}/>
           <a className="nav-cta" href="https://grantotter.streamlit.app" target="_blank" rel="noopener">
             Launch app <span className="arrow">→</span>
           </a>
         </div>
+        <button
+          className="nav-hamburger"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
       </div>
+      {isMobile && menuOpen && (
+        <div className="nav-mobile-menu">
+          {navLinks.map(([k, label]) => (
+            <a key={k}
+               className={`nav-link ${route === k ? 'active' : ''}`}
+               onClick={() => { setRoute(k); setMenuOpen(false); }}
+               style={{cursor:'pointer'}}>
+              {label}
+            </a>
+          ))}
+          <a className="nav-mobile-cta" href="https://grantotter.streamlit.app" target="_blank" rel="noopener">
+            Launch app →
+          </a>
+        </div>
+      )}
     </nav>
   );
 }
@@ -202,11 +239,15 @@ function Ticker() {
 }
 
 function Footer({ setRoute }) {
+  const w = useWindowWidth();
+  const isMobile = w < 768;
+  const isTablet = w < 1024;
+  const footerCols = isMobile ? '1fr 1fr' : isTablet ? '1fr 1fr 1fr' : '2fr 1fr 1fr 1fr';
   return (
-    <footer style={{background:'var(--ink)', color:'var(--bg)', padding:'64px 0 28px', fontFamily:'JetBrains Mono, monospace', fontSize:12}}>
+    <footer style={{background:'var(--ink)', color:'var(--bg)', padding: isMobile ? '40px 0 20px' : '64px 0 28px', fontFamily:'JetBrains Mono, monospace', fontSize:12}}>
       <div className="container">
-        <div style={{display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', gap:40, paddingBottom:48, borderBottom:'1px solid #2B3634'}}>
-          <div>
+        <div style={{display:'grid', gridTemplateColumns: footerCols, gap: isMobile ? 24 : 40, paddingBottom: isMobile ? 28 : 48, borderBottom:'1px solid #2B3634'}}>
+          <div style={{gridColumn: isMobile ? '1 / -1' : 'auto'}}>
             <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:18}}>
               <img src="logo-mark.png" alt="GrantOtter" width={22} height={22} style={{objectFit:'contain'}} />
               <span style={{fontSize:14, fontWeight:600}}>GrantOtter</span>
@@ -246,7 +287,7 @@ function Footer({ setRoute }) {
             </div>
           ))}
         </div>
-        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', paddingTop:24, color:'#5C6664'}}>
+        <div style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent:'space-between', alignItems: isMobile ? 'flex-start' : 'center', gap:8, paddingTop:24, color:'#5C6664'}}>
           <span>© 2026 GrantOtter. Built for researchers, by researchers.</span>
           <span>Free for researchers · <a href="mailto:grantotter42@gmail.com" style={{color:'#5C6664', textDecoration:'none'}}>Contact us</a></span>
         </div>

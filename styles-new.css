@@ -229,3 +229,37 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── Mobile ─────────────────────────────────────────────── */
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--ink); line-height: 1; font-size: 20px; }
+.nav-mobile-menu {
+  display: flex; flex-direction: column;
+  border-top: 1px solid var(--line);
+  padding: 12px 16px 16px;
+  gap: 4px;
+  background: color-mix(in oklab, var(--bg) 97%, transparent);
+  backdrop-filter: blur(10px);
+}
+.nav-mobile-menu .nav-link { padding: 10px 12px; font-size: 13px; }
+.nav-mobile-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 8px; padding: 10px 16px;
+  background: var(--ink); color: var(--bg);
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  border-radius: 2px; text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section { padding: 56px 0; }
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 28px;
+  }
+  .section-header h2 { font-size: 36px; line-height: 1.1; }
+  .nav-inner { padding: 0 16px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: block; }
+  .bracket-label { font-size: 14px; }
+}

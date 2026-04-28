@@ -4,7 +4,22 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Mon, 27 Apr 2026 10:11:35 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 02:02:00 +0000</lastBuildDate>
+    <item>
+      <title>Podcast: Photonic quantum chips promise fast future</title>
+      <link>https://www.nsf.gov/news/podcast-photonic-quantum-chips-promise-fast-future</link>
+      <description>Miloš Popović, an NSF-supported associate professor, discusses a collaboration that has built a photonic quantum system into a traditional electronic chip...</description>
+      <pubDate>Mon, 27 Apr 2026 20:00:15 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+    <item>
+      <title>My Application Was Scored as “Competitive But Not Discussed” During Review. What Does This Mean?</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/my-application-was-scored-as-competitive-but-not-discussed-during-review-what-does-this-mean</link>
+      <description>Last November, NIH implemented emergency modifications to review processes following resumption of activities after the lapse in appropriations. Recognizing that strong applications may fall below a 33% cut off, the middle third of applications in a study section were designated as “competitive but not discussed.”</description>
+      <pubDate>Mon, 27 Apr 2026 16:48:10 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>You Ask, We Answer&gt;</category>
+    </item>
     <item>
       <title>Notice to Rescind NOT-AG-21-055, "NIA Announces Guidance for Purchasing Identifiable Centers for Medicare and Medicaid Services (CMS) Data in Grant Applications Effective FY 2022"</title>
       <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AG-26-006.html</link>
@@ -97,49 +112,6 @@
       <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-079.html</link>
       <description>Notice NOT-OD-26-079 from the NIH Guide for Grants and Contracts</description>
       <pubDate>Tue, 21 Apr 2026 07:07:54 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>One Year Later: How Centralized NIH Peer Review is Strengthening Efficiency, Competition, and Transparency</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/one-year-later-how-centralized-nih-peer-review-is-strengthening-efficiency-competition-and-transparency</link>
-      <description>In March 2025, NIH announced that all peer review would be centralized within the Center for Scientific Review (CSR) (see also this NIH Guide Notice). As the one-year anniversary approaches, we are providing an update on the consolidation and its initial effects on the peer-review process.&amp;nbsp;</description>
-      <pubDate>Mon, 20 Apr 2026 19:12:12 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>NIH Funding Blog&gt;</category>
-    </item>
-    <item>
-      <title>Notice to Rescind NOT-OD-24-077 "Technical and Business Assistance (TABA) Funding May be Added to an SBIR/STTR Award by Administrative Supplement"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-076.html</link>
-      <description>Notice NOT-OD-26-076 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Mon, 20 Apr 2026 17:06:40 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Update - NIH Implementation of Uniform Administrative Requirements for Federal Financial Assistance</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-072.html</link>
-      <description>Notice NOT-OD-26-072 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Mon, 20 Apr 2026 17:03:36 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Information: Policy Changes to SBIR and STTR Foreign Disclosure and Risk Management</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-074.html</link>
-      <description>Notice NOT-OD-26-074 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Mon, 20 Apr 2026 17:01:07 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Information: Implementation of HHS Annual SBIR/STTR Application/Proposal Limit</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-073.html</link>
-      <description>Notice NOT-OD-26-073 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Mon, 20 Apr 2026 16:45:16 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Notice of Information: Policy changes to SBIR and STTR Discretionary Technical and Business Assistance</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-075.html</link>
-      <description>Notice NOT-OD-26-075 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Mon, 20 Apr 2026 16:29:25 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
   </channel>

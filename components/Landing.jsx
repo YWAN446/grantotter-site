@@ -3,6 +3,7 @@ const { useState: useStateL, useEffect: useEffectL } = React;
 function Hero({ setRoute, heroVariant, showOtter }) {
   const [query, setQuery] = useStateL('');
   const [idx, setIdx] = useStateL(0);
+  const isMobile = useWindowWidth() < 768;
   const samples = [
     'CRISPR-based gene therapy for pediatric sickle cell',
     'longitudinal study of urban food insecurity, ages 12–18',
@@ -34,12 +35,14 @@ function Hero({ setRoute, heroVariant, showOtter }) {
         <div className="gridbg" style={{position:'absolute', inset:0, maskImage:'radial-gradient(ellipse at 50% 30%, black 30%, transparent 70%)'}}/>
       </div>
       <div className="container" style={{position:'relative'}}>
-        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', paddingBottom:28, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.06em'}}>
-          <span>N 33°47′37″ · W 84°19′26″ — ATLANTA, GA · EMORY UNIVERSITY</span>
-          <span>SPRING 2026 · <span style={{color:'var(--orange-deep)'}}>NIH · NSF · DARPA · FOUNDATIONS</span></span>
-        </div>
+        {!isMobile && (
+          <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', paddingBottom:28, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.06em'}}>
+            <span>N 33°47′37″ · W 84°19′26″ — ATLANTA, GA · EMORY UNIVERSITY</span>
+            <span>SPRING 2026 · <span style={{color:'var(--orange-deep)'}}>NIH · NSF · DARPA · FOUNDATIONS</span></span>
+          </div>
+        )}
 
-        <div style={{display:'grid', gridTemplateColumns:'1.1fr 0.9fr', gap:64, alignItems:'start'}}>
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 0.9fr', gap: isMobile ? 40 : 64, alignItems:'start'}}>
           <div>
             <div className="bracket-label" style={{marginBottom:24}}>01 / the grant workflow, rebuilt</div>
             <h1 style={{
@@ -106,14 +109,14 @@ function Hero({ setRoute, heroVariant, showOtter }) {
                 <div style={{height:1, background:'var(--line)', margin:'14px 0'}}/>
 
                 <div className="comment">→ top matches · sorted by fit × deadline</div>
-                <div style={{marginTop:12, display:'grid', gap:10}}>
+                <div style={{marginTop:12, display:'grid', gap:10, overflowX:'auto'}}>
                   {[
                     { agency: 'NIH · R01',    code: 'PA-25-303',       fit: 94, amt: '$2.4M / 4y', due: 'Jun 05' },
                     { agency: 'NSF · CAREER', code: 'NSF 25-590',      fit: 91, amt: '$600k / 5y', due: 'Jul 22' },
                     { agency: 'DARPA · YFA',  code: 'HR001-26-S-0004', fit: 87, amt: '$1M / 3y',   due: 'Aug 14' },
                     { agency: 'Emory · IRG',  code: 'Emory-IRG-2026',  fit: 82, amt: '$50k / 1y',  due: 'Sep 01' },
                   ].map((r, i) => (
-                    <div key={i} style={{display:'grid', gridTemplateColumns:'110px 1fr 80px 90px 70px', gap:10, alignItems:'center', padding:'8px 10px', background:'var(--bg-2)', borderLeft:`2px solid ${i===0 ? 'var(--teal-deep)' : 'var(--line-2)'}`}}>
+                    <div key={i} style={{display:'grid', gridTemplateColumns:'110px 1fr 80px 90px 70px', gap:10, alignItems:'center', padding:'8px 10px', background:'var(--bg-2)', borderLeft:`2px solid ${i===0 ? 'var(--teal-deep)' : 'var(--line-2)'}`, minWidth:460}}>
                       <span style={{color:'var(--teal-deep)', fontWeight:600}}>{r.agency}</span>
                       <span style={{color:'var(--muted)'}}>{r.code}</span>
                       <span style={{color:'var(--ink)'}}>{r.amt}</span>
@@ -147,13 +150,14 @@ function Hero({ setRoute, heroVariant, showOtter }) {
 }
 
 function HeroEditorial({ setRoute, showOtter }) {
+  const isMobile = useWindowWidth() < 768;
   return (
-    <section style={{padding:'80px 0 120px', position:'relative'}}>
+    <section style={{padding: isMobile ? '48px 0 64px' : '80px 0 120px', position:'relative'}}>
       <div className="container">
-        <div className="bracket-label" style={{marginBottom:40}}>01 / mission</div>
+        <div className="bracket-label" style={{marginBottom: isMobile ? 24 : 40}}>01 / mission</div>
         <h1 style={{
           fontFamily:'Instrument Serif, Georgia, serif',
-          fontSize:'clamp(72px, 9vw, 140px)',
+          fontSize: isMobile ? 'clamp(44px, 12vw, 72px)' : 'clamp(72px, 9vw, 140px)',
           lineHeight:1.02, letterSpacing:'-0.035em',
           maxWidth:1200,
           paddingBottom: '0.12em',
@@ -162,8 +166,8 @@ function HeroEditorial({ setRoute, showOtter }) {
           The grant process is <em style={{color:'var(--orange-deep)'}}>the tax</em><br/>
           on <em style={{color:'var(--teal-deep)'}}>good research.</em>
         </h1>
-        <div style={{display:'grid', gridTemplateColumns:'1fr 420px', gap:60, marginTop:120, alignItems:'end'}}>
-          <p style={{fontSize:20, lineHeight:1.5, maxWidth:640, color:'var(--ink-2)'}}>
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 420px', gap: isMobile ? 32 : 60, marginTop: isMobile ? 40 : 120, alignItems:'end'}}>
+          <p style={{fontSize: isMobile ? 16 : 20, lineHeight:1.5, maxWidth:640, color:'var(--ink-2)'}}>
             Before you write a single word, researchers spend <span className="mono" style={{color:'var(--orange-deep)', fontWeight:600}}>20–40 hours</span> just to{' '}
             <span className="mono" style={{color:'var(--orange-deep)', fontWeight:600}}>find the right opportunity</span>,{' '}
             <span className="mono" style={{color:'var(--orange-deep)', fontWeight:600}}>assemble the right team</span>, and{' '}
@@ -208,6 +212,9 @@ function OurApproach() {
 }
 
 function ModulesGrid({ setRoute }) {
+  const w = useWindowWidth();
+  const isMobile = w < 768;
+  const isTablet = w < 1024;
   const mods = [
     { n: '01', k: 'PROFILE',   name: 'Researcher Profile',    desc: 'Just your name and institution — that\'s all it takes. GrantOtter searches Google Scholar, PubMed, ORCID, and your faculty page to build a complete profile from open data. Upload your CV for an even faster, more accurate result.',  stat: 'Minimum input · maximum coverage', color: 'teal' },
     { n: '02', k: 'DISCOVER',  name: 'Grant Discovery',       desc: 'Match your profile against 2,000+ active opportunities across NIH, NSF, DARPA, foundations, and Emory internal grants. A three-stage pipeline — hard filter, rule-based scoring, then AI ranking — surfaces your best fits with plain-language explanations.',            stat: '2,000+ grants indexed',  color: 'orange' },
@@ -225,14 +232,14 @@ function ModulesGrid({ setRoute }) {
           <h2>Five modules. <em>One workspace.</em></h2>
         </div>
 
-        <div style={{display:'grid', gridTemplateColumns:'repeat(5, 1fr)', border:'1px solid var(--line-2)', borderRight:0}}>
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : isTablet ? 'repeat(3, 1fr)' : 'repeat(5, 1fr)', border:'1px solid var(--line-2)', borderRight:0}}>
           {mods.map((m, i) => (
             <div key={m.n} onClick={() => setRoute('features')} style={{
               borderRight:'1px solid var(--line-2)',
-              padding:'28px 22px 24px',
+              padding: isMobile ? '20px 16px 18px' : '28px 22px 24px',
               background: i % 2 === 0 ? 'var(--paper)' : 'transparent',
               cursor:'pointer',
-              minHeight: 340,
+              minHeight: isMobile ? 'auto' : 340,
               display:'flex', flexDirection:'column',
               transition:'background .2s',
             }}>
@@ -260,6 +267,7 @@ function ModulesGrid({ setRoute }) {
 }
 
 function WeeklyFeed({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
   return (
     <section className="section" style={{background:'var(--paper)'}}>
       <div className="container">
@@ -271,8 +279,8 @@ function WeeklyFeed({ setRoute }) {
           <h2>Grant opportunities and agency news, <em>delivered weekly.</em></h2>
         </div>
 
-        <div style={{border:'1px solid var(--line-2)', background:'var(--bg)', padding:'40px 40px 32px'}}>
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:48, alignItems:'center'}}>
+        <div style={{border:'1px solid var(--line-2)', background:'var(--bg)', padding: isMobile ? '24px 20px 20px' : '40px 40px 32px'}}>
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 28 : 48, alignItems:'center'}}>
             <div>
               <p style={{fontSize:16, lineHeight:1.6, color:'var(--ink-2)', marginBottom:28}}>
                 Every Monday, GrantOtter aggregates the latest funding opportunities, deadlines, and agency news from NIH, NSF, and DARPA into a single weekly digest — no account required.

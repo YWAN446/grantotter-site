@@ -1,14 +1,15 @@
 function FeatureRow({ num, tag, title, desc, children, reverse }) {
+  const isMobile = useWindowWidth() < 768;
   return (
-    <section style={{padding:'96px 0', borderBottom:'1px solid var(--line)'}}>
+    <section style={{padding: isMobile ? '56px 0' : '96px 0', borderBottom:'1px solid var(--line)'}}>
       <div className="container">
-        <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:72, alignItems:'center'}}>
-          <div style={{order: reverse ? 2 : 1}}>
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 36 : 72, alignItems:'center'}}>
+          <div style={{order: (!isMobile && reverse) ? 2 : 1}}>
             <div className="bracket-label" style={{marginBottom:20}}>{num} / {tag}</div>
-            <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize:64, lineHeight:0.98, letterSpacing:'-0.025em', fontStyle:'italic', fontWeight:400, marginBottom:24}}>{title}</h2>
-            <p style={{fontSize:16, lineHeight:1.6, color:'var(--ink-2)', maxWidth:520}}>{desc}</p>
+            <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, lineHeight: isMobile ? 1.1 : 0.98, letterSpacing:'-0.025em', fontStyle:'italic', fontWeight:400, marginBottom:24}}>{title}</h2>
+            <p style={{fontSize: isMobile ? 15 : 16, lineHeight:1.6, color:'var(--ink-2)', maxWidth:520}}>{desc}</p>
           </div>
-          <div style={{order: reverse ? 1 : 2}}>{children}</div>
+          <div style={{order: (!isMobile && reverse) ? 1 : 2}}>{children}</div>
         </div>
       </div>
     </section>
@@ -61,36 +62,38 @@ function ProfileDemo() {
 
 function DiscoverDemo() {
   return (
-    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)'}}>
-      <div style={{padding:'10px 14px', borderBottom:'1px solid var(--line)', display:'flex', justifyContent:'space-between', fontFamily:'JetBrains Mono, monospace', fontSize:11, color:'var(--muted)', background:'var(--bg-2)'}}>
-        <span>discover · 2,000+ opportunities indexed</span>
-        <span>sort: fit × deadline ↓</span>
-      </div>
-      <div style={{display:'grid', gridTemplateColumns:'60px 1fr 110px 90px 90px', padding:'10px 14px', fontFamily:'JetBrains Mono, monospace', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'0.08em', borderBottom:'1px solid var(--line)'}}>
-        <span>fit</span><span>opportunity</span><span>amount</span><span>deadline</span><span>status</span>
-      </div>
-      {[
-        { fit: 10,  agency: 'NIH / NLM',      title: 'PAR-25-131 · Computational Curation at Scale (R01)',     amt: '$250k',     due: 'Apr \'27', status: 'draft' },
-        { fit: 9,  agency: 'Wellcome Trust',  title: 'Evidence Synthesis Infrastructure Hub',                  amt: '$1.9–2.4M', due: 'May 07', status: 'saved' },
-        { fit: 9, agency: 'Emory EGHI',     title: 'EGHI Faculty Seed Grant — global health pilot',          amt: '$20k',      due: 'May 31', status: 'new' },
-        { fit: 9,  agency: 'Emory RSPH',      title: 'RSPH Dean\'s Pilot Innovation Grant',                    amt: '$20–50k',   due: 'May 31', status: 'saved' },
-        { fit: 7,  agency: 'Wellcome Trust',  title: 'Early-Career Award — 5 year independent program',        amt: '~$508k',    due: 'Jul 21', status: 'new' },
-        { fit: 6,  agency: 'NIH (multi)',     title: 'PAR-25-144 · Dissemination & Implementation (R01)',      amt: 'TBD',       due: 'Jan \'28', status: 'new' },
-      ].map((r, i) => (
-        <div key={i} style={{display:'grid', gridTemplateColumns:'60px 1fr 110px 90px 90px', padding:'14px 14px', alignItems:'center', borderBottom:'1px solid var(--line)', fontSize:12, background: i===2 ? 'color-mix(in oklab, var(--orange) 6%, transparent)' : 'transparent'}}>
-          <div style={{display:'flex', alignItems:'center', gap:6}}>
-            <div style={{width:24, height:4, background:'var(--line)', position:'relative'}}><div style={{position:'absolute', inset:0, width:`${r.fit*10}%`, background:'var(--teal)'}}/></div>
-            <span className="mono" style={{color:'var(--ink)', fontWeight:600, fontSize:11}}>{r.fit}</span>
-          </div>
-          <div>
-            <div className="mono" style={{color:'var(--teal-deep)', fontSize:10, fontWeight:600}}>{r.agency}</div>
-            <div style={{color:'var(--ink)', marginTop:2}}>{r.title}</div>
-          </div>
-          <div className="mono" style={{color:'var(--ink)'}}>{r.amt}</div>
-          <div className="mono" style={{color:'var(--muted)'}}>{r.due}</div>
-          <div><span className={`tag ${r.status==='draft'?'orange':r.status==='saved'?'teal':''}`} style={{fontSize:9}}>{r.status}</span></div>
+    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)', overflowX:'auto'}}>
+      <div style={{minWidth:520}}>
+        <div style={{padding:'10px 14px', borderBottom:'1px solid var(--line)', display:'flex', justifyContent:'space-between', fontFamily:'JetBrains Mono, monospace', fontSize:11, color:'var(--muted)', background:'var(--bg-2)'}}>
+          <span>discover · 2,000+ opportunities indexed</span>
+          <span>sort: fit × deadline ↓</span>
         </div>
-      ))}
+        <div style={{display:'grid', gridTemplateColumns:'60px 1fr 110px 90px 90px', padding:'10px 14px', fontFamily:'JetBrains Mono, monospace', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'0.08em', borderBottom:'1px solid var(--line)'}}>
+          <span>fit</span><span>opportunity</span><span>amount</span><span>deadline</span><span>status</span>
+        </div>
+        {[
+          { fit: 10,  agency: 'NIH / NLM',      title: 'PAR-25-131 · Computational Curation at Scale (R01)',     amt: '$250k',     due: 'Apr \'27', status: 'draft' },
+          { fit: 9,  agency: 'Wellcome Trust',  title: 'Evidence Synthesis Infrastructure Hub',                  amt: '$1.9–2.4M', due: 'May 07', status: 'saved' },
+          { fit: 9, agency: 'Emory EGHI',     title: 'EGHI Faculty Seed Grant — global health pilot',          amt: '$20k',      due: 'May 31', status: 'new' },
+          { fit: 9,  agency: 'Emory RSPH',      title: 'RSPH Dean\'s Pilot Innovation Grant',                    amt: '$20–50k',   due: 'May 31', status: 'saved' },
+          { fit: 7,  agency: 'Wellcome Trust',  title: 'Early-Career Award — 5 year independent program',        amt: '~$508k',    due: 'Jul 21', status: 'new' },
+          { fit: 6,  agency: 'NIH (multi)',     title: 'PAR-25-144 · Dissemination & Implementation (R01)',      amt: 'TBD',       due: 'Jan \'28', status: 'new' },
+        ].map((r, i) => (
+          <div key={i} style={{display:'grid', gridTemplateColumns:'60px 1fr 110px 90px 90px', padding:'14px 14px', alignItems:'center', borderBottom:'1px solid var(--line)', fontSize:12, background: i===2 ? 'color-mix(in oklab, var(--orange) 6%, transparent)' : 'transparent'}}>
+            <div style={{display:'flex', alignItems:'center', gap:6}}>
+              <div style={{width:24, height:4, background:'var(--line)', position:'relative'}}><div style={{position:'absolute', inset:0, width:`${r.fit*10}%`, background:'var(--teal)'}}/></div>
+              <span className="mono" style={{color:'var(--ink)', fontWeight:600, fontSize:11}}>{r.fit}</span>
+            </div>
+            <div>
+              <div className="mono" style={{color:'var(--teal-deep)', fontSize:10, fontWeight:600}}>{r.agency}</div>
+              <div style={{color:'var(--ink)', marginTop:2}}>{r.title}</div>
+            </div>
+            <div className="mono" style={{color:'var(--ink)'}}>{r.amt}</div>
+            <div className="mono" style={{color:'var(--muted)'}}>{r.due}</div>
+            <div><span className={`tag ${r.status==='draft'?'orange':r.status==='saved'?'teal':''}`} style={{fontSize:9}}>{r.status}</span></div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -226,16 +229,17 @@ function BiosketcDemo() {
 }
 
 function Features({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
   return (
     <>
-      <section style={{padding:'80px 0 60px'}}>
+      <section style={{padding: isMobile ? '48px 0 36px' : '80px 0 60px'}}>
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>product / features</div>
-          <h1 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize:'clamp(64px, 9vw, 140px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, maxWidth:1200}}>
+          <h1 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 'clamp(44px, 12vw, 72px)' : 'clamp(64px, 9vw, 140px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, maxWidth:1200}}>
             Every step of the <em style={{color:'var(--teal-deep)'}}>grant workflow</em>,<br/>
             <em style={{color:'var(--orange-deep)'}}>handled.</em>
           </h1>
-          <div style={{display:'flex', gap:24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
+          <div style={{display:'flex', flexWrap:'wrap', gap: isMobile ? 12 : 24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
             {['01 profile','02 discover','03 team','04 brainstorm','05 biosketch'].map(x => (
               <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}</span>
             ))}
@@ -268,9 +272,9 @@ function Features({ setRoute }) {
         <BiosketcDemo/>
       </FeatureRow>
 
-      <section style={{padding:'100px 0', textAlign:'center'}}>
+      <section style={{padding: isMobile ? '64px 0' : '100px 0', textAlign:'center'}}>
         <div className="container">
-          <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize:64, fontStyle:'italic', letterSpacing:'-0.02em'}}>Ready to try it on your own profile?</h2>
+          <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, fontStyle:'italic', letterSpacing:'-0.02em'}}>Ready to try it on your own profile?</h2>
           <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — free →</a>
         </div>
       </section>
