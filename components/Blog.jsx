@@ -308,5 +308,6 @@ function BlogPost({ post, setRoute }) {
   );
 }
 
+window.POSTS    = POSTS;
 window.BlogList = BlogList;
 window.BlogPost = BlogPost;

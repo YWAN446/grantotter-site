@@ -76,17 +76,44 @@ window.__TWEAKS = /*EDITMODE-BEGIN*/{
 <script type="text/babel">
 const { useState, useEffect } = React;
 
+function parseHash() {
+  const hash = window.location.hash.slice(1);
+  if (hash.startsWith('blog/')) return { route: 'blog-post', slug: hash.slice(5) };
+  return { route: hash || 'home', slug: null };
+}
+
 function App() {
-  const [route, setRoute] = useState(() => {
-    try { return localStorage.getItem('go_route') || 'home'; } catch { return 'home'; }
-  });
+  const [route, setRoute] = useState(() => parseHash().route);
   const [tweaks, setTweaks] = useState(window.__TWEAKS);
-  const [currentPost, setCurrentPost] = useState(null);
+  const [currentPost, setCurrentPost] = useState(() => {
+    const { slug } = parseHash();
+    return slug ? (window.POSTS || []).find(p => p.slug === slug) || null : null;
+  });
 
   useEffect(() => {
-    try { localStorage.setItem('go_route', route); } catch {}
+    const hashVal = route === 'home'      ? '' :
+                    route === 'blog-post' && currentPost ? `blog/${currentPost.slug}` :
+                    route;
+    window.history.pushState(null, '', hashVal ? `#${hashVal}` : location.pathname);
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [route]);
+  }, [route, currentPost]);
+
+  useEffect(() => {
+    function onNav() {
+      const { route: r, slug } = parseHash();
+      if (slug) {
+        const post = (window.POSTS || []).find(p => p.slug === slug);
+        if (post) setCurrentPost(post);
+      }
+      setRoute(r);
+    }
+    window.addEventListener('popstate', onNav);
+    window.addEventListener('hashchange', onNav);
+    return () => {
+      window.removeEventListener('popstate', onNav);
+      window.removeEventListener('hashchange', onNav);
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', tweaks.theme);
