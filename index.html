@@ -71,6 +71,7 @@ window.__TWEAKS = /*EDITMODE-BEGIN*/{
 <script type="text/babel" src="components/Terms.jsx"></script>
 <script type="text/babel" src="components/Tutorial.jsx"></script>
 <script type="text/babel" src="components/Signup.jsx"></script>
+<script type="text/babel" src="components/Blog.jsx"></script>
 
 <script type="text/babel">
 const { useState, useEffect } = React;
@@ -80,6 +81,7 @@ function App() {
     try { return localStorage.getItem('go_route') || 'home'; } catch { return 'home'; }
   });
   const [tweaks, setTweaks] = useState(window.__TWEAKS);
+  const [currentPost, setCurrentPost] = useState(null);
 
   useEffect(() => {
     try { localStorage.setItem('go_route', route); } catch {}
@@ -91,14 +93,16 @@ function App() {
   }, [tweaks.theme]);
 
   const page = (
-    route === 'home'     ? <Landing setRoute={setRoute} heroVariant={tweaks.heroVariant} showOtter={tweaks.showOtter} /> :
-    route === 'features' ? <Features setRoute={setRoute} /> :
-    route === 'pricing'  ? <Pricing setRoute={setRoute} /> :
-    route === 'feed'    ? <Feed /> :
-    route === 'help'     ? <Help setRoute={setRoute} /> :
-    route === 'privacy'  ? <Privacy setRoute={setRoute} /> :
-    route === 'terms'    ? <Terms setRoute={setRoute} /> :
-    route === 'tutorial' ? <Tutorial setRoute={setRoute} /> :
+    route === 'home'      ? <Landing setRoute={setRoute} heroVariant={tweaks.heroVariant} showOtter={tweaks.showOtter} /> :
+    route === 'features'  ? <Features setRoute={setRoute} /> :
+    route === 'pricing'   ? <Pricing setRoute={setRoute} /> :
+    route === 'feed'      ? <Feed /> :
+    route === 'help'      ? <Help setRoute={setRoute} /> :
+    route === 'privacy'   ? <Privacy setRoute={setRoute} /> :
+    route === 'terms'     ? <Terms setRoute={setRoute} /> :
+    route === 'tutorial'  ? <Tutorial setRoute={setRoute} /> :
+    route === 'blog'      ? <BlogList setRoute={setRoute} setPost={setCurrentPost} /> :
+    route === 'blog-post' ? <BlogPost post={currentPost} setRoute={setRoute} /> :
     <Signup setRoute={setRoute} />
   );
 

@@ -5,6 +5,7 @@ function Feed() {
   const [activeSource, setActive]     = useState('All');
   const [lastUpdated, setLastUpdated] = useState('');
   const [status, setStatus]           = useState('loading'); // loading | ok | error
+  const isMobile = useWindowWidth() < 768;
 
   useEffect(() => {
     async function loadFeed() {
@@ -51,7 +52,7 @@ function Feed() {
       <section style={{padding:'80px 0 56px', borderBottom:'1px solid var(--line)'}}>
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>weekly feed</div>
-          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize:'clamp(52px,8vw,120px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
+          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize: isMobile ? 'clamp(44px,12vw,72px)' : 'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
             Grant funding,<br/><em style={{color:'var(--teal-deep)'}}>every Monday.</em>
           </h1>
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, marginBottom:36, lineHeight:1.6}}>
