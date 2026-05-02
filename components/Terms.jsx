@@ -1,4 +1,5 @@
 function Terms({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
   const terms = [
     {
       n: '1', label: 'The service',
@@ -89,10 +90,10 @@ function Terms({ setRoute }) {
   return (
     <>
       {/* Hero */}
-      <section style={{padding:'80px 0 56px', borderBottom:'1px solid var(--line)'}}>
+      <section style={{padding: isMobile ? '48px 0 36px' : '80px 0 56px', borderBottom:'1px solid var(--line)'}}>
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>terms of service</div>
-          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize:'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
+          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize: isMobile ? 'clamp(44px,12vw,72px)' : 'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
             Simple rules,<br/><em style={{color:'var(--orange-deep)'}}>plainly stated.</em>
           </h1>
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, lineHeight:1.6, marginBottom:36}}>
@@ -119,12 +120,12 @@ function Terms({ setRoute }) {
             you agree to these Terms of Service. If you do not agree, do not use the service.
           </p>
 
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0 48px', borderTop:'1px solid var(--line-2)'}}>
-            <div>{terms.slice(0, 6).map(t => <TermItem key={t.n} t={t} />)}</div>
-            <div>{terms.slice(6).map(t => <TermItem key={t.n} t={t} />)}</div>
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 0 : '0 48px', borderTop:'1px solid var(--line-2)'}}>
+            <div>{terms.slice(0, isMobile ? terms.length : 6).map(t => <TermItem key={t.n} t={t} />)}</div>
+            {!isMobile && <div>{terms.slice(6).map(t => <TermItem key={t.n} t={t} />)}</div>}
           </div>
 
-          <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+          <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 0, justifyContent:'space-between'}}>
             <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: April 2026</span>
             <button onClick={() => setRoute('privacy')} className="tag teal" style={{cursor:'pointer', background:'none', border:'1px solid var(--teal)', font:'inherit'}}>
               Read Privacy Policy →

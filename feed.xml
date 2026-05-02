@@ -4,56 +4,115 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Mon, 20 Apr 2026 09:56:01 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 02:08:13 +0000</lastBuildDate>
     <item>
-      <title>NGMM Shopping Notice</title>
-      <link>https://www.darpa.mil/work-with-us/opportunities</link>
-      <description>&lt;p&gt;The NGMM program will be actively reviewing the ERIS Marketplace for innovative, post-competitive, awardable solutions that exercise the early-stage version of the NGMM 3D Assembly Design Kit (3D-ADK). | &lt;a href="https://www.darpa.mil/research/programs/next-generation-microelectronics"&gt;See Program&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Thu, 16 Apr 2026 18:24:19 +0000</pubDate>
-      <source>DARPA Opportunities</source>
-    </item>
-    <item>
-      <title>Notice of Informational Webinar: Advancing Biomedical Careers: Strategies for Successful F and K Awards NIAID Virtual Outreach activity  May 6th and 7th, 2026</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AI-26-011.html</link>
-      <description>Notice NOT-AI-26-011 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Thu, 16 Apr 2026 14:44:01 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Continuation of Modifications to Peer Review Practices</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-069.html</link>
-      <description>Notice NOT-OD-26-069 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 15 Apr 2026 08:45:20 +0000</pubDate>
-      <source>NIH Guide</source>
-    </item>
-    <item>
-      <title>Podcast: The future of quantum computing</title>
-      <link>https://www.nsf.gov/news/podcast-future-quantum-computing</link>
-      <description>The future of quantum information science and engineering promises computers with unprecedented speed and capabilities. Mikhail Lukin, an NSF-supported professor, discusses his work...</description>
-      <pubDate>Tue, 14 Apr 2026 13:29:10 +0000</pubDate>
+      <title>Podcast: Photonic quantum chips promise fast future</title>
+      <link>https://www.nsf.gov/news/podcast-photonic-quantum-chips-promise-fast-future</link>
+      <description>Miloš Popović, an NSF-supported associate professor, discusses a collaboration that has built a photonic quantum system into a traditional electronic chip...</description>
+      <pubDate>Mon, 27 Apr 2026 20:00:15 +0000</pubDate>
       <source>NSF News</source>
     </item>
     <item>
-      <title>So, I’m Interested in a Highlighted Topic…What Do I Do Now?</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/so-im-interested-in-a-highlighted-topicwhat-do-i-do-now</link>
-      <description>In short, Highlighted Topics are a way to understand NIH priorities and start a conversation. it is important to note though that NIH Institutes, Centers, and Offices (ICOs) continue to fund a wide range of high-quality research beyond areas identified as a Highlighted Topic.</description>
-      <pubDate>Mon, 13 Apr 2026 20:03:46 +0000</pubDate>
+      <title>My Application Was Scored as “Competitive But Not Discussed” During Review. What Does This Mean?</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/my-application-was-scored-as-competitive-but-not-discussed-during-review-what-does-this-mean</link>
+      <description>Last November, NIH implemented emergency modifications to review processes following resumption of activities after the lapse in appropriations. Recognizing that strong applications may fall below a 33% cut off, the middle third of applications in a study section were designated as “competitive but not discussed.”</description>
+      <pubDate>Mon, 27 Apr 2026 16:48:10 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>You Ask, We Answer&gt;</category>
     </item>
     <item>
-      <title>For quantum computing, different qubits are better together</title>
-      <link>https://www.darpa.mil/news/2026/quantum-computing-different-qubits-better-together</link>
-      <description>HARQ program launches to move quantum computing beyond single-qubit systems.</description>
-      <pubDate>Mon, 13 Apr 2026 16:06:54 +0000</pubDate>
-      <source>DARPA News</source>
+      <title>Notice to Rescind NOT-AG-21-055, "NIA Announces Guidance for Purchasing Identifiable Centers for Medicare and Medicaid Services (CMS) Data in Grant Applications Effective FY 2022"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AG-26-006.html</link>
+      <description>Notice NOT-AG-26-006 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 17:38:04 +0000</pubDate>
+      <source>NIH Guide</source>
     </item>
     <item>
-      <title>NSF announces 2026 Graduate Research Fellowship Program award offers</title>
-      <link>https://www.nsf.gov/news/nsf-announces-2026-graduate-research-fellowship-program</link>
-      <description>The U.S. National Science Foundation (NSF) today announced that it has made offers and will award 2,500 Graduate Research Fellowships for the 2026-2027 academic year...</description>
-      <pubDate>Mon, 13 Apr 2026 10:59:59 +0000</pubDate>
+      <title>Notice to Rescind NOT-NS-24-079 "NINDS Policy for applications requesting $500,000 or more in direct costs in any year (excluding consortium F and A)on NIH Parent R01 Notices of Funding Opportunities"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-NS-26-038.html</link>
+      <description>Notice NOT-NS-26-038 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 17:15:16 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>NIA Caenorhabditis Interventions Testing Program (CITP) Announces Annual Call for Compounds to Test for Lifespan Extension in Caenorhabditis</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-AG-26-005.html</link>
+      <description>Notice NOT-AG-26-005 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 17:08:00 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Explore the NIH Data Book — New Fiscal Year 2025 Updates and More Are Underway</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/explore-the-nih-data-book-new-fiscal-year-2025-updates-and-more-are-underway</link>
+      <description>Fiscal year 2025 data in the NIH Data Book are currently being rolled out, ensuring users have access to the most recent information available.</description>
+      <pubDate>Fri, 24 Apr 2026 17:07:48 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>New Resources&gt;</category>
+    </item>
+    <item>
+      <title>Request for Information (RFI): Future Directions for the NLM Information Resource Grants (G08) Program</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-LM-26-001.html</link>
+      <description>Notice NOT-LM-26-001 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 17:06:20 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Update to Standard Language for Developer Terms of Access in the Terms and Conditions of Award</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-078.html</link>
+      <description>Notice NOT-OD-26-078 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 17:04:37 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Deep Thoughts</title>
+      <link>https://www.darpa.mil/work-with-us/opportunities</link>
+      <description>&lt;p&gt;DARPA is soliciting innovative approaches that enable revolutionary advances in uncrewed access to the full-ocean depths at a fraction of the size of current state-of-the-art AUV systems. | &lt;a href="https://www.darpa.mil/research/programs/deep-thoughts"&gt;See Program&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Fri, 24 Apr 2026 13:22:34 +0000</pubDate>
+      <source>DARPA Opportunities</source>
+    </item>
+    <item>
+      <title>Request for Information (RFI): Promoting Youth Participatory Action Research Approaches in Prevention Research</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-065.html</link>
+      <description>Notice NOT-OD-26-065 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 07:21:14 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice to Rescind NOT-OD-23-075 "Office of Research Infrastructure Programs (ORIP) implementation of NIH Policy on Acceptance for Review of Applications Requesting $500,000 or More in Direct Costs in Any One Budget Year"</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-071.html</link>
+      <description>Notice NOT-OD-26-071 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Fri, 24 Apr 2026 07:20:01 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>May 25 (Monday), 2026: NIH Closed for the Federal Holiday</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/may-25-monday-2026-nih-closed-for-the-federal-holiday</link>
+      <description>NIH (including help desks) will be closed on Monday, May 25, 2026 for the federal holiday.</description>
+      <pubDate>Tue, 21 Apr 2026 19:27:36 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Calendar&gt;</category>
+    </item>
+    <item>
+      <title>Podcast:  Increasing domestic critical minerals supplies</title>
+      <link>https://www.nsf.gov/news/podcast-increasing-domestic-critical-minerals-supplies</link>
+      <description>Critical minerals play an essential role in modern technologies, and a domestic supply is essential for national security. Elizabeth Holley discusses recovering critical minerals from...</description>
+      <pubDate>Tue, 21 Apr 2026 13:25:26 +0000</pubDate>
       <source>NSF News</source>
+    </item>
+    <item>
+      <title>It’s Official: NIH’s Small Business Program Is Back</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/04/its-official-nihs-small-business-program-is-back</link>
+      <description>Big news for innovators, founders, and R&amp;amp;D-driven small companies: NIH’s Seed Fund is back in action!</description>
+      <pubDate>Tue, 21 Apr 2026 13:25:18 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Top Stories&gt;</category>
+    </item>
+    <item>
+      <title>Announcement of Upcoming System Enforcement of Common Forms and End of NIHs Leniency Period</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-OD-26-079.html</link>
+      <description>Notice NOT-OD-26-079 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 21 Apr 2026 07:07:54 +0000</pubDate>
+      <source>NIH Guide</source>
     </item>
   </channel>
 </rss>

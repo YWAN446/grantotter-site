@@ -53,11 +53,12 @@ function Code({ children }) {
 }
 
 function Step({ id, n, tag, tagColor = 'teal', bg, children }) {
+  const isMobile = useWindowWidth() < 768;
   return (
     <section className="section" id={id} style={bg ? {background: bg} : {}}>
       <div className="container">
-        <div style={{display:'grid', gridTemplateColumns:'180px 1fr', gap:48, alignItems:'start'}}>
-          <div style={{display:'flex', flexDirection:'column', gap:10, position:'sticky', top:80}}>
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '180px 1fr', gap: isMobile ? 20 : 48, alignItems:'start'}}>
+          <div style={{display:'flex', flexDirection: isMobile ? 'row' : 'column', alignItems: isMobile ? 'center' : 'flex-start', gap:10, position: isMobile ? 'static' : 'sticky', top:80}}>
             <span className="bracket-label" style={{fontSize:14}}>{n}</span>
             <span className={`tag ${tagColor}`} style={{alignSelf:'flex-start', fontSize:10}}>{tag}</span>
           </div>
@@ -73,6 +74,7 @@ function StepH2({ children }) {
 }
 
 function Tutorial({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
   const toc = [
     ['Step 0: Sign Up',          '#step0', 'teal'],
     ['Step 1: My Workspace',     '#step1', 'teal'],
@@ -88,10 +90,10 @@ function Tutorial({ setRoute }) {
   return (
     <>
       {/* Hero */}
-      <section style={{padding:'80px 0 56px', borderBottom:'1px solid var(--line)'}}>
+      <section style={{padding: isMobile ? '48px 0 36px' : '80px 0 56px', borderBottom:'1px solid var(--line)'}}>
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>get started</div>
-          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize:'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
+          <h1 style={{fontFamily:'Instrument Serif,Georgia,serif', fontSize: isMobile ? 'clamp(44px,12vw,72px)' : 'clamp(52px,7vw,110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, marginBottom:28}}>
             The full workflow,<br/><em style={{color:'var(--teal-deep)'}}>step by step.</em>
           </h1>
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:560, lineHeight:1.6, marginBottom:36}}>
@@ -391,7 +393,7 @@ function Tutorial({ setRoute }) {
       </Step>
 
       {/* Next Steps CTA */}
-      <section style={{padding:'96px 0', background:'var(--ink)', color:'var(--bg)', position:'relative', overflow:'hidden'}}>
+      <section style={{padding: isMobile ? '64px 0' : '96px 0', background:'var(--ink)', color:'var(--bg)', position:'relative', overflow:'hidden'}}>
         <div style={{position:'absolute', inset:0, backgroundImage:'linear-gradient(#2B3634 1px,transparent 1px),linear-gradient(90deg,#2B3634 1px,transparent 1px)', backgroundSize:'48px 48px', opacity:0.3, maskImage:'radial-gradient(ellipse at 50% 50%,black 30%,transparent 75%)'}}/>
         <div className="container" style={{position:'relative'}}>
           <div className="bracket-label" style={{marginBottom:24, color:'#5C6664'}}>you're ready</div>
@@ -399,7 +401,7 @@ function Tutorial({ setRoute }) {
             The full workflow,<br/><em style={{color:'var(--teal)'}}>start to finish.</em>
           </h2>
           <div style={{display:'flex', flexDirection:'column', gap:10, marginBottom:48}}>
-            <div style={{display:'flex', flexWrap:'nowrap', alignItems:'center', gap:'6px 4px'}}>
+            <div style={{display:'flex', flexWrap:'wrap', alignItems:'center', gap:'6px 4px'}}>
               {[
                 {label:'Generate profile',    accent:'var(--teal)'},
                 {label:'Match grants',        accent:'var(--teal)'},
@@ -441,7 +443,7 @@ function Tutorial({ setRoute }) {
               },
             ];
             return (
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, marginBottom:48}}>
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap:16, marginBottom:48}}>
             {cards.map(c => (
               <div key={c.n}
                 onClick={c.mailto ? () => { window.location.href = c.mailto; } : undefined}
