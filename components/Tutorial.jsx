@@ -101,7 +101,8 @@ function Tutorial({ setRoute }) {
           </p>
           <div style={{display:'flex', gap:6, flexWrap:'wrap'}}>
             {toc.map(([label, href, color]) => (
-              <a key={href} href={href} className={`tag ${color}`} style={{cursor:'pointer', textDecoration:'none', fontSize:10}}>
+              <a key={href} href={href} className={`tag ${color}`} style={{cursor:'pointer', textDecoration:'none', fontSize:10}}
+                onClick={e => { e.preventDefault(); document.getElementById(href.slice(1))?.scrollIntoView({behavior:'smooth'}); }}>
                 {label}
               </a>
             ))}
@@ -317,7 +318,7 @@ function Tutorial({ setRoute }) {
           <Li n="6.">In <strong style={{color:'var(--teal-deep)'}}>Checklist</strong>, click <strong style={{color:'var(--teal-deep)'}}>Generate Checklist</strong> to have AI extract required submission components from the linked grant FOA — with due dates pre-filled based on the application deadline. Edit items or add custom ones as needed.</Li>
           <Li n="7.">When ready, click <strong style={{color:'var(--teal-deep)'}}>Download All as ZIP</strong> — this bundles the grant document, all team profiles, and every attached file into a single package.</Li>
         </OL>
-        <Tip>Use the ZIP download as the starting point for your AI writing session. Upload it to <strong style={{color:'var(--orange-deep)'}}>Claude</strong>, <strong style={{color:'var(--orange-deep)'}}>ChatGPT</strong>, or <strong style={{color:'var(--orange-deep)'}}>Gemini</strong> — the AI gets full context on the grant, your team, and your draft concepts in one go. See the <a href="#power-user" style={{color:'var(--orange-deep)'}}>Power User section</a> below.</Tip>
+        <Tip>Use the ZIP download as the starting point for your AI writing session. Upload it to <strong style={{color:'var(--orange-deep)'}}>Claude</strong>, <strong style={{color:'var(--orange-deep)'}}>ChatGPT</strong>, or <strong style={{color:'var(--orange-deep)'}}>Gemini</strong> — the AI gets full context on the grant, your team, and your draft concepts in one go. See the <a href="#power-user" style={{color:'var(--orange-deep)'}} onClick={e => { e.preventDefault(); document.getElementById('power-user')?.scrollIntoView({behavior:'smooth'}); }}>Power User section</a> below.</Tip>
         <Media src="media/create_application.mp4" alt="My Applications" isVideo={true}
           caption="Create a new application, link the grant, assemble your team, attach documents, and download everything as a ZIP." />
       </Step>
