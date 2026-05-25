@@ -4,65 +4,107 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Mon, 18 May 2026 11:41:25 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 11:50:34 +0000</lastBuildDate>
     <item>
-      <title>RFI: Biomolecule Purification</title>
+      <title>Podcast:  Onboard autonomous IndyCar racing (part 2)</title>
+      <link>https://www.nsf.gov/news/podcast-onboard-autonomous-indycar-racing-part-2</link>
+      <description>Madhur Behl, an NSF-supported associate professor, discusses software challenges in autonomous racing and how his program is helping to develop the AI workforce of the future...</description>
+      <pubDate>Fri, 22 May 2026 15:30:26 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+    <item>
+      <title>Looking for Animal Welfare Content? OLAW has moved to NIH Grants and Funding!</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/looking-for-animal-welfare-content-olaw-has-moved-to-nih-grants-and-funding</link>
+      <description>Information and other web resources from the NIH Office of Laboratory Animal Welfare (OLAW) have recently migrated to the NIH Grants and Funding hub.</description>
+      <pubDate>Fri, 22 May 2026 15:13:44 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>New Resources&gt;</category>
+    </item>
+    <item>
+      <title>Implementing SimplerNOFO at NIH: A Clearer, Simpler Path for Applicants</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/implementing-simplernofo-at-nih-a-clearer-simpler-path-for-applicants</link>
+      <description>NIH has released its first Notice of Funding Opportunity (NOFO) under the new Department of Health and Human Services (HHS) SimplerNOFO initiative, which aims to make funding opportunities more accessible, understandable, and actionable for applicants.</description>
+      <pubDate>Thu, 21 May 2026 19:22:56 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>Top Stories&gt;</category>
+    </item>
+    <item>
+      <title>Reinforcing NIH’s Continued Commitment to Fundamental Research</title>
+      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/reinforcing-nihs-continued-commitment-to-fundamental-research</link>
+      <description>NIH’s policies and funding approaches are designed to maintain strong support for investigator-initiated fundamental research. NIH’s Gold Standard Science plan explains that our priority-setting processes provide strong support for hypothesis-driven research while balancing opportunities to support other forms of research. Advancing foundational knowledge of human health and disease is a stated goal for the next NIH-wide strategic plan. Here we discuss NIH’s continued commitment in this area.</description>
+      <pubDate>Wed, 20 May 2026 19:12:36 +0000</pubDate>
+      <source>NIH Extramural Nexus</source>
+      <category>NIH Funding Blog&gt;</category>
+    </item>
+    <item>
+      <title>Office-wide BAA: Multi X Office</title>
       <link>https://www.darpa.mil/work-with-us/opportunities</link>
-      <description>&lt;p&gt;MTO seeks novel large-molecule purification methods that will enable the creation of a universal platform capable of separating and recovering multiple large and complex molecules with high specificity, purity, and yield from complex feedstock. | &lt;a href="https://www.darpa.mil/about/offices/mto"&gt;See MTO&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Fri, 15 May 2026 16:52:46 +0000</pubDate>
+      <description>&lt;p&gt;Proposed research should investigate innovative approaches that enable revolutionary advances in science, devices, or systems. | &lt;a href="https://www.darpa.mil/about/offices/mxo"&gt;See MXO&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Wed, 20 May 2026 19:12:21 +0000</pubDate>
       <source>DARPA Opportunities</source>
     </item>
     <item>
-      <title>Helpful Reminders to Ensure Integrity of NIH-Supported Research When Using Artificial Intelligence</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/helpful-reminders-to-ensure-integrity-of-nih-supported-research-when-using-artificial-intelligence</link>
-      <description>The rapid adoption of artificial intelligence (AI) has led to powerful new advances in biomedical research. Alongside these NIH-supported scientific advances and priority research areas involving AI, we have also occasionally observed challenges with the use of these tools that affect the integrity of the science we support. Today, we are sharing some helpful reminders on the appropriate use of AI tools when applying, managing awards, and conducting the research process itself.</description>
-      <pubDate>Thu, 14 May 2026 18:38:49 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>Top Stories&gt;</category>
+      <title>What’s in a name? At DARPA, reflecting enduring mission, future focus.</title>
+      <link>https://www.darpa.mil/news/2026/what-is-in-name-darpa-reflecting-enduring-mission-future-focus</link>
+      <description>DARPA has renamed two of its technical offices.</description>
+      <pubDate>Wed, 20 May 2026 16:25:45 +0000</pubDate>
+      <source>DARPA News</source>
     </item>
     <item>
-      <title>NSF announces $1.5B NSF X-Labs initiative to pursue generational breakthrough science efforts</title>
-      <link>https://www.nsf.gov/news/nsf-announces-15b-nsf-x-labs-initiative-pursue-generational</link>
-      <description>Today, the U.S. National Science Foundation announced $1.5 billion over the next decade toward the NSF X-Labs initiative to tackle pressing scientific challenges through novel and innovative...</description>
-      <pubDate>Thu, 14 May 2026 17:00:08 +0000</pubDate>
-      <source>NSF News</source>
-    </item>
-    <item>
-      <title>Notice to Rescind NOT-HL-24-008 "NHLBI Announces New Policies Regarding Budget Guidelines for SBIR/STTR Applications"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-HL-26-005.html</link>
-      <description>Notice NOT-HL-26-005 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Wed, 13 May 2026 06:45:13 +0000</pubDate>
+      <title>Notice of Change to Key Dates for PAR-25-182 - Development of Psychosocial Therapeutic and Preventive Interventions for Mental Disorders (R61/R33 Clinical Trial Required)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-MH-26-030.html</link>
+      <description>Notice NOT-MH-26-030 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Wed, 20 May 2026 13:50:09 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>An Update on How NIH Protects NIH-Funded Research from Undue Foreign Interference</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/an-update-on-how-nih-protects-nih-funded-research-from-undue-foreign-interference</link>
-      <description>NIH has advanced initiatives to strengthen transparency and ensure disclosure of other support. These actions build on prior work to address risks associated with foreign interference while reinforcing that honesty, transparency, and funding‑overlap prevention remain non‑negotiable requirements.</description>
-      <pubDate>Tue, 12 May 2026 15:43:50 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>Top Stories&gt;</category>
+      <title>Robotic Servicing of Geosynchronous Satellites technology to launch in 2026</title>
+      <link>https://www.darpa.mil/news/2026/robotic-servicing-geosynchronous-satellites-technology-launch-2026</link>
+      <description>DARPA and its partners approach the most significant milestone of the Robotic Servicing of Geosynchronous Satellites (RSGS) program.</description>
+      <pubDate>Tue, 19 May 2026 18:26:04 +0000</pubDate>
+      <source>DARPA News</source>
     </item>
     <item>
-      <title>Notice of Early Expiration of PAR-25-202 "Technology Development Research for Establishing Feasibility and Proof of Concept (R21 - Clinical Trial Not Allowed)"</title>
-      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-GM-26-005.html</link>
-      <description>Notice NOT-GM-26-005 from the NIH Guide for Grants and Contracts</description>
-      <pubDate>Tue, 12 May 2026 14:16:55 +0000</pubDate>
+      <title>A SMART approach to securing strategic materials</title>
+      <link>https://www.darpa.mil/news/2026/smart-approach-securing-strategic-materials</link>
+      <description>DARPA and State of Utah have entered into an agreement to establish the Strategic Materials Accelerator and Research Test Bed (SMART).</description>
+      <pubDate>Tue, 19 May 2026 12:16:04 +0000</pubDate>
+      <source>DARPA News</source>
+    </item>
+    <item>
+      <title>Notice to Rescind NOT-MH-22-310, Notice of Information on NIMH Policy Updates for Career Development Programs (K awards)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-MH-26-035.html</link>
+      <description>Notice NOT-MH-26-035 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 19 May 2026 07:22:41 +0000</pubDate>
       <source>NIH Guide</source>
     </item>
     <item>
-      <title>Podcast: The rise of AI-powered surgical robots</title>
-      <link>https://www.nsf.gov/news/podcast-rise-ai-powered-surgical-robots</link>
-      <description>Artificial intelligence, machine learning and advanced robotic systems could help solve many of the issues facing the health care industry today. Axel Krieger discusses his work developing...</description>
-      <pubDate>Mon, 11 May 2026 18:31:34 +0000</pubDate>
-      <source>NSF News</source>
+      <title>Native Collective Research Effort to Enhance Wellness (N CREW) Program: Addressing Overdose, Substance Use, Mental Health, and Pain  Native Research Resource Partners</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DA-26-011.html</link>
+      <description>Notice NOT-DA-26-011 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 19 May 2026 07:18:28 +0000</pubDate>
+      <source>NIH Guide</source>
     </item>
     <item>
-      <title>Consolidate Your eRA Commons Accounts with New Feature</title>
-      <link>https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/consolidate-your-era-commons-accounts-with-new-feature</link>
-      <description>A new eRA Commons enhancement allows users to consolidate multiple accounts into a single Multi-Factor Authentication capable linked set of credentials to help streamline and reduce the burden of managing multiple accounts.</description>
-      <pubDate>Mon, 11 May 2026 14:58:22 +0000</pubDate>
-      <source>NIH Extramural Nexus</source>
-      <category>New Resources&gt;</category>
+      <title>Native Collective Research Effort to Enhance Wellness (N CREW) Program: Addressing Overdose, Substance Use, Mental Health, and Pain  Advancing Native Research Projects</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DA-26-012.html</link>
+      <description>Notice NOT-DA-26-012 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 19 May 2026 07:17:28 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Notice of NIDCR Pre-Application Webinar and FAQs for Community-Based Participatory Research Initiative (PAR-27-015 and RFA-DE-27-001)</title>
+      <link>http://grants.nih.gov/grants/guide/notice-files/NOT-DE-26-014.html</link>
+      <description>Notice NOT-DE-26-014 from the NIH Guide for Grants and Contracts</description>
+      <pubDate>Tue, 19 May 2026 07:16:04 +0000</pubDate>
+      <source>NIH Guide</source>
+    </item>
+    <item>
+      <title>Podcast: Autonomous IndyCar racing (part 1)</title>
+      <link>https://www.nsf.gov/news/podcast-autonomous-indycar-racing-part-1</link>
+      <description>Artificial intelligence techniques are driving the development of autonomous vehicles. Madhur Behl, an NSF-supported associate professor, discusses how the high-speed world of racing helps advance...</description>
+      <pubDate>Mon, 18 May 2026 19:41:45 +0000</pubDate>
+      <source>NSF News</source>
     </item>
   </channel>
 </rss>
