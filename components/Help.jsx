@@ -154,12 +154,58 @@ function Help({ setRoute }) {
         </div>
       </section>
 
+      {/* AI & Research Integrity */}
+      <section className="section" id="ai-integrity">
+        <div className="container">
+          <div className="section-header">
+            <div className="left">
+              <span className="bracket-label">02 / ai &amp; research integrity</span>
+            </div>
+            <h2>AI &amp; <em style={{color:'var(--orange-deep)'}}>Research Integrity</em></h2>
+          </div>
+          <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:32, maxWidth:640}}>
+            What NIH's May 2026 guidance means for researchers using AI tools.
+          </p>
+          <div style={{borderTop:'1px solid var(--line-2)'}}>
+            {[
+              { n:'01', label:'disclosure required', accent:'var(--teal-deep)',
+                desc:"NIH expects researchers to document AI tool usage in applications, manuscripts, and presentations. If you use GrantOtter to generate concepts or biosketches, disclose that in your submission per your institution's and the funder's policy." },
+              { n:'02', label:'original authorship', accent:'var(--teal-deep)',
+                desc:'Applications substantially developed by AI — where the ideas and text are not primarily yours — may be rejected by NIH. Use GrantOtter outputs as scaffolding to develop your own ideas, not as final text.' },
+              { n:'03', label:'research misconduct', accent:'var(--orange-deep)',
+                desc:'NIH considers certain AI misuses potential misconduct: presenting AI-generated data as empirically obtained, submitting AI-written applications with fabricated references, or using unattributed AI-generated text.' },
+              { n:'04', label:'how to use grantotter', accent:'var(--teal-deep)',
+                desc:"Treat all outputs as drafts. Edit substantially. Verify every reference. Review your institution's AI policy and the funder's guidelines before submission." },
+            ].map(item => (
+              <div key={item.n} style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '200px 1fr', gap: isMobile ? 10 : 32, paddingTop:20, paddingBottom:20, borderBottom:'1px solid var(--line-2)'}}>
+                <div>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', display:'block', marginBottom:4}}>{item.n}</span>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:item.accent, letterSpacing:'0.04em'}}>{item.label}</span>
+                </div>
+                <p style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.65, margin:0}}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{marginTop:24, fontSize:12, color:'var(--muted)', lineHeight:1.6}}>
+            Source:{' '}
+            <a
+              href="https://grants.nih.gov/news-events/nih-extramural-nexus-news/2026/05/helpful-reminders-to-ensure-integrity-of-nih-supported-research-when-using-artificial-intelligence"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{color:'var(--teal-deep)'}}
+            >
+              NIH Extramural Nexus — May 2026
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Contact + Demo — two columns */}
       <section className="section" style={{background:'var(--paper)'}} id="contact">
         <div className="container">
           <div className="section-header">
             <div className="left">
-              <span className="bracket-label">02 / contact &amp; demo</span>
+              <span className="bracket-label">03 / contact &amp; demo</span>
             </div>
             <h2>Get in touch or <em>see it live.</em></h2>
           </div>
@@ -172,7 +218,7 @@ function Help({ setRoute }) {
                   @
                 </div>
                 <div className="tick-row" style={{flexDirection:'column', alignItems:'flex-start', gap:2}}>
-                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>02 / contact</span>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>03 / contact</span>
                   <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>Email us</span>
                 </div>
               </div>
@@ -194,7 +240,7 @@ function Help({ setRoute }) {
                   ◈
                 </div>
                 <div style={{display:'flex', flexDirection:'column', gap:2}}>
-                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>03 / live demo</span>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>04 / live demo</span>
                   <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>30-minute walkthrough</span>
                 </div>
               </div>
