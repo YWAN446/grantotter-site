@@ -269,14 +269,7 @@ function Footer({ setRoute }) {
       <div className="container">
         <div style={{display:'grid', gridTemplateColumns: footerCols, gap: isMobile ? 24 : 40, paddingBottom: isMobile ? 28 : 48, borderBottom:'1px solid #2B3634'}}>
           <div style={{gridColumn: isMobile ? '1 / -1' : 'auto'}}>
-            <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:18}}>
-              <img src="logo-mark.png?v=2" alt="GrantOtter" width={22} height={22} style={{objectFit:'contain'}} />
-              <span style={{fontSize:14, fontWeight:600}}>GrantOtter</span>
-            </div>
-            <p style={{color:'#8A9491', maxWidth:320, lineHeight:1.6, fontFamily:'Inter, sans-serif', fontSize:13}}>
-              AI-powered grant discovery for faculty and research teams.
-            </p>
-            <div style={{marginTop:24, display:'flex', gap:10, alignItems:'center', color:'#8A9491'}}>
+            <div style={{display:'flex', gap:10, alignItems:'center', color:'#8A9491'}}>
               <span style={{width:6, height:6, borderRadius:'50%', background:'#3BD171', boxShadow:'0 0 6px #3BD171'}}/>
               <span>All systems operational</span>
             </div>
