@@ -138,7 +138,7 @@ function RssSubscribeButton({ label = 'Subscribe', btnClass = 'btn btn-ghost' })
   );
 }
 
-function OtterMark({ size = 22, showOtter = true }) {
+function OtterMark({ size = 32, showOtter = true }) {
   if (!showOtter) {
     return (
       <svg width={size} height={size} viewBox="0 0 22 22" fill="none">
@@ -239,12 +239,32 @@ function Ticker() {
   );
 }
 
+function BrandBand() {
+  const isMobile = useWindowWidth() < 768;
+  return (
+    <section style={{background:'#F3EAD0', borderTop:'1px solid var(--line)', padding: isMobile ? '32px 0' : '48px 0'}}>
+      <div className="container" style={{display:'flex', alignItems:'center', gap: isMobile ? 24 : 48, flexWrap:'wrap'}}>
+        <img src="media/logo-brand.png" alt="GrantOtter mark" width={isMobile ? 130 : 190} height={isMobile ? 130 : 190} style={{display:'block', objectFit:'contain'}} />
+        <div>
+          <div style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 48, letterSpacing:'-0.02em', color:'#00262D', lineHeight:1.05}}>GrantOtter</div>
+          <div style={{width:64, height:4, background:'#C74E00', margin:'14px 0'}}/>
+          <div style={{fontFamily:'JetBrains Mono, monospace', fontSize:12, letterSpacing:'0.05em', color:'#4D6C69', maxWidth:460, lineHeight:1.6}}>
+            from blank page to submitted proposal — AI-powered grant workflow for researchers
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer({ setRoute }) {
   const w = useWindowWidth();
   const isMobile = w < 768;
   const isTablet = w < 1024;
   const footerCols = isMobile ? '1fr 1fr' : isTablet ? '1fr 1fr 1fr' : '2fr 1fr 1fr 1fr';
   return (
+    <React.Fragment>
+    <BrandBand />
     <footer style={{background:'var(--ink)', color:'var(--bg)', padding: isMobile ? '40px 0 20px' : '64px 0 28px', fontFamily:'JetBrains Mono, monospace', fontSize:12}}>
       <div className="container">
         <div style={{display:'grid', gridTemplateColumns: footerCols, gap: isMobile ? 24 : 40, paddingBottom: isMobile ? 28 : 48, borderBottom:'1px solid #2B3634'}}>
@@ -296,6 +316,7 @@ function Footer({ setRoute }) {
       </div>
       <style>{`.footlink:hover{color:var(--teal);} `}</style>
     </footer>
+    </React.Fragment>
   );
 }
 
