@@ -149,7 +149,7 @@ function OtterMark({ size = 22, showOtter = true }) {
     );
   }
   return (
-    <img src="logo-mark.png" alt="GrantOtter" width={size} height={size} style={{display:'block', objectFit:'contain'}} />
+    <img src="logo-mark.png?v=2" alt="GrantOtter" width={size} height={size} style={{display:'block', objectFit:'contain'}} />
   );
 }
 
@@ -250,7 +250,7 @@ function Footer({ setRoute }) {
         <div style={{display:'grid', gridTemplateColumns: footerCols, gap: isMobile ? 24 : 40, paddingBottom: isMobile ? 28 : 48, borderBottom:'1px solid #2B3634'}}>
           <div style={{gridColumn: isMobile ? '1 / -1' : 'auto'}}>
             <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:18}}>
-              <img src="logo-mark.png" alt="GrantOtter" width={22} height={22} style={{objectFit:'contain'}} />
+              <img src="logo-mark.png?v=2" alt="GrantOtter" width={22} height={22} style={{objectFit:'contain'}} />
               <span style={{fontSize:14, fontWeight:600}}>GrantOtter</span>
             </div>
             <p style={{color:'#8A9491', maxWidth:320, lineHeight:1.6, fontFamily:'Inter, sans-serif', fontSize:13}}>
