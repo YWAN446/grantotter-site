@@ -1,5 +1,14 @@
 const POSTS = [
   {
+    slug: 'two-weekly-grant-news-digests',
+    title: 'Two Digests That Watch the Funding World for You',
+    date: 'July 27, 2026',
+    tag: 'NEWS',
+    readTime: '5 min read',
+    excerpt: 'Keeping up with funding news is a job in itself: agency notices on one side, a stack of foundation newsletters on the other. GrantOtter now reads both for you and sends two complementary weekly digests — one federal, one foundation — each curated by AI and reviewed by a human before it reaches your inbox.',
+    content: () => <PostContent_004 />,
+  },
+  {
     slug: 'nih-ai-integrity-guide',
     title: 'Using AI in NIH Grant Applications: What the New Guidance Means for You',
     date: 'May 28, 2026',
@@ -391,6 +400,137 @@ function PostContent_003() {
       </h2>
       <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 28px' }}>
         GrantOtter is designed around these principles. AI outputs are explicitly framed as drafts and starting points, not finished submissions. Policy guidance appears at the point of use — when you open the Draft Concepts or Create Biosketch tabs — so the right framing is always in front of you before you generate anything. The responsibility for your final application is yours; these tools exist to make your thinking faster and your search more precise, not to replace your authorship.
+      </p>
+
+      <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
+        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+          Open GrantOtter →
+        </a>
+      </div>
+    </>
+  );
+}
+
+function PostContent_004() {
+  const listItemStyle = {
+    display: 'flex',
+    gap: 10,
+    marginBottom: 10,
+    fontSize: 14,
+    lineHeight: 1.65,
+    color: 'var(--ink-2)',
+  };
+  const h2Style = {
+    fontFamily: 'Instrument Serif, Georgia, serif',
+    fontWeight: 400,
+    fontStyle: 'italic',
+    fontSize: 24,
+    lineHeight: 1.2,
+    color: 'var(--ink)',
+    margin: '32px 0 16px',
+    borderLeft: '3px solid var(--orange-deep)',
+    paddingLeft: 16,
+  };
+
+  return (
+    <>
+      <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' }}>
+        Staying on top of research funding is really two jobs. On one side, the federal agencies: policy notices, budget news, new programs, and deadline changes flowing out of NIH, NSF, and their peers every week. On the other, the foundations: dozens of funders — Wellcome, the Gates Foundation, Arnold Ventures, AACR, and many more — that announce their opportunities not in a searchable database, but in email newsletters you'd have to subscribe to, open, and skim one by one.
+      </p>
+      <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 32px' }}>
+        GrantOtter now does both jobs for you. Every week, two complementary digests land in your inbox: <strong style={{ color: 'var(--ink)' }}>This Week in Grant News</strong> for the federal world, and <strong style={{ color: 'var(--ink)' }}>This Week in Foundation Grant News</strong> for everything the foundations announced. Here's what's inside each — and how they fit together with your personalized grant alerts.
+      </p>
+
+      <h2 style={h2Style}>
+        This Week in Grant News: Your Federal Radar
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' }}>
+        The federal digest is built from official agency channels — the NIH Guide, NSF news, and other agency feeds — and distilled into a single read that tells you what actually changed this week and why it matters to applicants.
+      </p>
+
+      <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' }}>
+        <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 }}>What the federal digest covers</div>
+        {[
+          ['Policy & agency news', 'Guidance changes, submission-rule updates, and agency announcements that affect how you apply — not just what to apply for.'],
+          ['Budget & appropriations', "Funding-level news that shapes what agencies can actually award in the coming cycles."],
+          ['New opportunities & deadlines', 'Newly posted programs and approaching deadlines, each item linked straight to its official source notice.'],
+          ['The fine print, bulleted', 'Notices of early expiration, requests for information, and informational webinars — the easy-to-miss items collected into quick-scan lists.'],
+        ].map(([title, desc]) => (
+          <div key={title} style={listItemStyle}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2 style={h2Style}>
+        This Week in Foundation Grant News: 60+ Newsletters, One Email
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' }}>
+        Foundation funding has always had a discovery problem: there is no Grants.gov for foundations. The opportunities are announced in each funder's own newsletter, and if you aren't subscribed to the right one at the right time, you simply never hear about it.
+      </p>
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' }}>
+        So we subscribed for you. GrantOtter maintains subscriptions to more than 60 foundation and funder newsletters and reads every issue that arrives each week. The digest distills what matters — and because it is grounded in the newsletters themselves, every item links to the funder's own announcement.
+      </p>
+
+      <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' }}>
+        <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 }}>What the foundation digest covers</div>
+        {[
+          ['The week’s top stories', 'The most consequential foundation opportunities and news, summarized in plain language with why each matters to applicants.'],
+          ['All Grant Opportunities This Week', 'A complete index of every distinct funding opportunity mentioned in any newsletter we received — so even the items that didn’t make the headlines are one click away.'],
+          ['A pipeline into your alerts', 'Promising newly announced programs are drafted into GrantOtter’s grant database, human-reviewed, and — once approved — become matchable. A grant that first appeared in a funder’s newsletter can show up in your personalized alerts the following week.'],
+        ].map(([title, desc]) => (
+          <div key={title} style={listItemStyle}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ margin: '32px 0' }}>
+        <img
+          src="media/blog4_foundation_digest_email.png"
+          alt='Screenshot of the "This Week in Foundation Grant News" email, showing the week&#39;s top funder stories'
+          style={{ width: '100%', maxWidth: 520, display: 'block', margin: '0 auto', border: '1px solid var(--line-2)' }}
+        />
+        <p style={{ fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' }}>
+          "This Week in Foundation Grant News — the week's top funder stories, each linked to the original announcement."
+        </p>
+      </div>
+
+      <h2 style={h2Style}>
+        Curated by AI, Reviewed by a Human
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 28px' }}>
+        Both digests are AI-drafted under strict grounding rules: items come only from the official feeds and newsletters themselves, every link points to the original source, and anything the sources don't state is left out rather than guessed. Then a human reviews each week's draft before it is sent. That review step is deliberate — a news digest is only useful if you can trust every line of it.
+      </p>
+
+      <h2 style={h2Style}>
+        Three Emails, Three Different Jobs
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' }}>
+        With these two digests joining your personalized alerts, a GrantOtter Monday can bring up to three emails — each with a distinct job:
+      </p>
+
+      <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' }}>
+        <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 }}>Your Monday inbox</div>
+        {[
+          ['Weekly Grant Alerts', 'Personal. Grants matched and scored against your saved research profile. These only arrive when there are strong new matches — and they require a My Profile saved in My Workspace.'],
+          ['This Week in Grant News', 'Broad awareness, federal. The policy, budget, and deadline picture across the agencies.'],
+          ['This Week in Foundation Grant News', 'Broad awareness, foundations. What 60+ funders announced, with the complete opportunity index.'],
+        ].map(([title, desc]) => (
+          <div key={title} style={listItemStyle}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' }}>
+        If you haven't built your profile yet, that's the one step standing between you and the personalized layer — see <a href="#blog/power-of-a-grantotter-profile" style={{ color: 'var(--teal-deep)' }}>Your Research, Reimagined: The Power of a GrantOtter Profile</a> for how it works and why it takes only minutes.
+      </p>
+      <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 28px' }}>
+        And every email stands on its own: each has a one-click unsubscribe at the bottom, and opting out of one never affects the others. Subscribe to exactly the awareness you want.
       </p>
 
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
