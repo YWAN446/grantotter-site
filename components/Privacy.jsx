@@ -34,7 +34,7 @@ function Privacy({ setRoute }) {
       items: [
         'PubMed, Google Scholar, ORCID, faculty pages, NIH RePORTER',
         'Only your name and institution are required to get started',
-        'Optional CV upload is processed server-side and never shared externally',
+        'Optional CV upload is used only to build your profile — never sold, and never shared beyond the AI processing described in this policy',
       ],
       listAccent: 'var(--teal-deep)',
     },
@@ -67,10 +67,10 @@ function Privacy({ setRoute }) {
 
   const thirdParties = [
     { name: 'Supabase',           color: 'var(--teal-deep)',   desc: 'Database and file storage with row-level security. Only you can access your own data.' },
-    { name: 'Anthropic (Claude)', color: 'var(--orange-deep)', desc: "AI processing for profile generation, grant matching, brainstorming, and biosketch generation. Anthropic's data processing agreement applies." },
-    { name: 'Voyage AI',          color: 'var(--orange-deep)', desc: 'Semantic search embeddings for collaborator search. Researcher names and profile text from the shared institution pool are sent for embedding generation.' },
-    { name: 'Google Analytics',   color: 'var(--muted)',       desc: 'Anonymized website and app usage tracking.' },
-    { name: 'Gmail (SMTP)',        color: 'var(--muted)',       desc: 'Used to send grant match results to your email when you request it.' },
+    { name: 'Anthropic (Claude)', color: 'var(--orange-deep)', desc: "AI processing for profile generation, grant matching, brainstorming, and document generation. Anthropic does not train models on this data; its data processing agreement applies." },
+    { name: 'Voyage AI',          color: 'var(--orange-deep)', desc: 'Powers the semantic collaborator search over partner-institution faculty profiles.' },
+    { name: 'Google Analytics',   color: 'var(--muted)',       desc: 'Anonymized website usage tracking.' },
+    { name: 'Gmail (SMTP)',        color: 'var(--muted)',       desc: 'Used to send account emails, the weekly emails you subscribe to (grant alerts and news briefs), and results you request.' },
   ];
 
   return (
@@ -119,10 +119,11 @@ function Privacy({ setRoute }) {
 
             <PolicyBlock label="What we collect" accent="var(--teal-deep)">
               <PrivacyList items={[
-                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Account information</span> — your email address and encrypted password, collected when you create an account.</>,
-                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Researcher profiles</span> — AI-generated profiles based on your name, institution, and publicly available sources. CV uploads are processed server-side and not shared externally.</>,
+                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Account information</span> — your email address and encrypted password when you create an account, or your name and email received from Google when you sign in with Google (we never see your Google password).</>,
+                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Researcher profiles</span> — AI-generated profiles based on your name, institution, and publicly available sources. CV uploads are used only to generate your profile.</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Application data</span> — grant applications, draft concepts, biosketches, checklists, and documents you create or upload within the app.</>,
-                <><span style={{color:'var(--muted)', fontWeight:600}}>Usage analytics</span> — anonymized usage events recorded in Supabase; website visits tracked via Google Analytics. No personal identifiers are linked to these events.</>,
+                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Partner faculty networks</span> — for partner institutions, GrantOtter maintains faculty profiles built from publicly available sources to power collaborator search. If a profile describes you, you can contact us anytime to correct or remove it.</>,
+                <><span style={{color:'var(--muted)', fontWeight:600}}>Usage analytics</span> — usage events linked to your account, recorded to operate and improve the product; website visits tracked via Google Analytics. This data is never sold or shared.</>,
               ]} />
             </PolicyBlock>
 
@@ -130,8 +131,8 @@ function Privacy({ setRoute }) {
               <PrivacyList items={[
                 'To provide and operate the GrantOtter service.',
                 'To generate researcher profiles, match grants, and produce biosketches using AI.',
-                'To send grant match results to your email when you request it.',
-                'To improve the product based on aggregated, anonymized usage patterns.',
+                'To send the weekly emails you subscribe to — personalized grant alerts and the news briefs — plus results you request. Every email has a one-click unsubscribe, and preferences are per-channel.',
+                'To improve the product based on aggregated usage patterns.',
               ]} />
             </PolicyBlock>
 
@@ -175,7 +176,7 @@ function Privacy({ setRoute }) {
           </div>
 
           <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 0, justifyContent:'space-between'}}>
-            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: May 2026</span>
+            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: July 2026</span>
             <button onClick={() => setRoute('terms')} className="tag orange" style={{cursor:'pointer', background:'none', border:'1px solid var(--orange)', font:'inherit'}}>
               Read Terms of Service →
             </button>

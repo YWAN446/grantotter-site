@@ -37,7 +37,7 @@ function Hero({ setRoute, heroVariant, showOtter }) {
       <div className="container" style={{position:'relative'}}>
         {!isMobile && (
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', paddingBottom:28, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.06em'}}>
-            <span>N 33°47′37″ · W 84°19′26″ — ATLANTA, GA · EMORY UNIVERSITY</span>
+            <span>BUILT BY RESEARCHERS · FOR RESEARCHERS</span>
             <span>SPRING 2026 · <span style={{color:'var(--orange-deep)'}}>NIH · NSF · DARPA · FOUNDATIONS</span></span>
           </div>
         )}
@@ -61,7 +61,7 @@ function Hero({ setRoute, heroVariant, showOtter }) {
             </h1>
 
             <p style={{marginTop:32, maxWidth:520, fontSize:17, lineHeight:1.55, color:'var(--ink-2)'}}>
-              GrantOtter is an AI-native workspace for faculty and research teams at Emory and beyond.
+              GrantOtter is an AI-native workspace for faculty and research teams at any institution.
               Build a researcher profile, discover best-fit funding, find collaborators,
               and draft biosketches — with the grant-specific boilerplate handled for you.
             </p>
@@ -76,9 +76,9 @@ function Hero({ setRoute, heroVariant, showOtter }) {
             </div>
 
             <div style={{display:'flex', gap:24, marginTop:40, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em'}}>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Free for researchers</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Currently free for researchers</span>
               <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card</span>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Built at Emory</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Built by researchers</span>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ function Hero({ setRoute, heroVariant, showOtter }) {
                     { agency: 'NIH · R01',    code: 'PA-25-303',       fit: 94, amt: '$2.4M / 4y', due: 'Jun 05' },
                     { agency: 'NSF · CAREER', code: 'NSF 25-590',      fit: 91, amt: '$600k / 5y', due: 'Jul 22' },
                     { agency: 'DARPA · YFA',  code: 'HR001-26-S-0004', fit: 87, amt: '$1M / 3y',   due: 'Aug 14' },
-                    { agency: 'Emory · IRG',  code: 'Emory-IRG-2026',  fit: 82, amt: '$50k / 1y',  due: 'Sep 01' },
+                    { agency: 'ACS · RSG',    code: 'RSG-26-104',      fit: 82, amt: '$660k / 4y', due: 'Sep 01' },
                   ].map((r, i) => (
                     <div key={i} style={{display:'grid', gridTemplateColumns:'110px 1fr 80px 90px 70px', gap:10, alignItems:'center', padding:'8px 10px', background:'var(--bg-2)', borderLeft:`2px solid ${i===0 ? 'var(--teal-deep)' : 'var(--line-2)'}`, minWidth:460}}>
                       <span style={{color:'var(--teal-deep)', fontWeight:600}}>{r.agency}</span>
@@ -139,7 +139,7 @@ function Hero({ setRoute, heroVariant, showOtter }) {
 
             <div style={{display:'flex', justifyContent:'space-between', marginTop:12, fontFamily:'JetBrains Mono, monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.06em'}}>
               <span>NIH · NSF · DARPA</span>
-              <span>foundations + Emory internal</span>
+              <span>federal + foundations</span>
               <span>updated weekly</span>
             </div>
           </div>
@@ -178,7 +178,7 @@ function HeroEditorial({ setRoute, showOtter }) {
           </p>
           <div>
             <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginBottom:12}}>
-              Launch app — it's free <span>→</span>
+              Launch app — currently free <span>→</span>
             </a><br/>
             <button className="btn btn-ghost" onClick={() => setRoute('features')}>
               See how it works →
@@ -214,13 +214,13 @@ function OurApproach() {
 function ModulesGrid({ setRoute }) {
   const w = useWindowWidth();
   const isMobile = w < 768;
-  const isTablet = w < 1024;
   const mods = [
     { n: '01', k: 'PROFILE',   name: 'Researcher Profile',    desc: 'Just your name and institution — that\'s all it takes. GrantOtter searches Google Scholar, PubMed, ORCID, and your faculty page to build a complete profile from open data. Upload your CV for an even faster, more accurate result.',  stat: 'Minimum input · maximum coverage', color: 'teal' },
-    { n: '02', k: 'DISCOVER',  name: 'Grant Discovery',       desc: 'Match your profile against 2,000+ active opportunities across NIH, NSF, DARPA, foundations, and Emory internal grants. A three-stage pipeline — hard filter, rule-based scoring, then AI ranking — surfaces your best fits with plain-language explanations.',            stat: '2,000+ grants indexed',  color: 'orange' },
-    { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched Emory faculty — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach.',          stat: '450+ Emory faculty',     color: 'teal' },
+    { n: '02', k: 'DISCOVER',  name: 'Grant Discovery',       desc: 'Match your profile against 2,000+ active opportunities across NIH, NSF, DARPA, DOE, and hundreds of foundation funders. Hard eligibility checks — career stage, institution type, mechanism — run first, so you never read a grant you can\'t apply for. Then rule-based scoring and AI ranking surface your best fits with plain-language explanations.',            stat: '2,000+ grants · eligibility-checked',  color: 'orange' },
+    { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched faculty in your institution\'s network — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach.',          stat: '450+ faculty profiles · growing',     color: 'teal' },
     { n: '04', k: 'BRAINSTORM', name: 'Concept Brainstorming', desc: 'Select a grant and your team profiles, then generate 2–3 concrete proposal concepts with budget estimates and strategic framing tailored to the specific funding opportunity.',  stat: '2–3 concepts · with budget estimates', color: 'orange' },
-    { n: '05', k: 'BIOSKETCH', name: 'NIH Biosketch',         desc: 'Generate a formatted NIH Biographical Sketch from your researcher profile. Aligned with current NIH Common Form guidance including section limits and citation requirements.',   stat: 'NIH Common Form',        color: 'teal' },
+    { n: '05', k: 'DOCS',      name: 'Non-Science Docs',      desc: 'The boilerplate, handled: NIH Biosketch aligned with current Common Form guidance, 2026 Data Management & Sharing Plan on the official template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files.',   stat: 'Biosketch · DMS Plan · Budget',        color: 'teal' },
+    { n: '06', k: 'TRACK',     name: 'Application Hub',       desc: 'Turn a match into a submission: each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity, status tracking, and one-click ZIP download of everything.',   stat: 'AI checklist · status · ZIP export',   color: 'orange' },
   ];
   return (
     <section className="section">
@@ -229,17 +229,18 @@ function ModulesGrid({ setRoute }) {
           <div className="left">
             <span className="bracket-label">03 / modules</span>
           </div>
-          <h2>Five modules. <em>One workspace.</em></h2>
+          <h2>Six modules. <em>One workspace.</em></h2>
         </div>
 
-        <div style={{display:'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : isTablet ? 'repeat(3, 1fr)' : 'repeat(5, 1fr)', border:'1px solid var(--line-2)', borderRight:0}}>
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', border:'1px solid var(--line-2)', borderRight:0, borderBottom:0}}>
           {mods.map((m, i) => (
             <div key={m.n} onClick={() => setRoute('features')} style={{
               borderRight:'1px solid var(--line-2)',
+              borderBottom:'1px solid var(--line-2)',
               padding: isMobile ? '20px 16px 18px' : '28px 22px 24px',
               background: i % 2 === 0 ? 'var(--paper)' : 'transparent',
               cursor:'pointer',
-              minHeight: isMobile ? 'auto' : 340,
+              minHeight: isMobile ? 'auto' : 300,
               display:'flex', flexDirection:'column',
               transition:'background .2s',
             }}>
@@ -268,43 +269,119 @@ function ModulesGrid({ setRoute }) {
 
 function WeeklyFeed({ setRoute }) {
   const isMobile = useWindowWidth() < 768;
+  const emails = [
+    { tag: 'ALERTS',     color: 'orange', name: 'Grant Alerts',          desc: 'Your personal top matches — scored against your researcher profile, with deadlines and award sizes. Only grants that clear your eligibility filters.', how: 'unlocked by saving your profile in My Workspace' },
+    { tag: 'FEDERAL',    color: 'teal',   name: 'Federal News Brief',    desc: 'NIH, NSF, and DARPA news that matters: new opportunities, policy changes, and deadline movements — summarized, sourced, and linked.', how: 'included with a free account' },
+    { tag: 'FOUNDATION', color: 'teal',   name: 'Foundation Newsletter', desc: 'Foundation and nonprofit funding news, curated weekly from hundreds of funder newsletters and websites.', how: 'included with a free account' },
+  ];
   return (
     <section className="section" style={{background:'var(--paper)'}}>
       <div className="container">
         <div className="section-header">
           <div className="left">
-            <span className="bracket-label">04 / weekly feed</span>
-            <span className="mono" style={{color:'var(--muted)', fontSize:11}}>updated every monday</span>
+            <span className="bracket-label">04 / your inbox</span>
+            <span className="mono" style={{color:'var(--muted)', fontSize:11}}>every monday · unsubscribe anytime</span>
           </div>
-          <h2>Grant opportunities and agency news, <em>delivered weekly.</em></h2>
+          <h2>The grants come to you, <em>every week.</em></h2>
         </div>
 
         <div style={{border:'1px solid var(--line-2)', background:'var(--bg)', padding: isMobile ? '24px 20px 20px' : '40px 40px 32px'}}>
-          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 28 : 48, alignItems:'center'}}>
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1.1fr', gap: isMobile ? 28 : 48, alignItems:'center'}}>
             <div>
               <p style={{fontSize:16, lineHeight:1.6, color:'var(--ink-2)', marginBottom:28}}>
-                Every Monday, GrantOtter aggregates the latest funding opportunities, deadlines, and agency news from NIH, NSF, and DARPA into a single weekly digest — no account required.
+                Most of GrantOtter happens in your inbox. Create a free account and two weekly
+                news briefs — federal and foundation — arrive every Monday. Save your researcher
+                profile in My Workspace to unlock the third: personalized grant alerts, matched
+                to your own work.
               </p>
               <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
-                <button className="btn btn-primary" onClick={() => setRoute('feed')}>
-                  View this week's feed →
+                <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-primary">
+                  Create a free account →
+                </a>
+                <button className="btn btn-ghost" onClick={() => setRoute('sample-brief')}>
+                  See a sample issue
                 </button>
-                <RssSubscribeButton label="Subscribe" btnClass="btn btn-ghost" />
+                <RssSubscribeButton label="RSS" btnClass="btn btn-ghost" />
               </div>
             </div>
             <div style={{display:'grid', gap:12}}>
-              {[
-                { agency: 'NIH',   label: 'Funding opportunities, FOA updates, NOT notices' },
-                { agency: 'NSF',   label: 'Program announcements, solicitations, deadlines' },
-                { agency: 'DARPA', label: 'BAAs, broad agency announcements, YFA cycles' },
-              ].map((item, i) => (
-                <div key={i} style={{display:'flex', alignItems:'center', gap:16, padding:'14px 18px', border:'1px solid var(--line-2)', background:'var(--paper)'}}>
-                  <span className={`tag ${i === 1 ? 'orange' : 'teal'}`} style={{fontSize:10, minWidth:52, textAlign:'center'}}>{item.agency}</span>
-                  <span style={{fontSize:13, color:'var(--ink-2)'}}>{item.label}</span>
+              {emails.map((item, i) => (
+                <div key={i} style={{display:'flex', alignItems:'flex-start', gap:16, padding:'14px 18px', border:'1px solid var(--line-2)', background:'var(--paper)'}}>
+                  <span className={`tag ${item.color}`} style={{fontSize:10, minWidth:86, textAlign:'center', marginTop:2}}>{item.tag}</span>
+                  <span style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5}}>
+                    <span style={{color:'var(--ink)', fontWeight:600}}>{item.name}</span> — {item.desc}
+                    <span className="mono" style={{display:'block', marginTop:6, fontSize:10, color:'var(--muted)', letterSpacing:'0.04em'}}>→ {item.how}</span>
+                  </span>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FaqSection({ setRoute }) {
+  const isMobile = useWindowWidth() < 768;
+  const faqs = [
+    {
+      q: 'What does GrantOtter cost?',
+      a: 'Currently nothing — GrantOtter is free for researchers during this early phase. No credit card, no institutional license, no demo call. Create an account and run your first grant match in minutes.',
+    },
+    {
+      q: 'Is my CV or proposal used to train AI models?',
+      a: 'No. Nothing you upload — CV, specific aims, proposal drafts — is ever used to train any AI model. Documents are processed through Anthropic\'s Claude API, which does not train on API data, and stored in your account where only you can access them. Delete them anytime.',
+    },
+    {
+      q: 'Where does the grant data come from?',
+      a: 'Federal opportunities are pulled from Grants.gov (NIH, NSF, DARPA, DOE, and more) and refreshed every Monday, with closed grants pruned automatically. Foundation opportunities from hundreds of funders are curated weekly from funder newsletters and websites.',
+    },
+    {
+      q: 'How is this different from Pivot or my university\'s funding database?',
+      a: 'Tools like Pivot-RP and GrantForward are search databases licensed by your institution — you run keyword searches and read listings. GrantOtter is currently free and goes past discovery: it builds your researcher profile automatically, checks eligibility, explains every match in plain language, finds collaborators, drafts concepts, and generates the boilerplate documents. A workspace, not a directory.',
+    },
+    {
+      q: 'Do I need my institution to buy anything?',
+      a: 'No. Unlike institution-licensed tools, GrantOtter is self-serve: any researcher can sign up directly. If you\'d like your department or research development office on board — with a collaborator network for your faculty — contact us about institution onboarding.',
+    },
+    {
+      q: 'Who built GrantOtter?',
+      a: 'A researcher who got tired of spending research time on the grant process. GrantOtter is the tool we wanted for our own workflow — built for researchers, by researchers.',
+    },
+  ];
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="section-header">
+          <div className="left">
+            <span className="bracket-label">05 / faq</span>
+          </div>
+          <h2>Before you <em>sign up.</em></h2>
+        </div>
+
+        <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', border:'1px solid var(--line-2)', borderRight:0, borderBottom:0}}>
+          {faqs.map((f, i) => (
+            <div key={i} style={{
+              borderRight:'1px solid var(--line-2)',
+              borderBottom:'1px solid var(--line-2)',
+              padding: isMobile ? '20px 16px' : '28px 26px',
+              background: i % 2 === 0 ? 'var(--paper)' : 'transparent',
+            }}>
+              <div style={{display:'flex', gap:12, alignItems:'baseline', marginBottom:12}}>
+                <span className="mono" style={{fontSize:11, color:'var(--teal-deep)'}}>Q{i+1}</span>
+                <h3 style={{fontFamily:'Instrument Serif, Georgia, serif', fontWeight:400, fontStyle:'italic', fontSize: isMobile ? 20 : 24, lineHeight:1.15, letterSpacing:'-0.01em', color:'var(--ink)'}}>{f.q}</h3>
+              </div>
+              <p style={{fontSize:13, lineHeight:1.6, color:'var(--ink-2)', paddingLeft: isMobile ? 0 : 30}}>{f.a}</p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{marginTop:20, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
+          More questions — account setup, workflows, AI &amp; research integrity —{' '}
+          <button onClick={() => setRoute('help')} style={{background:'none', border:'none', cursor:'pointer', color:'var(--teal-deep)', padding:0, font:'inherit', textDecoration:'underline'}}>
+            visit Help →
+          </button>
         </div>
       </div>
     </section>
@@ -324,7 +401,7 @@ function FinalCTA({ setRoute }) {
         </h2>
         <div style={{marginTop:48, display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap'}}>
           <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal">
-            Launch app — free →
+            Launch app — currently free →
           </a>
           <a href="tutorial.html" className="btn btn-ghost" style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)'}}>
             Get started guide
@@ -335,7 +412,7 @@ function FinalCTA({ setRoute }) {
           </a>
         </div>
         <div style={{marginTop:32, fontFamily:'JetBrains Mono, monospace', fontSize:11, color:'#5C6664'}}>
-          no credit card · no account required to browse
+          no credit card · sign up in minutes
         </div>
       </div>
     </section>
@@ -350,6 +427,7 @@ function Landing({ setRoute, heroVariant, showOtter }) {
       <OurApproach />
       <ModulesGrid setRoute={setRoute} />
       <WeeklyFeed setRoute={setRoute} />
+      <FaqSection setRoute={setRoute} />
       <FinalCTA setRoute={setRoute} />
     </>
   );

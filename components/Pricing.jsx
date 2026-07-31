@@ -5,7 +5,7 @@ function Pricing({ setRoute }) {
         <div className="container">
           <div className="bracket-label" style={{marginBottom:24}}>plans / pricing</div>
           <h1 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize:'clamp(64px, 9vw, 140px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, maxWidth:1200}}>
-            <em style={{color:'var(--teal-deep)'}}>Free</em> for researchers.<br/>
+            <em style={{color:'var(--teal-deep)'}}>Currently free</em> for researchers.<br/>
             <span style={{fontSize:'0.45em', color:'var(--muted)', letterSpacing:'-0.01em'}}>Institutional licensing coming soon.</span>
           </h1>
         </div>
@@ -26,7 +26,7 @@ function Pricing({ setRoute }) {
               <p style={{fontSize:13, color:'var(--muted)', marginBottom:24}}>Full access for individual faculty and research teams.</p>
               <div style={{marginBottom:28, paddingBottom:20, borderBottom:'1px dashed var(--line)'}}>
                 <div style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize:72, fontStyle:'italic', letterSpacing:'-0.03em', fontWeight:400, lineHeight:1, color:'var(--teal-deep)'}}>$0</div>
-                <div className="mono" style={{fontSize:12, color:'var(--muted)', marginTop:6}}>free · always</div>
+                <div className="mono" style={{fontSize:12, color:'var(--muted)', marginTop:6}}>free · during early access</div>
               </div>
               <div style={{display:'grid', gap:10, marginBottom:32}}>
                 {[

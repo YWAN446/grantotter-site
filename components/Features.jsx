@@ -26,7 +26,7 @@ function ProfileDemo() {
       <div className="term-body" style={{fontSize:12}}>
         <div><span style={{color:'var(--muted)'}}>name:</span> <span className="key">Your Name, PhD</span></div>
         <div><span style={{color:'var(--muted)'}}>position:</span> <span>Assistant Professor</span></div>
-        <div><span style={{color:'var(--muted)'}}>institution:</span> <span>Emory University · Rollins School of Public Health</span></div>
+        <div><span style={{color:'var(--muted)'}}>institution:</span> <span>Your University · School of Public Health</span></div>
         <div style={{margin:'10px 0', height:1, background:'var(--line)'}}/>
         <div style={{color:'var(--muted)'}}>research_expertise:</div>
         {[
@@ -74,8 +74,8 @@ function DiscoverDemo() {
         {[
           { fit: 10,  agency: 'NIH / NLM',      title: 'PAR-25-131 · Computational Curation at Scale (R01)',     amt: '$250k',     due: 'Apr \'27', status: 'draft' },
           { fit: 9,  agency: 'Wellcome Trust',  title: 'Evidence Synthesis Infrastructure Hub',                  amt: '$1.9–2.4M', due: 'May 07', status: 'saved' },
-          { fit: 9, agency: 'Emory EGHI',     title: 'EGHI Faculty Seed Grant — global health pilot',          amt: '$20k',      due: 'May 31', status: 'new' },
-          { fit: 9,  agency: 'Emory RSPH',      title: 'RSPH Dean\'s Pilot Innovation Grant',                    amt: '$20–50k',   due: 'May 31', status: 'saved' },
+          { fit: 9, agency: 'ACS',             title: 'Research Scholar Grant — early-career investigators',    amt: '$660k',     due: 'May 31', status: 'new' },
+          { fit: 9,  agency: 'Sloan Fdn',       title: 'Sloan Research Fellowship — early-career scholars',      amt: '$75k',      due: 'May 31', status: 'saved' },
           { fit: 7,  agency: 'Wellcome Trust',  title: 'Early-Career Award — 5 year independent program',        amt: '~$508k',    due: 'Jul 21', status: 'new' },
           { fit: 6,  agency: 'NIH (multi)',     title: 'PAR-25-144 · Dissemination & Implementation (R01)',      amt: 'TBD',       due: 'Jan \'28', status: 'new' },
         ].map((r, i) => (
@@ -100,13 +100,13 @@ function DiscoverDemo() {
 
 function TeamDemo() {
   const cards = [
-    { name: 'Dr. Andrew Park',      inst: 'RSPH · Biostatistics',       overlap: 'dept.', methods: ['behavioral modeling', 'mixed models'], fit: 95 },
+    { name: 'Dr. Andrew Park',      inst: 'Public Health · Biostatistics',       overlap: 'dept.', methods: ['behavioral modeling', 'mixed models'], fit: 95 },
     { name: 'Dr. Anita Mueller',    inst: 'Nursing · Maternal and Child Health',            overlap: 'school', methods: ['diet assessment', 'child nutrition'], fit: 87 },
-    { name: 'Dr. Scott Miller',    inst: 'RSPH · Behavioral Sciences',  overlap: 'co-author', methods: ['behavior change', 'interventions'],  fit: 73 },
+    { name: 'Dr. Scott Miller',    inst: 'Public Health · Behavioral Sciences',  overlap: 'co-author', methods: ['behavior change', 'interventions'],  fit: 73 },
   ];
   return (
     <div>
-      <div className="tick-row" style={{marginBottom:8}}><span>suggested co-investigators · Emory RSPH + Nursing</span></div>
+      <div className="tick-row" style={{marginBottom:8}}><span>suggested co-investigators · partner faculty network</span></div>
       <div style={{display:'grid', gap:10}}>
         {cards.map((c, i) => (
           <div key={i} style={{border:'1px solid var(--line-2)', background:'var(--paper)', padding:'16px 18px', display:'grid', gridTemplateColumns:'1fr 60px', gap:16, alignItems:'center'}}>
@@ -228,6 +228,46 @@ function BiosketcDemo() {
   );
 }
 
+function TrackDemo() {
+  const items = [
+    ['Specific Aims — 1 page',              'done',    'from Draft Concepts'],
+    ['Biosketch — NIH Common Form',          'done',    'generated · module 05'],
+    ['Data Management & Sharing Plan',       'done',    'generated · module 05'],
+    ['Budget Brief + Justification',         'active',  'in review'],
+    ['Letters of Support — 2 required',      'open',    'requested 07/28'],
+    ['Facilities & Other Resources',         'open',    'not started'],
+  ];
+  const dot = s => s === 'done' ? 'var(--teal-deep)' : s === 'active' ? 'var(--orange-deep)' : 'var(--line-2)';
+  return (
+    <div className="term">
+      <div className="term-head">
+        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>application · PAR-25-131</span></div>
+        <span>status: in progress</span>
+      </div>
+      <div className="term-body" style={{fontSize:12}}>
+        <div style={{marginBottom:10, paddingBottom:10, borderBottom:'1px solid var(--line)', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+          <div>
+            <div style={{color:'var(--muted)', fontSize:11}}>submission checklist · AI-generated from the FOA</div>
+            <div style={{color:'var(--ink)', fontWeight:600, marginTop:2}}>Computational Curation at Scale (R01)</div>
+          </div>
+          <span className="tag orange" style={{fontSize:9}}>due Apr '27</span>
+        </div>
+        {items.map(([name, status, note], i) => (
+          <div key={i} style={{display:'grid', gridTemplateColumns:'16px 1fr auto', gap:8, padding:'6px 0', borderBottom: i < items.length-1 ? '1px solid var(--line)' : 'none', alignItems:'center'}}>
+            <span style={{width:8, height:8, borderRadius:'50%', background:dot(status), justifySelf:'center'}}/>
+            <span style={{color: status === 'open' ? 'var(--ink-2)' : 'var(--ink)'}}>{name}</span>
+            <span className="mono" style={{fontSize:10, color:'var(--muted)'}}>{note}</span>
+          </div>
+        ))}
+        <div style={{marginTop:12, display:'flex', justifyContent:'space-between', alignItems:'center', color:'var(--muted)', fontSize:11}}>
+          <span>4 of 6 items ready · team: PI + 2 co-Is</span>
+          <span style={{color:'var(--teal-deep)'}}>↓ download ZIP</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Features({ setRoute }) {
   const isMobile = useWindowWidth() < 768;
   return (
@@ -240,7 +280,7 @@ function Features({ setRoute }) {
             <em style={{color:'var(--orange-deep)'}}>handled.</em>
           </h1>
           <div style={{display:'flex', flexWrap:'wrap', gap: isMobile ? 12 : 24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
-            {['01 profile','02 discover','03 team','04 brainstorm','05 biosketch'].map(x => (
+            {['01 profile','02 discover','03 team','04 brainstorm','05 docs','06 track'].map(x => (
               <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}</span>
             ))}
           </div>
@@ -253,12 +293,12 @@ function Features({ setRoute }) {
       </FeatureRow>
 
       <FeatureRow reverse num="02" tag="discover" title={<>Ranked matches across <em style={{color:'var(--orange-deep)'}}>2,000+</em> opportunities.</>}
-        desc="A three-stage pipeline: hard filters eliminate ineligible grants, a rule-based scorer ranks by field and career stage, then LLM evaluates the top candidates against your profile and writes fit explanations. Federal, foundation, and Emory internal grants — updated every Monday.">
+        desc="A three-stage pipeline: hard eligibility checks eliminate grants you can't apply for — career stage, institution type, mechanism — then a rule-based scorer ranks by field and career stage, and an LLM evaluates the top candidates against your profile and writes fit explanations. Federal grants plus hundreds of foundation funders — updated every Monday.">
         <DiscoverDemo/>
       </FeatureRow>
 
       <FeatureRow num="03" tag="team" title={<>Find the co-I with <em style={{color:'var(--teal-deep)'}}>expertise you need</em>.</>}
-        desc="Semantic search across 450+ Emory RSPH and Nursing faculty — find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
+        desc="Semantic search across 450+ faculty profiles in GrantOtter's growing partner network — find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
         <TeamDemo/>
       </FeatureRow>
 
@@ -267,15 +307,20 @@ function Features({ setRoute }) {
         <IdeateDemo/>
       </FeatureRow>
 
-      <FeatureRow num="05" tag="biosketch" title={<>NIH Biosketch, <em style={{color:'var(--teal-deep)'}}>formatted correctly</em>.</>}
-        desc="Generate a formatted NIH Biographical Sketch directly from your researcher profile. Aligned with current NIH Common Form guidance — Personal Statement character limits, Contributions to Science structure, and required header fields.">
+      <FeatureRow num="05" tag="docs" title={<>The boilerplate documents, <em style={{color:'var(--teal-deep)'}}>handled</em>.</>}
+        desc="Three non-science documents, generated from your profile and the specific grant: an NIH Biosketch aligned with current Common Form guidance, a 2026 Data Management & Sharing Plan on the official NIH template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files. Anything GrantOtter can't verify is flagged as an explicit placeholder, never invented.">
         <BiosketcDemo/>
+      </FeatureRow>
+
+      <FeatureRow reverse num="06" tag="track" title={<>Every application, <em style={{color:'var(--orange-deep)'}}>tracked to submission</em>.</>}
+        desc="Turn a match into a submission. Each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity's requirements, status tracking from drafting to submitted, and one-click ZIP download of the whole package.">
+        <TrackDemo/>
       </FeatureRow>
 
       <section style={{padding: isMobile ? '64px 0' : '100px 0', textAlign:'center'}}>
         <div className="container">
           <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, fontStyle:'italic', letterSpacing:'-0.02em'}}>Ready to try it on your own profile?</h2>
-          <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — free →</a>
+          <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — currently free →</a>
         </div>
       </section>
     </>

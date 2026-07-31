@@ -120,14 +120,14 @@ function Tutorial({ setRoute }) {
         </p>
         <H3>Creating an account</H3>
         <OL>
-          <Li n="1.">Click the <strong style={{color:'var(--teal-deep)'}}>Create Account</strong> tab on the welcome screen.</Li>
-          <Li n="2.">Enter your email address and choose a password (minimum 6 characters).</Li>
+          <Li n="1.">Fastest: click <strong style={{color:'var(--teal-deep)'}}>Continue with Google</strong> to sign in with your Google account — no password needed.</Li>
+          <Li n="2.">Or use email: click the <strong style={{color:'var(--teal-deep)'}}>Create Account</strong> tab, enter your email address, and choose a password (minimum 6 characters).</Li>
           <Li n="3.">Click <strong style={{color:'var(--teal-deep)'}}>Create Account</strong>. You will be signed in automatically.</Li>
         </OL>
         <H3>Signing in on return visits</H3>
         <OL>
           <Li n="1.">Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--orange-deep)'}}>grantotter.streamlit.app</a>.</Li>
-          <Li n="2.">Enter your email and password in the <strong style={{color:'var(--teal-deep)'}}>Sign In</strong> tab and click <strong style={{color:'var(--teal-deep)'}}>Sign In</strong>.</Li>
+          <Li n="2.">Click <strong style={{color:'var(--teal-deep)'}}>Continue with Google</strong>, or enter your email and password in the <strong style={{color:'var(--teal-deep)'}}>Sign In</strong> tab and click <strong style={{color:'var(--teal-deep)'}}>Sign In</strong>.</Li>
         </OL>
         <Tip>To sign out, use the <strong style={{color:'var(--teal-deep)'}}>Sign Out</strong> button in the sidebar at any time. Your profile and saved data are stored securely and will be there when you sign back in.</Tip>
         <Tip><strong style={{color:'var(--orange-deep)'}}>Forgot your password?</strong> On the sign-in screen, click <strong style={{color:'var(--orange-deep)'}}>Forgot password?</strong>, enter your email, and click <strong style={{color:'var(--teal-deep)'}}>Send Reset Email</strong>. A reset link will arrive in your inbox within a few minutes.</Tip>
@@ -188,7 +188,7 @@ function Tutorial({ setRoute }) {
         <H3>How to do it</H3>
         <OL>
           <Li n="1.">Open GrantOtter and go to the <strong style={{color:'var(--teal-deep)'}}>Generate Profile</strong> tab.</Li>
-          <Li n="2.">Enter your full name and institution (e.g., <em>"Yuke Wang, Emory University"</em>). These are the only required fields.</Li>
+          <Li n="2.">Enter your full name and institution (e.g., <em>"Jane Doe, State University"</em>). These are the only required fields.</Li>
           <Li n="3.">Optionally fill in Department, Rank, ORCID, and Google Scholar URL — especially important if your name is common.</Li>
           <Li n="4.">Optionally upload your <strong style={{color:'var(--teal-deep)'}}>CV</strong> (PDF, Word, Markdown, or plain text — up to 10 MB). When provided, the CV is treated as the highest-priority source of truth and the AI fills gaps with web search.</Li>
           <Li n="5.">Fill in <strong style={{color:'var(--teal-deep)'}}>Developing Research Interests</strong> and <strong style={{color:'var(--orange-deep)'}}>Areas to Avoid</strong>.</Li>
@@ -423,7 +423,7 @@ function Tutorial({ setRoute }) {
           {/* Three cards */}
           {(() => {
             const chairMailto = 'mailto:?subject=' + encodeURIComponent('GrantOtter — AI grant discovery for our department') + '&body=' + encodeURIComponent(
-              'Hi,\n\nI\u2019ve been using GrantOtter, an AI-powered grant discovery platform that matches researchers to relevant funding opportunities based on their expertise and research profile.\n\nI think it would be valuable for our department. A few highlights:\n\n\u2022 Covers federal, major foundations, and internal grants (2,000+ opportunities, updated weekly)\n\u2022 Generates a rich researcher profile from your publications, grant history, and expertise\n\u2022 Sends a personalized digest of new matching opportunities to each researcher every Monday by email\n\u2022 Supports the full workflow: find collaborators, brainstorm proposal concepts, generate NIH biosketches, and manage application packages\n\nWould you be open to a 1-hour demo for our department? Sessions are free and tailored to your department\u2019s research areas.\n\nLearn more: https://grantotter.com\n\nBest,\n[Your Name]'
+              'Hi,\n\nI\u2019ve been using GrantOtter, an AI-powered grant discovery platform that matches researchers to relevant funding opportunities based on their expertise and research profile.\n\nI think it would be valuable for our department. A few highlights:\n\n\u2022 Covers federal and major foundation grants (2,000+ opportunities, updated weekly)\n\u2022 Generates a rich researcher profile from your publications, grant history, and expertise\n\u2022 Sends a personalized digest of new matching opportunities to each researcher every Monday by email\n\u2022 Supports the full workflow: find collaborators, brainstorm proposal concepts, generate NIH biosketches, and manage application packages\n\nWould you be open to a 1-hour demo for our department? Sessions are free and tailored to your department\u2019s research areas.\n\nLearn more: https://grantotter.com\n\nBest,\n[Your Name]'
             );
             const cards = [
               {
@@ -465,7 +465,7 @@ function Tutorial({ setRoute }) {
 
           <div style={{marginTop:0, display:'flex', gap:14, flexWrap:'wrap'}}>
             <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal">
-              Launch app — free →
+              Launch app — currently free →
             </a>
             <button className="btn btn-ghost" onClick={() => setRoute('home')} style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)'}}>
               Back to home

@@ -10,7 +10,7 @@ function Signup({ setRoute }) {
               Your workspace<br/>is <em style={{color:'var(--teal-deep)'}}>ready.</em>
             </h1>
             <p style={{fontSize:17, lineHeight:1.55, color:'var(--ink-2)', marginBottom:36, maxWidth:460}}>
-              GrantOtter is free to use — no account setup required to get started. Launch the app, generate your researcher profile, and match grants in minutes.
+              GrantOtter is currently free to use. Launch the app, generate your researcher profile, and match grants in minutes.
             </p>
 
             <div style={{display:'grid', gap:12, marginBottom:40}}>
@@ -23,7 +23,7 @@ function Signup({ setRoute }) {
             </div>
 
             <div style={{display:'flex', gap:24, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em', flexWrap:'wrap'}}>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Free forever</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Currently free</span>
               <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card</span>
               <span><span style={{color:'var(--teal-deep)'}}>✓</span> No install</span>
             </div>
@@ -33,15 +33,16 @@ function Signup({ setRoute }) {
             <div className="term">
               <div className="term-head">
                 <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>what to expect</span></div>
-                <span>5 modules</span>
+                <span>6 modules</span>
               </div>
               <div className="term-body" style={{fontSize:13}}>
                 {[
                   ['01', 'Generate Profile',    'Upload your CV or search by name → structured researcher profile'],
                   ['02', 'Match Grants',        'Profile + filters → top 10 ranked grants with fit explanations'],
-                  ['03', 'Find Collaborators',  'Search 450+ Emory RSPH + Nursing faculty by research area'],
+                  ['03', 'Find Collaborators',  'Search 450+ partner-network faculty by research area'],
                   ['04', 'Brainstorm Concepts', 'Grant + team → 2–3 concrete proposal concepts with budgets'],
-                  ['05', 'Create Biosketch',    'Profile → formatted NIH Biographical Sketch (Common Form)'],
+                  ['05', 'Non-Science Docs',    'Biosketch · DMS Plan · Budget Brief — drafted from your profile'],
+                  ['06', 'My Applications',     'AI submission checklist, status tracking, one-click ZIP download'],
                 ].map(([n, title, desc]) => (
                   <div key={n} style={{padding:'10px 0', borderBottom:'1px solid var(--line)', display:'grid', gap:4}}>
                     <div style={{display:'flex', gap:12, alignItems:'center'}}>

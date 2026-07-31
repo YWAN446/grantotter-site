@@ -4,20 +4,20 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>GrantOtter — AI-powered grant discovery for researchers</title>
-<meta name="description" content="GrantOtter is an AI-native workspace for faculty and research teams. Discover best-fit funding, build researcher profiles, find collaborators, and draft biosketches — free."/>
+<meta name="description" content="GrantOtter is an AI-native workspace for faculty and research teams. Discover best-fit funding, build researcher profiles, find collaborators, and draft biosketches — currently free."/>
 <link rel="icon" href="logo.png?v=2" type="image/png">
 <link rel="alternate" type="application/rss+xml" title="GrantOtter Weekly Feed" href="feed.xml">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GrantOtter">
 <meta property="og:title" content="GrantOtter — AI-powered grant discovery for researchers">
-<meta property="og:description" content="Discover best-fit funding, build researcher profiles, find collaborators, and draft biosketches — free.">
+<meta property="og:description" content="Discover best-fit funding, build researcher profiles, find collaborators, and draft biosketches — currently free.">
 <meta property="og:url" content="https://grantotter.com/">
 <meta property="og:image" content="https://grantotter.com/og_image.png">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GrantOtter — AI-powered grant discovery for researchers">
-<meta name="twitter:description" content="Discover best-fit funding, build researcher profiles, find collaborators, and draft biosketches — free.">
+<meta name="twitter:description" content="Discover best-fit funding, build researcher profiles, find collaborators, and draft biosketches — currently free.">
 <meta name="twitter:image" content="https://grantotter.com/og_image.png">
 <link rel="canonical" href="https://grantotter.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -43,6 +43,44 @@
   "applicationCategory": "ResearchApplication",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "operatingSystem": "Web"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does GrantOtter cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Currently nothing — GrantOtter is free for researchers during this early phase. No credit card, no institutional license, no demo call. Create an account and run your first grant match in minutes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my CV or proposal used to train AI models?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Nothing you upload — CV, specific aims, proposal drafts — is ever used to train any AI model. Documents are processed through Anthropic's Claude API, which does not train on API data, and stored in your account where only you can access them. Delete them anytime." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the grant data come from?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Federal opportunities are pulled from Grants.gov (NIH, NSF, DARPA, DOE, and more) and refreshed every Monday, with closed grants pruned automatically. Foundation opportunities from hundreds of funders are curated weekly from funder newsletters and websites." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from Pivot or my university's funding database?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tools like Pivot-RP and GrantForward are search databases licensed by your institution — you run keyword searches and read listings. GrantOtter is currently free and goes past discovery: it builds your researcher profile automatically, checks eligibility, explains every match in plain language, finds collaborators, drafts concepts, and generates the boilerplate documents. A workspace, not a directory." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need my institution to buy anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Unlike institution-licensed tools, GrantOtter is self-serve: any researcher can sign up directly. If you'd like your department or research development office on board — with a collaborator network for your faculty — contact us about institution onboarding." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who built GrantOtter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A researcher who got tired of spending research time on the grant process. GrantOtter is the tool we wanted for our own workflow — built for researchers, by researchers." }
+    }
+  ]
 }
 </script>
 </head>
@@ -72,6 +110,7 @@ window.__TWEAKS = /*EDITMODE-BEGIN*/{
 <script type="text/babel" src="components/Tutorial.jsx"></script>
 <script type="text/babel" src="components/Signup.jsx"></script>
 <script type="text/babel" src="components/Blog.jsx"></script>
+<script type="text/babel" src="components/SampleBrief.jsx"></script>
 
 <script type="text/babel">
 const { useState, useEffect } = React;
@@ -130,6 +169,7 @@ function App() {
     route === 'tutorial'  ? <Tutorial setRoute={setRoute} /> :
     route === 'blog'      ? <BlogList setRoute={setRoute} setPost={setCurrentPost} /> :
     route === 'blog-post' ? <BlogPost post={currentPost} setRoute={setRoute} /> :
+    route === 'sample-brief' ? <SampleBrief setRoute={setRoute} /> :
     <Signup setRoute={setRoute} />
   );
 

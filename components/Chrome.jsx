@@ -216,12 +216,12 @@ function Nav({ route, setRoute, showOtter }) {
 function Ticker() {
   const items = [
     ['FEDERAL_AGENCIES', 'NIH · NSF · DARPA · DOE · NASA · USDA · DOD · and more via Grants.gov'],
-    ['FOUNDATIONS',      'ACS · Komen · Gates · Simons · Sloan · Wellcome · and 200+ more'],
+    ['FOUNDATIONS',      'ACS · Komen · Gates · Simons · Sloan · Wellcome · and hundreds more'],
     ['GRANTS_INDEXED',   '2,000+ · updated every Monday'],
-    ['EMORY_RESEARCHERS','450+ Emory RSPH + Nursing faculty indexed'],
-    ['MODULES',          'Profile · Discover · Collaborate · Brainstorm · Biosketch'],
-    ['RESEARCHERS',       '41 users · 7 institutions'],
-    ['COST',             'Free for researchers'],
+    ['FACULTY_NETWORK','450+ faculty profiles indexed · and growing'],
+    ['MODULES',          'Profile · Discover · Collaborate · Brainstorm · Docs · Applications'],
+    ['RESEARCHERS',       '165 researchers and counting'],
+    ['COST',             'Currently free for researchers'],
   ];
   const row = (
     <>
@@ -304,7 +304,7 @@ function Footer({ setRoute }) {
         </div>
         <div style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent:'space-between', alignItems: isMobile ? 'flex-start' : 'center', gap:8, paddingTop:24, color:'#5C6664'}}>
           <span>© 2026 GrantOtter. Built for researchers, by researchers.</span>
-          <span>Free for researchers · <a href="mailto:grantotter42@gmail.com" style={{color:'#5C6664', textDecoration:'none'}}>Contact us</a></span>
+          <span>Currently free for researchers · <a href="mailto:grantotter42@gmail.com" style={{color:'#5C6664', textDecoration:'none'}}>Contact us</a></span>
         </div>
       </div>
       <style>{`.footlink:hover{color:var(--teal);} `}</style>

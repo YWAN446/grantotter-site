@@ -3,7 +3,7 @@ function Terms({ setRoute }) {
   const terms = [
     {
       n: '1', label: 'The service',
-      body: 'GrantOtter is a free, web-based tool that helps researchers discover grant opportunities, generate researcher profiles, and manage grant applications using AI. The service is provided as-is and may be modified, suspended, or discontinued at any time without notice.',
+      body: 'GrantOtter is a web-based tool, currently free to use, that helps researchers discover grant opportunities, generate researcher profiles, and manage grant applications using AI. The service is provided as-is and may be modified, suspended, or discontinued at any time without notice; pricing may be introduced in the future.',
     },
     {
       n: '2', label: 'Eligibility',
@@ -14,6 +14,7 @@ function Terms({ setRoute }) {
       list: [
         'You are responsible for maintaining the confidentiality of your account credentials.',
         'You are responsible for all activity that occurs under your account.',
+        'Creating an account subscribes you to GrantOtter\'s weekly emails (grant alerts and news briefs). Every email includes a one-click unsubscribe, and preferences are per-channel.',
         <>Notify us immediately at <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a> if you suspect unauthorized access.</>,
       ],
     },
@@ -41,7 +42,7 @@ function Terms({ setRoute }) {
     },
     {
       n: '8', label: 'Limitation of liability', accent: 'var(--orange-deep)',
-      body: 'To the maximum extent permitted by law, Yuke Wang shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of GrantOtter, including but not limited to lost funding opportunities, data loss, or reliance on AI-generated content.',
+      body: 'To the maximum extent permitted by law, GrantOtter and its operator shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of GrantOtter, including but not limited to lost funding opportunities, data loss, or reliance on AI-generated content.',
     },
     {
       n: '9', label: 'Termination',
@@ -126,7 +127,7 @@ function Terms({ setRoute }) {
           </div>
 
           <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 0, justifyContent:'space-between'}}>
-            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: May 2026</span>
+            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: July 2026</span>
             <button onClick={() => setRoute('privacy')} className="tag teal" style={{cursor:'pointer', background:'none', border:'1px solid var(--teal)', font:'inherit'}}>
               Read Privacy Policy →
             </button>

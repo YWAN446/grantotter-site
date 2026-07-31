@@ -31,7 +31,7 @@ function Help({ setRoute }) {
   const faqs = [
     {
       q: 'How do I create an account?',
-      a: <p>Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>grantotter.streamlit.app</a>, click the <strong>Create Account</strong> tab, enter your email and a password (minimum 6 characters), and click <strong>Create Account</strong>. You will be signed in automatically.</p>,
+      a: <p>Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>grantotter.streamlit.app</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or use the <strong>Create Account</strong> tab: enter your email and a password (minimum 6 characters) and click <strong>Create Account</strong>. With email sign-up, a confirmation email is sent from <strong>grantotter42@gmail.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
     },
     {
       q: 'I forgot my password. How do I reset it?',
@@ -47,11 +47,11 @@ function Help({ setRoute }) {
     },
     {
       q: 'What types of grants does GrantOtter search?',
-      a: <p>GrantOtter covers <strong>federal funding opportunities</strong> (NIH, NSF, DARPA via Grants.gov), <strong>foundation grants</strong>, and <strong>internal institutional grants</strong>. For any other funder, you can paste the full grant information as plain text in the Draft Concepts tab to run brainstorming against it directly.</p>,
+      a: <p>GrantOtter covers <strong>federal funding opportunities</strong> (NIH, NSF, DARPA, DOE, and more via Grants.gov) and <strong>foundation grants from hundreds of funders</strong>, curated weekly from funder newsletters and websites. For any grant not in the database, you can paste or upload the full opportunity document in the Draft Concepts and Non-Science Docs tabs to work against it directly.</p>,
     },
     {
       q: 'How often is the grant database updated?',
-      a: <p>The grant database is refreshed regularly. The <button onClick={() => setRoute('feed')} style={{background:'none', border:'none', cursor:'pointer', color:'var(--teal-deep)', padding:0, font:'inherit', textDecoration:'underline'}}>Weekly Funding Feed</button> aggregates new announcements from NIH, NSF, and DARPA every Monday.</p>,
+      a: <p>Every Monday: federal grants are re-fetched from Grants.gov, closed opportunities are pruned automatically, and newly curated foundation grants are merged in. The <button onClick={() => setRoute('feed')} style={{background:'none', border:'none', cursor:'pointer', color:'var(--teal-deep)', padding:0, font:'inherit', textDecoration:'underline'}}>Weekly Funding Feed</button> aggregates new announcements from NIH, NSF, and DARPA the same day.</p>,
     },
     {
       q: 'How does grant matching work?',
@@ -67,6 +67,9 @@ function Help({ setRoute }) {
               <span style={{fontSize:13, color:'var(--ink-2)'}}>{desc}</span>
             </div>
           ))}
+          <p style={{margin:'8px 0 0', fontSize:13, color:'var(--ink-2)', lineHeight:1.6}}>
+            You can also match from an <strong>uploaded proposal or Specific Aims document</strong> instead of your profile — GrantOtter extracts each aim and matches grants per aim.
+          </p>
         </div>
       ),
     },
@@ -76,11 +79,11 @@ function Help({ setRoute }) {
     },
     {
       q: 'What is My Applications?',
-      a: <p><strong>My Applications</strong> is an end-to-end grant application hub. For each application, you can link the grant opportunity, assemble your team (PI + co-investigators), attach draft concepts, biosketches, and supporting documents, and track every submission task with a checklist. A single <strong>Download All as ZIP</strong> button bundles everything — so you can load the full context into any AI platform.</p>,
+      a: <p><strong>My Applications</strong> is an end-to-end grant application hub. For each application, you can link the grant opportunity, assemble your team (PI + co-investigators), attach draft concepts, biosketches, and supporting documents, and track status from drafting to submitted. An <strong>AI-generated submission checklist</strong>, built from the specific opportunity's requirements, keeps every task visible. A single <strong>Download All as ZIP</strong> button bundles everything — so you can load the full context into any AI platform.</p>,
     },
     {
       q: 'Can I use GrantOtter for team proposals?',
-      a: <p>Yes. Use <strong>Find Collaborators</strong> to search an institution-wide faculty pool by research expertise. Save them to your preferred collaborators list in <strong>My Workspace</strong>, then pull them into any application, brainstorming session, or biosketch. In <strong>My Applications</strong>, you can assemble your full team and keep all profiles together for download.</p>,
+      a: <p>Yes. Generate a full GrantOtter researcher profile for any collaborator — just their name and institution in <strong>Generate Profile</strong> — and save it as a <strong>preferred collaborator</strong> in My Workspace. From there, pull collaborators into any application, brainstorming session, or biosketch. If your institution's faculty network is on GrantOtter, you can also use <strong>Find Collaborators</strong> to discover new co-investigators by research expertise. In <strong>My Applications</strong>, you can assemble your full team and keep all profiles together for download.</p>,
     },
     {
       q: 'What is the Power User workflow?',
@@ -88,7 +91,15 @@ function Help({ setRoute }) {
     },
     {
       q: 'What is the NIH biosketch output used for?',
-      a: <p>The Create Biosketch tab generates a draft NIH Biographical Sketch covering all four required sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research Support). Use it as a reference to populate your biosketch on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>SciENcv</a>, the official NIH tool.</p>,
+      a: <p>The Biosketch generator (under <strong>Non-Science Docs</strong>) drafts an NIH Biographical Sketch covering all four required sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research Support). Anything it can't verify from your profile is flagged as an explicit <code style={{fontFamily:'JetBrains Mono,monospace', fontSize:12}}>[PLACEHOLDER]</code> for you to fill in — nothing is invented. Use the draft as a reference to populate your biosketch on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>SciENcv</a>, the official NIH tool.</p>,
+    },
+    {
+      q: 'Can GrantOtter draft my Data Management & Sharing Plan or budget?',
+      a: <p>Yes — both live under <strong>Non-Science Docs</strong>. The <strong>DMS Plan</strong> generator (Beta) fills the official NIH 2026 Data Management &amp; Sharing Plan template from your answers about the project. The <strong>Budget Brief &amp; Justification</strong> generator (Beta) produces a funder-aware budget document as an editable Word file plus an Excel companion with live formulas, so you can adjust numbers without breaking totals.</p>,
+    },
+    {
+      q: 'What emails does GrantOtter send, and how do I unsubscribe?',
+      a: <p>Up to three weekly emails, each optional: <strong>Grant Alerts</strong> (your personal top matches), the <strong>Federal News Brief</strong> (NIH/NSF/DARPA news and opportunities), and the <strong>Foundation Newsletter</strong> (curated foundation funding news). Every email includes its own one-click unsubscribe link, and preferences are per-channel — leaving one list never affects the others.</p>,
     },
     {
       q: 'Is my data secure? How does GrantOtter handle my privacy?',
@@ -97,7 +108,7 @@ function Help({ setRoute }) {
           {[
             { n:'01', label:'Open data sources only',        desc:'Profiles are built from publicly available sources — PubMed, Google Scholar, ORCID, faculty pages, NIH RePORTER. Only your name and institution are required. CV uploads are processed server-side and never shared externally.' },
             { n:'02', label:'Platform-level security',       desc:'All data is stored in Supabase with row-level security (RLS) — you can only access your own data. All credentials are encrypted. Uploaded documents are stored in a private, access-controlled bucket.' },
-            { n:'03', label:'Never used for AI training',    desc:'Your profiles, applications, and documents are never used to train AI models or shared with third parties. You can request deletion at any time by emailing grantotter42@gmail.com.' },
+            { n:'03', label:'Never used for AI training',    desc:'Your profiles, applications, and documents are never used to train AI models or shared with third parties. AI processing runs through Anthropic\'s Claude API, which does not train on API data. You can request deletion at any time by emailing grantotter42@gmail.com.' },
           ].map(p => (
             <div key={p.n} style={{padding:'12px 16px', border:'1px solid var(--line-2)', background:'var(--paper)', display:'grid', gridTemplateColumns:'36px 1fr', gap:12, alignItems:'start'}}>
               <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.06em', paddingTop:2}}>{p.n}</span>
@@ -128,10 +139,11 @@ function Help({ setRoute }) {
             Frequently asked questions, contact options, and live demo scheduling — all in one place.
           </p>
           <div style={{display:'flex', gap:8, flexWrap:'wrap'}}>
-            {[['FAQ', '#faq', 'teal'], ['Contact', '#contact', 'teal'], ['Schedule a Demo', '#demo', 'orange']].map(([label, href, color]) => (
-              <a key={label} href={href} className={`tag ${color}`} style={{fontSize:11, cursor:'pointer', textDecoration:'none'}}>
+            {[['FAQ', 'faq', 'teal'], ['AI & Research Integrity', 'ai-integrity', 'teal'], ['Contact', 'contact', 'teal'], ['Schedule a Demo', 'demo', 'orange']].map(([label, id, color]) => (
+              <button key={label} className={`tag ${color}`} style={{fontSize:11, cursor:'pointer'}}
+                onClick={() => { const el = document.getElementById(id); if (el) el.scrollIntoView({block:'start'}); }}>
                 {label} →
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -209,7 +221,7 @@ function Help({ setRoute }) {
             </div>
             <h2>Get in touch or <em>see it live.</em></h2>
           </div>
-          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:24}} id="demo">
+          <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap:24}} id="demo">
 
             {/* Contact card */}
             <div style={{border:'1px solid var(--line-2)', background:'var(--bg)', padding:'32px 36px'}}>
@@ -218,7 +230,7 @@ function Help({ setRoute }) {
                   @
                 </div>
                 <div className="tick-row" style={{flexDirection:'column', alignItems:'flex-start', gap:2}}>
-                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>03 / contact</span>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>contact</span>
                   <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>Email us</span>
                 </div>
               </div>
@@ -233,6 +245,25 @@ function Help({ setRoute }) {
               </p>
             </div>
 
+            {/* Slack card */}
+            <div style={{border:'1px solid var(--line-2)', background:'var(--bg)', padding:'32px 36px'}}>
+              <div style={{display:'flex', alignItems:'center', gap:14, marginBottom:20}}>
+                <div style={{width:44, height:44, border:'1px solid var(--line-2)', display:'grid', placeItems:'center', color:'var(--teal-deep)', background:'color-mix(in oklab,var(--teal) 8%,transparent)', flexShrink:0}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+                </div>
+                <div style={{display:'flex', flexDirection:'column', gap:2}}>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>community</span>
+                  <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>Join our Slack</span>
+                </div>
+              </div>
+              <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.6, marginBottom:20}}>
+                Join the GrantOtter community to ask questions, share feedback, swap grant-writing tips with other researchers, and hear about new features first.
+              </p>
+              <a href="https://join.slack.com/t/grantottercommunity/shared_invite/zt-3wb5fmemq-CPTYpyWjXzl8wkmhn6tw4Q" target="_blank" rel="noopener" className="btn btn-ghost" style={{background:'#4A154B', color:'#fff', borderColor:'#4A154B'}}>
+                Join Slack group →
+              </a>
+            </div>
+
             {/* Demo card */}
             <div style={{border:'1px solid var(--orange)', background:'color-mix(in oklab,var(--orange) 5%,transparent)', padding:'32px 36px'}}>
               <div style={{display:'flex', alignItems:'center', gap:14, marginBottom:20}}>
@@ -240,7 +271,7 @@ function Help({ setRoute }) {
                   ◈
                 </div>
                 <div style={{display:'flex', flexDirection:'column', gap:2}}>
-                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>04 / live demo</span>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>live demo</span>
                   <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>30-minute walkthrough</span>
                 </div>
               </div>
