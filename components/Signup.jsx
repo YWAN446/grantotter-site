@@ -17,9 +17,9 @@ function Signup({ setRoute }) {
               <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'block', textAlign:'center', textDecoration:'none', padding:'16px 24px', fontSize:16}}>
                 Launch GrantOtter app →
               </a>
-              <a href="tutorial.html" className="btn btn-ghost" style={{display:'block', textAlign:'center', textDecoration:'none'}}>
+              <button onClick={() => setRoute('tutorial')} className="btn btn-ghost" style={{display:'block', textAlign:'center', width:'100%', cursor:'pointer'}}>
                 Read the get started guide first
-              </a>
+              </button>
             </div>
 
             <div style={{display:'flex', gap:24, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em', flexWrap:'wrap'}}>
@@ -61,8 +61,8 @@ function Signup({ setRoute }) {
             <div style={{marginTop:14, padding:'16px 18px', background:'var(--bg)', border:'1px solid var(--line-2)'}}>
               <div className="tick-row" style={{marginBottom:10}}><span>need help?</span></div>
               <div style={{display:'grid', gap:8, fontSize:13, color:'var(--ink-2)'}}>
-                <a href="tutorial.html" style={{color:'inherit', textDecoration:'none'}}>→ <span style={{color:'var(--teal-deep)'}}>Get started guide</span> — step by step walkthrough</a>
-                <a href="help.html" style={{color:'inherit', textDecoration:'none'}}>→ <span style={{color:'var(--teal-deep)'}}>Help page</span> — FAQs and tips</a>
+                <a onClick={() => setRoute('tutorial')} style={{color:'inherit', textDecoration:'none', cursor:'pointer'}}>→ <span style={{color:'var(--teal-deep)'}}>Get started guide</span> — step by step walkthrough</a>
+                <a onClick={() => setRoute('help')} style={{color:'inherit', textDecoration:'none', cursor:'pointer'}}>→ <span style={{color:'var(--teal-deep)'}}>Help page</span> — FAQs and tips</a>
                 <a href="mailto:grantotter42@gmail.com" style={{color:'inherit', textDecoration:'none'}}>→ <span style={{color:'var(--teal-deep)'}}>Email us</span> — grantotter42@gmail.com</a>
               </div>
             </div>
