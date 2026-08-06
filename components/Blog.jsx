@@ -495,7 +495,7 @@ function PostContent_005() {
         <img
           src="media/application_assistant_walkthrough.png"
           alt="Screenshot of the Application Assistant chat inside a GrantOtter application"
-          style={{ width: '100%', maxWidth: 800, display: 'block', margin: '0 auto', border: '1px solid var(--line-2)' }}
+          style={{ width: '100%', display: 'block', border: '1px solid var(--line-2)' }}
         />
         <p style={{ fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' }}>
           "The assistant linking a grant, setting the deadline, and proposing next steps — inside one application."
