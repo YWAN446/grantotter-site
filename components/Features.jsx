@@ -1,3 +1,39 @@
+function AssistantDemo() {
+  const user = (text) => (
+    <div style={{display:'flex', justifyContent:'flex-end', margin:'10px 0'}}>
+      <div style={{background:'color-mix(in oklab, var(--teal) 10%, transparent)', border:'1px solid var(--line)', padding:'6px 10px', maxWidth:'85%', color:'var(--ink-2)'}}>{text}</div>
+    </div>
+  );
+  const bot = (text) => (
+    <div style={{display:'flex', gap:8, margin:'10px 0'}}>
+      <span>🦦</span>
+      <div style={{maxWidth:'88%', color:'var(--ink-2)'}}>{text}</div>
+    </div>
+  );
+  const action = (text) => (
+    <div style={{margin:'2px 0 2px 24px', fontSize:11, color:'var(--teal-deep)'}}>✓ {text}</div>
+  );
+  return (
+    <div className="term">
+      <div className="term-head">
+        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>application assistant</span></div>
+        <span style={{color:'var(--orange-deep)'}}>beta</span>
+      </div>
+      <div className="term-body" style={{fontSize:12}}>
+        {user('My target grant is PAR-26-095.')}
+        {bot('Linked it and read the full announcement — summary saved to your application. NIH R01, 5 years of support, budget cap noted. The next cycle after today is due Oct 5. Set that as your deadline?')}
+        {action('Grant linked · summary saved · classified NIH R01')}
+        {user('Yes. Then let’s set up the team.')}
+        {action('Deadline set to 2026-10-05')}
+        {bot('Done. I can add your preferred collaborators by name, search the partner network by expertise, or build a profile for an external collaborator — just give me a name and institution.')}
+        {user('Add Kim Lee, and find someone doing wastewater epidemiology.')}
+        {action('Team updated · searching partner network…')}
+        {bot('Team saved. Next up: want me to brainstorm 2–3 proposal concepts with this team, or generate the submission checklist first?')}
+      </div>
+    </div>
+  );
+}
+
 function FeatureRow({ num, tag, title, desc, children, reverse }) {
   const isMobile = useWindowWidth() < 768;
   return (
@@ -280,8 +316,8 @@ function Features({ setRoute }) {
             <em style={{color:'var(--orange-deep)'}}>handled.</em>
           </h1>
           <div style={{display:'flex', flexWrap:'wrap', gap: isMobile ? 12 : 24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
-            {['01 profile','02 discover','03 team','04 brainstorm','05 docs','06 track'].map(x => (
-              <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}</span>
+            {['01 profile','02 discover','03 team','04 brainstorm','05 docs','06 track','07 assistant'].map(x => (
+              <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}{x === '07 assistant' && <span style={{color:'var(--orange-deep)'}}> · new</span>}</span>
             ))}
           </div>
         </div>
@@ -315,6 +351,11 @@ function Features({ setRoute }) {
       <FeatureRow reverse num="06" tag="track" title={<>Every application, <em style={{color:'var(--orange-deep)'}}>tracked to submission</em>.</>}
         desc="Turn a match into a submission. Each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity's requirements, status tracking from drafting to submitted, and one-click ZIP download of the whole package.">
         <TrackDemo/>
+      </FeatureRow>
+
+      <FeatureRow num="07" tag="assistant · new" title={<>Your application, <em style={{color:'var(--teal-deep)'}}>walked through</em>.</>}
+        desc="A chat assistant inside every application that knows where you are and what comes next. It links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step — outline first, then a writing plan, then the full draft — grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your application, ready to download. In beta now.">
+        <AssistantDemo/>
       </FeatureRow>
 
       <section style={{padding: isMobile ? '64px 0' : '100px 0', textAlign:'center'}}>

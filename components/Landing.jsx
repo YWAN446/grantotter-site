@@ -44,6 +44,14 @@ function Hero({ setRoute, heroVariant, showOtter }) {
 
         <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 0.9fr', gap: isMobile ? 40 : 64, alignItems:'start'}}>
           <div>
+            <a href="#blog/application-assistant-beta"
+               style={{display:'inline-flex', alignItems:'center', gap:8, marginBottom:20, padding:'6px 14px',
+                       border:'1px solid var(--line)', borderRadius:99, textDecoration:'none',
+                       fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em', color:'var(--ink-2)'}}>
+              <span style={{color:'var(--orange-deep)', fontWeight:700}}>NEW</span>
+              <span>Application Assistant (beta) — a guided AI walkthrough of your whole application</span>
+              <span style={{color:'var(--teal-deep)'}}>→</span>
+            </a>
             <div className="bracket-label" style={{marginBottom:24}}>01 / the grant workflow, rebuilt</div>
             <h1 style={{
               fontFamily:'Instrument Serif, Georgia, serif',

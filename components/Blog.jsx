@@ -1,5 +1,14 @@
 const POSTS = [
   {
+    slug: 'application-assistant-beta',
+    title: 'Meet the Application Assistant: Your Grant Application, Walked Through',
+    date: 'August 6, 2026',
+    tag: 'ASSISTANT',
+    readTime: '6 min read',
+    excerpt: 'The distance between "I found my grant" and "I submitted" is where applications stall: twenty decisions, a dozen documents, and requirements that differ by funder. GrantOtter\'s new Application Assistant — in beta today — is a chat inside every application that knows where you are, what comes next, and does the heavy lifting at each step.',
+    content: () => <PostContent_005 />,
+  },
+  {
     slug: 'two-weekly-grant-news-digests',
     title: 'Two Digests That Watch the Funding World for You',
     date: 'July 27, 2026',
@@ -407,6 +416,83 @@ function PostContent_003() {
           Open GrantOtter →
         </a>
       </div>
+    </>
+  );
+}
+
+function PostContent_005() {
+  const listItemStyle = {
+    display: 'flex',
+    gap: 10,
+    marginBottom: 10,
+    fontSize: 14,
+    lineHeight: 1.65,
+    color: 'var(--ink-2)',
+  };
+  const h2Style = {
+    fontFamily: 'Instrument Serif, Georgia, serif',
+    fontWeight: 400,
+    fontStyle: 'italic',
+    fontSize: 24,
+    lineHeight: 1.2,
+    color: 'var(--ink)',
+    margin: '32px 0 16px',
+    borderLeft: '3px solid var(--orange-deep)',
+    paddingLeft: 16,
+  };
+  const pStyle = { fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' };
+
+  return (
+    <>
+      <p style={pStyle}>
+        Finding the right grant is hard. But most applications don't stall at discovery — they stall in the long middle: reading a 60-page funding announcement, working out which of five deadline cycles applies to you, assembling a team, turning an idea into a fundable concept, and producing the exact set of documents <em>this</em> funder requires, in <em>this</em> funder's format. Twenty decisions, a dozen documents, and no one telling you what comes next.
+      </p>
+      <p style={pStyle}>
+        Today we're launching the <strong>Application Assistant</strong> in beta: a chat that lives inside every application in your <strong>My Applications</strong> tab. It knows the state of your application — what's linked, what's decided, what's missing — and walks you from "I found my grant" to a submission-ready package, doing the heavy lifting at each step.
+      </p>
+
+      <h2 style={h2Style}>It starts by actually reading your grant</h2>
+      <p style={pStyle}>
+        Tell it your target grant's number or title and it links the opportunity from GrantOtter's repository — or drop the RFP straight into the chat as a PDF or Word file if your funder isn't in our database. Either way, the assistant reads the <em>full</em> announcement and saves a structured summary to your application: mechanism, budget cap, years of support, every submission cycle (not just the next one), review criteria, and what's explicitly out of scope. It identifies the funder and grant type — NIH R01, NSF standard grant, a foundation program — and everything downstream adapts to that classification.
+      </p>
+
+      <h2 style={h2Style}>Team, concepts, checklist — in one conversation</h2>
+      <div style={{ margin: '0 0 24px' }}>
+        <div style={listItemStyle}><span style={{ color: 'var(--teal-deep)' }}>▸</span><span><strong>Assemble the team.</strong> Add your preferred collaborators by name, search the partner institution network by expertise, or — for an external collaborator — just give the assistant a name and institution and it builds a research profile from open sources on the spot.</span></div>
+        <div style={listItemStyle}><span style={{ color: 'var(--teal-deep)' }}>▸</span><span><strong>Brainstorm concepts.</strong> With the grant and team in place, it generates 2–3 tailored proposal concepts. Pick one, shape it in conversation, and it becomes the target concept the rest of your application builds on.</span></div>
+        <div style={listItemStyle}><span style={{ color: 'var(--teal-deep)' }}>▸</span><span><strong>Build the checklist.</strong> A submission checklist generated from your specific announcement — funder-aware, so an NSF application gets NSF components, not NIH boilerplate — with due dates worked back from your deadline.</span></div>
+        <div style={listItemStyle}><span style={{ color: 'var(--teal-deep)' }}>▸</span><span><strong>File your documents.</strong> Drop letters of support, draft aims, or facilities pages into the chat and the assistant classifies and files them with your application, ready for one-click ZIP download at submission time.</span></div>
+      </div>
+
+      <h2 style={h2Style}>Drafting that works like a writing partner</h2>
+      <p style={pStyle}>
+        For the core science documents — Specific Aims and Research Strategy for NIH, Project Summary and Project Description for NSF — the assistant doesn't dump a wall of generated text on you. It works in phases, each gated on your approval: first a <strong>section-by-section outline</strong> (with structural options when there's a genuine choice to make), then a <strong>writing plan</strong> — the key claims, evidence, and figures for each section — and only after you've signed off does it write the <strong>full draft</strong>, section by section, iterating on your feedback.
+      </p>
+      <p style={pStyle}>
+        Every draft is grounded in curated writing guides split from the official sources — the NIH application-guide instructions for research, career, fellowship, training, and SBIR applications, and the NSF Proposal &amp; Award Policies &amp; Procedures Guide — so the structure and required content match what reviewers and compliance officers actually expect. And per NIH's 2026 AI guidance, you stay the author: the assistant drafts, you verify and revise, and anything it can't verify is flagged rather than invented.
+      </p>
+
+      <h2 style={h2Style}>It remembers, so you don't repeat yourself</h2>
+      <p style={pStyle}>
+        Tell the assistant once that you always include a biostatistician, or that you've decided to drop Aim 3, and it remembers — across sessions, per application and across your account. Come back a week later and it greets you with where you are: grant linked, deadline set, team of three, checklist 5 of 18 done, and the suggested next step. Everything it remembers is visible in a memory panel in My Workspace, and you can delete any of it, any time.
+      </p>
+
+      <MediaPlaceholder label="application_assistant_walkthrough.png" caption="The assistant linking a grant, setting the deadline, and proposing next steps — inside one application." />
+
+      <h2 style={h2Style}>How to try it</h2>
+      <div style={{ margin: '0 0 24px' }}>
+        <div style={listItemStyle}><span style={{ color: 'var(--orange-deep)' }}>1.</span><span>Open GrantOtter and go to <strong>My Applications</strong> — create an application (or open an existing one).</span></div>
+        <div style={listItemStyle}><span style={{ color: 'var(--orange-deep)' }}>2.</span><span>You'll land on the <strong>Assistant</strong> tab. Tell it your target grant's number or title — or drop the RFP into the chat.</span></div>
+        <div style={listItemStyle}><span style={{ color: 'var(--orange-deep)' }}>3.</span><span>Follow the walkthrough — or skip around freely. You're in charge; the assistant keeps track either way.</span></div>
+      </div>
+      <p style={pStyle}>
+        The Application Assistant is in beta, and it improves fastest when you tell us what confused you or what you wish it did. Join the{' '}
+        <a href="https://join.slack.com/t/grantottercommunity/shared_invite/zt-3wb5fmemq-CPTYpyWjXzl8wkmhn6tw4Q" target="_blank" rel="noopener" style={{ color: 'var(--teal-deep)' }}>GrantOtter Slack community</a>{' '}
+        and share your experience — we ship fixes weekly.
+      </p>
+      <p style={{ ...pStyle, margin: 0 }}>
+        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{ color: 'var(--orange-deep)', fontWeight: 600 }}>Open GrantOtter and try the Application Assistant →</a>
+      </p>
     </>
   );
 }
