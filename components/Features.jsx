@@ -20,13 +20,14 @@ function AssistantDemo() {
         <span style={{color:'var(--orange-deep)'}}>beta</span>
       </div>
       <div className="term-body" style={{fontSize:12}}>
-        {user('My target grant is PAR-26-095.')}
+        {bot('Welcome! Which grant would you like to work on? Give me its number or title and I\'ll link it from our grant repository — or drop the FOA/RFP straight into the chat.')}
+        {user('I want to apply for NIH grant PAR-26-095.')}
         {bot('Linked it and read the full announcement — summary saved to your application. NIH R01, 5 years of support, budget cap noted. The next cycle after today is due Oct 5. Set that as your deadline?')}
         {action('Grant linked · summary saved · classified NIH R01')}
         {user('Yes. Then let’s set up the team.')}
         {action('Deadline set to 2026-10-05')}
-        {bot('Done. I can add your preferred collaborators by name, search the partner network by expertise, or build a profile for an external collaborator — just give me a name and institution.')}
-        {user('Add Kim Lee, and find someone doing wastewater epidemiology.')}
+        {bot('I can add your preferred collaborators by name, search the partner network by expertise, or build a profile for an external collaborator — just give me a name and institution.')}
+        {user('Add Kim Lee, and find someone doing spatial epidemiology.')}
         {action('Team updated · searching partner network…')}
         {bot('Team saved. Next up: want me to brainstorm 2–3 proposal concepts with this team, or generate the submission checklist first?')}
       </div>
