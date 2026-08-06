@@ -451,7 +451,16 @@ function PostContent_005() {
         Today we're launching the <strong>Application Assistant</strong> in beta: a chat that lives inside every application in your <strong>My Applications</strong> tab. It knows the state of your application — what's linked, what's decided, what's missing — and walks you from "I found my grant" to a submission-ready package, doing the heavy lifting at each step. And because the assistant already knows every GrantOtter tool, you don't have to learn where the features live: describe what you need in plain language, and it drives the right tool for you — or just answers your question about the grant.
       </p>
 
-      <MediaPlaceholder label="application_assistant_workflow_diagram.png" caption="One conversation, the whole workflow: the assistant guides each step, calls GrantOtter's tools for you, and turns your feedback into revisions." />
+      <div style={{ margin: '32px 0' }}>
+        <img
+          src="media/application_assistant_workflow_diagram.png"
+          alt="Diagram: the Application Assistant chats with a researcher while calling GrantOtter's tools — reading the grant, assembling the team, brainstorming concepts, building the checklist, drafting documents, and managing the application — with a feedback-to-revision loop on the finished documents"
+          style={{ width: '100%', display: 'block', border: '1px solid var(--line-2)' }}
+        />
+        <p style={{ fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' }}>
+          "One conversation, the whole workflow: the assistant guides each step, calls GrantOtter's tools for you, and turns your feedback into revisions."
+        </p>
+      </div>
 
       <h2 style={h2Style}>It starts by actually reading your grant</h2>
       <p style={pStyle}>
@@ -482,7 +491,16 @@ function PostContent_005() {
         Tell the assistant once that you always include a biostatistician, or that you've decided to drop Aim 3, and it remembers — across sessions, per application and across your account. Come back a week later and it greets you with where you are: grant linked, deadline set, team of three, checklist 5 of 18 done, and the suggested next step. Everything it remembers is visible in a memory panel in My Workspace, and you can delete any of it, any time.
       </p>
 
-      <MediaPlaceholder label="application_assistant_walkthrough.png" caption="The assistant linking a grant, setting the deadline, and proposing next steps — inside one application." />
+      <div style={{ margin: '32px 0' }}>
+        <img
+          src="media/application_assistant_walkthrough.png"
+          alt="Screenshot of the Application Assistant chat inside a GrantOtter application"
+          style={{ width: '100%', display: 'block', border: '1px solid var(--line-2)' }}
+        />
+        <p style={{ fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' }}>
+          "The assistant linking a grant, setting the deadline, and proposing next steps — inside one application."
+        </p>
+      </div>
 
       <h2 style={h2Style}>How to try it</h2>
       <div style={{ margin: '0 0 24px' }}>
