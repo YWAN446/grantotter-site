@@ -448,8 +448,10 @@ function PostContent_005() {
         Finding the right grant is hard. But most applications don't stall at discovery — they stall in the long middle: reading a 60-page funding announcement, working out which of five deadline cycles applies to you, assembling a team, turning an idea into a fundable concept, and producing the exact set of documents <em>this</em> funder requires, in <em>this</em> funder's format. Twenty decisions, a dozen documents, and no one telling you what comes next.
       </p>
       <p style={pStyle}>
-        Today we're launching the <strong>Application Assistant</strong> in beta: a chat that lives inside every application in your <strong>My Applications</strong> tab. It knows the state of your application — what's linked, what's decided, what's missing — and walks you from "I found my grant" to a submission-ready package, doing the heavy lifting at each step.
+        Today we're launching the <strong>Application Assistant</strong> in beta: a chat that lives inside every application in your <strong>My Applications</strong> tab. It knows the state of your application — what's linked, what's decided, what's missing — and walks you from "I found my grant" to a submission-ready package, doing the heavy lifting at each step. And because the assistant already knows every GrantOtter tool, you don't have to learn where the features live: describe what you need in plain language, and it drives the right tool for you — or just answers your question about the grant.
       </p>
+
+      <MediaPlaceholder label="application_assistant_workflow_diagram.png" caption="One conversation, the whole workflow: the assistant guides each step, calls GrantOtter's tools for you, and turns your feedback into revisions." />
 
       <h2 style={h2Style}>It starts by actually reading your grant</h2>
       <p style={pStyle}>
@@ -470,6 +472,9 @@ function PostContent_005() {
       </p>
       <p style={pStyle}>
         Every draft is grounded in curated writing guides split from the official sources — the NIH application-guide instructions for research, career, fellowship, training, and SBIR applications, and the NSF Proposal &amp; Award Policies &amp; Procedures Guide — so the structure and required content match what reviewers and compliance officers actually expect. And per NIH's 2026 AI guidance, you stay the author: the assistant drafts, you verify and revise, and anything it can't verify is flagged rather than invented.
+      </p>
+      <p style={pStyle}>
+        Reviewing is built in, too. Flip on the <strong>document panel</strong> and any saved document opens side-by-side with the chat — the draft on one side, the conversation on the other. Give feedback the way you would to a colleague ("tighten Aim 2," "make the significance section land for reviewers outside the field") and the assistant revises the draft and updates the saved document <em>in place</em> — no duplicate copies, no version soup. When you're happy, download it as Word with one click.
       </p>
 
       <h2 style={h2Style}>It remembers, so you don't repeat yourself</h2>
