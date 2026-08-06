@@ -44,14 +44,6 @@ function Hero({ setRoute, heroVariant, showOtter }) {
 
         <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 0.9fr', gap: isMobile ? 40 : 64, alignItems:'start'}}>
           <div>
-            <a href="#blog/application-assistant-beta"
-               style={{display:'inline-flex', alignItems:'center', gap:8, marginBottom:20, padding:'6px 14px',
-                       border:'1px solid var(--line)', borderRadius:99, textDecoration:'none',
-                       fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em', color:'var(--ink-2)'}}>
-              <span style={{color:'var(--orange-deep)', fontWeight:700}}>NEW</span>
-              <span>Application Assistant (beta) — a guided AI walkthrough of your whole application</span>
-              <span style={{color:'var(--teal-deep)'}}>→</span>
-            </a>
             <div className="bracket-label" style={{marginBottom:24}}>01 / the grant workflow, rebuilt</div>
             <h1 style={{
               fontFamily:'Instrument Serif, Georgia, serif',
@@ -427,10 +419,41 @@ function FinalCTA({ setRoute }) {
   );
 }
 
+// Newest first. Add an entry here whenever a feature ships — the banner
+// always shows the top entry and links out (e.g. to the launch blog post).
+const UPDATES = [
+  {
+    tag: 'NEW · BETA',
+    title: 'The Application Assistant',
+    desc: 'A chat inside every application that walks you from “here’s my grant” to a submission-ready package — reading the announcement, assembling the team, brainstorming concepts, building the funder-specific checklist, and drafting documents with you.',
+    href: '#blog/application-assistant-beta',
+    cta: 'Read the launch post',
+  },
+];
+
+function WhatsNew() {
+  const isMobile = useWindowWidth() < 768;
+  const u = UPDATES[0];
+  if (!u) return null;
+  return (
+    <section style={{borderTop:'1px solid var(--line)', borderBottom:'1px solid var(--line)', background:'color-mix(in oklab, var(--orange-deep) 5%, transparent)'}}>
+      <div className="container" style={{padding: isMobile ? '18px 0' : '24px 0'}}>
+        <a href={u.href} style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 10 : 24, textDecoration:'none', color:'inherit'}}>
+          <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:11, fontWeight:700, letterSpacing:'0.08em', color:'#fff', background:'var(--orange-deep)', padding:'4px 10px'}}>{u.tag}</span>
+          <span style={{flexShrink:0, fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', fontSize: isMobile ? 20 : 24, lineHeight:1.1}}>{u.title}</span>
+          {!isMobile && <span style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5, flex:1, minWidth:0}}>{u.desc}</span>}
+          <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--teal-deep)', whiteSpace:'nowrap'}}>{u.cta} →</span>
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function Landing({ setRoute, heroVariant, showOtter }) {
   return (
     <>
       <Hero setRoute={setRoute} heroVariant={heroVariant} showOtter={showOtter} />
+      <WhatsNew />
       <Ticker />
       <OurApproach />
       <ModulesGrid setRoute={setRoute} />
