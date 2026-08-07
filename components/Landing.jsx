@@ -437,12 +437,12 @@ function WhatsNew() {
   if (!u) return null;
   return (
     <section style={{borderTop:'1px solid var(--line)', borderBottom:'1px solid var(--line)', background:'color-mix(in oklab, var(--orange-deep) 5%, transparent)'}}>
-      <div className="container" style={{padding: isMobile ? '18px 0' : '24px 0'}}>
-        <a href={u.href} style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 10 : 24, textDecoration:'none', color:'inherit'}}>
-          <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:11, fontWeight:700, letterSpacing:'0.08em', color:'#fff', background:'var(--orange-deep)', padding:'4px 10px'}}>{u.tag}</span>
-          <span style={{flexShrink:0, fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', fontSize: isMobile ? 20 : 24, lineHeight:1.1}}>{u.title}</span>
-          {!isMobile && <span style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.5, flex:1, minWidth:0}}>{u.desc}</span>}
-          <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--teal-deep)', whiteSpace:'nowrap'}}>{u.cta} →</span>
+      <div className="container" style={{padding: isMobile ? '22px 0' : '30px 0'}}>
+        <a href={u.href} style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 28, textDecoration:'none', color:'inherit'}}>
+          <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:13, fontWeight:700, letterSpacing:'0.08em', color:'#fff', background:'var(--orange-deep)', padding:'6px 14px'}}>{u.tag}</span>
+          <span style={{flexShrink:0, fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', fontSize: isMobile ? 26 : 32, lineHeight:1.1}}>{u.title}</span>
+          {!isMobile && <span style={{fontSize:15, color:'var(--ink-2)', lineHeight:1.55, flex:1, minWidth:0}}>{u.desc}</span>}
+          <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:14, color:'var(--teal-deep)', whiteSpace:'nowrap'}}>{u.cta} →</span>
         </a>
       </div>
     </section>
