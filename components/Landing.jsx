@@ -203,7 +203,7 @@ function OurApproach() {
 
         <div style={{border:'1px solid var(--line-2)', borderRadius:4, overflow:'hidden', background:'var(--bg-2)'}}>
           <video controls playsInline style={{width:'100%', display:'block'}}>
-            <source src="GrantOtterPromo.mp4" type="video/mp4"/>
+            <source src="GrantOtterPromo.mp4?v=2" type="video/mp4"/>
           </video>
         </div>
       </div>
