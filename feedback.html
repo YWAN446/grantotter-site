@@ -124,7 +124,10 @@
       if (type === "saved") {
         heading.innerHTML = "&#128193; Grant Saved!";
         message.textContent = "This grant has been added to your My Workspace. Open GrantOtter to start your application.";
-      } else if (type === "good") {
+        confirmArea.innerHTML = '<a href="https://grantotter.streamlit.app" class="return-btn">Open GrantOtter &rarr;</a>';
+        return;
+      }
+      if (type === "good") {
         heading.innerHTML = "&#128077; Thanks for your feedback!";
         message.textContent = "Great! We\u2019ll keep surfacing similar opportunities for you.";
       } else {
@@ -160,7 +163,7 @@
         showThankYou(successType);
       } catch (err) {
         btn.disabled = false;
-        btn.textContent = btn.dataset.label;
+        btn.innerHTML = btn.dataset.label;
         const errDiv = document.createElement("p");
         errDiv.id = "error-msg";
         errDiv.className = "error-msg";
@@ -186,8 +189,8 @@
       message.textContent = "Click the button below to add this grant to your My Workspace in GrantOtter.";
       const btn = document.createElement("button");
       btn.className = "confirm-btn";
-      btn.textContent = "&#128193; Save to My Workspace";
-      btn.dataset.label = btn.textContent;
+      btn.innerHTML = "&#128193; Save to My Workspace";
+      btn.dataset.label = btn.innerHTML;
       btn.addEventListener("click", () => submitFeedback(btn, { token, action: "save" }, "saved"));
       confirmArea.appendChild(btn);
     } else if (verdict === "good") {
