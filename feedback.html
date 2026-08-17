@@ -114,6 +114,13 @@
     const confirmArea  = document.getElementById("confirm-area");
 
     function showThankYou(type) {
+      if (type === "applied") {
+        heading.innerHTML = "&#128640; Application Created!";
+        message.textContent = "Your application is ready — grant linked, deadline set. Taking you to GrantOtter to sign in and start working…";
+        confirmArea.innerHTML = '<a href="https://grantotter.streamlit.app" class="return-btn">Open GrantOtter &rarr;</a>';
+        setTimeout(function () { window.location.href = "https://grantotter.streamlit.app"; }, 1800);
+        return;
+      }
       if (type === "saved") {
         heading.innerHTML = "&#128193; Grant Saved!";
         message.textContent = "This grant has been added to your My Workspace. Open GrantOtter to start your application.";
@@ -165,6 +172,15 @@
     // ── Render confirmation UI ────────────────────────────────────────────────
     if (!token) {
       showError("Missing feedback token. Please check your email for a valid link.");
+    } else if (action === "apply") {
+      heading.innerHTML = "&#128640; Start This Application";
+      message.textContent = "We’ll create the application in your GrantOtter workspace — named after the grant, deadline set, and grant linked — ready for the Application Assistant.";
+      const btn = document.createElement("button");
+      btn.className = "confirm-btn";
+      btn.innerHTML = "&#128640; Create my application";
+      btn.dataset.label = btn.innerHTML;
+      btn.addEventListener("click", () => submitFeedback(btn, { token, action: "apply" }, "applied"));
+      confirmArea.appendChild(btn);
     } else if (action === "save") {
       heading.innerHTML = "Save Grant to My Workspace";
       message.textContent = "Click the button below to add this grant to your My Workspace in GrantOtter.";
