@@ -104,6 +104,15 @@
   <script>
     const EDGE_FN = "https://mrmmlirkwugttukzltts.supabase.co/functions/v1/record-feedback";
 
+    // v2 web app (GrantOtter v2 P3). Flip V2_LIVE at cutover (P5) — until then
+    // app.grantotter.com does not exist and the legacy Streamlit hand-off stays.
+    const APP_BASE   = "https://app.grantotter.com";
+    const V2_LIVE    = false;
+    const LEGACY_APP = "https://grantotter.streamlit.app";
+    function deepLink(applicationId, feedbackToken) {
+      return APP_BASE + "/p/" + encodeURIComponent(applicationId) + "?src=" + encodeURIComponent(feedbackToken);
+    }
+
     const params  = new URLSearchParams(window.location.search);
     const token   = params.get("token");
     const verdict = params.get("verdict");
@@ -113,12 +122,19 @@
     const message      = document.getElementById("message");
     const confirmArea  = document.getElementById("confirm-area");
 
-    function showThankYou(type) {
+    function showThankYou(type, data) {
       if (type === "applied") {
-        heading.innerHTML = "&#128640; Application Created!";
-        message.textContent = "Your application is ready — grant linked, deadline set. Taking you to GrantOtter to sign in and start working…";
-        confirmArea.innerHTML = '<a href="https://grantotter.streamlit.app" class="return-btn">Open GrantOtter &rarr;</a>';
-        setTimeout(function () { window.location.href = "https://grantotter.streamlit.app"; }, 1800);
+        const appId  = data && data.application_id;
+        const useV2  = V2_LIVE && !!appId;
+        const target = useV2 ? deepLink(appId, token) : LEGACY_APP;
+        heading.innerHTML = (useV2 && data.already) ? "&#128640; Application Found!" : "&#128640; Application Created!";
+        message.textContent = useV2
+          ? (data.already
+              ? "You already have an application for this grant — opening it now…"
+              : "Your application is ready — grant linked, deadline set. Opening it in GrantOtter…")
+          : "Your application is ready — grant linked, deadline set. Taking you to GrantOtter to sign in and start working…";
+        confirmArea.innerHTML = '<a href="' + target + '" class="return-btn">Open your application &rarr;</a>';
+        setTimeout(function () { window.location.href = target; }, 1800);
         return;
       }
       if (type === "saved") {
@@ -160,7 +176,7 @@
         if (!res.ok || data.error) {
           throw new Error(data.error || "Server error (" + res.status + ")");
         }
-        showThankYou(successType);
+        showThankYou(successType, data);
       } catch (err) {
         btn.disabled = false;
         btn.innerHTML = btn.dataset.label;
