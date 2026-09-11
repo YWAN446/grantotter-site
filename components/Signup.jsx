@@ -33,7 +33,7 @@ function Signup({ setRoute }) {
             <div className="term">
               <div className="term-head">
                 <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>what to expect</span></div>
-                <span>6 modules</span>
+                <span>6 tools</span>
               </div>
               <div className="term-body" style={{fontSize:13}}>
                 {[

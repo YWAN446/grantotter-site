@@ -268,8 +268,8 @@ function BiosketcDemo() {
 function TrackDemo() {
   const items = [
     ['Specific Aims — 1 page',              'done',    'from Draft Concepts'],
-    ['Biosketch — NIH Common Form',          'done',    'generated · module 05'],
-    ['Data Management & Sharing Plan',       'done',    'generated · module 05'],
+    ['Biosketch — NIH Common Form',          'done',    'generated · tool 05'],
+    ['Data Management & Sharing Plan',       'done',    'generated · tool 05'],
     ['Budget Brief + Justification',         'active',  'in review'],
     ['Letters of Support — 2 required',      'open',    'requested 07/28'],
     ['Facilities & Other Resources',         'open',    'not started'],
@@ -325,7 +325,7 @@ function Features({ setRoute }) {
       </section>
 
       <FeatureRow num="01" tag="profile" title={<>A researcher profile, <em style={{color:'var(--teal-deep)'}}>built for you</em>.</>}
-        desc="Just your name and institution — that's all GrantOtter needs to get started. It searches open sources for your publications, grants, and research areas to build a structured profile used across all five modules. Minimum input, maximum coverage.">
+        desc="Just your name and institution — that's all GrantOtter needs to get started. It searches open sources for your publications, grants, and research areas to build a structured profile used across every tool. Minimum input, maximum coverage.">
         <ProfileDemo/>
       </FeatureRow>
 

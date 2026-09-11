@@ -219,7 +219,7 @@ function Ticker() {
     ['FOUNDATIONS',      'ACS · Komen · Gates · Simons · Sloan · Wellcome · and hundreds more'],
     ['GRANTS_INDEXED',   '2,000+ · updated every Monday'],
     ['FACULTY_NETWORK','4,532 faculty profiles indexed · and growing'],
-    ['MODULES',          'Profile · Discover · Collaborate · Brainstorm · Docs · Applications'],
+    ['TOOLS',            'Profile · Discover · Collaborate · Brainstorm · Docs · Projects'],
     ['RESEARCHERS',       '165 researchers and counting'],
     ['COST',             'Currently free for researchers'],
   ];
