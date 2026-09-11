@@ -22,12 +22,14 @@ function BannerV2({ children }) {
   );
 }
 
-function MediaV2({ src, alt, caption, isVideo, narrow }) {
+function MediaV2({ src, alt, caption, isVideo, narrow, flush }) {
   // `narrow` (px) caps the frame width for tall, long-format screenshots (panel clips,
   // chat columns, phone shots) so they read as figures instead of dominating the page.
+  // `flush` drops the top margin — used inside SplitV2's media column, which aligns
+  // the frame with the top of the neighbouring text.
   const sizing = narrow ? {maxWidth: narrow, marginLeft:'auto', marginRight:'auto'} : {};
   return (
-    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)', marginTop:24, overflow:'hidden', ...sizing}}>
+    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)', marginTop: flush ? 0 : 24, overflow:'hidden', ...sizing}}>
       {isVideo
         ? <video autoPlay loop muted playsInline style={{width:'100%', display:'block'}}><source src={src} type="video/mp4"/></video>
         : <img src={src} alt={alt} style={{width:'100%', display:'block'}}/>
@@ -35,6 +37,17 @@ function MediaV2({ src, alt, caption, isVideo, narrow }) {
       <div style={{padding:'10px 16px', borderTop:'1px solid var(--line)', fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>
         {caption}
       </div>
+    </div>
+  );
+}
+
+function SplitV2({ media, mediaWidth = 420, children }) {
+  // Two-column step layout: text left, a tall screenshot right. flex-wrap folds the
+  // media column under the text on narrow viewports — no media queries needed.
+  return (
+    <div style={{display:'flex', flexWrap:'wrap', gap:28, alignItems:'flex-start', marginTop:8}}>
+      <div style={{flex:'1 1 340px', minWidth:0}}>{children}</div>
+      <div style={{flex:`0 1 ${mediaWidth}px`, minWidth:260, maxWidth:'100%'}}>{media}</div>
     </div>
   );
 }
@@ -253,21 +266,24 @@ function TutorialV2({ setRoute }) {
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
           A project is one application, tracked end to end — its own chat thread, its own status, deadline, team, and documents.
         </p>
-        <H3V2>Starting one</H3V2>
-        <ULV2>
-          <LiV2 n="→">Click <strong style={{color:'var(--teal-deep)'}}>Start application</strong> on a card in your Feed.</LiV2>
-          <LiV2 n="→">Or click the link in your Monday grant-alert email — it opens the project directly.</LiV2>
-        </ULV2>
-        <H3V2>The project detail view</H3V2>
-        <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>Each project tracks:</p>
-        <ULV2>
-          <LiV2 n="+"><strong>Status</strong> and <strong>deadline</strong>, plus your own notes</LiV2>
-          <LiV2 n="+"><strong>Team</strong> — the PI and any collaborators you've added</LiV2>
-          <LiV2 n="+"><strong>Checklist</strong> — the submission components the assistant extracted for you</LiV2>
-          <LiV2 n="+"><strong>Documents</strong> — everything the assistant drafts inside the thread</LiV2>
-        </ULV2>
-        <MediaV2 narrow={400} src="media/v2_project_detail.png" alt="A project's detail view showing status, deadline, team, checklist, and documents" isVideo={false}
-          caption="Project detail — status, deadline, notes, team + PI, checklist, and documents in one place." />
+        <SplitV2 mediaWidth={400} media={
+          <MediaV2 flush src="media/v2_project_detail.png" alt="A project's detail view showing status, deadline, team, checklist, and documents" isVideo={false}
+            caption="Project detail — status, deadline, notes, team + PI, checklist, and documents in one place." />
+        }>
+          <H3V2>Starting one</H3V2>
+          <ULV2>
+            <LiV2 n="→">Click <strong style={{color:'var(--teal-deep)'}}>Start application</strong> on a card in your Feed.</LiV2>
+            <LiV2 n="→">Or click the link in your Monday grant-alert email — it opens the project directly.</LiV2>
+          </ULV2>
+          <H3V2>The project detail view</H3V2>
+          <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>Each project tracks:</p>
+          <ULV2>
+            <LiV2 n="+"><strong>Status</strong> and <strong>deadline</strong>, plus your own notes</LiV2>
+            <LiV2 n="+"><strong>Team</strong> — the PI and any collaborators you've added</LiV2>
+            <LiV2 n="+"><strong>Checklist</strong> — the submission components the assistant extracted for you</LiV2>
+            <LiV2 n="+"><strong>Documents</strong> — everything the assistant drafts inside the thread</LiV2>
+          </ULV2>
+        </SplitV2>
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type: click "Start application" on a feed card, or click the link in your Monday email.
         </p>
@@ -279,22 +295,25 @@ function TutorialV2({ setRoute }) {
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
           Open a project and you're in that project's own thread. The assistant already knows the grant, your team, and everything you've discussed — ask it to move the application forward.
         </p>
-        <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>From this one thread, ask it to:</p>
-        <ULV2>
-          <LiV2 n="→">Summarize the grant and its requirements</LiV2>
-          <LiV2 n="→">Set the deadline and add team members</LiV2>
-          <LiV2 n="→">Find collaborators for this application — matched to the grant's topic, saved with one word</LiV2>
-          <LiV2 n="→">Brainstorm proposal concepts</LiV2>
-          <LiV2 n="→">Generate the submission checklist</LiV2>
-          <LiV2 n="→">Draft a biosketch — gaps are marked with <CodeV2>[PLACEHOLDER]</CodeV2> so you know exactly what to fill in yourself</LiV2>
-          <LiV2 n="→">Draft a Data Management &amp; Sharing plan</LiV2>
-          <LiV2 n="→">Draft a budget brief and justification</LiV2>
-        </ULV2>
-        <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, margin:'12px 0 0'}}>
-          Every document it drafts lands in the project's <strong style={{color:'var(--teal-deep)'}}>Documents</strong> list, ready to open or download.
-        </p>
-        <MediaV2 narrow={480} src="media/v2_project_thread.png" alt="A project chat thread with the assistant drafting a document that appears as a chip in the conversation" isVideo={false}
-          caption="One thread per project — ask for a checklist, a biosketch, a budget brief, and each lands in Documents." />
+        <SplitV2 mediaWidth={440} media={
+          <MediaV2 flush src="media/v2_project_thread.png" alt="A project chat thread with the assistant drafting a document that appears as a chip in the conversation" isVideo={false}
+            caption="One thread per project — ask for a checklist, a biosketch, a budget brief, and each lands in Documents." />
+        }>
+          <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>From this one thread, ask it to:</p>
+          <ULV2>
+            <LiV2 n="→">Summarize the grant and its requirements</LiV2>
+            <LiV2 n="→">Set the deadline and add team members</LiV2>
+            <LiV2 n="→">Find collaborators for this application — matched to the grant's topic, saved with one word</LiV2>
+            <LiV2 n="→">Brainstorm proposal concepts</LiV2>
+            <LiV2 n="→">Generate the submission checklist</LiV2>
+            <LiV2 n="→">Draft a biosketch — gaps are marked with <CodeV2>[PLACEHOLDER]</CodeV2> so you know exactly what to fill in yourself</LiV2>
+            <LiV2 n="→">Draft a Data Management &amp; Sharing plan</LiV2>
+            <LiV2 n="→">Draft a budget brief and justification</LiV2>
+          </ULV2>
+          <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, margin:'12px 0 0'}}>
+            Every document it drafts lands in the project's <strong style={{color:'var(--teal-deep)'}}>Documents</strong> list, ready to open or download.
+          </p>
+        </SplitV2>
         <TipV2>Always review a <CodeV2>[PLACEHOLDER]</CodeV2> before you submit — it marks a gap the assistant couldn't fill from what you've given it, never a guess.</TipV2>
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type: "Draft a biosketch for [collaborator]," or "Generate the submission checklist."
@@ -307,13 +326,16 @@ function TutorialV2({ setRoute }) {
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
           Every reply from the assistant has a thumbs-up and thumbs-down underneath it — in the main chat and inside a project thread alike.
         </p>
-        <OLV2>
-          <LiV2 n="1.">Click the thumb that matches your reaction.</LiV2>
-          <LiV2 n="2.">On a thumbs-down, a small note field opens.</LiV2>
-          <LiV2 n="3.">Type what went wrong — it goes straight to us, not into a queue no one reads.</LiV2>
-        </OLV2>
-        <MediaV2 narrow={480} src="media/v2_thumbs.png" alt="Thumbs-up and thumbs-down feedback controls under an assistant reply, with a note field open" isVideo={false}
-          caption="Thumbs under every reply — a thumbs-down note goes straight to us." />
+        <SplitV2 mediaWidth={440} media={
+          <MediaV2 flush src="media/v2_thumbs.png" alt="Thumbs-up and thumbs-down feedback controls under an assistant reply, with a note field open" isVideo={false}
+            caption="Thumbs under every reply — a thumbs-down note goes straight to us." />
+        }>
+          <OLV2>
+            <LiV2 n="1.">Click the thumb that matches your reaction.</LiV2>
+            <LiV2 n="2.">On a thumbs-down, a small note field opens.</LiV2>
+            <LiV2 n="3.">Type what went wrong — it goes straight to us, not into a queue no one reads.</LiV2>
+          </OLV2>
+        </SplitV2>
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type a quick note when you thumbs-down a reply — that's what tells us what to fix.
         </p>
@@ -322,15 +344,18 @@ function TutorialV2({ setRoute }) {
       {/* Power User */}
       <StepV2 id="v2-power-user" n="⚡ power user" tag="Shortcuts" tagColor="orange" bg="var(--paper)">
         <StepH2V2>Move <em style={{color:'var(--orange-deep)'}}>Faster</em></StepH2V2>
-        <ULV2>
-          <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Enter sends, Shift+Enter for a new line</strong> — on desktop. On a phone, the arrow button sends instead.</LiV2>
-          <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Drag and drop</strong> — drop a PDF straight onto the chat, no attach button required.</LiV2>
-          <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Email deep links</strong> — the <strong>Start application</strong> button in a grant-alert email jumps straight into that project's chat once you're signed in.</LiV2>
-          <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Getting-started card</strong> — while you still have steps left, a card at the top of the Projects tab tracks them; dismiss it any time, and it disappears on its own once you're done.</LiV2>
-          <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Dark / light theme</strong> — switch it from the account menu (Appearance). Dark is the default.</LiV2>
-        </ULV2>
-        <MediaV2 narrow={300} src="media/v2_phone.png" alt="GrantOtter on a phone, with the arrow-send button and the Dashboard opened as a sheet" isVideo={false}
-          caption="On a phone: the arrow button sends, and Dashboard opens as a sheet over the chat." />
+        <SplitV2 mediaWidth={300} media={
+          <MediaV2 flush src="media/v2_phone.png" alt="GrantOtter on a phone, with the arrow-send button and the Dashboard opened as a sheet" isVideo={false}
+            caption="On a phone: the arrow button sends, and Dashboard opens as a sheet over the chat." />
+        }>
+          <ULV2>
+            <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Enter sends, Shift+Enter for a new line</strong> — on desktop. On a phone, the arrow button sends instead.</LiV2>
+            <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Drag and drop</strong> — drop a PDF straight onto the chat, no attach button required.</LiV2>
+            <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Email deep links</strong> — the <strong>Start application</strong> button in a grant-alert email jumps straight into that project's chat once you're signed in.</LiV2>
+            <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Getting-started card</strong> — while you still have steps left, a card at the top of the Projects tab tracks them; dismiss it any time, and it disappears on its own once you're done.</LiV2>
+            <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Dark / light theme</strong> — switch it from the account menu (Appearance). Dark is the default.</LiV2>
+          </ULV2>
+        </SplitV2>
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type: drag a PDF straight into the chat — the assistant reads it without a separate upload step.
         </p>
