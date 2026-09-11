@@ -17,7 +17,7 @@ function AssistantDemo() {
     <div className="term">
       <div className="term-head">
         <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>application assistant</span></div>
-        <span style={{color:'var(--orange-deep)'}}>beta</span>
+        <span>online</span>
       </div>
       <div className="term-body" style={{fontSize:12}}>
         {bot('Welcome! Which grant would you like to work on? Give me its number or title and I\'ll link it from our grant repository — or drop the FOA/RFP straight into the chat.')}
@@ -26,7 +26,7 @@ function AssistantDemo() {
         {action('Grant linked · summary saved · classified NIH R01')}
         {user('Yes. Then let’s set up the team.')}
         {action('Deadline set to 2026-10-05')}
-        {bot('I can add your preferred collaborators by name, search the partner network by expertise, or build a profile for an external collaborator — just give me a name and institution.')}
+        {bot('I can add your saved collaborators by name, search the partner network by expertise, or build a profile for an external collaborator — just give me a name and institution.')}
         {user('Add Kim Lee, and find someone doing spatial epidemiology.')}
         {action('Team updated · searching partner network…')}
         {bot('Team saved. Next up: want me to brainstorm 2–3 proposal concepts with this team, or generate the submission checklist first?')}
@@ -174,13 +174,13 @@ function IdeateDemo() {
       num: '01', color: 'var(--teal-deep)', bg: 'var(--teal)',
       title: 'AI-Powered Data Curation Platform for Infectious Disease Research',
       approach: 'Multi-agent LLM system for automated literature discovery, data extraction, and structured database curation.',
-      budget: '$1.6M · 4 years', innovation: 5, team: 5, cost: 4,
+      budget: '$1.0M · 4 years', innovation: 5, team: 5, cost: 4,
     },
     {
       num: '02', color: 'var(--orange-deep)', bg: 'var(--orange)',
       title: 'Data Curation and Analysis for Infectious Disease Surveillance',
       approach: 'Combines disease surveillance data with mobility and behavioral data to identify and predict outbreaks.',
-      budget: '$1.2M · 4 years', innovation: 4, team: 4, cost: 5,
+      budget: '$920k · 4 years', innovation: 4, team: 4, cost: 5,
     },
   ];
   return (
@@ -194,7 +194,7 @@ function IdeateDemo() {
           <div style={{color:'var(--muted)', fontSize:11}}>grant</div>
           <div style={{color:'var(--ink)', fontWeight:600}}>PAR-25-131 · Computational Curation at Scale (R01)</div>
           <div style={{display:'flex', gap:16, marginTop:4, color:'var(--muted)'}}>
-            <span>NIH / NLM</span><span>·</span><span>$250k ceiling</span><span>·</span><span>Apr 2027</span>
+            <span>NIH / NLM</span><span>·</span><span>$250k/yr direct</span><span>·</span><span>Apr 2027</span>
           </div>
         </div>
         {concepts.map(c => (
@@ -267,7 +267,7 @@ function BiosketcDemo() {
 
 function TrackDemo() {
   const items = [
-    ['Specific Aims — 1 page',              'done',    'from Draft Concepts'],
+    ['Specific Aims — 1 page',              'done',    'from Brainstorm'],
     ['Biosketch — NIH Common Form',          'done',    'generated · tool 05'],
     ['Data Management & Sharing Plan',       'done',    'generated · tool 05'],
     ['Budget Brief + Justification',         'active',  'in review'],
@@ -317,7 +317,7 @@ function Features({ setRoute }) {
             <em style={{color:'var(--orange-deep)'}}>handled.</em>
           </h1>
           <div style={{display:'flex', flexWrap:'wrap', gap: isMobile ? 12 : 24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
-            {['01 profile','02 discover','03 team','04 brainstorm','05 docs','06 track','07 assistant'].map(x => (
+            {['01 profile','02 discover','03 collaborate','04 brainstorm','05 docs','06 projects','07 assistant'].map(x => (
               <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}</span>
             ))}
           </div>
@@ -334,7 +334,7 @@ function Features({ setRoute }) {
         <DiscoverDemo/>
       </FeatureRow>
 
-      <FeatureRow num="03" tag="team" title={<>Find the co-I with <em style={{color:'var(--teal-deep)'}}>expertise you need</em>.</>}
+      <FeatureRow num="03" tag="collaborate" title={<>Find the co-I with <em style={{color:'var(--teal-deep)'}}>expertise you need</em>.</>}
         desc="Semantic search across 4,532 faculty profiles in GrantOtter's growing partner network — find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
         <TeamDemo/>
       </FeatureRow>
@@ -349,13 +349,13 @@ function Features({ setRoute }) {
         <BiosketcDemo/>
       </FeatureRow>
 
-      <FeatureRow reverse num="06" tag="track" title={<>Every application, <em style={{color:'var(--orange-deep)'}}>tracked to submission</em>.</>}
+      <FeatureRow reverse num="06" tag="projects" title={<>Every application, <em style={{color:'var(--orange-deep)'}}>tracked to submission</em>.</>}
         desc="Turn a match into a submission. Each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity's requirements, status tracking from drafting to submitted, and every document ready to download.">
         <TrackDemo/>
       </FeatureRow>
 
-      <FeatureRow num="07" tag="assistant" title={<>Your application, <em style={{color:'var(--teal-deep)'}}>walked through</em>.</>}
-        desc="A chat assistant inside every application that knows where you are and what comes next. It links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step — outline first, then a writing plan, then the full draft — grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your application, ready to download.">
+      <FeatureRow num="07" tag="assistant" title={<>One assistant, <em style={{color:'var(--teal-deep)'}}>everywhere</em>.</>}
+        desc="The assistant is how you use everything on this page. From the main chat it builds your profile, matches grants, and finds collaborators; inside every application it knows where you are and what comes next — it links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step, grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your project, ready to download.">
         <AssistantDemo/>
       </FeatureRow>
 
