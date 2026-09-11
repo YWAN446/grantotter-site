@@ -22,9 +22,12 @@ function BannerV2({ children }) {
   );
 }
 
-function MediaV2({ src, alt, caption, isVideo }) {
+function MediaV2({ src, alt, caption, isVideo, narrow }) {
+  // `narrow` (px) caps the frame width for tall, long-format screenshots (panel clips,
+  // chat columns, phone shots) so they read as figures instead of dominating the page.
+  const sizing = narrow ? {maxWidth: narrow, marginLeft:'auto', marginRight:'auto'} : {};
   return (
-    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)', marginTop:24, overflow:'hidden'}}>
+    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)', marginTop:24, overflow:'hidden', ...sizing}}>
       {isVideo
         ? <video autoPlay loop muted playsInline style={{width:'100%', display:'block'}}><source src={src} type="video/mp4"/></video>
         : <img src={src} alt={alt} style={{width:'100%', display:'block'}}/>
@@ -216,6 +219,15 @@ function TutorialV2({ setRoute }) {
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
           Build your team the same way you do everything else — by asking — or browse the institution network directly.
         </p>
+        <BannerV2>
+          <strong>Who's in the network today:</strong> the collaborator pool currently covers Emory University —
+          over <strong>4,600 faculty</strong> across the School of Medicine, the Rollins School of Public Health,
+          and the Nell Hodgson Woodruff School of Nursing — with roughly 1,000 more faculty from Emory's other
+          schools coming soon. At another institution? Find Collaborators searches this pool only, so it becomes
+          useful for your team once your institution has a network of its own —{' '}
+          <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)', fontWeight:600}}>contact us</a>{' '}
+          about institution onboarding. Everything else in GrantOtter works for researchers anywhere.
+        </BannerV2>
         <H3V2>Ask the assistant</H3V2>
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>
           Describe the expertise you need, in a grant thread or anywhere else in the chat, and the assistant searches the network and returns matched researchers with an explanation of the fit.
@@ -254,7 +266,7 @@ function TutorialV2({ setRoute }) {
           <LiV2 n="+"><strong>Checklist</strong> — the submission components the assistant extracted for you</LiV2>
           <LiV2 n="+"><strong>Documents</strong> — everything the assistant drafts inside the thread</LiV2>
         </ULV2>
-        <MediaV2 src="media/v2_project_detail.png" alt="A project's detail view showing status, deadline, team, checklist, and documents" isVideo={false}
+        <MediaV2 narrow={400} src="media/v2_project_detail.png" alt="A project's detail view showing status, deadline, team, checklist, and documents" isVideo={false}
           caption="Project detail — status, deadline, notes, team + PI, checklist, and documents in one place." />
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type: click "Start application" on a feed card, or click the link in your Monday email.
@@ -281,7 +293,7 @@ function TutorialV2({ setRoute }) {
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, margin:'12px 0 0'}}>
           Every document it drafts lands in the project's <strong style={{color:'var(--teal-deep)'}}>Documents</strong> list, ready to open or download.
         </p>
-        <MediaV2 src="media/v2_project_thread.png" alt="A project chat thread with the assistant drafting a document that appears as a chip in the conversation" isVideo={false}
+        <MediaV2 narrow={480} src="media/v2_project_thread.png" alt="A project chat thread with the assistant drafting a document that appears as a chip in the conversation" isVideo={false}
           caption="One thread per project — ask for a checklist, a biosketch, a budget brief, and each lands in Documents." />
         <TipV2>Always review a <CodeV2>[PLACEHOLDER]</CodeV2> before you submit — it marks a gap the assistant couldn't fill from what you've given it, never a guess.</TipV2>
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
@@ -300,7 +312,7 @@ function TutorialV2({ setRoute }) {
           <LiV2 n="2.">On a thumbs-down, a small note field opens.</LiV2>
           <LiV2 n="3.">Type what went wrong — it goes straight to us, not into a queue no one reads.</LiV2>
         </OLV2>
-        <MediaV2 src="media/v2_thumbs.png" alt="Thumbs-up and thumbs-down feedback controls under an assistant reply, with a note field open" isVideo={false}
+        <MediaV2 narrow={480} src="media/v2_thumbs.png" alt="Thumbs-up and thumbs-down feedback controls under an assistant reply, with a note field open" isVideo={false}
           caption="Thumbs under every reply — a thumbs-down note goes straight to us." />
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type a quick note when you thumbs-down a reply — that's what tells us what to fix.
@@ -317,7 +329,7 @@ function TutorialV2({ setRoute }) {
           <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Getting-started card</strong> — while you still have steps left, a card at the top of the Projects tab tracks them; dismiss it any time, and it disappears on its own once you're done.</LiV2>
           <LiV2 n="⌘" accent="var(--orange-deep)"><strong>Dark / light theme</strong> — switch it from the account menu (Appearance). Dark is the default.</LiV2>
         </ULV2>
-        <MediaV2 src="media/v2_phone.png" alt="GrantOtter on a phone, with the arrow-send button and the Dashboard opened as a sheet" isVideo={false}
+        <MediaV2 narrow={300} src="media/v2_phone.png" alt="GrantOtter on a phone, with the arrow-send button and the Dashboard opened as a sheet" isVideo={false}
           caption="On a phone: the arrow button sends, and Dashboard opens as a sheet over the chat." />
         <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
           Type: drag a PDF straight into the chat — the assistant reads it without a separate upload step.
