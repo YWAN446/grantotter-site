@@ -31,7 +31,7 @@ function Help({ setRoute }) {
   const faqs = [
     {
       q: 'How do I create an account?',
-      a: <p>Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>grantotter.streamlit.app</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or use the <strong>Create Account</strong> tab: enter your email and a password (minimum 6 characters) and click <strong>Create Account</strong>. With email sign-up, a confirmation email is sent from <strong>grantotter42@gmail.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
+      a: <p>Go to <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>app.grantotter.com</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or use the <strong>Create Account</strong> tab: enter your email and a password (at least 8 characters with a letter, a number, and a special character) and click <strong>Create Account</strong>. With email sign-up, a confirmation email is sent from <strong>grantotter42@gmail.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
     },
     {
       q: 'I forgot my password. How do I reset it?',

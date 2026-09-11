@@ -182,7 +182,7 @@ function Nav({ route, setRoute, showOtter }) {
             </a>
           ))}
           <span style={{width:12}}/>
-          <a className="nav-cta" href="https://grantotter.streamlit.app" target="_blank" rel="noopener">
+          <a className="nav-cta" href="https://app.grantotter.com" target="_blank" rel="noopener">
             Launch app <span className="arrow">→</span>
           </a>
         </div>
@@ -204,7 +204,7 @@ function Nav({ route, setRoute, showOtter }) {
               {label}
             </a>
           ))}
-          <a className="nav-mobile-cta" href="https://grantotter.streamlit.app" target="_blank" rel="noopener">
+          <a className="nav-mobile-cta" href="https://app.grantotter.com" target="_blank" rel="noopener">
             Launch app →
           </a>
         </div>
@@ -287,7 +287,7 @@ function Footer({ setRoute }) {
               { label: 'Terms',       onClick: () => setRoute('terms') },
             ]],
             ['App', [
-              { label: 'Launch App', href: 'https://grantotter.streamlit.app', external: true },
+              { label: 'Launch App', href: 'https://app.grantotter.com', external: true },
               { label: 'Join Slack', href: 'https://join.slack.com/t/grantottercommunity/shared_invite/zt-3wb5fmemq-CPTYpyWjXzl8wkmhn6tw4Q', external: true },
             ]],
           ].map(([title, rows]) => (

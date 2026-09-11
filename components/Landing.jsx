@@ -67,7 +67,7 @@ function Hero({ setRoute, heroVariant, showOtter }) {
             </p>
 
             <div style={{display:'flex', gap:12, marginTop:36, flexWrap:'wrap'}}>
-              <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-primary">
+              <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-primary">
                 Launch app <span>→</span>
               </a>
               <button className="btn btn-ghost" onClick={() => setRoute('features')}>
@@ -177,7 +177,7 @@ function HeroEditorial({ setRoute, showOtter }) {
             <span style={{color:'var(--teal-deep)', fontWeight:600}}>What, Who, and How</span>.
           </p>
           <div>
-            <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginBottom:12}}>
+            <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginBottom:12}}>
               Launch app — currently free <span>→</span>
             </a><br/>
             <button className="btn btn-ghost" onClick={() => setRoute('features')}>
@@ -295,7 +295,7 @@ function WeeklyFeed({ setRoute }) {
                 to your own work.
               </p>
               <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
-                <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-primary">
+                <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-primary">
                   Create a free account →
                 </a>
                 <button className="btn btn-ghost" onClick={() => setRoute('sample-brief')}>
@@ -400,7 +400,7 @@ function FinalCTA({ setRoute }) {
           <span style={{fontSize:'0.55em', letterSpacing:'-0.01em'}}>Start to finish, <span style={{color:'var(--orange)'}}>in hours.</span></span>
         </h2>
         <div style={{marginTop:48, display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap'}}>
-          <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal">
+          <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal">
             Launch app — currently free →
           </a>
           <button onClick={() => setRoute('tutorial')} className="btn btn-ghost" style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)', cursor:'pointer'}}>

@@ -115,7 +115,7 @@ function Tutorial({ setRoute }) {
         <StepH2>Sign Up &amp; Log In</StepH2>
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
           GrantOtter is a web app — no installation needed. Open it at{' '}
-          <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--orange-deep)', fontWeight:600}}>grantotter.streamlit.app</a>{' '}
+          <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--orange-deep)', fontWeight:600}}>app.grantotter.com</a>{' '}
           in any browser. You'll be greeted with a sign-in screen before accessing the app.
         </p>
         <H3>Creating an account</H3>
@@ -126,7 +126,7 @@ function Tutorial({ setRoute }) {
         </OL>
         <H3>Signing in on return visits</H3>
         <OL>
-          <Li n="1.">Go to <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--orange-deep)'}}>grantotter.streamlit.app</a>.</Li>
+          <Li n="1.">Go to <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--orange-deep)'}}>app.grantotter.com</a>.</Li>
           <Li n="2.">Click <strong style={{color:'var(--teal-deep)'}}>Continue with Google</strong>, or enter your email and password in the <strong style={{color:'var(--teal-deep)'}}>Sign In</strong> tab and click <strong style={{color:'var(--teal-deep)'}}>Sign In</strong>.</Li>
         </OL>
         <Tip>To sign out, use the <strong style={{color:'var(--teal-deep)'}}>Sign Out</strong> button in the sidebar at any time. Your profile and saved data are stored securely and will be there when you sign back in.</Tip>
@@ -464,7 +464,7 @@ function Tutorial({ setRoute }) {
           })()}
 
           <div style={{marginTop:0, display:'flex', gap:14, flexWrap:'wrap'}}>
-            <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal">
+            <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal">
               Launch app — currently free →
             </a>
             <button className="btn btn-ghost" onClick={() => setRoute('home')} style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)'}}>

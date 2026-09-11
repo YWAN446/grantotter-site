@@ -154,7 +154,7 @@ function SampleBrief({ setRoute }) {
             and personalized grant alerts join them — your top matches, scored and explained.
           </p>
           <div style={{display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap'}}>
-            <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal">
+            <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal">
               Create a free account →
             </a>
             <button className="btn btn-ghost" onClick={() => setRoute('home')}>

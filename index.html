@@ -108,6 +108,7 @@ window.__TWEAKS = /*EDITMODE-BEGIN*/{
 <script type="text/babel" src="components/Privacy.jsx"></script>
 <script type="text/babel" src="components/Terms.jsx"></script>
 <script type="text/babel" src="components/Tutorial.jsx"></script>
+<script type="text/babel" src="components/TutorialV2.jsx"></script>
 <script type="text/babel" src="components/Signup.jsx"></script>
 <script type="text/babel" src="components/Blog.jsx"></script>
 <script type="text/babel" src="components/SampleBrief.jsx"></script>
@@ -166,7 +167,7 @@ function App() {
     route === 'help'      ? <Help setRoute={setRoute} /> :
     route === 'privacy'   ? <Privacy setRoute={setRoute} /> :
     route === 'terms'     ? <Terms setRoute={setRoute} /> :
-    route === 'tutorial'  ? <Tutorial setRoute={setRoute} /> :
+    route === 'tutorial'  ? <TutorialV2 setRoute={setRoute} /> :
     route === 'blog'      ? <BlogList setRoute={setRoute} setPost={setCurrentPost} /> :
     route === 'blog-post' ? <BlogPost post={currentPost} setRoute={setRoute} /> :
     route === 'sample-brief' ? <SampleBrief setRoute={setRoute} /> :

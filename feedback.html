@@ -107,7 +107,7 @@
     // v2 web app (GrantOtter v2 P3). Flip V2_LIVE at cutover (P5) — until then
     // app.grantotter.com does not exist and the legacy Streamlit hand-off stays.
     const APP_BASE   = "https://app.grantotter.com";
-    const V2_LIVE    = false;
+    const V2_LIVE    = true;   // flipped 2026-09-11 — the cutover (docs/DEPLOY_V2.md §9)
     const LEGACY_APP = "https://grantotter.streamlit.app";
     function deepLink(applicationId, feedbackToken) {
       return APP_BASE + "/p/" + encodeURIComponent(applicationId) + "?src=" + encodeURIComponent(feedbackToken);

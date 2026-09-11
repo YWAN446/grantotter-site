@@ -115,7 +115,7 @@ function Terms({ setRoute }) {
 
           <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:36}}>
             By accessing or using GrantOtter at{' '}
-            <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>grantotter.streamlit.app</a>
+            <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>app.grantotter.com</a>
             {' '}or{' '}
             <a href="https://grantotter.com" style={{color:'var(--teal-deep)'}}>grantotter.com</a>,
             you agree to these Terms of Service. If you do not agree, do not use the service.

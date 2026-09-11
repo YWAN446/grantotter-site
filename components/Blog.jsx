@@ -174,7 +174,7 @@ function PostContent_001() {
       </p>
 
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
-        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Create My Research Profile →
         </a>
       </div>
@@ -329,7 +329,7 @@ function PostContent_002() {
       </p>
 
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
-        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Start Matching Grants →
         </a>
       </div>
@@ -412,7 +412,7 @@ function PostContent_003() {
       </p>
 
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
-        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Open GrantOtter →
         </a>
       </div>
@@ -514,7 +514,7 @@ function PostContent_005() {
         and share your experience — we ship fixes weekly.
       </p>
       <p style={{ ...pStyle, margin: 0 }}>
-        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" style={{ color: 'var(--orange-deep)', fontWeight: 600 }}>Open GrantOtter and try the Application Assistant →</a>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{ color: 'var(--orange-deep)', fontWeight: 600 }}>Open GrantOtter and try the Application Assistant →</a>
       </p>
     </>
   );
@@ -643,7 +643,7 @@ function PostContent_004() {
       </p>
 
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
-        <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Open GrantOtter →
         </a>
       </div>

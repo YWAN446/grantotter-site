@@ -14,7 +14,7 @@ function Signup({ setRoute }) {
             </p>
 
             <div style={{display:'grid', gap:12, marginBottom:40}}>
-              <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'block', textAlign:'center', textDecoration:'none', padding:'16px 24px', fontSize:16}}>
+              <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'block', textAlign:'center', textDecoration:'none', padding:'16px 24px', fontSize:16}}>
                 Launch GrantOtter app →
               </a>
               <button onClick={() => setRoute('tutorial')} className="btn btn-ghost" style={{display:'block', textAlign:'center', width:'100%', cursor:'pointer'}}>

@@ -43,7 +43,7 @@ function Pricing({ setRoute }) {
                   </div>
                 ))}
               </div>
-              <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'block', textAlign:'center', textDecoration:'none'}}>
+              <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'block', textAlign:'center', textDecoration:'none'}}>
                 Launch app →
               </a>
             </div>

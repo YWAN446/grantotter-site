@@ -362,7 +362,7 @@ function Features({ setRoute }) {
       <section style={{padding: isMobile ? '64px 0' : '100px 0', textAlign:'center'}}>
         <div className="container">
           <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, fontStyle:'italic', letterSpacing:'-0.02em'}}>Ready to try it on your own profile?</h2>
-          <a href="https://grantotter.streamlit.app" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — currently free →</a>
+          <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — currently free →</a>
         </div>
       </section>
     </>
