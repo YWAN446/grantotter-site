@@ -229,7 +229,7 @@ function ModulesGrid({ setRoute }) {
           <div className="left">
             <span className="bracket-label">03 / tools</span>
           </div>
-          <h2>Six tools. <em>One conversation.</em></h2>
+          <h2>Every tool. <em>One conversation.</em></h2>
         </div>
 
         <div style={{display:'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', border:'1px solid var(--line-2)', borderRight:0, borderBottom:0}}>
