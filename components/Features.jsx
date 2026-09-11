@@ -298,7 +298,7 @@ function TrackDemo() {
         ))}
         <div style={{marginTop:12, display:'flex', justifyContent:'space-between', alignItems:'center', color:'var(--muted)', fontSize:11}}>
           <span>4 of 6 items ready · team: PI + 2 co-Is</span>
-          <span style={{color:'var(--teal-deep)'}}>↓ download ZIP</span>
+          <span style={{color:'var(--teal-deep)'}}>↓ download documents</span>
         </div>
       </div>
     </div>
@@ -340,21 +340,21 @@ function Features({ setRoute }) {
       </FeatureRow>
 
       <FeatureRow reverse num="04" tag="brainstorm" title={<>From grant + team to <em style={{color:'var(--orange-deep)'}}>funded concept</em>.</>}
-        desc="Select a grant opportunity and your team profiles. GrantOtter generates 2–3 concrete proposal concepts with strategic framing, budget estimates, and rationale tailored to the specific agency and mechanism.">
+        desc="Ask the assistant to brainstorm against a grant — it pulls in your profile and your team's, then generates 2–3 concrete proposal concepts with strategic framing, budget estimates, and rationale tailored to the specific agency and mechanism.">
         <IdeateDemo/>
       </FeatureRow>
 
       <FeatureRow num="05" tag="docs" title={<>The boilerplate documents, <em style={{color:'var(--teal-deep)'}}>handled</em>.</>}
-        desc="Three non-science documents, generated from your profile and the specific grant: an NIH Biosketch aligned with current Common Form guidance, a 2026 Data Management & Sharing Plan on the official NIH template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files. Anything GrantOtter can't verify is flagged as an explicit placeholder, never invented.">
+        desc="Three supporting documents, drafted from your profile and the specific grant: an NIH Biosketch aligned with current Common Form guidance, a 2026 Data Management & Sharing Plan on the official NIH template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files. Anything GrantOtter can't verify is flagged as an explicit placeholder, never invented.">
         <BiosketcDemo/>
       </FeatureRow>
 
       <FeatureRow reverse num="06" tag="track" title={<>Every application, <em style={{color:'var(--orange-deep)'}}>tracked to submission</em>.</>}
-        desc="Turn a match into a submission. Each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity's requirements, status tracking from drafting to submitted, and one-click ZIP download of the whole package.">
+        desc="Turn a match into a submission. Each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity's requirements, status tracking from drafting to submitted, and every document ready to download.">
         <TrackDemo/>
       </FeatureRow>
 
-      <FeatureRow num="07" tag="assistant · new" title={<>Your application, <em style={{color:'var(--teal-deep)'}}>walked through</em>.</>}
+      <FeatureRow num="07" tag="assistant" title={<>Your application, <em style={{color:'var(--teal-deep)'}}>walked through</em>.</>}
         desc="A chat assistant inside every application that knows where you are and what comes next. It links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step — outline first, then a writing plan, then the full draft — grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your application, ready to download.">
         <AssistantDemo/>
       </FeatureRow>

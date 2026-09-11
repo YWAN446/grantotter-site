@@ -218,8 +218,8 @@ function ModulesGrid({ setRoute }) {
     { n: '01', k: 'PROFILE',   name: 'Researcher Profile',    desc: 'Just your name and institution — that\'s all it takes. GrantOtter searches Google Scholar, PubMed, ORCID, and your faculty page to build a complete profile from open data. Upload your CV for an even faster, more accurate result.',  stat: 'Minimum input · maximum coverage', color: 'teal' },
     { n: '02', k: 'DISCOVER',  name: 'Grant Discovery',       desc: 'Match your profile against 2,000+ active opportunities across NIH, NSF, DARPA, DOE, and hundreds of foundation funders. Hard eligibility checks — career stage, institution type, mechanism — run first, so you never read a grant you can\'t apply for. Then rule-based scoring and AI ranking surface your best fits with plain-language explanations.',            stat: '2,000+ grants · eligibility-checked',  color: 'orange' },
     { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched faculty in your institution\'s network — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach.',          stat: '4,532 faculty profiles · growing',     color: 'teal' },
-    { n: '04', k: 'BRAINSTORM', name: 'Concept Brainstorming', desc: 'Select a grant and your team profiles, then generate 2–3 concrete proposal concepts with budget estimates and strategic framing tailored to the specific funding opportunity.',  stat: '2–3 concepts · with budget estimates', color: 'orange' },
-    { n: '05', k: 'DOCS',      name: 'Non-Science Docs',      desc: 'The boilerplate, handled: NIH Biosketch aligned with current Common Form guidance, 2026 Data Management & Sharing Plan on the official template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files.',   stat: 'Biosketch · DMS Plan · Budget',        color: 'teal' },
+    { n: '04', k: 'BRAINSTORM', name: 'Concept Brainstorming', desc: 'Ask the assistant to brainstorm against a grant — it pulls in your profile and your team\'s, then returns 2–3 concrete proposal concepts with budget estimates and strategic framing tailored to the specific funding opportunity.',  stat: '2–3 concepts · with budget estimates', color: 'orange' },
+    { n: '05', k: 'DOCS',      name: 'Drafting',              desc: 'The boilerplate, drafted with you in the chat: NIH Biosketch aligned with current Common Form guidance, 2026 Data Management & Sharing Plan on the official template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files.',   stat: 'Biosketch · DMS Plan · Budget',        color: 'teal' },
     { n: '06', k: 'TRACK',     name: 'Projects',       desc: 'Turn a match into a submission. Every application is a project with its own assistant chat that walks it end to end: it reads your grant, sets the deadline, assembles the team, brainstorms concepts, builds a funder-specific checklist, and drafts the science documents with you, remembering your decisions between sessions. Grant, team, documents, and status tracking — all in one thread.',   stat: 'one chat per application · checklist · documents',   color: 'orange' },
   ];
   return (
@@ -289,10 +289,10 @@ function WeeklyFeed({ setRoute }) {
           <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1.1fr', gap: isMobile ? 28 : 48, alignItems:'center'}}>
             <div>
               <p style={{fontSize:16, lineHeight:1.6, color:'var(--ink-2)', marginBottom:28}}>
-                Most of GrantOtter happens in your inbox. Create a free account and two weekly
-                news briefs — federal and foundation — arrive every Monday. Save your researcher
-                profile to unlock the third: personalized grant alerts, matched
-                to your own work.
+                Your feed refreshes every Monday — in the app and in your inbox. Create a free
+                account and two weekly news briefs — federal and foundation — arrive each week.
+                Save your researcher profile to unlock the third: personalized grant alerts,
+                matched to your own work.
               </p>
               <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
                 <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-primary">
@@ -423,6 +423,13 @@ function FinalCTA({ setRoute }) {
 // always shows the top entry and links out (e.g. to the launch blog post).
 const UPDATES = [
   {
+    tag: 'NEW',
+    title: 'GrantOtter 2.0',
+    desc: 'The chat-first rebuild is live. One conversation now drives everything — your profile, grant matching, collaborator search, brainstorming, drafting, and projects — in a faster app at app.grantotter.com. Same account, same projects and history.',
+    href: 'https://app.grantotter.com',
+    cta: 'Launch the new app',
+  },
+  {
     tag: 'NEW · BETA',
     title: 'The Application Assistant',
     desc: 'A chat inside every application that walks you from “here’s my grant” to a submission-ready package — reading the announcement, assembling the team, brainstorming concepts, building the funder-specific checklist, and drafting documents with you.',
@@ -438,7 +445,7 @@ function WhatsNew() {
   return (
     <section style={{borderTop:'1px solid var(--line)', borderBottom:'1px solid var(--line)', background:'color-mix(in oklab, var(--orange-deep) 5%, transparent)'}}>
       <div className="container" style={{padding: isMobile ? '22px 0' : '30px 0'}}>
-        <a href={u.href} style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 28, textDecoration:'none', color:'inherit'}}>
+        <a href={u.href} target={u.href.startsWith('http') ? '_blank' : undefined} rel={u.href.startsWith('http') ? 'noopener' : undefined} style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 28, textDecoration:'none', color:'inherit'}}>
           <span style={{flexShrink:0, fontFamily:'JetBrains Mono, monospace', fontSize:13, fontWeight:700, letterSpacing:'0.08em', color:'#fff', background:'var(--orange-deep)', padding:'6px 14px'}}>{u.tag}</span>
           <span style={{flexShrink:0, fontFamily:'Instrument Serif, Georgia, serif', fontStyle:'italic', fontSize: isMobile ? 26 : 32, lineHeight:1.1}}>{u.title}</span>
           {!isMobile && <span style={{fontSize:15, color:'var(--ink-2)', lineHeight:1.55, flex:1, minWidth:0}}>{u.desc}</span>}

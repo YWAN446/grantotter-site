@@ -220,7 +220,7 @@ function Ticker() {
     ['GRANTS_INDEXED',   '2,000+ · updated every Monday'],
     ['FACULTY_NETWORK','4,532 faculty profiles indexed · and growing'],
     ['TOOLS',            'Profile · Discover · Collaborate · Brainstorm · Docs · Projects'],
-    ['RESEARCHERS',       '165 researchers and counting'],
+    ['RESEARCHERS',       '180+ researchers and counting'],
     ['COST',             'Currently free for researchers'],
   ];
   const row = (
