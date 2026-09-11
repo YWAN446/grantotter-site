@@ -39,7 +39,7 @@ function Help({ setRoute }) {
     },
     {
       q: 'What information does GrantOtter need to generate my profile?',
-      a: <p>Only your <strong>name</strong> and <strong>institution</strong> are required. Providing additional details — your Google Scholar URL, ORCID iD, department, and a link to your faculty page or CV — significantly improves profile quality. We also recommend filling in <strong>Developing Research Interests</strong> and <strong>Areas to Avoid</strong> to get better-targeted grant recommendations.</p>,
+      a: <p>Just start chatting — the assistant asks for what it needs and guides you through it. Only your <strong>name</strong> and <strong>institution</strong> are required; sharing more when it asks — your CV (drop it right into the chat), a faculty page or Google Scholar URL, your ORCID iD — significantly improves profile quality. Before writing the profile, the assistant researches you from public sources, shows you a sourced summary card to confirm or correct, and asks about your <strong>developing research interests</strong> and any <strong>areas to avoid</strong>, so your grant recommendations are targeted from day one.</p>,
     },
     {
       q: 'What does the generated researcher profile include?',
@@ -86,10 +86,6 @@ function Help({ setRoute }) {
       a: <p>Yes. Ask the assistant to find collaborators by expertise — it searches a network of <strong>4,532 Emory faculty</strong> and explains each match — or name a colleague and it will look them up, building a full researcher profile from the web if they aren't in the pool yet. Saved collaborators appear in your <strong>Profile</strong> tab and can be added to any project's team, and the assistant can draft a biosketch for any team member.</p>,
     },
     {
-      q: 'Can I use my GrantOtter documents in other AI tools?',
-      a: <p>Yes. Every document the assistant drafts — concepts, biosketch, DMS plan, budget brief — lands in the project's <strong>Documents</strong> list, downloadable as markdown or Word. You can also download your researcher profile and any collaborator's profile from the <strong>Profile</strong> tab. Take them into Claude, ChatGPT, or Gemini whenever you want to keep working outside GrantOtter — your data is never locked in.</p>,
-    },
-    {
       q: 'What is the NIH biosketch output used for?',
       a: <p>Ask the assistant in any project to draft a biosketch — it writes an NIH Biographical Sketch covering all four required sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research Support). Anything it can't verify from your profile is flagged as an explicit <code style={{fontFamily:'JetBrains Mono,monospace', fontSize:12}}>[PLACEHOLDER]</code> for you to fill in — nothing is invented. Use the draft as a reference to populate your biosketch on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>SciENcv</a>, the official NIH tool.</p>,
     },
@@ -99,7 +95,7 @@ function Help({ setRoute }) {
     },
     {
       q: 'What emails does GrantOtter send, and how do I unsubscribe?',
-      a: <p>Up to three weekly emails, each optional: <strong>Grant Alerts</strong> (your personal top matches), the <strong>Federal News Brief</strong> (NIH/NSF/DARPA news and opportunities), and the <strong>Foundation Newsletter</strong> (curated foundation funding news). Every email includes its own one-click unsubscribe link, and preferences are per-channel — leaving one list never affects the others.</p>,
+      a: <p>Up to three weekly emails, each optional: <strong>Grant Alerts</strong> (your personal top matches), the <strong>Federal News Brief</strong> (NIH/NSF/DARPA news and opportunities), and the <strong>Foundation Newsletter</strong> (curated foundation funding news). You can manage all three in the app — open the account menu and go to <strong>Settings</strong>, where each channel has its own toggle — or use the one-click unsubscribe link in any email. Preferences are per-channel: leaving one list never affects the others.</p>,
     },
     {
       q: 'Is my data secure? How does GrantOtter handle my privacy?',
