@@ -37,12 +37,12 @@ function Signup({ setRoute }) {
               </div>
               <div className="term-body" style={{fontSize:13}}>
                 {[
-                  ['01', 'Generate Profile',    'Upload your CV or search by name → structured researcher profile'],
-                  ['02', 'Match Grants',        'Profile + filters → top 10 ranked grants with fit explanations'],
-                  ['03', 'Find Collaborators',  'Search 450+ partner-network faculty by research area'],
-                  ['04', 'Brainstorm Concepts', 'Grant + team → 2–3 concrete proposal concepts with budgets'],
-                  ['05', 'Non-Science Docs',    'Biosketch · DMS Plan · Budget Brief — drafted from your profile'],
-                  ['06', 'My Applications',     'AI submission checklist, status tracking, one-click ZIP download'],
+                  ['01', 'Chat-first',          'Describe your work — the assistant builds your researcher profile from your CV or the web'],
+                  ['02', 'Match Grants',        'Ask for a match → ranked grants with plain-language fit explanations'],
+                  ['03', 'Weekly Feed',         'Fit-scored recommendations every Monday — in the app and your inbox'],
+                  ['04', 'Find Collaborators',  'Search 4,532 partner-network faculty by research area'],
+                  ['05', 'Projects',            'One chat per application — deadline, team, AI checklist, status'],
+                  ['06', 'Drafting',            'Concepts · biosketch · DMS Plan · budget brief — drafted with you'],
                 ].map(([n, title, desc]) => (
                   <div key={n} style={{padding:'10px 0', borderBottom:'1px solid var(--line)', display:'grid', gap:4}}>
                     <div style={{display:'flex', gap:12, alignItems:'center'}}>

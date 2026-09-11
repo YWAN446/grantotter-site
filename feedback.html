@@ -108,7 +108,9 @@
     // app.grantotter.com does not exist and the legacy Streamlit hand-off stays.
     const APP_BASE   = "https://app.grantotter.com";
     const V2_LIVE    = true;   // flipped 2026-09-11 — the cutover (docs/DEPLOY_V2.md §9)
-    const LEGACY_APP = "https://grantotter.streamlit.app";
+    // Post-retirement (2026-09-11): the old Streamlit URL is itself a redirect now,
+    // so the no-application fallback goes straight to the new app.
+    const LEGACY_APP = "https://app.grantotter.com";
     function deepLink(applicationId, feedbackToken) {
       return APP_BASE + "/p/" + encodeURIComponent(applicationId) + "?src=" + encodeURIComponent(feedbackToken);
     }
@@ -139,8 +141,8 @@
       }
       if (type === "saved") {
         heading.innerHTML = "&#128193; Grant Saved!";
-        message.textContent = "This grant has been added to your My Workspace. Open GrantOtter to start your application.";
-        confirmArea.innerHTML = '<a href="https://grantotter.streamlit.app" class="return-btn">Open GrantOtter &rarr;</a>';
+        message.textContent = "This grant is saved — you'll find it under Saved in your Feed. Open GrantOtter to start your application.";
+        confirmArea.innerHTML = '<a href="https://app.grantotter.com" class="return-btn">Open GrantOtter &rarr;</a>';
         return;
       }
       if (type === "good") {

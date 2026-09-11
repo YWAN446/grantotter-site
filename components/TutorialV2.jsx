@@ -234,7 +234,7 @@ function TutorialV2({ setRoute }) {
         </p>
         <BannerV2>
           <strong>Who's in the network today:</strong> the collaborator pool currently covers Emory University —
-          over <strong>4,600 faculty</strong> across the School of Medicine, the Rollins School of Public Health,
+          <strong>4,532 faculty</strong> across the School of Medicine, the Rollins School of Public Health,
           and the Nell Hodgson Woodruff School of Nursing — with roughly 1,000 more faculty from Emory's other
           schools coming soon. At another institution? Find Collaborators searches this pool only, so it becomes
           useful for your team once your institution has a network of its own —{' '}

@@ -31,7 +31,7 @@ function Help({ setRoute }) {
   const faqs = [
     {
       q: 'How do I create an account?',
-      a: <p>Go to <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>app.grantotter.com</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or use the <strong>Create Account</strong> tab: enter your email and a password (at least 8 characters with a letter, a number, and a special character) and click <strong>Create Account</strong>. With email sign-up, a confirmation email is sent from <strong>grantotter42@gmail.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
+      a: <p>Go to <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>app.grantotter.com</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or click <strong>Sign up</strong>: enter your email and a password (at least 8 characters with a letter, a number, and a special character) and confirm it. With email sign-up, a confirmation email is sent from <strong>grantotter42@gmail.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
     },
     {
       q: 'I forgot my password. How do I reset it?',
@@ -47,7 +47,7 @@ function Help({ setRoute }) {
     },
     {
       q: 'What types of grants does GrantOtter search?',
-      a: <p>GrantOtter covers <strong>federal funding opportunities</strong> (NIH, NSF, DARPA, DOE, and more via Grants.gov) and <strong>foundation grants from hundreds of funders</strong>, curated weekly from funder newsletters and websites. For any grant not in the database, you can paste or upload the full opportunity document in the Draft Concepts and Non-Science Docs tabs to work against it directly.</p>,
+      a: <p>GrantOtter covers <strong>federal funding opportunities</strong> (NIH, NSF, DARPA, DOE, and more via Grants.gov) and <strong>foundation grants from hundreds of funders</strong>, curated weekly from funder newsletters and websites. For any grant not in the database, drop the full opportunity document (PDF, Word, or text) straight into a project's chat — the assistant files it and works against it directly.</p>,
     },
     {
       q: 'How often is the grant database updated?',
@@ -74,28 +74,28 @@ function Help({ setRoute }) {
       ),
     },
     {
-      q: 'What is My Workspace?',
-      a: <p><strong>My Workspace</strong> is your central hub — a single place to manage your researcher profile, preferred collaborators, saved grant opportunities, and previous proposals. It consolidates everything you need before diving into a specific application.</p>,
+      q: 'What is the Dashboard?',
+      a: <p>The <strong>Dashboard</strong> is the panel beside the chat, with four tabs: <strong>Projects</strong> (your applications), <strong>Feed</strong> (your fit-scored grant recommendations, refreshed every Monday), <strong>Profile</strong> (your researcher card and saved collaborators), and <strong>Find Collaborators</strong> (browse the faculty network). The chat can do everything the Dashboard shows — the panel is where you see and manage it all at a glance.</p>,
     },
     {
-      q: 'What is My Applications?',
-      a: <p><strong>My Applications</strong> is an end-to-end grant application hub. For each application, you can link the grant opportunity, assemble your team (PI + co-investigators), attach draft concepts, biosketches, and supporting documents, and track status from drafting to submitted. An <strong>AI-generated submission checklist</strong>, built from the specific opportunity's requirements, keeps every task visible. A single <strong>Download All as ZIP</strong> button bundles everything — so you can load the full context into any AI platform.</p>,
+      q: 'What are Projects?',
+      a: <p>A <strong>project</strong> is one grant application, tracked end to end. Each project has its own chat thread with the assistant, plus the grant it's linked to, status and deadline, your team (PI + co-investigators), an <strong>AI-generated submission checklist</strong> built from that opportunity's requirements, and every document drafted along the way — each one viewable and downloadable from the project's Documents list.</p>,
     },
     {
       q: 'Can I use GrantOtter for team proposals?',
-      a: <p>Yes. Generate a full GrantOtter researcher profile for any collaborator — just their name and institution in <strong>Generate Profile</strong> — and save it as a <strong>preferred collaborator</strong> in My Workspace. From there, pull collaborators into any application, brainstorming session, or biosketch. If your institution's faculty network is on GrantOtter, you can also use <strong>Find Collaborators</strong> to discover new co-investigators by research expertise. In <strong>My Applications</strong>, you can assemble your full team and keep all profiles together for download.</p>,
+      a: <p>Yes. Ask the assistant to find collaborators by expertise — it searches a network of <strong>4,532 Emory faculty</strong> and explains each match — or name a colleague and it will look them up, building a full researcher profile from the web if they aren't in the pool yet. Saved collaborators appear in your <strong>Profile</strong> tab and can be added to any project's team, and the assistant can draft a biosketch for any team member.</p>,
     },
     {
-      q: 'What is the Power User workflow?',
-      a: <p>Use <strong>My Applications</strong> to assemble your full application package, then hit <strong>Download All as ZIP</strong> — this bundles your grant document, team profiles, brainstorming report, and biosketch into a single file. Upload the contents into Claude, ChatGPT, or Gemini to give the AI full context, then develop your Specific Aims, write recruitment emails, or refine the proposal through conversation.</p>,
+      q: 'Can I use my GrantOtter documents in other AI tools?',
+      a: <p>Yes. Every document the assistant drafts — concepts, biosketch, DMS plan, budget brief — lands in the project's <strong>Documents</strong> list, downloadable as markdown or Word. You can also download your researcher profile and any collaborator's profile from the <strong>Profile</strong> tab. Take them into Claude, ChatGPT, or Gemini whenever you want to keep working outside GrantOtter — your data is never locked in.</p>,
     },
     {
       q: 'What is the NIH biosketch output used for?',
-      a: <p>The Biosketch generator (under <strong>Non-Science Docs</strong>) drafts an NIH Biographical Sketch covering all four required sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research Support). Anything it can't verify from your profile is flagged as an explicit <code style={{fontFamily:'JetBrains Mono,monospace', fontSize:12}}>[PLACEHOLDER]</code> for you to fill in — nothing is invented. Use the draft as a reference to populate your biosketch on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>SciENcv</a>, the official NIH tool.</p>,
+      a: <p>Ask the assistant in any project to draft a biosketch — it writes an NIH Biographical Sketch covering all four required sections (Personal Statement, Positions &amp; Honors, Contributions to Science, Research Support). Anything it can't verify from your profile is flagged as an explicit <code style={{fontFamily:'JetBrains Mono,monospace', fontSize:12}}>[PLACEHOLDER]</code> for you to fill in — nothing is invented. Use the draft as a reference to populate your biosketch on <a href="https://www.ncbi.nlm.nih.gov/sciencv/" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>SciENcv</a>, the official NIH tool.</p>,
     },
     {
       q: 'Can GrantOtter draft my Data Management & Sharing Plan or budget?',
-      a: <p>Yes — both live under <strong>Non-Science Docs</strong>. The <strong>DMS Plan</strong> generator (Beta) fills the official NIH 2026 Data Management &amp; Sharing Plan template from your answers about the project. The <strong>Budget Brief &amp; Justification</strong> generator (Beta) produces a funder-aware budget document as an editable Word file plus an Excel companion with live formulas, so you can adjust numbers without breaking totals.</p>,
+      a: <p>Yes — ask the assistant in the project's chat. The <strong>DMS Plan</strong> generator fills the official NIH 2026 Data Management &amp; Sharing Plan template from your answers about the project. The <strong>Budget Brief &amp; Justification</strong> generator produces a funder-aware budget document as an editable Word file plus an Excel companion with live formulas, so you can adjust numbers without breaking totals.</p>,
     },
     {
       q: 'What emails does GrantOtter send, and how do I unsubscribe?',

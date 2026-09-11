@@ -217,10 +217,10 @@ function ModulesGrid({ setRoute }) {
   const mods = [
     { n: '01', k: 'PROFILE',   name: 'Researcher Profile',    desc: 'Just your name and institution — that\'s all it takes. GrantOtter searches Google Scholar, PubMed, ORCID, and your faculty page to build a complete profile from open data. Upload your CV for an even faster, more accurate result.',  stat: 'Minimum input · maximum coverage', color: 'teal' },
     { n: '02', k: 'DISCOVER',  name: 'Grant Discovery',       desc: 'Match your profile against 2,000+ active opportunities across NIH, NSF, DARPA, DOE, and hundreds of foundation funders. Hard eligibility checks — career stage, institution type, mechanism — run first, so you never read a grant you can\'t apply for. Then rule-based scoring and AI ranking surface your best fits with plain-language explanations.',            stat: '2,000+ grants · eligibility-checked',  color: 'orange' },
-    { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched faculty in your institution\'s network — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach.',          stat: '450+ faculty profiles · growing',     color: 'teal' },
+    { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched faculty in your institution\'s network — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach.',          stat: '4,532 faculty profiles · growing',     color: 'teal' },
     { n: '04', k: 'BRAINSTORM', name: 'Concept Brainstorming', desc: 'Select a grant and your team profiles, then generate 2–3 concrete proposal concepts with budget estimates and strategic framing tailored to the specific funding opportunity.',  stat: '2–3 concepts · with budget estimates', color: 'orange' },
     { n: '05', k: 'DOCS',      name: 'Non-Science Docs',      desc: 'The boilerplate, handled: NIH Biosketch aligned with current Common Form guidance, 2026 Data Management & Sharing Plan on the official template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files.',   stat: 'Biosketch · DMS Plan · Budget',        color: 'teal' },
-    { n: '06', k: 'TRACK',     name: 'Application Hub',       desc: 'Turn a match into a submission — now with a built-in AI assistant (beta) that walks each application end to end: it reads your grant, sets the deadline, assembles the team, brainstorms concepts, builds a funder-specific checklist, and drafts the science documents with you, remembering your decisions between sessions. Grant, team, documents, status tracking, and one-click ZIP download — all in one place.',   stat: 'AI assistant (beta) · checklist · ZIP',   color: 'orange' },
+    { n: '06', k: 'TRACK',     name: 'Projects',       desc: 'Turn a match into a submission. Every application is a project with its own assistant chat that walks it end to end: it reads your grant, sets the deadline, assembles the team, brainstorms concepts, builds a funder-specific checklist, and drafts the science documents with you, remembering your decisions between sessions. Grant, team, documents, and status tracking — all in one thread.',   stat: 'one chat per application · checklist · documents',   color: 'orange' },
   ];
   return (
     <section className="section">
@@ -270,7 +270,7 @@ function ModulesGrid({ setRoute }) {
 function WeeklyFeed({ setRoute }) {
   const isMobile = useWindowWidth() < 768;
   const emails = [
-    { tag: 'ALERTS',     color: 'orange', name: 'Grant Alerts',          desc: 'Your personal top matches — scored against your researcher profile, with deadlines and award sizes. Only grants that clear your eligibility filters.', how: 'unlocked by saving your profile in My Workspace' },
+    { tag: 'ALERTS',     color: 'orange', name: 'Grant Alerts',          desc: 'Your personal top matches — scored against your researcher profile, with deadlines and award sizes. Only grants that clear your eligibility filters.', how: 'unlocked by saving your researcher profile' },
     { tag: 'FEDERAL',    color: 'teal',   name: 'Federal News Brief',    desc: 'NIH, NSF, and DARPA news that matters: new opportunities, policy changes, and deadline movements — summarized, sourced, and linked.', how: 'included with a free account' },
     { tag: 'FOUNDATION', color: 'teal',   name: 'Foundation Newsletter', desc: 'Foundation and nonprofit funding news, curated weekly from hundreds of funder newsletters and websites.', how: 'included with a free account' },
   ];
@@ -291,7 +291,7 @@ function WeeklyFeed({ setRoute }) {
               <p style={{fontSize:16, lineHeight:1.6, color:'var(--ink-2)', marginBottom:28}}>
                 Most of GrantOtter happens in your inbox. Create a free account and two weekly
                 news briefs — federal and foundation — arrive every Monday. Save your researcher
-                profile in My Workspace to unlock the third: personalized grant alerts, matched
+                profile to unlock the third: personalized grant alerts, matched
                 to your own work.
               </p>
               <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>

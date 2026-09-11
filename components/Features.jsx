@@ -318,7 +318,7 @@ function Features({ setRoute }) {
           </h1>
           <div style={{display:'flex', flexWrap:'wrap', gap: isMobile ? 12 : 24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
             {['01 profile','02 discover','03 team','04 brainstorm','05 docs','06 track','07 assistant'].map(x => (
-              <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}{x === '07 assistant' && <span style={{color:'var(--orange-deep)'}}> · new</span>}</span>
+              <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}</span>
             ))}
           </div>
         </div>
@@ -335,7 +335,7 @@ function Features({ setRoute }) {
       </FeatureRow>
 
       <FeatureRow num="03" tag="team" title={<>Find the co-I with <em style={{color:'var(--teal-deep)'}}>expertise you need</em>.</>}
-        desc="Semantic search across 450+ faculty profiles in GrantOtter's growing partner network — find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
+        desc="Semantic search across 4,532 faculty profiles in GrantOtter's growing partner network — find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
         <TeamDemo/>
       </FeatureRow>
 
@@ -355,7 +355,7 @@ function Features({ setRoute }) {
       </FeatureRow>
 
       <FeatureRow num="07" tag="assistant · new" title={<>Your application, <em style={{color:'var(--teal-deep)'}}>walked through</em>.</>}
-        desc="A chat assistant inside every application that knows where you are and what comes next. It links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step — outline first, then a writing plan, then the full draft — grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your application, ready to download. In beta now.">
+        desc="A chat assistant inside every application that knows where you are and what comes next. It links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step — outline first, then a writing plan, then the full draft — grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your application, ready to download.">
         <AssistantDemo/>
       </FeatureRow>
 

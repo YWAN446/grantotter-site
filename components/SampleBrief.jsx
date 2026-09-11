@@ -150,7 +150,7 @@ function SampleBrief({ setRoute }) {
             A fresh issue, <em style={{color:'var(--orange-deep)'}}>every Monday.</em>
           </h2>
           <p style={{fontSize:14, color:'var(--ink-2)', maxWidth:520, margin:'0 auto 28px', lineHeight:1.6}}>
-            Create a free account to get both briefs. Save your researcher profile in My Workspace
+            Create a free account to get both briefs. Save your researcher profile
             and personalized grant alerts join them — your top matches, scored and explained.
           </p>
           <div style={{display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap'}}>

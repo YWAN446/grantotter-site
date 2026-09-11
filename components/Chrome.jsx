@@ -218,7 +218,7 @@ function Ticker() {
     ['FEDERAL_AGENCIES', 'NIH · NSF · DARPA · DOE · NASA · USDA · DOD · and more via Grants.gov'],
     ['FOUNDATIONS',      'ACS · Komen · Gates · Simons · Sloan · Wellcome · and hundreds more'],
     ['GRANTS_INDEXED',   '2,000+ · updated every Monday'],
-    ['FACULTY_NETWORK','450+ faculty profiles indexed · and growing'],
+    ['FACULTY_NETWORK','4,532 faculty profiles indexed · and growing'],
     ['MODULES',          'Profile · Discover · Collaborate · Brainstorm · Docs · Applications'],
     ['RESEARCHERS',       '165 researchers and counting'],
     ['COST',             'Currently free for researchers'],
