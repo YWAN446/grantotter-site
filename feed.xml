@@ -4,7 +4,52 @@
     <title>GrantOtter — Federal Funding Updates</title>
     <link>https://ywan446.github.io/grantotter-site/</link>
     <description>Aggregated weekly feed of grant opportunities and agency news from NIH, NSF, and DARPA.</description>
-    <lastBuildDate>Fri, 11 Sep 2026 20:46:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 14:41:09 +0000</lastBuildDate>
+    <item>
+      <title>NSF launches $20M pilot to accelerate commercialization of promising deep technologies from small businesses</title>
+      <link>https://www.nsf.gov/news/nsf-launches-20m-pilot-accelerate-commercialization</link>
+      <description>The U.S. National Science Foundation today announced a $20 million investment to launch a two-year pilot supporting small businesses in commercializing their deep-technology ventures. The pilot aims to address a persistent gap separating federally…</description>
+      <pubDate>Mon, 14 Sep 2026 14:00:32 +0000</pubDate>
+      <source>NSF News</source>
+    </item>
+    <item>
+      <title>APOD: 2026 September 14 – Where Your Elements Came From</title>
+      <link>https://science.nasa.gov/image-article/apod-2026-september-14-where-your-elements-came-from/</link>
+      <description>APOD Science APOD APOD: 2026 September 14 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Where Your Elements [&amp;#8230;]</description>
+      <pubDate>Mon, 14 Sep 2026 04:05:00 +0000</pubDate>
+      <source>NASA News</source>
+      <category>APOD</category>
+    </item>
+    <item>
+      <title>An Early Look at Fall Color in Canada</title>
+      <link>https://science.nasa.gov/earth/earth-observatory/an-early-look-at-fall-color-in-canada/</link>
+      <description>Reds, yellows, and oranges are already sweeping across tundra landscapes in Nunavut.</description>
+      <pubDate>Mon, 14 Sep 2026 04:00:00 +0000</pubDate>
+      <source>NASA News</source>
+      <category>Earth Observatory</category>
+      <category>Land Cover</category>
+      <category>Landsat 9</category>
+      <category>Vegetation</category>
+    </item>
+    <item>
+      <title>APOD: 2026 September 13 – Comet NEOWISE Rising over the Adriatic Sea</title>
+      <link>https://science.nasa.gov/image-article/apod-2026-september-13-comet-neowise-rising-over-the-adriatic-sea/</link>
+      <description>APOD Science APOD APOD: 2026 September 13 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss   APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. To view this [&amp;#8230;]</description>
+      <pubDate>Sun, 13 Sep 2026 04:05:00 +0000</pubDate>
+      <source>NASA News</source>
+      <category>APOD</category>
+    </item>
+    <item>
+      <title>Help Refine Data from Space Telescopes with Artifact InSPECtor</title>
+      <link>https://science.nasa.gov/get-involved/citizen-science/help-refine-data-from-space-telescopes-with-artifact-inspector/</link>
+      <description>How do scientists studying space with data from a telescope hundreds of thousands of miles away know that what they are seeing is real? A new NASA project, Artifact InSPECtor, invites you to find out – and by doing so, to help missions like Euclid and NASA’s new Nancy Grace Roman Space Telescope answer fundamental […]</description>
+      <pubDate>Fri, 11 Sep 2026 19:48:09 +0000</pubDate>
+      <source>NASA News</source>
+      <category>Citizen Science</category>
+      <category>Dark Energy</category>
+      <category>Euclid</category>
+      <category>Nancy Grace Roman Space Telescope</category>
+    </item>
     <item>
       <title>NASA’s Chandra Spots Galactic Gem</title>
       <link>https://www.nasa.gov/image-article/nasas-chandra-spots-galactic-gem/</link>
@@ -20,6 +65,13 @@
       <pubDate>Fri, 11 Sep 2026 16:47:58 +0000</pubDate>
       <source>NIH Extramural Nexus</source>
       <category>Top Stories&gt;</category>
+    </item>
+    <item>
+      <title>Industry Day: Surgical Competition</title>
+      <link>https://www.darpa.mil/work-with-us/opportunities</link>
+      <description>&lt;p&gt;BTO is hosting a hybrid Industry Day for the DARPA Surgical Competition, which seeks to advance autonomous trauma robotics capable of both collaborative assistance alongside human surgeons and independent procedure execution. | &lt;a href="https://www.darpa.mil/events/2026/industry-day-surgical"&gt;See Event&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Fri, 11 Sep 2026 16:29:42 +0000</pubDate>
+      <source>DARPA Opportunities</source>
     </item>
     <item>
       <title>Notice of Change to Eligible Organizations for PAR-26-106 "Development of Collaborative Research Facilities or Research-Resource Facilities (C06 Clinical Trial Not Allowed)"</title>
@@ -84,55 +136,11 @@
       <category>Office of International and Interagency Relations (OIIR)</category>
     </item>
     <item>
-      <title>NASA Answers President’s Call to Establish United States Space Academy</title>
-      <link>https://www.nasa.gov/news-release/nasa-answers-presidents-call-to-establish-united-states-space-academy/</link>
-      <description>Less than two weeks after an Executive Order was signed to create the first United States Space Academy, NASA-led work is in full swing to make the academy a reality and shape the future of America’s aerospace workforce and leadership. NASA Administrator Jared Isaacman chaired the first Presidential Commission on the United States Space Academy [&amp;#8230;]</description>
-      <pubDate>Thu, 10 Sep 2026 20:26:52 +0000</pubDate>
-      <source>NASA News</source>
-      <category>Leadership</category>
-      <category>General</category>
-    </item>
-    <item>
-      <title>NASA’s Life-Saving Technology Where Cell Signals Can’t Go</title>
-      <link>https://www.nasa.gov/technology/tech-transfer-spinoffs/nasas-life-saving-technology-where-cell-signals-cant-go/</link>
-      <description>Search and rescue technology developed in part by NASA saved five lives</description>
-      <pubDate>Thu, 10 Sep 2026 20:12:39 +0000</pubDate>
-      <source>NASA News</source>
-      <category>Technology Transfer &amp; Spinoffs</category>
-      <category>Research and Technology Mission Directorate</category>
-      <category>Spinoffs</category>
-      <category>Technology Transfer</category>
-    </item>
-    <item>
       <title>NSF leadership in a new golden age of science</title>
       <link>https://www.nsf.gov/news/nsf-leadership-new-golden-age-science</link>
       <description>The U.S. National Science Foundation was established in 1950 to keep American discovery at the frontier. That mission has not changed. The science and technology ecosystem around it has...</description>
       <pubDate>Thu, 10 Sep 2026 18:59:14 +0000</pubDate>
       <source>NSF News</source>
-    </item>
-    <item>
-      <title>NASA, NFL Team Up to Showcase Space, Aeronautics Innovation</title>
-      <link>https://www.nasa.gov/news-release/nasa-nfl-team-up-to-showcase-space-aeronautics-innovation/</link>
-      <description>Through a new collaboration between NASA and the National Football League (NFL), the agency will soon bring America’s strengths in space exploration and aeronautics innovation to the football field. NASA will conduct flyovers, astronaut appearances, and fan engagement at NFL games across the United States as part of its new Inspiration Tour. “This is the [&amp;#8230;]</description>
-      <pubDate>Thu, 10 Sep 2026 17:28:13 +0000</pubDate>
-      <source>NASA News</source>
-      <category>Aeronautics</category>
-      <category>General</category>
-      <category>Missions</category>
-    </item>
-    <item>
-      <title>Dust and Water in Sagittarius A*</title>
-      <link>https://www.nasa.gov/image-article/dust-and-water-in-sagittarius-a/</link>
-      <description>A brilliant concentration of stars takes center stage in this Aug. 11, 2026, image taken by NASA&amp;#8217;s James Webb Space Telescope. Webb observed IRS 3, a star near the end of its life cycle, located within this starfield. Webb’s mid-infrared data revealed the clear signature of oxygen-rich silicate dust, as well as, for the first [&amp;#8230;]</description>
-      <pubDate>Thu, 10 Sep 2026 16:14:03 +0000</pubDate>
-      <source>NASA News</source>
-    </item>
-    <item>
-      <title>Proposers Day: Office-wide TTO</title>
-      <link>https://www.darpa.mil/work-with-us/opportunities</link>
-      <description>&lt;p&gt;TTO is sponsoring a Proposers Day to provide information to potential proposers on the objectives of the TTO Office-Wide (OW) Solicitation. | &lt;a href="https://www.darpa.mil/events/2026/proposers-day-tto"&gt;See Event&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Thu, 10 Sep 2026 15:59:18 +0000</pubDate>
-      <source>DARPA Opportunities</source>
     </item>
     <item>
       <title>Notice of Pre-Application Technical Assistance Webinar for the Grants for Early Medical/Surgical Specialists' Transition to Aging Research (GEMSSTAR) Program</title>
