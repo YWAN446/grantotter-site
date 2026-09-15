@@ -426,8 +426,8 @@ const UPDATES = [
     tag: 'NEW',
     title: 'GrantOtter 2.0',
     desc: 'The chat-first rebuild is live. One conversation now drives everything — your profile, grant matching, collaborator search, brainstorming, drafting, and projects — in a faster app at app.grantotter.com. Same account, same projects and history.',
-    href: 'https://app.grantotter.com',
-    cta: 'Launch the new app',
+    href: '#blog/grantotter-2-0',
+    cta: 'Read the launch post',
   },
   {
     tag: 'NEW · BETA',

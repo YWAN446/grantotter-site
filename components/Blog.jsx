@@ -1,5 +1,14 @@
 const POSTS = [
   {
+    slug: 'grantotter-2-0',
+    title: 'GrantOtter 2.0: The Grant Workflow, as One Conversation',
+    date: 'September 15, 2026',
+    tag: 'LAUNCH',
+    readTime: '7 min read',
+    excerpt: 'The tabs are gone. GrantOtter 2.0 is a single conversation that builds your profile, ranks the funding worth writing for, names who could join the team, brainstorms concepts and drafts the documents — showing its work at every step, and drawing on a research map of an entire institution.',
+    content: () => <PostContent_006 />,
+  },
+  {
     slug: 'application-assistant-beta',
     title: 'Meet the Application Assistant: Your Grant Application, Walked Through',
     date: 'August 6, 2026',
@@ -645,6 +654,149 @@ function PostContent_004() {
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
         <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Open GrantOtter →
+        </a>
+      </div>
+    </>
+  );
+}
+
+function PostContent_006() {
+  const para = { fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' };
+  const h2 = { fontFamily: 'Instrument Serif, Georgia, serif', fontWeight: 400, fontStyle: 'italic', fontSize: 24, lineHeight: 1.2, color: 'var(--ink)', margin: '32px 0 16px', borderLeft: '3px solid var(--orange-deep)', paddingLeft: 16 };
+  const box = { background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' };
+  const boxLabel = { fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 };
+  const item = { display: 'flex', gap: 10, marginBottom: 10, fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)' };
+  const caption = { fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' };
+
+  const STAGES = [
+    ['Your profile', 'Tell it your name, your institution and roughly what you work on. It researches you across public sources in about thirty seconds and hands back a short sourced card — expertise areas, funding history, career stage, with a source number on every line. You correct it, add what you want to grow into, and the profile is written from what you confirmed.'],
+    ['Find the funding', 'One scoping question, then a ranked report: federal and foundation notices separately, each with agency, mechanism, deadline, funding, a score out of ten, why it fits your profile and what to watch out for. Matches land in your Feed, and a weekly email brings new ones without you asking.'],
+    ['Start the application', 'The application becomes its own thread. GrantOtter links the notice, reads the real due dates out of it rather than guessing, builds the funder-specific checklist and files every document you upload. Open it months later and the context is still there.'],
+    ['Assemble the team', 'Say what the project needs and it names who covers each requirement, scores how workable each pairing is from shared awards, co-authorship, current grant load and complementary expertise, and can trace the shortest connection between you and anyone it suggests.'],
+    ['Brainstorm concepts', 'Two or three proposal concepts, each with aims, the role of every collaborator, a rough budget and scores for innovation, team expertise and cost-efficiency — deliberately different enough to need different teams, so the first team meeting starts from something concrete.'],
+    ['Draft the documents', 'Biosketch in the NIH format, the 2026 data-management and sharing plan, and a budget brief with a funder-aware justification and an editable Excel companion whose formulas stay live. Anything that could not be verified arrives as a marked placeholder rather than an invention.'],
+  ];
+
+  return (
+    <>
+      <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' }}>
+        GrantOtter 2.0 is live at app.grantotter.com. The tabs are gone. In their place is a single conversation: you say what you need in plain language, and an AI agent picks the right tools, runs them, and shows you what it did. Same account, same projects, same history — a faster app and a different way of working.
+      </p>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        The old version asked you to know which tab solved your problem. You filled in a profile form, moved to a search page with a row of filters, judged fit yourself, then started each document from a blank template. The work of moving between those places, and of remembering what you entered last time, fell on you. That is the part 2.0 removes.
+      </p>
+
+      <div style={{ margin: '32px 0' }}>
+        <img
+          src="media/v2_phone.png"
+          alt="GrantOtter 2.0 on a phone: a greeting, a message box, and four suggested tasks"
+          style={{ width: '100%', maxWidth: 300, display: 'block', margin: '0 auto', border: '1px solid var(--line-2)' }}
+        />
+        <p style={caption}>
+          "Every task in the app starts as a sentence."
+        </p>
+      </div>
+
+      <h2 style={h2}>The workflow, stage by stage</h2>
+      <p style={para}>
+        Three steps get you to an application. Everything after that happens inside it, in whatever order the work demands. Each stage is a request you can make in one sentence.
+      </p>
+
+      <div style={box}>
+        <div style={boxLabel}>Six stages, one thread</div>
+        {STAGES.map(([title, desc], i) => (
+          <div key={title} style={item}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0, fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>{String(i + 1).padStart(2, '0')}</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2 style={h2}>What one turn actually looks like</h2>
+      <p style={para}>
+        Say you have a profile and you want funding that is far enough out to be worth writing for. You type: <em>find grants due after 90 days, federal or foundation, at least $150k a year.</em> GrantOtter asks one scoping question if anything is ambiguous, then returns the report — federal and foundation ranked separately.
+      </p>
+
+      <div style={box}>
+        <div style={boxLabel}>Rank 1 &middot; federal</div>
+        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--ink-2)', margin: '0 0 10px' }}>
+          <strong style={{ color: 'var(--ink)' }}>Implementing Evidence-Based Hypertension Control in Primary Care</strong><br />
+          Agency: NIH, NHLBI &nbsp;&middot;&nbsp; Mechanism: R01 &nbsp;&middot;&nbsp; Deadline: 16 June &nbsp;&middot;&nbsp; Funding: $500,000 direct per year
+        </p>
+        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--ink-2)', margin: '0 0 10px' }}>
+          <strong style={{ color: 'var(--ink)' }}>Match Score:</strong> 9/10
+        </p>
+        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--ink-2)', margin: '0 0 10px' }}>
+          <strong style={{ color: 'var(--ink)' }}>Why This Fits:</strong> The notice asks for pragmatic implementation trials of team-based hypertension care in safety-net primary care, which is the centre of your last five years of work. It requires a stepped-wedge or cluster design, which you have run twice, and health equity is a stated priority your disparities papers speak to directly.
+        </p>
+        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--ink-2)', margin: 0 }}>
+          <strong style={{ color: 'var(--ink)' }}>Key Considerations:</strong> A letter of commitment from a health-system partner is required at submission, and this mechanism is competitive for a first R01.
+        </p>
+      </div>
+
+      <p style={para}>
+        Every tool the agent runs appears as a chip you can open to read the raw result, so nothing is a black box. And it does not fill gaps with guesses: a deadline comes from the notice's own text rather than from memory, and an unverifiable fact in a biosketch becomes a marked placeholder for you to fill.
+      </p>
+
+      <h2 style={h2}>An institution research map</h2>
+      <p style={para}>
+        Questions about people and expertise draw on something new: a research map built for a whole institution. Every faculty member is linked to the expertise they claim, each area to the research topic it belongs to, each person to the NIH awards they hold and the colleagues they publish with, and everyone to their department and school. It is assembled from public faculty pages, NIH RePORTER and PubMed only, and every answer can point back to the person, award or topic it came from.
+      </p>
+
+      <div style={{ margin: '32px 0' }}>
+        <img
+          src="media/blog6_research_map.jpg"
+          alt="The research map drawn as a network of thousands of coloured dots joined by fine lines"
+          style={{ width: '100%', maxWidth: 520, display: 'block', margin: '0 auto', border: '1px solid var(--line-2)' }}
+        />
+        <p style={caption}>
+          "One partner network: 4,532 faculty, 2,474 research topics, 5,633 NIH awards, 35,745 co-author pairs."
+        </p>
+      </div>
+
+      <div style={box}>
+        <div style={boxLabel}>What the map answers</div>
+        {[
+          ['Find collaborators by capability, not by memory', 'Say what the project needs and get the people who cover it, each with the evidence: shared awards, co-authorship, the department they sit in, how loaded they already are.'],
+          ['Find a mentor', 'Who works in your area, holds an active NIH award as principal investigator, and is senior enough to sponsor a career-development application.'],
+          ['Find the group to join', 'Every research topic, department and center has its own page: who works there, what they are funded for, the platforms and training they run.'],
+          ['See who already works on your idea', 'The awards nearest your question, with the people holding them, so you know whether you are duplicating, competing or complementing before you write.'],
+          ['Turn a cold email into a warm one', 'Ask for the shortest connection between you and anyone on the map and it traces the path through shared papers, grants and departments.'],
+        ].map(([title, desc]) => (
+          <div key={title} style={item}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <p style={para}>
+        The map is an institution-level feature: a university is mapped once and every researcher there draws on it. One partner network is mapped today, covering three schools. Everything else in GrantOtter works without a map, so if your institution is not mapped yet you still get the profile, the matching, the project threads and the documents — the collaborator and coverage answers arrive when it joins.
+      </p>
+
+      <h2 style={h2}>Getting started</h2>
+      <p style={para}>
+        Sign up and the Getting started card takes you through four steps. The assistant does each one with you, in the chat, so the first useful answer is minutes away rather than a setup afternoon.
+      </p>
+
+      <div style={{ margin: '32px 0' }}>
+        <img
+          src="media/v2_onboarding.png"
+          alt="The GrantOtter welcome screen with the Getting started card listing four steps"
+          style={{ width: '100%', display: 'block', border: '1px solid var(--line-2)' }}
+        />
+        <p style={caption}>
+          "The first screen after you sign up. The four steps tick themselves off as you go."
+        </p>
+      </div>
+
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        If you already have a GrantOtter account, nothing needs migrating — your profile, saved grants, applications and chat history are waiting in the new app. If you are new, the fastest start is to tell it your name and institution and let it draft your profile from there.
+      </p>
+
+      <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+          Open GrantOtter 2.0 →
         </a>
       </div>
     </>
