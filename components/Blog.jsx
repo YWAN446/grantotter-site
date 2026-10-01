@@ -1,5 +1,14 @@
 const POSTS = [
   {
+    slug: 'pricing',
+    title: 'GrantOtter Pricing: Free Through December, Plans From January 1',
+    date: 'October 1, 2026',
+    tag: 'ANNOUNCEMENT',
+    readTime: '4 min read',
+    excerpt: 'Grant alerts stay free (monthly on the Free plan), and so does your Feed. Weekly alerts and the full assistant move to Pro and Max plans on January 1, 2027, and everyone with an account before December 1 has Pro free through December 31.',
+    content: () => <PostContent_007 />,
+  },
+  {
     slug: 'grantotter-2-0',
     title: 'GrantOtter 2.0: The Grant Workflow, as One Conversation',
     date: 'September 15, 2026',
@@ -797,6 +806,94 @@ function PostContent_006() {
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center' }}>
         <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Open GrantOtter 2.0 →
+        </a>
+      </div>
+    </>
+  );
+}
+
+function PostContent_007() {
+  const para = { fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' };
+  const h2 = { fontFamily: 'Instrument Serif, Georgia, serif', fontWeight: 400, fontStyle: 'italic', fontSize: 24, lineHeight: 1.2, color: 'var(--ink)', margin: '32px 0 16px', borderLeft: '3px solid var(--orange-deep)', paddingLeft: 16 };
+  const box = { background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' };
+  const boxLabel = { fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 };
+  const item = { display: 'flex', gap: 10, marginBottom: 10, fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)' };
+  const link = { color: 'var(--teal-deep)' };
+
+  const PLANS = [
+    ['Free — $0', 'Monthly grant alerts matched to your profile; your Feed and the news briefs; building your researcher profile with the assistant; one interactive grant match.'],
+    ['Pro — $20 a month', 'Everything in Free, plus weekly grant alerts matched to your profile; the full assistant within a daily and weekly usage allowance; project and application management — deadlines, a submission checklist, your team and all the documents in one place; the biosketch, data management plan and budget brief; researching and saving your collaborators’ profiles; and extra usage when a deadline week needs it.'],
+    ['Max — $80 a month', 'Everything in Pro, with five times Pro’s usage — 20% less than five Pro plans, which would come to $100.'],
+  ];
+
+  const DATES = [
+    ['December 1, 2026', 'Plans and checkout open. New accounts from this date start on Free.'],
+    ['Through December 31, 2026', 'Everyone with a GrantOtter account before December 1 has Pro free. There is nothing to do.'],
+    ['January 1, 2027', 'Charging starts. Anyone who has not subscribed moves to Free and keeps monthly grant alerts and the Feed.'],
+  ];
+
+  return (
+    <>
+      <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' }}>
+        GrantOtter is introducing plans. Grant alerts stay free (monthly on the Free plan), and so do your Feed and the news briefs. Weekly alerts and the full assistant — projects, documents and collaborator research — become part of two paid plans, Pro at $20 a month and Max at $80 a month. Nothing changes today: plans open on December 1, 2026, nobody is charged before January 1, 2027, and if you already have an account you have Pro free through December 31.
+      </p>
+
+      <h2 style={h2}>Why plans, and why now</h2>
+      <p style={para}>
+        Every time the assistant researches a profile, ranks grants against your work, reads a funding announcement or drafts a biosketch, it runs large language models and live web searches, and each of those requests costs real money. Through the early phase we covered that cost ourselves so researchers could try the whole workflow on their own applications. As more people rely on it for real deadlines, a paid plan is what keeps it running, and improving, on a footing that lasts.
+      </p>
+      <p style={para}>
+        The grant loop is different. Alerts matched to your profile, the Feed and the news briefs are where GrantOtter started, and they stay free for good: grant alerts stay free (monthly on the Free plan, weekly on Pro and Max).
+      </p>
+
+      <h2 style={h2}>The plans</h2>
+      <div style={box}>
+        <div style={boxLabel}>Three plans · US dollars</div>
+        {PLANS.map(([title, desc]) => (
+          <div key={title} style={item}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+          </div>
+        ))}
+      </div>
+      <p style={para}>
+        On Pro and Max, if a deadline week needs more than your plan allows, you can buy extra usage: any whole-dollar amount from $10 to $500, valid for one year and used only after your plan’s limit is reached.
+      </p>
+      <p style={para}>
+        Faculty search is the one part that belongs to an institution rather than to a person. With an institution subscription, a department, school or institution can find faculty with the expertise a grant needs, see who already works together and who could introduce you, and check whether it covers every capability a center grant asks for. Researchers at partner institutions with faculty search included can search and read faculty profiles on any plan, Free included. To ask about a subscription for yours, email{' '}
+        <a href="mailto:grantotter42@gmail.com?subject=Institution%20subscription" style={link}>grantotter42@gmail.com</a> with the subject “Institution subscription”.
+      </p>
+
+      <h2 style={h2}>The timeline</h2>
+      <div style={box}>
+        <div style={boxLabel}>Key dates</div>
+        {DATES.map(([when, what]) => (
+          <div key={when} style={item}>
+            <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+            <span><strong style={{ color: 'var(--ink)' }}>{when}</strong>: {what}</span>
+          </div>
+        ))}
+      </div>
+      <p style={para}>
+        If you already have an account, you do not need to do anything. You have Pro through December 31. If you want to keep it, subscribe in the app any time from December 1; if you do not, your account moves to Free on January 1 and keeps monthly grant alerts and the Feed.
+      </p>
+
+      <h2 style={h2}>The fine print</h2>
+      <p style={para}>
+        Checkout is available to US billing addresses for now. You can cancel anytime from the billing page, and a cancelled plan runs to the end of the period.
+      </p>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        Every plan, the key dates and answers to the common questions are on the{' '}
+        <a href="#pricing" style={link}>pricing page</a>. Questions about the plans? Email{' '}
+        <a href="mailto:grantotter42@gmail.com" style={link}>grantotter42@gmail.com</a>.
+      </p>
+
+      <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center', display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <a href="#pricing" className="btn btn-ghost" style={{ display: 'inline-block' }}>
+          See all plans
+        </a>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+          Open GrantOtter →
         </a>
       </div>
     </>

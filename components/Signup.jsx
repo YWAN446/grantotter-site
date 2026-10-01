@@ -10,7 +10,7 @@ function Signup({ setRoute }) {
               Your workspace<br/>is <em style={{color:'var(--teal-deep)'}}>ready.</em>
             </h1>
             <p style={{fontSize:17, lineHeight:1.55, color:'var(--ink-2)', marginBottom:36, maxWidth:460}}>
-              GrantOtter is currently free to use. Launch the app, generate your researcher profile, and match grants in minutes.
+              Start on the free plan: launch the app, generate your researcher profile, and get grant alerts matched to your work (monthly on the free plan). Pro and Max add weekly alerts and the full assistant.
             </p>
 
             <div style={{display:'grid', gap:12, marginBottom:40}}>
@@ -23,8 +23,8 @@ function Signup({ setRoute }) {
             </div>
 
             <div style={{display:'flex', gap:24, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em', flexWrap:'wrap'}}>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Currently free</span>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Free plan</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card to start</span>
               <span><span style={{color:'var(--teal-deep)'}}>✓</span> No install</span>
             </div>
           </div>
@@ -40,7 +40,7 @@ function Signup({ setRoute }) {
                   ['01', 'Chat-first',          'Describe your work — the assistant builds your researcher profile from your CV or the web'],
                   ['02', 'Match Grants',        'Ask for a match → ranked grants with plain-language fit explanations'],
                   ['03', 'Weekly Feed',         'Fit-scored recommendations every Monday — in the app and your inbox'],
-                  ['04', 'Find Collaborators',  'Search 4,532 partner-network faculty by research area'],
+                  ['04', 'Faculty Search',      'Find faculty by research area — part of an institution subscription, included at partner institutions'],
                   ['05', 'Projects',            'One chat per application — deadline, team, AI checklist, status'],
                   ['06', 'Drafting',            'Concepts · biosketch · DMS Plan · budget brief — drafted with you'],
                 ].map(([n, title, desc]) => (

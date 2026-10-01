@@ -75,7 +75,7 @@ function Help({ setRoute }) {
     },
     {
       q: 'What is the Dashboard?',
-      a: <p>The <strong>Dashboard</strong> is the panel beside the chat, with four tabs: <strong>Projects</strong> (your applications), <strong>Feed</strong> (your fit-scored grant recommendations, refreshed every Monday), <strong>Profile</strong> (your researcher card and saved collaborators), and <strong>Find Collaborators</strong> (browse the faculty network). The chat can do everything the Dashboard shows — the panel is where you see and manage it all at a glance.</p>,
+      a: <p>The <strong>Dashboard</strong> is the panel beside the chat, with four tabs: <strong>Projects</strong> (your applications), <strong>Feed</strong> (your fit-scored grant recommendations, refreshed every Monday), <strong>Profile</strong> (your researcher card and saved collaborators), and <strong>Find Collaborators</strong> (browse your institution\'s faculty, where faculty search is included). The chat can do everything the Dashboard shows — the panel is where you see and manage it all at a glance.</p>,
     },
     {
       q: 'What are Projects?',
@@ -83,7 +83,7 @@ function Help({ setRoute }) {
     },
     {
       q: 'Can I use GrantOtter for team proposals?',
-      a: <p>Yes. Ask the assistant to find collaborators by expertise — it searches a network of <strong>4,532 Emory faculty</strong> and explains each match — or name a colleague and it will look them up, building a full researcher profile from the web if they aren't in the pool yet. Saved collaborators appear in your <strong>Profile</strong> tab and can be added to any project's team, and the assistant can draft a biosketch for any team member.</p>,
+      a: <p>Yes. Where your institution has faculty search — part of an institution subscription, and included for researchers at partner institutions — ask the assistant to find collaborators by expertise and it searches that faculty and explains each match. Anywhere, you can name a colleague and it will look them up, building a full researcher profile from the web if they aren't in the pool yet. Saved collaborators appear in your <strong>Profile</strong> tab and can be added to any project's team, and the assistant can draft a biosketch for any team member.</p>,
     },
     {
       q: 'What is the NIH biosketch output used for?',
@@ -95,7 +95,7 @@ function Help({ setRoute }) {
     },
     {
       q: 'What emails does GrantOtter send, and how do I unsubscribe?',
-      a: <p>Up to three weekly emails, each optional: <strong>Grant Alerts</strong> (your personal top matches), the <strong>Federal News Brief</strong> (NIH/NSF/DARPA news and opportunities), and the <strong>Foundation Newsletter</strong> (curated foundation funding news). You can manage all three in the app — open the account menu and go to <strong>Settings</strong>, where each channel has its own toggle — or use the one-click unsubscribe link in any email. Preferences are per-channel: leaving one list never affects the others.</p>,
+      a: <p>Up to three emails, each optional: <strong>Grant Alerts</strong> (your personal top matches — weekly on Pro and Max, monthly on the Free plan), and two weekly briefs, the <strong>Federal News Brief</strong> (NIH/NSF/DARPA news and opportunities), and the <strong>Foundation Newsletter</strong> (curated foundation funding news). You can manage all three in the app — open the account menu and go to <strong>Settings</strong>, where each channel has its own toggle — or use the one-click unsubscribe link in any email. Preferences are per-channel: leaving one list never affects the others.</p>,
     },
     {
       q: 'Is my data secure? How does GrantOtter handle my privacy?',
@@ -272,10 +272,10 @@ function Help({ setRoute }) {
                 </div>
               </div>
               <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.6, marginBottom:20}}>
-                Want a guided walkthrough for yourself or your department? We walk through the full workflow — profile generation to a complete application — using a real grant relevant to your group.
+                Want a guided walkthrough for yourself or your department? Email us to set up a demo — we walk through the full workflow, from profile generation to a complete application, using a real grant relevant to your group.
               </p>
-              <a href="https://calendly.com/ywan446-emory/30min" target="_blank" rel="noopener" className="btn btn-signal">
-                Book a Demo Session →
+              <a href="mailto:grantotter42@gmail.com?subject=GrantOtter%20demo" className="btn btn-signal">
+                Email us to set up a demo →
               </a>
             </div>
 

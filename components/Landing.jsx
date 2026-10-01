@@ -76,8 +76,8 @@ function Hero({ setRoute, heroVariant, showOtter }) {
             </div>
 
             <div style={{display:'flex', gap:24, marginTop:40, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em'}}>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Currently free for researchers</span>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Free grant alerts (monthly)</span>
+              <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card to start</span>
               <span><span style={{color:'var(--teal-deep)'}}>✓</span> Built by researchers</span>
             </div>
           </div>
@@ -178,7 +178,7 @@ function HeroEditorial({ setRoute, showOtter }) {
           </p>
           <div>
             <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginBottom:12}}>
-              Launch app — currently free <span>→</span>
+              Launch app — start free <span>→</span>
             </a><br/>
             <button className="btn btn-ghost" onClick={() => setRoute('features')}>
               See how it works →
@@ -217,7 +217,7 @@ function ModulesGrid({ setRoute }) {
   const mods = [
     { n: '01', k: 'PROFILE',   name: 'Researcher Profile',    desc: 'Just your name and institution — that\'s all it takes. GrantOtter searches Google Scholar, PubMed, ORCID, and your faculty page to build a complete profile from open data. Upload your CV for an even faster, more accurate result.',  stat: 'Minimum input · maximum coverage', color: 'teal' },
     { n: '02', k: 'DISCOVER',  name: 'Grant Discovery',       desc: 'Match your profile against 2,000+ active opportunities across NIH, NSF, DARPA, DOE, and hundreds of foundation funders. Hard eligibility checks — career stage, institution type, mechanism — run first, so you never read a grant you can\'t apply for. Then rule-based scoring and AI ranking surface your best fits with plain-language explanations.',            stat: '2,000+ grants · eligibility-checked',  color: 'orange' },
-    { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched faculty in your institution\'s network — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach.',          stat: '4,532 faculty profiles · growing',     color: 'teal' },
+    { n: '03', k: 'TEAM',      name: 'Collaborator Search',   desc: 'Describe the expertise you need in plain language and GrantOtter finds the best-matched faculty in your institution\'s network — then shows you the connection path between you and each person through shared departments, centers, and co-authorships. Warm introductions, not cold outreach. Part of an institution subscription, and included for researchers at partner institutions.',          stat: 'Institution subscription · partner institutions',     color: 'teal' },
     { n: '04', k: 'BRAINSTORM', name: 'Concept Brainstorming', desc: 'Ask the assistant to brainstorm against a grant — it pulls in your profile and your team\'s, then returns 2–3 concrete proposal concepts with budget estimates and strategic framing tailored to the specific funding opportunity.',  stat: '2–3 concepts · with budget estimates', color: 'orange' },
     { n: '05', k: 'DOCS',      name: 'Drafting',              desc: 'The boilerplate, drafted with you in the chat: NIH Biosketch aligned with current Common Form guidance, 2026 Data Management & Sharing Plan on the official template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files.',   stat: 'Biosketch · DMS Plan · Budget',        color: 'teal' },
     { n: '06', k: 'TRACK',     name: 'Projects',       desc: 'Turn a match into a submission. Every application is a project with its own assistant chat that walks it end to end: it reads your grant, sets the deadline, assembles the team, brainstorms concepts, builds a funder-specific checklist, and drafts the science documents with you, remembering your decisions between sessions. Grant, team, documents, and status tracking — all in one thread.',   stat: 'one chat per application · checklist · documents',   color: 'orange' },
@@ -270,7 +270,7 @@ function ModulesGrid({ setRoute }) {
 function WeeklyFeed({ setRoute }) {
   const isMobile = useWindowWidth() < 768;
   const emails = [
-    { tag: 'ALERTS',     color: 'orange', name: 'Grant Alerts',          desc: 'Your personal top matches — scored against your researcher profile, with deadlines and award sizes. Only grants that clear your eligibility filters.', how: 'unlocked by saving your researcher profile' },
+    { tag: 'ALERTS',     color: 'orange', name: 'Grant Alerts',          desc: 'Your personal top matches — scored against your researcher profile, with deadlines and award sizes. Only grants that clear your eligibility filters.', how: 'unlocked by saving your researcher profile · weekly on Pro and Max, monthly on Free' },
     { tag: 'FEDERAL',    color: 'teal',   name: 'Federal News Brief',    desc: 'NIH, NSF, and DARPA news that matters: new opportunities, policy changes, and deadline movements — summarized, sourced, and linked.', how: 'included with a free account' },
     { tag: 'FOUNDATION', color: 'teal',   name: 'Foundation Newsletter', desc: 'Foundation and nonprofit funding news, curated weekly from hundreds of funder newsletters and websites.', how: 'included with a free account' },
   ];
@@ -292,7 +292,7 @@ function WeeklyFeed({ setRoute }) {
                 Your feed refreshes every Monday — in the app and in your inbox. Create a free
                 account and two weekly news briefs — federal and foundation — arrive each week.
                 Save your researcher profile to unlock the third: personalized grant alerts,
-                matched to your own work.
+                matched to your own work — weekly on Pro and Max, monthly on the Free plan.
               </p>
               <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
                 <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-primary">
@@ -327,7 +327,7 @@ function FaqSection({ setRoute }) {
   const faqs = [
     {
       q: 'What does GrantOtter cost?',
-      a: 'Currently nothing — GrantOtter is free for researchers during this early phase. No credit card, no institutional license, no demo call. Create an account and run your first grant match in minutes.',
+      a: 'Grant alerts stay free (monthly on the Free plan), and so do your Feed, the news briefs and building your researcher profile — no credit card, no demo call. Weekly alerts, the full assistant, projects and documents are Pro at $20/month or Max at $80/month, from January 1, 2027. Plans open December 1, 2026, and everyone with an account before then has Pro free through December 31. Details on the Pricing page.',
     },
     {
       q: 'Is my CV or proposal used to train AI models?',
@@ -339,11 +339,11 @@ function FaqSection({ setRoute }) {
     },
     {
       q: 'How is this different from Pivot or my university\'s funding database?',
-      a: 'Tools like Pivot-RP and GrantForward are search databases licensed by your institution — you run keyword searches and read listings. GrantOtter is currently free and goes past discovery: it builds your researcher profile automatically, checks eligibility, explains every match in plain language, finds collaborators, drafts concepts, and generates the boilerplate documents. A workspace, not a directory.',
+      a: 'Tools like Pivot-RP and GrantForward are search databases licensed by your institution — you run keyword searches and read listings. GrantOtter is self-serve, starts free, and goes past discovery: it builds your researcher profile automatically, checks eligibility, explains every match in plain language, finds collaborators, drafts concepts, and generates the boilerplate documents. A workspace, not a directory.',
     },
     {
       q: 'Do I need my institution to buy anything?',
-      a: 'No. Unlike institution-licensed tools, GrantOtter is self-serve: any researcher can sign up directly. If you\'d like your department or research development office on board — with a collaborator network for your faculty — contact us about institution onboarding.',
+      a: 'No. Unlike institution-licensed tools, GrantOtter is self-serve: any researcher can sign up directly, on the free plan or a personal Pro or Max plan. Faculty search across a department, school or institution comes with an institution subscription, priced per institution or unit — if you\'d like yours on board, request a quote.',
     },
     {
       q: 'Who built GrantOtter?',
@@ -401,7 +401,7 @@ function FinalCTA({ setRoute }) {
         </h2>
         <div style={{marginTop:48, display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap'}}>
           <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal">
-            Launch app — currently free →
+            Launch app — start free →
           </a>
           <button onClick={() => setRoute('tutorial')} className="btn btn-ghost" style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)', cursor:'pointer'}}>
             Get started guide
@@ -412,7 +412,7 @@ function FinalCTA({ setRoute }) {
           </a>
         </div>
         <div style={{marginTop:32, fontFamily:'JetBrains Mono, monospace', fontSize:11, color:'#5C6664'}}>
-          no credit card · sign up in minutes
+          free plan · no credit card to start · sign up in minutes
         </div>
       </div>
     </section>
@@ -422,6 +422,13 @@ function FinalCTA({ setRoute }) {
 // Newest first. Add an entry here whenever a feature ships — the banner
 // always shows the top entry and links out (e.g. to the launch blog post).
 const UPDATES = [
+  {
+    tag: 'PRICING',
+    title: 'Plans from January 1',
+    desc: 'Grant alerts stay free (monthly on the Free plan), and so does your Feed. Weekly alerts and the full assistant move to Pro ($20/month) and Max ($80/month) on January 1, 2027 — and everyone with an account before December 1 has Pro free through December 31.',
+    href: '#blog/pricing',
+    cta: 'Read the announcement',
+  },
   {
     tag: 'NEW',
     title: 'GrantOtter 2.0',

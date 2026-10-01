@@ -233,13 +233,11 @@ function TutorialV2({ setRoute }) {
           Build your team the same way you do everything else — by asking — or browse the institution network directly.
         </p>
         <BannerV2>
-          <strong>Who's in the network today:</strong> the collaborator pool currently covers Emory University —
-          <strong>4,532 faculty</strong> across the School of Medicine, the Rollins School of Public Health,
-          and the Nell Hodgson Woodruff School of Nursing — with roughly 1,000 more faculty from Emory's other
-          schools coming soon. At another institution? Find Collaborators searches this pool only, so it becomes
-          useful for your team once your institution has a network of its own —{' '}
-          <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)', fontWeight:600}}>contact us</a>{' '}
-          about institution onboarding. Everything else in GrantOtter works for researchers anywhere.
+          <strong>Faculty search:</strong> browsing and searching faculty is part of an institution subscription,
+          and is included for researchers at partner institutions. It covers the faculty of a department, school
+          or institution, so it becomes useful for your team once your institution is on board —{' '}
+          <a href="mailto:grantotter42@gmail.com?subject=Institution%20subscription" style={{color:'var(--teal-deep)', fontWeight:600}}>contact us</a>{' '}
+          about an institution subscription. Everything else in GrantOtter works for researchers anywhere.
         </BannerV2>
         <H3V2>Ask the assistant</H3V2>
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>
@@ -273,7 +271,7 @@ function TutorialV2({ setRoute }) {
           <H3V2>Starting one</H3V2>
           <ULV2>
             <LiV2 n="→">Click <strong style={{color:'var(--teal-deep)'}}>Start application</strong> on a card in your Feed.</LiV2>
-            <LiV2 n="→">Or click the link in your Monday grant-alert email — it opens the project directly.</LiV2>
+            <LiV2 n="→">Or click the link in your grant-alert email — it opens the project directly.</LiV2>
           </ULV2>
           <H3V2>The project detail view</H3V2>
           <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:12}}>Each project tracks:</p>
@@ -371,7 +369,7 @@ function TutorialV2({ setRoute }) {
           </h2>
           <div style={{display:'flex', gap:14, flexWrap:'wrap'}}>
             <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal">
-              Launch app — currently free →
+              Launch app — start free →
             </a>
             <button className="btn btn-ghost" onClick={() => setRoute('home')} style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)'}}>
               Back to home

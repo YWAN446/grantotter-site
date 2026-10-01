@@ -160,6 +160,7 @@ function Nav({ route, setRoute, showOtter }) {
   const navLinks = [
     ['home',     'Home'],
     ['features', 'Features'],
+    ['pricing',  'Pricing'],
     ['feed',     'Weekly Feed'],
     ['blog',     'Blog'],
     ['tutorial', 'Get Started'],
@@ -218,10 +219,10 @@ function Ticker() {
     ['FEDERAL_AGENCIES', 'NIH · NSF · DARPA · DOE · NASA · USDA · DOD · and more via Grants.gov'],
     ['FOUNDATIONS',      'ACS · Komen · Gates · Simons · Sloan · Wellcome · and hundreds more'],
     ['GRANTS_INDEXED',   '2,000+ · updated every Monday'],
-    ['FACULTY_NETWORK','4,532 faculty profiles indexed · and growing'],
+    ['FACULTY_SEARCH', 'With an institution subscription · included at partner institutions'],
     ['TOOLS',            'Profile · Discover · Collaborate · Brainstorm · Docs · Projects'],
     ['RESEARCHERS',       '180+ researchers and counting'],
-    ['COST',             'Currently free for researchers'],
+    ['PLANS',            'Grant alerts free (monthly) · Pro $20/month · Max $80/month'],
   ];
   const row = (
     <>
@@ -277,6 +278,7 @@ function Footer({ setRoute }) {
           {[
             ['Product', [
               { label: 'Features',    onClick: () => setRoute('features') },
+              { label: 'Pricing',     onClick: () => setRoute('pricing') },
               { label: 'Weekly Feed', onClick: () => setRoute('feed') },
             ]],
             ['Resources', [
@@ -304,7 +306,7 @@ function Footer({ setRoute }) {
         </div>
         <div style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent:'space-between', alignItems: isMobile ? 'flex-start' : 'center', gap:8, paddingTop:24, color:'#5C6664'}}>
           <span>© 2026 GrantOtter. Built for researchers, by researchers.</span>
-          <span>Currently free for researchers · <a href="mailto:grantotter42@gmail.com" style={{color:'#5C6664', textDecoration:'none'}}>Contact us</a></span>
+          <span>Grant alerts free (monthly on the Free plan) · <a onClick={() => setRoute('pricing')} style={{color:'#5C6664', textDecoration:'none', cursor:'pointer'}}>Pricing</a> · <a href="mailto:grantotter42@gmail.com" style={{color:'#5C6664', textDecoration:'none'}}>Contact us</a></span>
         </div>
       </div>
       <style>{`.footlink:hover{color:var(--teal);} `}</style>

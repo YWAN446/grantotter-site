@@ -3,7 +3,7 @@ function Terms({ setRoute }) {
   const terms = [
     {
       n: '1', label: 'The service',
-      body: 'GrantOtter is a web-based tool, currently free to use, that helps researchers discover grant opportunities, generate researcher profiles, and manage grant applications using AI. The service is provided as-is and may be modified, suspended, or discontinued at any time without notice; pricing may be introduced in the future.',
+      body: 'GrantOtter is a web-based tool, offered on a free plan and on paid plans described on the Pricing page, that helps researchers discover grant opportunities, generate researcher profiles, and manage grant applications using AI. The service is provided as-is and may be modified, suspended, or discontinued at any time without notice.',
     },
     {
       n: '2', label: 'Eligibility',
@@ -19,7 +19,25 @@ function Terms({ setRoute }) {
       ],
     },
     {
-      n: '4', label: 'Acceptable use',
+      n: '4', label: 'Subscriptions and billing', accent: 'var(--orange-deep)',
+      intro: <>Paid plans are sold by Otters LLC, the Illinois company that operates GrantOtter ("we", "us"). These terms apply to Pro, Max and extra-usage purchases.</>,
+      list: [
+        <><strong>Plans and prices.</strong> Plans and their prices are listed on the <a href="#pricing" style={{color:'var(--teal-deep)'}}>Pricing</a> page, in US dollars, billed monthly.</>,
+        <><strong style={{color:'var(--orange-deep)'}}>Automatic renewal.</strong> Paid plans <span style={{color:'var(--orange-deep)', fontWeight:600}}>renew automatically every month</span> at the then-current price until you cancel. By subscribing, you authorize us, through our payment processor Stripe, to charge your payment method each month.</>,
+        <><strong>Cancelling.</strong> You can cancel online at any time in the app: <strong>Plan &amp; usage → Billing → Manage billing</strong>. Cancellation takes effect at the end of the current paid month, and you keep access until then.</>,
+        <><strong>Switching plans.</strong> An upgrade from Pro to Max takes effect immediately, with a prorated charge. A downgrade from Max to Pro takes effect at the end of the current period.</>,
+        <><strong>Failed payments.</strong> If a payment fails, we retry it. Your paid plan continues for 3 days; after that, your account moves to the Free plan until payment succeeds. If the retries fail, the subscription is cancelled.</>,
+        <><strong>Price changes.</strong> We will email you at least 30 days before a price change applies to your next renewal. You may cancel before then.</>,
+        <><strong>Refunds.</strong> Fees are non-refundable, and there are no refunds or credits for partial months, except where required by law. Purchases made with a non-US billing address are refunded automatically.</>,
+        <><strong>US billing addresses only.</strong> For now, checkout is available only to US billing addresses.</>,
+        <><strong>Taxes.</strong> Prices exclude applicable taxes, which may be added where required.</>,
+        <><strong>Extra usage.</strong> Available on Pro and Max only, as a one-time purchase of $10 to $500. It is valid for one year from purchase; unused credit then expires. Extra usage is non-refundable once used.</>,
+        <><strong>Complimentary access.</strong> Accounts created before December 1, 2026 receive Pro at no charge through December 31, 2026. No payment method is collected, and it does not renew into a paid plan: the account moves to the Free plan on January 1, 2027 unless you subscribe.</>,
+        <><strong>Moving to Free.</strong> When an account moves to the Free plan, paid features become unavailable. We keep your projects and documents, as described in our Privacy Policy, and they become available again if you resubscribe.</>,
+      ],
+    },
+    {
+      n: '5', label: 'Acceptable use',
       intro: 'You agree not to:',
       list: [
         'Use GrantOtter to generate false, misleading, or fraudulent grant applications.',
@@ -29,35 +47,35 @@ function Terms({ setRoute }) {
       ],
     },
     {
-      n: '5', label: 'AI-generated content', accent: 'var(--orange-deep)',
+      n: '6', label: 'AI-generated content', accent: 'var(--orange-deep)',
       body: <span>GrantOtter uses AI to generate researcher profiles, grant recommendations, proposal concepts, and biosketches. These outputs are provided as a starting point and <span style={{color:'var(--orange-deep)', fontWeight:600}}>may contain errors, omissions, or inaccuracies</span>. You are solely responsible for reviewing, verifying, and editing all AI-generated content before using it in any official submission.</span>,
     },
     {
-      n: '6', label: 'Intellectual property',
+      n: '7', label: 'Intellectual property',
       body: <>You <span style={{color:'var(--teal-deep)', fontWeight:600}}>retain ownership</span> of all content you upload or create within GrantOtter. By using the service, you grant GrantOtter a limited license to process and store your content solely to provide the service to you.</>,
     },
     {
-      n: '7', label: 'Disclaimer of warranties', accent: 'var(--orange-deep)',
+      n: '8', label: 'Disclaimer of warranties', accent: 'var(--orange-deep)',
       body: <span>GrantOtter is provided <span style={{color:'var(--orange-deep)', fontWeight:600}}>"as is"</span> without warranties of any kind, express or implied. We do not guarantee that the service will be uninterrupted, error-free, or that grant recommendations will result in successful funding outcomes.</span>,
     },
     {
-      n: '8', label: 'Limitation of liability', accent: 'var(--orange-deep)',
+      n: '9', label: 'Limitation of liability', accent: 'var(--orange-deep)',
       body: 'To the maximum extent permitted by law, GrantOtter and its operator shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of GrantOtter, including but not limited to lost funding opportunities, data loss, or reliance on AI-generated content.',
     },
     {
-      n: '9', label: 'Termination',
-      body: <>We reserve the right to suspend or terminate your account at any time for violation of these Terms. You may delete your account at any time by contacting <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>.</>,
+      n: '10', label: 'Termination',
+      body: <>We reserve the right to suspend or terminate your account at any time for violation of these Terms. You may delete your account at any time by contacting <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>. If your account is terminated or deleted, any active subscription is cancelled, with no refund for the current period except as required by law.</>,
     },
     {
-      n: '10', label: 'Governing law',
+      n: '11', label: 'Governing law',
       body: 'These Terms are governed by the laws of the State of Illinois, United States, without regard to conflict of law principles.',
     },
     {
-      n: '11', label: 'Changes to these terms',
-      body: "We may update these Terms from time to time. Continued use of GrantOtter after changes constitutes your acceptance of the revised Terms.",
+      n: '12', label: 'Changes to these terms',
+      body: "We may update these Terms from time to time. Continued use of GrantOtter after changes constitutes your acceptance of the revised Terms. Material changes to the terms of a paid plan take effect at your next renewal after at least 30 days' notice; you can cancel before then to avoid them.",
     },
     {
-      n: '12', label: 'Contact',
+      n: '13', label: 'Contact',
       body: <>Questions about these Terms? Email <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>.</>,
     },
   ];
@@ -122,12 +140,12 @@ function Terms({ setRoute }) {
           </p>
 
           <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 0 : '0 48px', borderTop:'1px solid var(--line-2)'}}>
-            <div>{terms.slice(0, isMobile ? terms.length : 6).map(t => <TermItem key={t.n} t={t} />)}</div>
-            {!isMobile && <div>{terms.slice(6).map(t => <TermItem key={t.n} t={t} />)}</div>}
+            <div>{terms.slice(0, isMobile ? terms.length : 4).map(t => <TermItem key={t.n} t={t} />)}</div>
+            {!isMobile && <div>{terms.slice(4).map(t => <TermItem key={t.n} t={t} />)}</div>}
           </div>
 
           <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 0, justifyContent:'space-between'}}>
-            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: July 2026</span>
+            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: October 2026</span>
             <button onClick={() => setRoute('privacy')} className="tag teal" style={{cursor:'pointer', background:'none', border:'1px solid var(--teal)', font:'inherit'}}>
               Read Privacy Policy →
             </button>

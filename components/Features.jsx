@@ -335,7 +335,7 @@ function Features({ setRoute }) {
       </FeatureRow>
 
       <FeatureRow num="03" tag="collaborate" title={<>Find the co-I with <em style={{color:'var(--teal-deep)'}}>expertise you need</em>.</>}
-        desc="Semantic search across 4,532 faculty profiles in GrantOtter's growing partner network — find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
+        desc="Semantic search across the faculty of a department, school or institution — part of an institution subscription, and included for researchers at partner institutions. Find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
         <TeamDemo/>
       </FeatureRow>
 
@@ -362,7 +362,7 @@ function Features({ setRoute }) {
       <section style={{padding: isMobile ? '64px 0' : '100px 0', textAlign:'center'}}>
         <div className="container">
           <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, fontStyle:'italic', letterSpacing:'-0.02em'}}>Ready to try it on your own profile?</h2>
-          <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — currently free →</a>
+          <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — start free →</a>
         </div>
       </section>
     </>

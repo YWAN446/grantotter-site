@@ -465,7 +465,7 @@ function Tutorial({ setRoute }) {
 
           <div style={{marginTop:0, display:'flex', gap:14, flexWrap:'wrap'}}>
             <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal">
-              Launch app — currently free →
+              Launch app — start free →
             </a>
             <button className="btn btn-ghost" onClick={() => setRoute('home')} style={{background:'var(--teal-deep)', color:'#fff', borderColor:'var(--teal-deep)'}}>
               Back to home

@@ -55,9 +55,9 @@ function Privacy({ setRoute }) {
       n: '03', label: 'Never used for AI training',
       accent: 'var(--orange-deep)',
       border: 'var(--orange)',
-      desc: <>Your content is <span style={{color:'var(--orange-deep)', fontWeight:600}}>never used to train AI models</span> or shared with third parties — strictly yours.</>,
+      desc: <>Your content is <span style={{color:'var(--orange-deep)', fontWeight:600}}>never used to train AI models</span> or sold — shared only with the service providers that run GrantOtter.</>,
       items: [
-        'Your data is never used to train AI models or shared with third parties',
+        'Your data is never used to train AI models or sold; it is shared only with the service providers that run GrantOtter (listed below), such as our AI provider and our payment processor',
         'Grant concepts, biosketches, and documents are visible only to you',
         <>You can request deletion anytime at <a href="mailto:grantotter42@gmail.com" style={{color:'var(--orange-deep)'}}>grantotter42@gmail.com</a></>,
       ],
@@ -69,6 +69,7 @@ function Privacy({ setRoute }) {
     { name: 'Supabase',           color: 'var(--teal-deep)',   desc: 'Database and file storage with row-level security. Only you can access your own data.' },
     { name: 'Anthropic (Claude)', color: 'var(--orange-deep)', desc: "AI processing for profile generation, grant matching, brainstorming, and document generation. Anthropic does not train models on this data; its data processing agreement applies." },
     { name: 'Voyage AI',          color: 'var(--orange-deep)', desc: 'Powers the semantic collaborator search over partner-institution faculty profiles.' },
+    { name: 'Stripe',             color: 'var(--orange-deep)', desc: 'Payment processor for paid plans and extra usage. Payment card details go directly to Stripe and never reach our servers.' },
     { name: 'Google Analytics',   color: 'var(--muted)',       desc: 'Anonymized website usage tracking.' },
     { name: 'Gmail (SMTP)',        color: 'var(--muted)',       desc: 'Used to send account emails, the weekly emails you subscribe to (grant alerts and news briefs), and results you request.' },
   ];
@@ -124,6 +125,7 @@ function Privacy({ setRoute }) {
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Assistant memory</span> — the application assistant can save short facts you share in chat (preferences, decisions about an application) to personalize its help. You can view and delete every memory in the app at any time — account-level memory under Settings, a project's memory in its Details panel; deleting a project deletes its memories.</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Application data</span> — grant applications, draft concepts, biosketches, checklists, and documents you create or upload within the app.</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Partner faculty networks</span> — for partner institutions, GrantOtter maintains faculty profiles built from publicly available sources to power collaborator search. If a profile describes you, you can contact us anytime to correct or remove it.</>,
+                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Billing information</span> — if you buy a plan or extra usage: your billing country, Stripe customer and subscription identifiers, your plan, your purchase history, and the usage amounts measured against your plan's limits. Card details are entered with Stripe and never reach our servers.</>,
                 <><span style={{color:'var(--muted)', fontWeight:600}}>Usage analytics</span> — usage events linked to your account, recorded to operate and improve the product; website visits tracked via Google Analytics. This data is never sold or shared.</>,
               ]} />
             </PolicyBlock>
@@ -133,6 +135,7 @@ function Privacy({ setRoute }) {
                 'To provide and operate the GrantOtter service.',
                 'To generate researcher profiles, match grants, and produce biosketches using AI.',
                 'To send the weekly emails you subscribe to — personalized grant alerts and the news briefs — plus results you request. Every email has a one-click unsubscribe, and preferences are per-channel.',
+                'To process payments, manage subscriptions, and apply plan limits.',
                 'To improve the product based on aggregated usage patterns.',
               ]} />
             </PolicyBlock>
@@ -152,7 +155,7 @@ function Privacy({ setRoute }) {
               <p style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.7, margin:0}}>
                 Your data is retained for as long as your account is active. You can <span style={{color:'var(--orange-deep)', fontWeight:600}}>request deletion</span> of your account and all associated data at any time by emailing{' '}
                 <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>.
-                We will process deletion requests within 30 days.
+                We will process deletion requests within 30 days. Billing records are kept as required for tax and accounting, even after account deletion.
               </p>
             </PolicyBlock>
 
@@ -177,7 +180,7 @@ function Privacy({ setRoute }) {
           </div>
 
           <div style={{marginTop:48, paddingTop:32, borderTop:'1px solid var(--line-2)', display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 12 : 0, justifyContent:'space-between'}}>
-            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: July 2026</span>
+            <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>Last updated: October 2026</span>
             <button onClick={() => setRoute('terms')} className="tag orange" style={{cursor:'pointer', background:'none', border:'1px solid var(--orange)', font:'inherit'}}>
               Read Terms of Service →
             </button>
