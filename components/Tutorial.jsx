@@ -224,7 +224,7 @@ function Tutorial({ setRoute }) {
       <Step id="step3" n="step 3" tag="Tab: Match Grants">
         <StepH2>Match Grants to Your Profile</StepH2>
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:24}}>
-          GrantOtter compares your profile against <span style={{color:'var(--orange-deep)', fontWeight:600}}>2,000+</span> open funding opportunities — federal grants (e.g., from <span style={{color:'var(--teal-deep)'}}>NIH</span> and <span style={{color:'var(--teal-deep)'}}>NSF</span>), plus foundation and institutional grants — using a three-stage pipeline:
+          GrantOtter compares your profile against <span style={{color:'var(--orange-deep)', fontWeight:600}}>thousands of</span> open funding opportunities — federal grants (e.g., from <span style={{color:'var(--teal-deep)'}}>NIH</span> and <span style={{color:'var(--teal-deep)'}}>NSF</span>), plus foundation and institutional grants — using a three-stage pipeline:
         </p>
         {/* Pipeline */}
         <div style={{display:'grid', gap:8, marginBottom:24}}>
@@ -423,7 +423,7 @@ function Tutorial({ setRoute }) {
           {/* Three cards */}
           {(() => {
             const chairMailto = 'mailto:?subject=' + encodeURIComponent('GrantOtter — AI grant discovery for our department') + '&body=' + encodeURIComponent(
-              'Hi,\n\nI\u2019ve been using GrantOtter, an AI-powered grant discovery platform that matches researchers to relevant funding opportunities based on their expertise and research profile.\n\nI think it would be valuable for our department. A few highlights:\n\n\u2022 Covers federal and major foundation grants (2,000+ opportunities, updated weekly)\n\u2022 Generates a rich researcher profile from your publications, grant history, and expertise\n\u2022 Sends a personalized digest of new matching opportunities to each researcher every Monday by email\n\u2022 Supports the full workflow: find collaborators, brainstorm proposal concepts, generate NIH biosketches, and manage application packages\n\nWould you be open to a 1-hour demo for our department? Sessions are free and tailored to your department\u2019s research areas.\n\nLearn more: https://grantotter.com\n\nBest,\n[Your Name]'
+              'Hi,\n\nI\u2019ve been using GrantOtter, an AI-powered grant discovery platform that matches researchers to relevant funding opportunities based on their expertise and research profile.\n\nI think it would be valuable for our department. A few highlights:\n\n\u2022 Covers federal and major foundation grants (thousands of opportunities, updated weekly)\n\u2022 Generates a rich researcher profile from your publications, grant history, and expertise\n\u2022 Sends a personalized digest of new matching opportunities to each researcher every Monday by email\n\u2022 Supports the full workflow: find collaborators, brainstorm proposal concepts, generate NIH biosketches, and manage application packages\n\nWould you be open to a 1-hour demo for our department? Sessions are free and tailored to your department\u2019s research areas.\n\nLearn more: https://grantotter.com\n\nBest,\n[Your Name]'
             );
             const cards = [
               {
