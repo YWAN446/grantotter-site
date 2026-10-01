@@ -138,181 +138,175 @@ function RssSubscribeButton({ label = 'Subscribe', btnClass = 'btn btn-ghost' })
   );
 }
 
-function OtterMark({ size = 32, showOtter = true }) {
-  if (!showOtter) {
-    return (
-      <svg width={size} height={size} viewBox="0 0 22 22" fill="none">
-        <rect x="1" y="1" width="20" height="20" stroke="var(--ink)" strokeWidth="1.5"/>
-        <path d="M6 11 L10 11 L10 7 L16 7" stroke="var(--teal-deep)" strokeWidth="1.5" fill="none"/>
-        <circle cx="16" cy="7" r="1.5" fill="var(--orange)"/>
-      </svg>
-    );
-  }
+function OtterMark({ size = 32 }) {
   return (
-    <img src="logo-mark.png?v=2" alt="GrantOtter" width={size} height={size} style={{display:'block', objectFit:'contain'}} />
+    <img src="logo-mark.png?v=2" alt="" width={size} height={size} style={{display:'block', objectFit:'contain'}} />
   );
 }
 
-function Nav({ route, setRoute, showOtter }) {
+const APP_URL = 'https://app.grantotter.com';
+const SLACK_URL = 'https://join.slack.com/t/grantottercommunity/shared_invite/zt-3wb5fmemq-CPTYpyWjXzl8wkmhn6tw4Q';
+const THEME_KEY = 'grantotter.site.theme';
+
+// The theme lives on <html data-theme>; index.html sets it before paint.
+function useTheme() {
+  const [theme, setTheme] = useStateC(() => document.documentElement.getAttribute('data-theme') || 'light');
+  function toggle() {
+    // Read the live attribute: the nav mounts two toggles (desktop and narrow) with separate state.
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* private window: the choice lasts for this page view */ }
+    setTheme(next);
+  }
+  return [theme, toggle];
+}
+
+function ThemeToggle() {
+  const [theme, toggle] = useTheme();
+  const dark = theme === 'dark';
+  return (
+    <button className="theme-toggle" onClick={toggle} aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'} title={dark ? 'Light theme' : 'Dark theme'}>
+      {dark ? (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      ) : (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      )}
+    </button>
+  );
+}
+
+function Nav({ route, setRoute }) {
   const [menuOpen, setMenuOpen] = useStateC(false);
-  const isMobile = useWindowWidth() < 768;
+  const isNarrow = useWindowWidth() <= 1040;
 
   const navLinks = [
-    ['home',     'Home'],
-    ['features', 'Features'],
-    ['pricing',  'Pricing'],
-    ['feed',     'Weekly Feed'],
-    ['blog',     'Blog'],
-    ['tutorial', 'Get Started'],
+    ['features',     'Features'],
+    ['institutions', 'For institutions'],
+    ['pricing',      'Pricing'],
+    ['feed',         'Weekly Feed'],
+    ['blog',         'Blog'],
+    ['tutorial',     'Get Started'],
   ];
+  const go = (k) => { setRoute(k); setMenuOpen(false); };
+  const onKey = (k) => (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(k); } };
 
   return (
-    <nav className="nav">
+    <nav className="nav" aria-label="Main">
       <div className="nav-inner">
-        <a className="nav-logo" onClick={() => { setRoute('home'); setMenuOpen(false); }} style={{cursor:'pointer'}}>
-          <span className="mark"><OtterMark showOtter={showOtter} /></span>
+        <a className="nav-logo" role="link" tabIndex={0} onClick={() => go('home')} onKeyDown={onKey('home')} aria-label="GrantOtter home">
+          <span className="mark"><OtterMark /></span>
           <span>GrantOtter</span>
         </a>
         <div className="nav-links">
           {navLinks.map(([k, label]) => (
-            <a key={k}
+            <a key={k} role="link" tabIndex={0}
                className={`nav-link ${route === k ? 'active' : ''}`}
-               onClick={() => setRoute(k)}
-               style={{cursor:'pointer'}}>
+               aria-current={route === k ? 'page' : undefined}
+               onClick={() => go(k)} onKeyDown={onKey(k)}>
               {label}
             </a>
           ))}
-          <span style={{width:12}}/>
-          <a className="nav-cta" href="https://app.grantotter.com" target="_blank" rel="noopener">
-            Launch app <span className="arrow">→</span>
-          </a>
+          <span style={{width:6}}/>
+          <ThemeToggle />
+          <span style={{width:6}}/>
+          <a className="nav-cta" href={APP_URL} target="_blank" rel="noopener">Start free</a>
         </div>
-        <button
-          className="nav-hamburger"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          onClick={() => setMenuOpen(o => !o)}
-        >
-          {menuOpen ? '✕' : '☰'}
-        </button>
+        {isNarrow && (
+          <div style={{display:'flex', alignItems:'center', gap:4}}>
+            <ThemeToggle />
+            <button className="nav-hamburger" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(o => !o)}>
+              {menuOpen ? '✕' : '☰'}
+            </button>
+          </div>
+        )}
       </div>
-      {isMobile && menuOpen && (
+      {isNarrow && menuOpen && (
         <div className="nav-mobile-menu">
           {navLinks.map(([k, label]) => (
-            <a key={k}
+            <a key={k} role="link" tabIndex={0}
                className={`nav-link ${route === k ? 'active' : ''}`}
-               onClick={() => { setRoute(k); setMenuOpen(false); }}
-               style={{cursor:'pointer'}}>
+               onClick={() => go(k)} onKeyDown={onKey(k)}>
               {label}
             </a>
           ))}
-          <a className="nav-mobile-cta" href="https://app.grantotter.com" target="_blank" rel="noopener">
-            Launch app →
-          </a>
+          <a className="nav-mobile-cta" href={APP_URL} target="_blank" rel="noopener">Start free</a>
         </div>
       )}
     </nav>
   );
 }
 
-function Ticker() {
-  const items = [
-    ['FEDERAL_AGENCIES', 'NIH · NSF · DARPA · DOE · NASA · USDA · DOD · and more via Grants.gov'],
-    ['FOUNDATIONS',      'ACS · Komen · Gates · Simons · Sloan · Wellcome · and hundreds more'],
-    ['GRANTS_INDEXED',   '2,000+ · updated every Monday'],
-    ['FACULTY_SEARCH', 'With an institution subscription · included at partner institutions'],
-    ['TOOLS',            'Profile · Discover · Collaborate · Brainstorm · Docs · Projects'],
-    ['RESEARCHERS',       '180+ researchers and counting'],
-    ['PLANS',            'Grant alerts free (monthly) · Pro $20/month · Max $80/month'],
-  ];
-  const row = (
-    <>
-      {items.map(([k, v], i) => (
-        <span key={i}><span className="sig">◆</span> {k}<span style={{color:'var(--line-2)', margin:'0 6px'}}>/</span><span style={{color:'var(--ink)'}}>{v}</span></span>
-      ))}
-    </>
-  );
-  return (
-    <div className="scroll-ticker">
-      <div className="ticker-track">
-        {row}{row}
-      </div>
-    </div>
-  );
-}
-
-function BrandBand() {
-  const isMobile = useWindowWidth() < 768;
-  return (
-    <section style={{background:'#F3EAD0', borderTop:'1px solid var(--line)', padding: isMobile ? '32px 0' : '48px 0'}}>
-      <div className="container" style={{display:'flex', alignItems:'center', gap: isMobile ? 24 : 48, flexWrap:'wrap'}}>
-        <img src="media/logo-brand.png" alt="GrantOtter mark" width={isMobile ? 130 : 190} height={isMobile ? 130 : 190} style={{display:'block', objectFit:'contain'}} />
-        <div>
-          <div style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 48, letterSpacing:'-0.02em', color:'#00262D', lineHeight:1.05}}>GrantOtter</div>
-          <div style={{width:64, height:4, background:'#C74E00', margin:'14px 0'}}/>
-          <div style={{fontFamily:'JetBrains Mono, monospace', fontSize:12, letterSpacing:'0.05em', color:'#4D6C69', maxWidth:460, lineHeight:1.6}}>
-            from blank page to submitted proposal — AI-powered grant workflow for researchers
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// Kept for pages that still reference it; the home page no longer shows a ticker.
+function Ticker() { return null; }
 
 function Footer({ setRoute }) {
   const w = useWindowWidth();
   const isMobile = w < 768;
-  const isTablet = w < 1024;
-  const footerCols = isMobile ? '1fr 1fr' : isTablet ? '1fr 1fr 1fr' : '2fr 1fr 1fr 1fr';
+  const cols = isMobile ? '1fr 1fr' : '1.6fr 1fr 1fr 1fr';
+  const groups = [
+    ['Product', [
+      { label: 'Features',         onClick: () => setRoute('features') },
+      { label: 'For institutions', onClick: () => setRoute('institutions') },
+      { label: 'Pricing',          onClick: () => setRoute('pricing') },
+      { label: 'Weekly Feed',      onClick: () => setRoute('feed') },
+    ]],
+    ['Resources', [
+      { label: 'Get Started', onClick: () => setRoute('tutorial') },
+      { label: 'Blog',        onClick: () => setRoute('blog') },
+      { label: 'Help',        onClick: () => setRoute('help') },
+      { label: 'Privacy',     onClick: () => setRoute('privacy') },
+      { label: 'Terms',       onClick: () => setRoute('terms') },
+    ]],
+    ['App', [
+      { label: 'Open the app',         href: APP_URL, external: true },
+      { label: 'Join the Slack group', href: SLACK_URL, external: true },
+      { label: 'Contact us',           href: 'mailto:grantotter42@gmail.com' },
+    ]],
+  ];
   return (
-    <React.Fragment>
-    <BrandBand />
-    <footer style={{background:'var(--ink)', color:'var(--bg)', padding: isMobile ? '40px 0 20px' : '64px 0 28px', fontFamily:'JetBrains Mono, monospace', fontSize:12}}>
+    <footer style={{background:'var(--band-bg)', color:'var(--band-ink)', padding: isMobile ? '48px 0 24px' : '72px 0 32px', fontSize:15, borderTop:'1px solid var(--line)'}}>
       <div className="container">
-        <div style={{display:'grid', gridTemplateColumns: footerCols, gap: isMobile ? 24 : 40, paddingBottom: isMobile ? 28 : 48, borderBottom:'1px solid #2B3634'}}>
-          <div style={{gridColumn: isMobile ? '1 / -1' : 'auto'}}>
-            <div style={{display:'flex', gap:10, alignItems:'center', color:'#8A9491'}}>
-              <span style={{width:6, height:6, borderRadius:'50%', background:'#3BD171', boxShadow:'0 0 6px #3BD171'}}/>
-              <span>All systems operational</span>
+        <div style={{display:'grid', gridTemplateColumns: cols, gap: isMobile ? 28 : 40, paddingBottom: isMobile ? 32 : 48, borderBottom:'1px solid color-mix(in oklab, var(--band-ink) 16%, transparent)'}}>
+          <div style={{gridColumn: isMobile ? '1 / -1' : 'auto', maxWidth:340}}>
+            <div style={{display:'flex', alignItems:'center', gap:10, fontWeight:600, fontSize:18}}>
+              <OtterMark size={34} /> GrantOtter
             </div>
+            <p style={{marginTop:14, color:'var(--band-muted)', lineHeight:1.6}}>
+              A grant assistant for researchers: find the funding, build the team, draft the application.
+            </p>
           </div>
-          {[
-            ['Product', [
-              { label: 'Features',    onClick: () => setRoute('features') },
-              { label: 'Pricing',     onClick: () => setRoute('pricing') },
-              { label: 'Weekly Feed', onClick: () => setRoute('feed') },
-            ]],
-            ['Resources', [
-              { label: 'Get Started', onClick: () => setRoute('tutorial') },
-              { label: 'Blog',        onClick: () => setRoute('blog') },
-              { label: 'Help',        onClick: () => setRoute('help') },
-              { label: 'Privacy',     onClick: () => setRoute('privacy') },
-              { label: 'Terms',       onClick: () => setRoute('terms') },
-            ]],
-            ['App', [
-              { label: 'Launch App', href: 'https://app.grantotter.com', external: true },
-              { label: 'Join Slack', href: 'https://join.slack.com/t/grantottercommunity/shared_invite/zt-3wb5fmemq-CPTYpyWjXzl8wkmhn6tw4Q', external: true },
-            ]],
-          ].map(([title, rows]) => (
+          {groups.map(([title, rows]) => (
             <div key={title}>
-              <div style={{color:'#8A9491', textTransform:'uppercase', letterSpacing:'0.08em', fontSize:11, marginBottom:14}}>{title}</div>
+              <div style={{color:'var(--band-muted)', fontSize:14, fontWeight:600, marginBottom:12}}>{title}</div>
               {rows.map(r => (
                 r.href
                   ? <a key={r.label} href={r.href} target={r.external ? '_blank' : undefined} rel={r.external ? 'noopener' : undefined}
-                       style={{display:'block', padding:'5px 0', color:'inherit', textDecoration:'none'}} className="footlink">{r.label}</a>
-                  : <div key={r.label} style={{padding:'5px 0', cursor:'pointer'}} className="footlink" onClick={r.onClick}>{r.label}</div>
+                       style={{display:'block', padding:'6px 0'}} className="footlink">{r.label}</a>
+                  : <a key={r.label} role="link" tabIndex={0} style={{display:'block', padding:'6px 0', cursor:'pointer'}} className="footlink"
+                       onClick={r.onClick} onKeyDown={(e) => { if (e.key === 'Enter') r.onClick(); }}>{r.label}</a>
               ))}
             </div>
           ))}
         </div>
-        <div style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent:'space-between', alignItems: isMobile ? 'flex-start' : 'center', gap:8, paddingTop:24, color:'#5C6664'}}>
-          <span>© 2026 GrantOtter. Built for researchers, by researchers.</span>
-          <span>Grant alerts free (monthly on the Free plan) · <a onClick={() => setRoute('pricing')} style={{color:'#5C6664', textDecoration:'none', cursor:'pointer'}}>Pricing</a> · <a href="mailto:grantotter42@gmail.com" style={{color:'#5C6664', textDecoration:'none'}}>Contact us</a></span>
+        <div style={{display:'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent:'space-between', gap:8, paddingTop:24, color:'var(--band-muted)', fontSize:14}}>
+          <span>© 2026 GrantOtter. Built by researchers, for researchers.</span>
+          <span>Grant alerts are free, monthly on the Free plan.</span>
         </div>
       </div>
-      <style>{`.footlink:hover{color:var(--teal);} `}</style>
+      <style>{`.footlink:hover{color:#6ADAD6;}`}</style>
     </footer>
-    </React.Fragment>
   );
 }
 
-Object.assign(window, { OtterMark, Nav, Ticker, Footer, RssSubscribeButton });
+// Shared section head for the redesigned pages.
+function SecHead({ kicker, title, children }) {
+  return (
+    <div className="sec-head">
+      {kicker && <div className="kicker">{kicker}</div>}
+      <h2>{title}</h2>
+      {children && <p>{children}</p>}
+    </div>
+  );
+}
+
+Object.assign(window, { OtterMark, Nav, Ticker, Footer, RssSubscribeButton, ThemeToggle, SecHead, APP_URL, SLACK_URL });

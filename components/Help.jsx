@@ -132,10 +132,10 @@ function Help({ setRoute }) {
             Questions,<br/><em style={{color:'var(--teal-deep)'}}>answered.</em>
           </h1>
           <p style={{fontSize:15, color:'var(--muted)', maxWidth:520, lineHeight:1.6, marginBottom:36}}>
-            Frequently asked questions, contact options, and live demo scheduling — all in one place.
+            Frequently asked questions, contact options, and live demos for institutions — all in one place.
           </p>
           <div style={{display:'flex', gap:8, flexWrap:'wrap'}}>
-            {[['FAQ', 'faq', 'teal'], ['AI & Research Integrity', 'ai-integrity', 'teal'], ['Contact', 'contact', 'teal'], ['Schedule a Demo', 'demo', 'orange']].map(([label, id, color]) => (
+            {[['FAQ', 'faq', 'teal'], ['AI & Research Integrity', 'ai-integrity', 'teal'], ['Contact', 'contact', 'teal'], ['Institution Demo', 'demo', 'orange']].map(([label, id, color]) => (
               <button key={label} className={`tag ${color}`} style={{fontSize:11, cursor:'pointer'}}
                 onClick={() => { const el = document.getElementById(id); if (el) el.scrollIntoView({block:'start'}); }}>
                 {label} →
@@ -215,7 +215,7 @@ function Help({ setRoute }) {
             <div className="left">
               <span className="bracket-label">03 / contact &amp; demo</span>
             </div>
-            <h2>Get in touch or <em>see it live.</em></h2>
+            <h2>Get in touch.</h2>
           </div>
           <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap:24}} id="demo">
 
@@ -267,16 +267,21 @@ function Help({ setRoute }) {
                   ◈
                 </div>
                 <div style={{display:'flex', flexDirection:'column', gap:2}}>
-                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>live demo</span>
-                  <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>30-minute walkthrough</span>
+                  <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.08em', textTransform:'uppercase'}}>for institutions</span>
+                  <span style={{fontFamily:'Instrument Serif,Georgia,serif', fontStyle:'italic', fontSize:22, color:'var(--ink)'}}>Live demo for your unit</span>
                 </div>
               </div>
               <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.6, marginBottom:20}}>
-                Want a guided walkthrough for yourself or your department? Email us to set up a demo — we walk through the full workflow, from profile generation to a complete application, using a real grant relevant to your group.
+                Live demos are for departments, schools and research offices considering an institution subscription. In 30 minutes we walk through the faculty research map, center opportunities and pursuit teams, using examples relevant to your unit.
               </p>
-              <a href="mailto:grantotter42@gmail.com?subject=GrantOtter%20demo" className="btn btn-signal">
-                Email us to set up a demo →
+              <a href="mailto:grantotter42@gmail.com?subject=GrantOtter%20institution%20demo" className="btn btn-signal">
+                Request an institution demo
               </a>
+              <p style={{fontSize:12, color:'var(--muted)', lineHeight:1.5, marginTop:14}}>
+                An individual researcher? The{' '}
+                <a onClick={() => setRoute('tutorial')} style={{color:'var(--teal-deep)', cursor:'pointer', textDecoration:'underline'}}>get started guide</a>{' '}
+                walks through everything, and the app is free to try.
+              </p>
             </div>
 
           </div>

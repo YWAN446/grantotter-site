@@ -1,73 +1,41 @@
+// Shown for #signup and for any hash the router does not know.
 function Signup({ setRoute }) {
+  const link = (route, text) => (
+    <span className="text-link" role="link" tabIndex={0} onClick={() => setRoute(route)} onKeyDown={(e) => { if (e.key === 'Enter') setRoute(route); }}>{text}</span>
+  );
+  const expect = [
+    ['Build your profile', 'Give your name and institution, or drop in your CV; the assistant researches your public record and writes your researcher profile.'],
+    ['Match grants', 'Ask for a match and get ranked grants, each with the reason it fits.'],
+    ['Get alerts', 'New matches by email on Monday: monthly on the Free plan, weekly on Pro and Max.'],
+    ['Work an application', 'One chat per application keeps the deadline, team, checklist and drafts. Pro and Max.'],
+  ];
   return (
-    <section style={{minHeight:'calc(100vh - 60px)', padding:'80px 0', background:'var(--paper)'}}>
-      <div className="container" style={{maxWidth:900}}>
-        <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:80, alignItems:'start'}}>
-
+    <section className="sec tint" style={{minHeight:'calc(100vh - 64px)'}}>
+      <div className="container">
+        <div className="split top">
           <div>
-            <div className="bracket-label" style={{marginBottom:24}}>get started</div>
-            <h1 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize:'clamp(52px, 7vw, 88px)', fontStyle:'italic', fontWeight:400, lineHeight:0.97, letterSpacing:'-0.03em', marginBottom:28}}>
-              Your workspace<br/>is <em style={{color:'var(--teal-deep)'}}>ready.</em>
-            </h1>
-            <p style={{fontSize:17, lineHeight:1.55, color:'var(--ink-2)', marginBottom:36, maxWidth:460}}>
-              Start on the free plan: launch the app, generate your researcher profile, and get grant alerts matched to your work (monthly on the free plan). Pro and Max add weekly alerts and the full assistant.
+            <h1 className="display" style={{fontSize:'clamp(42px, 6vw, 76px)'}}>Your workspace is ready.</h1>
+            <p className="lede" style={{margin:'24px 0 32px', maxWidth:480}}>
+              Start on the free plan: open the app, build your researcher profile, and get grant alerts matched to your work.
             </p>
-
-            <div style={{display:'grid', gap:12, marginBottom:40}}>
-              <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'block', textAlign:'center', textDecoration:'none', padding:'16px 24px', fontSize:16}}>
-                Launch GrantOtter app →
-              </a>
-              <button onClick={() => setRoute('tutorial')} className="btn btn-ghost" style={{display:'block', textAlign:'center', width:'100%', cursor:'pointer'}}>
-                Read the get started guide first
-              </button>
+            <div style={{display:'flex', gap:16, flexWrap:'wrap', alignItems:'center'}}>
+              <a href={APP_URL} target="_blank" rel="noopener" className="btn btn-signal">Start free</a>
+              {link('tutorial', 'Read the get started guide first')}
             </div>
-
-            <div style={{display:'flex', gap:24, color:'var(--muted)', fontFamily:'JetBrains Mono, monospace', fontSize:11, letterSpacing:'0.04em', flexWrap:'wrap'}}>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> Free plan</span>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> No credit card to start</span>
-              <span><span style={{color:'var(--teal-deep)'}}>✓</span> No install</span>
-            </div>
+            <p className="small" style={{marginTop:20}}>No credit card to start. Nothing to install.</p>
           </div>
-
-          <div style={{position:'sticky', top:100}}>
-            <div className="term">
-              <div className="term-head">
-                <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>what to expect</span></div>
-                <span>the toolkit</span>
+          <div>
+            {expect.map(([title, desc]) => (
+              <div key={title} className="mail-row" style={{gridTemplateColumns:'1fr'}}>
+                <div><strong>{title}</strong><p>{desc}</p></div>
               </div>
-              <div className="term-body" style={{fontSize:13}}>
-                {[
-                  ['01', 'Chat-first',          'Describe your work — the assistant builds your researcher profile from your CV or the web'],
-                  ['02', 'Match Grants',        'Ask for a match → ranked grants with plain-language fit explanations'],
-                  ['03', 'Weekly Feed',         'Fit-scored recommendations every Monday — in the app and your inbox'],
-                  ['04', 'Faculty Search',      'Find faculty by research area — part of an institution subscription, included at partner institutions'],
-                  ['05', 'Projects',            'One chat per application — deadline, team, AI checklist, status'],
-                  ['06', 'Drafting',            'Concepts · biosketch · DMS Plan · budget brief — drafted with you'],
-                ].map(([n, title, desc]) => (
-                  <div key={n} style={{padding:'10px 0', borderBottom:'1px solid var(--line)', display:'grid', gap:4}}>
-                    <div style={{display:'flex', gap:12, alignItems:'center'}}>
-                      <span className="mono" style={{color:'var(--muted)', fontSize:11}}>{n}</span>
-                      <span style={{color:'var(--ink)', fontWeight:500}}>{title}</span>
-                    </div>
-                    <div style={{paddingLeft:28, color:'var(--muted)', fontSize:12}}>{desc}</div>
-                  </div>
-                ))}
-                <div style={{marginTop:16, color:'var(--muted)'}}>
-                  <span className="prompt">otter@lab:~$</span> <span className="blink">▊</span>
-                </div>
-              </div>
-            </div>
-
-            <div style={{marginTop:14, padding:'16px 18px', background:'var(--bg)', border:'1px solid var(--line-2)'}}>
-              <div className="tick-row" style={{marginBottom:10}}><span>need help?</span></div>
-              <div style={{display:'grid', gap:8, fontSize:13, color:'var(--ink-2)'}}>
-                <a onClick={() => setRoute('tutorial')} style={{color:'inherit', textDecoration:'none', cursor:'pointer'}}>→ <span style={{color:'var(--teal-deep)'}}>Get started guide</span> — step by step walkthrough</a>
-                <a onClick={() => setRoute('help')} style={{color:'inherit', textDecoration:'none', cursor:'pointer'}}>→ <span style={{color:'var(--teal-deep)'}}>Help page</span> — FAQs and tips</a>
-                <a href="mailto:grantotter42@gmail.com" style={{color:'inherit', textDecoration:'none'}}>→ <span style={{color:'var(--teal-deep)'}}>Email us</span> — grantotter42@gmail.com</a>
-              </div>
-            </div>
+            ))}
+            <p style={{marginTop:24}}>
+              Need help? {link('help', 'Help and FAQs')}
+              <span className="small" style={{margin:'0 10px'}}>or</span>
+              <a className="text-link" href="mailto:grantotter42@gmail.com">email us</a>
+            </p>
           </div>
-
         </div>
       </div>
     </section>

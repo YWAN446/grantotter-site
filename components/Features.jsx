@@ -1,368 +1,168 @@
-function AssistantDemo() {
-  const user = (text) => (
-    <div style={{display:'flex', justifyContent:'flex-end', margin:'10px 0'}}>
-      <div style={{background:'color-mix(in oklab, var(--teal) 10%, transparent)', border:'1px solid var(--line)', padding:'6px 10px', maxWidth:'85%', color:'var(--ink-2)'}}>{text}</div>
-    </div>
-  );
-  const bot = (text) => (
-    <div style={{display:'flex', gap:8, margin:'10px 0'}}>
-      <span>🦦</span>
-      <div style={{maxWidth:'88%', color:'var(--ink-2)'}}>{text}</div>
-    </div>
-  );
-  const action = (text) => (
-    <div style={{margin:'2px 0 2px 24px', fontSize:11, color:'var(--teal-deep)'}}>✓ {text}</div>
-  );
-  return (
-    <div className="term">
-      <div className="term-head">
-        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>application assistant</span></div>
-        <span>online</span>
-      </div>
-      <div className="term-body" style={{fontSize:12}}>
-        {bot('Welcome! Which grant would you like to work on? Give me its number or title and I\'ll link it from our grant repository — or drop the FOA/RFP straight into the chat.')}
-        {user('I want to apply for NIH grant PAR-26-095.')}
-        {bot('Linked it and read the full announcement — summary saved to your application. NIH R01, 5 years of support, budget cap noted. The next cycle after today is due Oct 5. Set that as your deadline?')}
-        {action('Grant linked · summary saved · classified NIH R01')}
-        {user('Yes. Then let’s set up the team.')}
-        {action('Deadline set to 2026-10-05')}
-        {bot('I can add your saved collaborators by name, search the partner network by expertise, or build a profile for an external collaborator — just give me a name and institution.')}
-        {user('Add Kim Lee, and find someone doing spatial epidemiology.')}
-        {action('Team updated · searching partner network…')}
-        {bot('Team saved. Next up: want me to brainstorm 2–3 proposal concepts with this team, or generate the submission checklist first?')}
-      </div>
-    </div>
-  );
-}
+// Features: the workflow in order, each step with who it is for, what you get and an example
+// in the app's own layout (AppMock) or a real screenshot.
 
-function FeatureRow({ num, tag, title, desc, children, reverse }) {
-  const isMobile = useWindowWidth() < 768;
+function FeatureRow({ id, who, title, body, gets, plan, reverse, children }) {
   return (
-    <section style={{padding: isMobile ? '56px 0' : '96px 0', borderBottom:'1px solid var(--line)'}}>
+    <section className="feature" id={id}>
       <div className="container">
-        <div style={{display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 36 : 72, alignItems:'center'}}>
-          <div style={{order: (!isMobile && reverse) ? 2 : 1}}>
-            <div className="bracket-label" style={{marginBottom:20}}>{num} / {tag}</div>
-            <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, lineHeight: isMobile ? 1.1 : 0.98, letterSpacing:'-0.025em', fontStyle:'italic', fontWeight:400, marginBottom:24}}>{title}</h2>
-            <p style={{fontSize: isMobile ? 15 : 16, lineHeight:1.6, color:'var(--ink-2)', maxWidth:520}}>{desc}</p>
+        <div className="split" style={{alignItems:'center'}}>
+          <div style={{order: reverse ? 2 : 1}} className="feature-text">
+            <div className="who">{who}</div>
+            <h2>{title}</h2>
+            <p className="body">{body}</p>
+            <ul className="gets">{gets.map(g => <li key={g}>{g}</li>)}</ul>
+            <div className="plan-note">{plan}</div>
           </div>
-          <div style={{order: (!isMobile && reverse) ? 1 : 2}}>{children}</div>
+          <div style={{order: reverse ? 1 : 2, minWidth:0}}>{children}</div>
         </div>
       </div>
     </section>
   );
 }
 
-function ProfileDemo() {
-  return (
-    <div className="term">
-      <div className="term-head">
-        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>profile.md</span></div>
-        <span>generated from open sources</span>
-      </div>
-      <div className="term-body" style={{fontSize:12}}>
-        <div><span style={{color:'var(--muted)'}}>name:</span> <span className="key">Your Name, PhD</span></div>
-        <div><span style={{color:'var(--muted)'}}>position:</span> <span>Assistant Professor</span></div>
-        <div><span style={{color:'var(--muted)'}}>institution:</span> <span>Your University · School of Public Health</span></div>
-        <div style={{margin:'10px 0', height:1, background:'var(--line)'}}/>
-        <div style={{color:'var(--muted)'}}>research_expertise:</div>
-        {[
-          ['infectious disease modeling', 5],
-          ['AI/LLM applications in research', 4],
-          ['biostatistics', 3],
-          ['health policy', 2],
-        ].map(([area, score]) => (
-          <div key={area} style={{display:'grid', gridTemplateColumns:'1fr 60px', paddingLeft:12, paddingTop:4, alignItems:'center'}}>
-            <span style={{color:'var(--ink-2)'}}>— {area}</span>
-            <span style={{display:'flex', gap:2}}>
-              {[1,2,3,4,5].map(i => (
-                <span key={i} style={{width:6, height:6, background: i<=score ? 'var(--teal)' : 'var(--line-2)'}}/>
-              ))}
-            </span>
-          </div>
-        ))}
-        <div style={{margin:'10px 0', height:1, background:'var(--line)'}}/>
-        <div style={{color:'var(--muted)'}}>grant_suitability:</div>
-        <div style={{paddingLeft:12, color:'var(--ink-2)'}}>
-          <div><span style={{color:'var(--muted)'}}>pi_ready:</span> R21 · R03 · foundation grants</div>
-          <div><span style={{color:'var(--muted)'}}>co_i:</span> R01 · multi-site · international</div>
-          <div><span style={{color:'var(--muted)'}}>publications:</span> 50+ · h-index 15</div>
-        </div>
-        <div style={{marginTop:12, padding:'8px 10px', background:'color-mix(in oklab, var(--teal) 8%, transparent)', borderLeft:'2px solid var(--teal-deep)'}}>
-          <div className="mono" style={{fontSize:11, color:'var(--teal-deep)'}}>◇ sources used</div>
-          <div style={{color:'var(--muted)', marginTop:4}}>→ web search · Google Scholar · PubMed · ORCID</div>
-        </div>
-      </div>
-    </div>
-  );
-}
+const FX_PROFILE_CHAT = [
+  { role: 'bot', parts: [
+    { k: 'text', text: 'Welcome. The first thing to do is build your researcher profile. What is your name, and where do you work? A CV helps, but it is optional.' },
+  ]},
+  { role: 'user', text: 'Alex Rivera, Westmark University.' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: '', summary: 'Researched Alex Rivera · 9 sources', done: true },
+    { k: 'text', text: '**Alex Rivera, PhD** · Assistant Professor, Environmental Health\n\n- Low-cost sensor networks for drinking-water quality\n- Physics-informed forecasting of contamination events\n- 21 publications; NSF award as co-PI\n\nDoes this look right? Tell me any emerging areas to add, or topics to avoid.' },
+  ]},
+  { role: 'user', text: 'Looks right. Add wastewater surveillance as an emerging area.' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: '', summary: 'Saved My Profile', done: true },
+    { k: 'text', text: 'Your profile is saved. Want me to match grants to it?' },
+  ]},
+];
 
-function DiscoverDemo() {
-  return (
-    <div style={{border:'1px solid var(--line-2)', background:'var(--paper)', overflowX:'auto'}}>
-      <div style={{minWidth:520}}>
-        <div style={{padding:'10px 14px', borderBottom:'1px solid var(--line)', display:'flex', justifyContent:'space-between', fontFamily:'JetBrains Mono, monospace', fontSize:11, color:'var(--muted)', background:'var(--bg-2)'}}>
-          <span>discover · 2,000+ opportunities indexed</span>
-          <span>sort: fit × deadline ↓</span>
-        </div>
-        <div style={{display:'grid', gridTemplateColumns:'60px 1fr 110px 90px 90px', padding:'10px 14px', fontFamily:'JetBrains Mono, monospace', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'0.08em', borderBottom:'1px solid var(--line)'}}>
-          <span>fit</span><span>opportunity</span><span>amount</span><span>deadline</span><span>status</span>
-        </div>
-        {[
-          { fit: 10,  agency: 'NIH / NLM',      title: 'PAR-25-131 · Computational Curation at Scale (R01)',     amt: '$250k',     due: 'Apr \'27', status: 'draft' },
-          { fit: 9,  agency: 'Wellcome Trust',  title: 'Evidence Synthesis Infrastructure Hub',                  amt: '$1.9–2.4M', due: 'May 07', status: 'saved' },
-          { fit: 9, agency: 'ACS',             title: 'Research Scholar Grant — early-career investigators',    amt: '$660k',     due: 'May 31', status: 'new' },
-          { fit: 9,  agency: 'Sloan Fdn',       title: 'Sloan Research Fellowship — early-career scholars',      amt: '$75k',      due: 'May 31', status: 'saved' },
-          { fit: 7,  agency: 'Wellcome Trust',  title: 'Early-Career Award — 5 year independent program',        amt: '~$508k',    due: 'Jul 21', status: 'new' },
-          { fit: 6,  agency: 'NIH (multi)',     title: 'PAR-25-144 · Dissemination & Implementation (R01)',      amt: 'TBD',       due: 'Jan \'28', status: 'new' },
-        ].map((r, i) => (
-          <div key={i} style={{display:'grid', gridTemplateColumns:'60px 1fr 110px 90px 90px', padding:'14px 14px', alignItems:'center', borderBottom:'1px solid var(--line)', fontSize:12, background: i===2 ? 'color-mix(in oklab, var(--orange) 6%, transparent)' : 'transparent'}}>
-            <div style={{display:'flex', alignItems:'center', gap:6}}>
-              <div style={{width:24, height:4, background:'var(--line)', position:'relative'}}><div style={{position:'absolute', inset:0, width:`${r.fit*10}%`, background:'var(--teal)'}}/></div>
-              <span className="mono" style={{color:'var(--ink)', fontWeight:600, fontSize:11}}>{r.fit}</span>
-            </div>
-            <div>
-              <div className="mono" style={{color:'var(--teal-deep)', fontSize:10, fontWeight:600}}>{r.agency}</div>
-              <div style={{color:'var(--ink)', marginTop:2}}>{r.title}</div>
-            </div>
-            <div className="mono" style={{color:'var(--ink)'}}>{r.amt}</div>
-            <div className="mono" style={{color:'var(--muted)'}}>{r.due}</div>
-            <div><span className={`tag ${r.status==='draft'?'orange':r.status==='saved'?'teal':''}`} style={{fontSize:9}}>{r.status}</span></div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+const FX_DOCS_CHAT = [
+  { role: 'user', text: 'Brainstorm concepts for this grant.' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: '', summary: 'Brainstormed 2 concepts', done: true },
+    { k: 'artifact', title: 'Concept notes', type: 'concept', tone: 4 },
+    { k: 'text', text: '**1.** Calibration that transfers between utilities, so small systems can use low-cost sensors.\n\n**2.** Early warning of contamination from sensor and weather data.\n\nWhich one should be the target concept?' },
+  ]},
+  { role: 'user', text: 'Concept 1. Draft my biosketch for it.' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: '', summary: 'Biosketch drafted', done: true },
+    { k: 'artifact', title: 'Biosketch — Alex Rivera', type: 'biosketch', tone: 1, file: true },
+    { k: 'text', text: 'Saved, and written around Concept 1. Two items are marked **[PLACEHOLDER]** because I could not verify them: your degree year and one award end date. Fill those in before you submit.' },
+  ]},
+  { role: 'user', text: 'Now the budget.' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: 'Building the budget brief and worksheet… (takes 1–3 minutes)', done: false },
+  ]},
+];
 
-function TeamDemo() {
-  const cards = [
-    { name: 'Dr. Andrew Park',      inst: 'Public Health · Biostatistics',       overlap: 'dept.', methods: ['behavioral modeling', 'mixed models'], fit: 95 },
-    { name: 'Dr. Anita Mueller',    inst: 'Nursing · Maternal and Child Health',            overlap: 'school', methods: ['diet assessment', 'child nutrition'], fit: 87 },
-    { name: 'Dr. Scott Miller',    inst: 'Public Health · Behavioral Sciences',  overlap: 'co-author', methods: ['behavior change', 'interventions'],  fit: 73 },
-  ];
-  return (
-    <div>
-      <div className="tick-row" style={{marginBottom:8}}><span>suggested co-investigators · partner faculty network</span></div>
-      <div style={{display:'grid', gap:10}}>
-        {cards.map((c, i) => (
-          <div key={i} style={{border:'1px solid var(--line-2)', background:'var(--paper)', padding:'16px 18px', display:'grid', gridTemplateColumns:'1fr 60px', gap:16, alignItems:'center'}}>
-            <div>
-              <div style={{display:'flex', alignItems:'center', gap:10, marginBottom:4}}>
-                <div style={{width:28, height:28, borderRadius:'50%', background:'var(--bg-2)', border:'1px solid var(--line-2)', display:'grid', placeItems:'center', fontFamily:'JetBrains Mono, monospace', fontSize:10, color:'var(--muted)'}}>{c.name.split(' ')[1][0]}{c.name.split(' ')[2][0]}</div>
-                <div style={{fontWeight:600, color:'var(--ink)'}}>{c.name}</div>
-              </div>
-              <div className="mono" style={{fontSize:11, color:'var(--muted)', marginBottom:8}}>{c.inst} · {c.overlap} connection</div>
-              <div style={{display:'flex', gap:6, flexWrap:'wrap'}}>
-                {c.methods.map(m => <span key={m} className="tag" style={{fontSize:10}}>{m}</span>)}
-              </div>
-            </div>
-            <div style={{textAlign:'right'}}>
-              <div className="mono" style={{fontSize:22, fontWeight:600, color:'var(--teal-deep)'}}>{c.fit}</div>
-              <div className="mono" style={{fontSize:9, color:'var(--muted)', textTransform:'uppercase'}}>fit</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+const FX_TEAM_CHAT = [
+  { role: 'user', text: 'I need a co-investigator in spatial epidemiology for this application.' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: '', summary: 'Found 3 people for spatial epidemiology', done: true },
+    { k: 'text', text: 'Three people fit best:\n\n- **Maya Okafor**, Epidemiology. Spatial models of waterborne disease; holds an active R01 as PI.\n- **Daniel Cho**, Biostatistics. Bayesian disease mapping.\n- **Priya Raman**, Environmental Health. GIS-based exposure assessment.' },
+  ]},
+  { role: 'user', text: 'How am I connected to Maya Okafor?' },
+  { role: 'bot', parts: [
+    { k: 'tool', label: '', summary: 'Traced connection to Maya Okafor', done: true },
+    { k: 'text', text: 'You have no direct tie yet. The best introduction is through **Daniel Cho**: you and he have co-authored 3 papers (a solid tie), and he and Dr. Okafor have co-authored 6, most recently in 2025 (a strong tie).' },
+  ]},
+];
 
-function IdeateDemo() {
-  const concepts = [
-    {
-      num: '01', color: 'var(--teal-deep)', bg: 'var(--teal)',
-      title: 'AI-Powered Data Curation Platform for Infectious Disease Research',
-      approach: 'Multi-agent LLM system for automated literature discovery, data extraction, and structured database curation.',
-      budget: '$1.0M · 4 years', innovation: 5, team: 5, cost: 4,
-    },
-    {
-      num: '02', color: 'var(--orange-deep)', bg: 'var(--orange)',
-      title: 'Data Curation and Analysis for Infectious Disease Surveillance',
-      approach: 'Combines disease surveillance data with mobility and behavioral data to identify and predict outbreaks.',
-      budget: '$920k · 4 years', innovation: 4, team: 4, cost: 5,
-    },
-  ];
-  return (
-    <div className="term">
-      <div className="term-head">
-        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>brainstorm · concept-draft.md</span></div>
-        <span>2 concepts generated</span>
-      </div>
-      <div className="term-body" style={{fontSize:12}}>
-        <div style={{marginBottom:12, paddingBottom:10, borderBottom:'1px solid var(--line)'}}>
-          <div style={{color:'var(--muted)', fontSize:11}}>grant</div>
-          <div style={{color:'var(--ink)', fontWeight:600}}>PAR-25-131 · Computational Curation at Scale (R01)</div>
-          <div style={{display:'flex', gap:16, marginTop:4, color:'var(--muted)'}}>
-            <span>NIH / NLM</span><span>·</span><span>$250k/yr direct</span><span>·</span><span>Apr 2027</span>
-          </div>
-        </div>
-        {concepts.map(c => (
-          <div key={c.num} style={{background:`color-mix(in oklab, ${c.bg} 8%, transparent)`, padding:'10px 12px', borderLeft:`2px solid ${c.color}`, marginBottom:10}}>
-            <div style={{color:c.color, fontWeight:600, marginBottom:4}}>◆ CONCEPT {c.num}</div>
-            <div style={{color:'var(--ink)', marginBottom:4}}>{c.title}</div>
-            <div style={{color:'var(--ink-2)', marginBottom:8, fontSize:11, lineHeight:1.5}}>{c.approach}</div>
-            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-              <span style={{color:'var(--muted)'}}>est. {c.budget}</span>
-              <span style={{display:'flex', gap:10, fontFamily:'JetBrains Mono, monospace', fontSize:10}}>
-                {[['innov', c.innovation], ['team', c.team], ['cost', c.cost]].map(([label, val]) => (
-                  <span key={label}><span style={{color:'var(--muted)'}}>{label} </span><span style={{color:c.color, fontWeight:600}}>{val}/5</span></span>
-                ))}
-              </span>
-            </div>
-          </div>
-        ))}
-        <div style={{color:'var(--muted)', fontSize:11, marginTop:4}}>
-          → team profiles used: PI · 2 co-investigators
-          &nbsp;·&nbsp; <span style={{color:'var(--teal-deep)'}}>recommended: concept 01</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function BiosketcDemo() {
-  const sections = [
-    ['Professional Preparation', 'education · 3 degrees'],
-    ['Appointments & Positions', '4 roles · 2023–present'],
-    ['A · Personal Statement',   '~600 words · grant-tailored'],
-    ['B · Positions & Honors',   'current + prior positions'],
-    ['C · Contributions to Science', '5 contributions · with citations'],
-    ['D · Research Support',     'active + recently completed'],
-    ['Products',                 '5 related · 5 other significant'],
-  ];
-  return (
-    <div className="term">
-      <div className="term-head">
-        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>biosketch.md</span></div>
-        <span>NIH Common Form</span>
-      </div>
-      <div className="term-body" style={{fontSize:12}}>
-        <div style={{marginBottom:10, paddingBottom:10, borderBottom:'1px solid var(--line)'}}>
-          <div style={{color:'var(--muted)', fontSize:11}}>grant</div>
-          <div style={{color:'var(--ink)', fontWeight:600}}>PAR-25-131 · Computational Curation at Scale (R01)</div>
-        </div>
-        <div style={{marginBottom:10, paddingBottom:10, borderBottom:'1px solid var(--line)', padding:'8px 10px', background:'color-mix(in oklab, var(--teal) 8%, transparent)', borderLeft:'2px solid var(--teal-deep)'}}>
-          <div className="mono" style={{fontSize:10, color:'var(--teal-deep)', marginBottom:4}}>A · personal statement (preview)</div>
-          <div style={{color:'var(--ink-2)', lineHeight:1.5, fontSize:11}}>"I am uniquely positioned to contribute to computational approaches for curation at scale through my experience developing and deploying tools that transform complex biomedical data into actionable public health resources..."</div>
-        </div>
-        <div style={{display:'grid', gap:0}}>
-          {sections.map(([name, note], i) => (
-            <div key={i} style={{display:'grid', gridTemplateColumns:'16px 1fr', gap:8, padding:'6px 0', borderBottom: i<sections.length-1?'1px solid var(--line)':'none', alignItems:'start'}}>
-              <span style={{color:'var(--teal-deep)', marginTop:1}}>✓</span>
-              <div>
-                <span style={{color:'var(--ink)'}}>{name}</span>
-                <span style={{color:'var(--muted)', marginLeft:8, fontSize:11}}>{note}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div style={{marginTop:10, color:'var(--muted)', fontSize:11}}>
-          → ORCID linked · aligned with NIH Common Form
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TrackDemo() {
-  const items = [
-    ['Specific Aims — 1 page',              'done',    'from Brainstorm'],
-    ['Biosketch — NIH Common Form',          'done',    'generated · tool 05'],
-    ['Data Management & Sharing Plan',       'done',    'generated · tool 05'],
-    ['Budget Brief + Justification',         'active',  'in review'],
-    ['Letters of Support — 2 required',      'open',    'requested 07/28'],
-    ['Facilities & Other Resources',         'open',    'not started'],
-  ];
-  const dot = s => s === 'done' ? 'var(--teal-deep)' : s === 'active' ? 'var(--orange-deep)' : 'var(--line-2)';
-  return (
-    <div className="term">
-      <div className="term-head">
-        <div style={{display:'flex', gap:10, alignItems:'center'}}><div className="dots"><span/><span/><span/></div><span>application · PAR-25-131</span></div>
-        <span>status: in progress</span>
-      </div>
-      <div className="term-body" style={{fontSize:12}}>
-        <div style={{marginBottom:10, paddingBottom:10, borderBottom:'1px solid var(--line)', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-          <div>
-            <div style={{color:'var(--muted)', fontSize:11}}>submission checklist · AI-generated from the FOA</div>
-            <div style={{color:'var(--ink)', fontWeight:600, marginTop:2}}>Computational Curation at Scale (R01)</div>
-          </div>
-          <span className="tag orange" style={{fontSize:9}}>due Apr '27</span>
-        </div>
-        {items.map(([name, status, note], i) => (
-          <div key={i} style={{display:'grid', gridTemplateColumns:'16px 1fr auto', gap:8, padding:'6px 0', borderBottom: i < items.length-1 ? '1px solid var(--line)' : 'none', alignItems:'center'}}>
-            <span style={{width:8, height:8, borderRadius:'50%', background:dot(status), justifySelf:'center'}}/>
-            <span style={{color: status === 'open' ? 'var(--ink-2)' : 'var(--ink)'}}>{name}</span>
-            <span className="mono" style={{fontSize:10, color:'var(--muted)'}}>{note}</span>
-          </div>
-        ))}
-        <div style={{marginTop:12, display:'flex', justifyContent:'space-between', alignItems:'center', color:'var(--muted)', fontSize:11}}>
-          <span>4 of 6 items ready · team: PI + 2 co-Is</span>
-          <span style={{color:'var(--teal-deep)'}}>↓ download documents</span>
-        </div>
-      </div>
-    </div>
-  );
-}
+const PROJECT_HEAD = { kind: 'project', title: 'Sensor Networks and Data Science for Safe Drinking Water (R01)' };
 
 function Features({ setRoute }) {
-  const isMobile = useWindowWidth() < 768;
+  const jump = (id) => (e) => { e.preventDefault(); document.getElementById(id).scrollIntoView(); };
+  const sections = [
+    ['f-profile', 'Profile'], ['f-match', 'Matching'], ['f-alerts', 'Weekly alerts'], ['f-projects', 'Projects'],
+    ['f-docs', 'Concepts and documents'], ['f-team', 'Collaborators'], ['f-leadership', 'Research leadership'],
+  ];
+  const link = (route, text) => (
+    <span className="text-link" role="link" tabIndex={0} onClick={() => setRoute(route)} onKeyDown={(e) => { if (e.key === 'Enter') setRoute(route); }}>{text}</span>
+  );
   return (
     <>
-      <section style={{padding: isMobile ? '48px 0 36px' : '80px 0 60px'}}>
+      <section className="hero" style={{paddingBottom:56}}>
         <div className="container">
-          <div className="bracket-label" style={{marginBottom:24}}>product / features</div>
-          <h1 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 'clamp(44px, 12vw, 72px)' : 'clamp(52px, 7vw, 110px)', lineHeight:0.95, letterSpacing:'-0.035em', fontStyle:'italic', fontWeight:400, maxWidth:1200}}>
-            Every step of the <em style={{color:'var(--teal-deep)'}}>grant workflow</em>,<br/>
-            <em style={{color:'var(--orange-deep)'}}>handled.</em>
+          <h1 className="display" style={{fontSize:'clamp(42px, 6vw, 80px)', maxWidth:900}}>
+            From your name to a submitted application, <span className="soft">step by step.</span>
           </h1>
-          <div style={{display:'flex', flexWrap:'wrap', gap: isMobile ? 12 : 24, marginTop:40, fontFamily:'JetBrains Mono, monospace', fontSize:12, color:'var(--muted)'}}>
-            {['01 profile','02 discover','03 collaborate','04 brainstorm','05 docs','06 projects','07 assistant'].map(x => (
-              <span key={x}><span style={{color:'var(--teal-deep)'}}>▸</span> {x}</span>
-            ))}
-          </div>
+          <p className="lede" style={{marginTop:24, maxWidth:640}}>
+            Everything below happens in one chat. You ask in plain words; the assistant does the step
+            and saves the result where you can find it.
+          </p>
+          <nav className="jump" aria-label="On this page">
+            {sections.map(([id, label]) => <a key={id} href={'#' + id} onClick={jump(id)}>{label}</a>)}
+          </nav>
         </div>
       </section>
 
-      <FeatureRow num="01" tag="profile" title={<>A researcher profile, <em style={{color:'var(--teal-deep)'}}>built for you</em>.</>}
-        desc="Just your name and institution — that's all GrantOtter needs to get started. It searches open sources for your publications, grants, and research areas to build a structured profile used across every tool. Minimum input, maximum coverage.">
-        <ProfileDemo/>
+      <FeatureRow id="f-profile" who="For every researcher, on every plan"
+        title="A researcher profile you confirm, not one you fill in."
+        body="Give your name and institution; a CV is optional. GrantOtter researches your public record, shows you a short sourced summary, and writes the full profile only after you say it is right."
+        gets={['Built from open sources: your publications, funding record and faculty page', 'Expertise areas, funding history and career stage in one structured profile', 'Edit or regenerate it whenever your work changes']}
+        plan="Included on Free, Pro and Max.">
+        <AppChat thread={{kind:'global'}} messages={FX_PROFILE_CHAT} />
       </FeatureRow>
 
-      <FeatureRow reverse num="02" tag="discover" title={<>Ranked matches across <em style={{color:'var(--orange-deep)'}}>2,000+</em> opportunities.</>}
-        desc="A three-stage pipeline: hard eligibility checks eliminate grants you can't apply for — career stage, institution type, mechanism — then a rule-based scorer ranks by field and career stage, and an LLM evaluates the top candidates against your profile and writes fit explanations. Federal grants plus hundreds of foundation funders — updated every Monday.">
-        <DiscoverDemo/>
+      <FeatureRow reverse id="f-match" who="For anyone looking for the next grant"
+        title="Matches ranked for fit, with the reason spelled out."
+        body="Thousands of open opportunities from federal agencies and hundreds of foundations are checked against your eligibility first: career stage, institution type, mechanism. What passes is scored for fit from 1 to 10, and each match says why it fits and what to watch for."
+        gets={['Narrow a match by funder type, award size or time to deadline', 'Upload specific aims or a declined proposal to find it a new home', 'One click turns a match into a project']}
+        plan="Free includes one live match. Pro and Max match as often as you need, within your usage allowance.">
+        <AppPanel tabs={RES_TABS} tab={1}><VFeed /></AppPanel>
       </FeatureRow>
 
-      <FeatureRow num="03" tag="collaborate" title={<>Find the co-I with <em style={{color:'var(--teal-deep)'}}>expertise you need</em>.</>}
-        desc="Semantic search across the faculty of a department, school or institution — part of an institution subscription, and included for researchers at partner institutions. Find collaborators by expertise, not just keywords. GrantOtter surfaces connection paths between you and potential co-investigators through shared departments, centers, and prior collaborations.">
-        <TeamDemo/>
+      <FeatureRow id="f-alerts" who="For researchers who do not have time to search"
+        title="New matches in your inbox on Monday."
+        body="Once your profile is saved, GrantOtter keeps matching in the background. The email shows your best new matches, each with the reason it fits, the things to check and two concept sparks to get you thinking."
+        gets={['Start an application from the email in one click', 'Save a grant for later, or say it is not a fit, straight from the email', 'Two weekly news briefs, federal and foundation, with any free account']}
+        plan="Monthly on Free. Weekly on Pro and Max.">
+        <div className="shot" style={{background:'#F3F3F3'}}><img src="media/v2_alert_email.png" alt="A Monday GrantOtter alert email: one NIH grant with its deadline, match score 9/10, why it fits, key considerations, concept sparks and a Start application button" loading="lazy" /></div>
+        <div className="shot-cap">A real alert email, sent to a test account.</div>
       </FeatureRow>
 
-      <FeatureRow reverse num="04" tag="brainstorm" title={<>From grant + team to <em style={{color:'var(--orange-deep)'}}>funded concept</em>.</>}
-        desc="Ask the assistant to brainstorm against a grant — it pulls in your profile and your team's, then generates 2–3 concrete proposal concepts with strategic framing, budget estimates, and rationale tailored to the specific agency and mechanism.">
-        <IdeateDemo/>
+      <FeatureRow reverse id="f-projects" who="For a PI with a deadline"
+        title="One project per application, and it keeps track for you."
+        body="Link a grant by its number or drop in the announcement. The assistant reads it, proposes the next real due date, and builds a submission checklist from that announcement’s own requirements. Team, notes and every drafted document stay with the project."
+        gets={['Deadlines taken from the notice, including multi-cycle announcements', 'Upload your own files; download any draft as a Word document', 'It remembers your decisions between sessions']}
+        plan="Pro and Max.">
+        <AppPanel tabs={RES_TABS} tab={0}><VProject deadline="02/05/2027" checklist={6} docs={[['Concept notes', 'concept', 4], ['Biosketch — Alex Rivera', 'biosketch', 1]]} team={['Maya Okafor']} /></AppPanel>
       </FeatureRow>
 
-      <FeatureRow num="05" tag="docs" title={<>The boilerplate documents, <em style={{color:'var(--teal-deep)'}}>handled</em>.</>}
-        desc="Three supporting documents, drafted from your profile and the specific grant: an NIH Biosketch aligned with current Common Form guidance, a 2026 Data Management & Sharing Plan on the official NIH template, and a funder-aware Budget Brief with justification — delivered as editable Word and Excel files. Anything GrantOtter can't verify is flagged as an explicit placeholder, never invented.">
-        <BiosketcDemo/>
+      <FeatureRow id="f-docs" who="For the week before the deadline"
+        title="Concepts and the supporting documents, drafted with you."
+        body="Ask for proposal concepts against a specific announcement and you get two or three, shaped by your team’s profiles, each with a budget estimate. Pick one as the target concept, and the documents are drafted around it: an NIH biosketch, a data management and sharing plan on the 2026 template, and a budget brief with justification and an editable Excel worksheet."
+        gets={['Anything the assistant cannot verify is marked [PLACEHOLDER] and listed before you submit', 'Drafts follow official NIH and NSF application guidance', 'A second pass checks letters of intent and biosketches for unsupported claims']}
+        plan="Pro and Max.">
+        <AppChat thread={PROJECT_HEAD} messages={FX_DOCS_CHAT} />
       </FeatureRow>
 
-      <FeatureRow reverse num="06" tag="projects" title={<>Every application, <em style={{color:'var(--orange-deep)'}}>tracked to submission</em>.</>}
-        desc="Turn a match into a submission. Each application links its grant, team, and documents in one place — with an AI-generated submission checklist tailored to the opportunity's requirements, status tracking from drafting to submitted, and every document ready to download.">
-        <TrackDemo/>
+      <FeatureRow reverse id="f-team" who="For a PI who needs an expertise they do not have"
+        title="The right colleague, and a way to reach them."
+        body="Describe the expertise in plain words. GrantOtter searches your institution’s faculty by what they actually work on, then shows how you are connected: shared papers, shared grants, a colleague who knows you both. Ties are described as strong, solid or weak, with the evidence."
+        gets={['Filter by school, department, career stage or active funding', 'Check whether a team covers every capability an announcement asks for', 'Build a profile for a collaborator outside your institution']}
+        plan={<>Faculty search comes with an {link('institutions', 'institution subscription')}. Building and saving outside collaborators’ profiles is on Pro and Max.</>}>
+        <AppChat thread={PROJECT_HEAD} messages={FX_TEAM_CHAT} />
       </FeatureRow>
 
-      <FeatureRow num="07" tag="assistant" title={<>One assistant, <em style={{color:'var(--teal-deep)'}}>everywhere</em>.</>}
-        desc="The assistant is how you use everything on this page. From the main chat it builds your profile, matches grants, and finds collaborators; inside every application it knows where you are and what comes next — it links your grant and reads the full announcement (or any RFP you drop into the chat), sets the deadline, assembles your team, brainstorms concepts, builds the funder-specific checklist, and drafts the science documents step by step, grounded in official NIH and NSF application guidance. It remembers your preferences and decisions between sessions, and everything it saves shows up in your project, ready to download.">
-        <AssistantDemo/>
+      <FeatureRow id="f-leadership" who="For research offices, deans and chairs"
+        title="See which center grants your faculty can cover."
+        body="Center-scale announcements are scored against a department, a school or the whole institution: which required capabilities are covered and by whom, which have candidates to check, and where the gaps are. Open a pursuit to assemble the team and draft the letter of intent."
+        gets={['A research landscape for each unit: topics, funding mix, career mix, succession risk', 'Who already holds a similar award', 'A faculty directory anyone at the institution can search']}
+        plan={<>Part of an institution subscription. {link('institutions', 'See GrantOtter for institutions')}</>}>
+        <AppPanel tabs={ADM_TABS} tab={1}><VOpps open /></AppPanel>
       </FeatureRow>
 
-      <section style={{padding: isMobile ? '64px 0' : '100px 0', textAlign:'center'}}>
+      <section className="cta-final" style={{borderTop:'1px solid var(--line)'}}>
         <div className="container">
-          <h2 style={{fontFamily:'Instrument Serif, Georgia, serif', fontSize: isMobile ? 36 : 64, fontStyle:'italic', letterSpacing:'-0.02em'}}>Ready to try it on your own profile?</h2>
-          <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{display:'inline-block', marginTop:32}}>Launch app — start free →</a>
+          <h2>Try it on your own profile.</h2>
+          <div style={{marginTop:36}}>
+            <a href={APP_URL} target="_blank" rel="noopener" className="btn btn-signal">Start free</a>
+          </div>
+          <div className="links">
+            {link('pricing', 'Compare the plans')}
+            {link('tutorial', 'Read the get started guide')}
+          </div>
         </div>
       </section>
     </>
