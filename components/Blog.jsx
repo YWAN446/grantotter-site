@@ -861,7 +861,7 @@ function PostContent_007() {
       </p>
       <p style={para}>
         Faculty search is the one part that belongs to an institution rather than to a person. With an institution subscription, a department, school or institution can find faculty with the expertise a grant needs, see who already works together and who could introduce you, and check whether it covers every capability a center grant asks for. Researchers at partner institutions with faculty search included can search and read faculty profiles on any plan, Free included. To ask about a subscription for yours, email{' '}
-        <a href="mailto:grantotter42@gmail.com?subject=Institution%20subscription" style={link}>grantotter42@gmail.com</a> with the subject “Institution subscription”.
+        <a href="mailto:help@grantotter.com?subject=Institution%20subscription" style={link}>help@grantotter.com</a> with the subject “Institution subscription”.
       </p>
 
       <h2 style={h2}>The timeline</h2>
@@ -885,7 +885,7 @@ function PostContent_007() {
       <p style={{ ...para, margin: '0 0 32px' }}>
         Every plan, the key dates and answers to the common questions are on the{' '}
         <a href="#pricing" style={link}>pricing page</a>. Questions about the plans? Email{' '}
-        <a href="mailto:grantotter42@gmail.com" style={link}>grantotter42@gmail.com</a>.
+        <a href="mailto:help@grantotter.com" style={link}>help@grantotter.com</a>.
       </p>
 
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center', display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>

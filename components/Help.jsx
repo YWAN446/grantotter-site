@@ -31,7 +31,7 @@ function Help({ setRoute }) {
   const faqs = [
     {
       q: 'How do I create an account?',
-      a: <p>Go to <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>app.grantotter.com</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or click <strong>Sign up</strong>: enter your email and a password (at least 8 characters with a letter, a number, and a special character) and confirm it. With email sign-up, a confirmation email is sent from <strong>grantotter42@gmail.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
+      a: <p>Go to <a href="https://app.grantotter.com" target="_blank" rel="noopener" style={{color:'var(--teal-deep)'}}>app.grantotter.com</a> and either click <strong>Continue with Google</strong> to sign in with your Google account, or click <strong>Sign up</strong>: enter your email and a password (at least 8 characters with a letter, a number, and a special character) and confirm it. With email sign-up, a confirmation email is sent from <strong>noreply@grantotter.com</strong> — check your junk/spam folder if you don't see it. The confirmation link expires in one hour; once confirmed, you're signed in.</p>,
     },
     {
       q: 'I forgot my password. How do I reset it?',
@@ -104,7 +104,7 @@ function Help({ setRoute }) {
           {[
             { n:'01', label:'Open data sources only',        desc:'Profiles are built from publicly available sources — PubMed, Google Scholar, ORCID, faculty pages, NIH RePORTER. Only your name and institution are required. CV uploads are processed server-side and never shared externally.' },
             { n:'02', label:'Platform-level security',       desc:'All data is stored in Supabase with row-level security (RLS) — you can only access your own data. All credentials are encrypted. Uploaded documents are stored in a private, access-controlled bucket.' },
-            { n:'03', label:'Never used for AI training',    desc:'Your profiles, applications, and documents are never used to train AI models or shared with third parties. AI processing runs through Anthropic\'s Claude API, which does not train on API data. You can request deletion at any time by emailing grantotter42@gmail.com.' },
+            { n:'03', label:'Never used for AI training',    desc:'Your profiles, applications, and documents are never used to train AI models or shared with third parties. AI processing runs through Anthropic\'s Claude API, which does not train on API data. You can request deletion at any time by emailing help@grantotter.com.' },
           ].map(p => (
             <div key={p.n} style={{padding:'12px 16px', border:'1px solid var(--line-2)', background:'var(--paper)', display:'grid', gridTemplateColumns:'36px 1fr', gap:12, alignItems:'start'}}>
               <span style={{fontFamily:'JetBrains Mono,monospace', fontSize:10, color:'var(--muted)', letterSpacing:'0.06em', paddingTop:2}}>{p.n}</span>
@@ -233,8 +233,8 @@ function Help({ setRoute }) {
               <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.6, marginBottom:20}}>
                 Have a question not covered here, a feature request, or running into an issue? Reach out — we typically respond within one business day.
               </p>
-              <a href="mailto:grantotter42@gmail.com" style={{fontFamily:'JetBrains Mono,monospace', fontSize:13, color:'var(--teal-deep)', fontWeight:600, display:'block', marginBottom:6}}>
-                grantotter42@gmail.com
+              <a href="mailto:help@grantotter.com" style={{fontFamily:'JetBrains Mono,monospace', fontSize:13, color:'var(--teal-deep)', fontWeight:600, display:'block', marginBottom:6}}>
+                help@grantotter.com
               </a>
               <p style={{fontSize:12, color:'var(--muted)', lineHeight:1.5}}>
                 Account issues, password resets, bug reports, and general questions.
@@ -274,7 +274,7 @@ function Help({ setRoute }) {
               <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.6, marginBottom:20}}>
                 Live demos are for departments, schools and research offices considering an institution subscription. In 30 minutes we walk through the faculty research map, center opportunities and pursuit teams, using examples relevant to your unit.
               </p>
-              <a href="mailto:grantotter42@gmail.com?subject=GrantOtter%20institution%20demo" className="btn btn-signal">
+              <a href="mailto:help@grantotter.com?subject=GrantOtter%20institution%20demo" className="btn btn-signal">
                 Request an institution demo
               </a>
               <p style={{fontSize:12, color:'var(--muted)', lineHeight:1.5, marginTop:14}}>

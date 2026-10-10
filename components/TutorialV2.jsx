@@ -236,7 +236,7 @@ function TutorialV2({ setRoute }) {
           <strong>Faculty search:</strong> browsing and searching faculty is part of an institution subscription,
           and is included for researchers at partner institutions. It covers the faculty of a department, school
           or institution, so it becomes useful for your team once your institution is on board —{' '}
-          <a href="mailto:grantotter42@gmail.com?subject=Institution%20subscription" style={{color:'var(--teal-deep)', fontWeight:600}}>contact us</a>{' '}
+          <a href="mailto:help@grantotter.com?subject=Institution%20subscription" style={{color:'var(--teal-deep)', fontWeight:600}}>contact us</a>{' '}
           about an institution subscription. Everything else in GrantOtter works for researchers anywhere.
         </BannerV2>
         <H3V2>Ask the assistant</H3V2>

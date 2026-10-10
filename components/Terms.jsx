@@ -15,7 +15,7 @@ function Terms({ setRoute }) {
         'You are responsible for maintaining the confidentiality of your account credentials.',
         'You are responsible for all activity that occurs under your account.',
         'Creating an account subscribes you to GrantOtter\'s weekly emails (grant alerts and news briefs). Every email includes a one-click unsubscribe, and preferences are per-channel.',
-        <>Notify us immediately at <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a> if you suspect unauthorized access.</>,
+        <>Notify us immediately at <a href="mailto:help@grantotter.com" style={{color:'var(--teal-deep)'}}>help@grantotter.com</a> if you suspect unauthorized access.</>,
       ],
     },
     {
@@ -64,7 +64,7 @@ function Terms({ setRoute }) {
     },
     {
       n: '10', label: 'Termination',
-      body: <>We reserve the right to suspend or terminate your account at any time for violation of these Terms. You may delete your account at any time by contacting <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>. If your account is terminated or deleted, any active subscription is cancelled, with no refund for the current period except as required by law.</>,
+      body: <>We reserve the right to suspend or terminate your account at any time for violation of these Terms. You may delete your account at any time by contacting <a href="mailto:help@grantotter.com" style={{color:'var(--teal-deep)'}}>help@grantotter.com</a>. If your account is terminated or deleted, any active subscription is cancelled, with no refund for the current period except as required by law.</>,
     },
     {
       n: '11', label: 'Governing law',
@@ -76,7 +76,7 @@ function Terms({ setRoute }) {
     },
     {
       n: '13', label: 'Contact',
-      body: <>Questions about these Terms? Email <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>.</>,
+      body: <>Questions about these Terms? Email <a href="mailto:help@grantotter.com" style={{color:'var(--teal-deep)'}}>help@grantotter.com</a>.</>,
     },
   ];
 

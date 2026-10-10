@@ -1,7 +1,7 @@
 // For institutions: the research-administration side of GrantOtter (unit landscape, center
 // opportunities, pursuits) and the institution subscription. No institution is named.
 
-const INSTITUTION_QUOTE_MAILTO = 'mailto:grantotter42@gmail.com?subject=' + encodeURIComponent('Institution subscription quote') + '&body=' + encodeURIComponent(
+const INSTITUTION_QUOTE_MAILTO = 'mailto:help@grantotter.com?subject=' + encodeURIComponent('Institution subscription quote') + '&body=' + encodeURIComponent(
   'Hello,\n\nWe would like a quote for a GrantOtter institution subscription.\n\n' +
   'Institution:\n' +
   'Unit(s) (department / school / whole institution):\n' +
@@ -213,7 +213,7 @@ function Institutions({ setRoute }) {
               <p className="small" style={{margin:'10px 0 22px'}}>Priced per institution or unit. Tell us the unit, the approximate number of faculty and your timing, and we reply with a quote.</p>
               <a href={INSTITUTION_QUOTE_MAILTO} className="btn btn-signal" style={{width:'100%'}}>Request a quote</a>
               <p style={{marginTop:16}}>
-                <a className="text-link" href="mailto:grantotter42@gmail.com?subject=GrantOtter%20institution%20demo">Or ask for a 30-minute live demo</a>
+                <a className="text-link" href="mailto:help@grantotter.com?subject=GrantOtter%20institution%20demo">Or ask for a 30-minute live demo</a>
               </p>
               <p className="small" style={{marginTop:14}}>
                 Individual researchers do not need any of this to start.{' '}

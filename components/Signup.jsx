@@ -33,7 +33,7 @@ function Signup({ setRoute }) {
             <p style={{marginTop:24}}>
               Need help? {link('help', 'Help and FAQs')}
               <span className="small" style={{margin:'0 10px'}}>or</span>
-              <a className="text-link" href="mailto:grantotter42@gmail.com">email us</a>
+              <a className="text-link" href="mailto:help@grantotter.com">email us</a>
             </p>
           </div>
         </div>

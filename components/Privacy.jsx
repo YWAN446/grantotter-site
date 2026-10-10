@@ -59,7 +59,7 @@ function Privacy({ setRoute }) {
       items: [
         'Your data is never used to train AI models or sold; it is shared only with the service providers that run GrantOtter (listed below), such as our AI provider and our payment processor',
         'Grant concepts, biosketches, and documents are visible only to you',
-        <>You can request deletion anytime at <a href="mailto:grantotter42@gmail.com" style={{color:'var(--orange-deep)'}}>grantotter42@gmail.com</a></>,
+        <>You can request deletion anytime at <a href="mailto:help@grantotter.com" style={{color:'var(--orange-deep)'}}>help@grantotter.com</a></>,
       ],
       listAccent: 'var(--orange-deep)',
     },
@@ -71,7 +71,7 @@ function Privacy({ setRoute }) {
     { name: 'Voyage AI',          color: 'var(--orange-deep)', desc: 'Powers the semantic collaborator search over partner-institution faculty profiles.' },
     { name: 'Stripe',             color: 'var(--orange-deep)', desc: 'Payment processor for paid plans and extra usage. Payment card details go directly to Stripe and never reach our servers.' },
     { name: 'Google Analytics',   color: 'var(--muted)',       desc: 'Anonymized website usage tracking.' },
-    { name: 'Gmail (SMTP)',        color: 'var(--muted)',       desc: 'Used to send account emails, the weekly emails you subscribe to (grant alerts and news briefs), and results you request.' },
+    { name: 'Resend',             color: 'var(--muted)',       desc: 'Email delivery: account emails, the weekly emails you subscribe to (grant alerts and news briefs), and results you request.' },
   ];
 
   return (
@@ -154,7 +154,7 @@ function Privacy({ setRoute }) {
             <PolicyBlock label="Data retention & deletion" accent="var(--orange-deep)">
               <p style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.7, margin:0}}>
                 Your data is retained for as long as your account is active. You can <span style={{color:'var(--orange-deep)', fontWeight:600}}>request deletion</span> of your account and all associated data at any time by emailing{' '}
-                <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>.
+                <a href="mailto:help@grantotter.com" style={{color:'var(--teal-deep)'}}>help@grantotter.com</a>.
                 We will process deletion requests within 30 days. Billing records are kept as required for tax and accounting, even after account deletion.
               </p>
             </PolicyBlock>
@@ -173,7 +173,7 @@ function Privacy({ setRoute }) {
 
             <PolicyBlock label="Contact" accent="var(--teal-deep)">
               <p style={{fontSize:13, color:'var(--ink-2)', lineHeight:1.7, margin:0}}>
-                Questions about this policy? Email <a href="mailto:grantotter42@gmail.com" style={{color:'var(--teal-deep)'}}>grantotter42@gmail.com</a>.
+                Questions about this policy? Email <a href="mailto:help@grantotter.com" style={{color:'var(--teal-deep)'}}>help@grantotter.com</a>.
               </p>
             </PolicyBlock>
 

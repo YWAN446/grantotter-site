@@ -260,7 +260,7 @@ function Footer({ setRoute }) {
     ['App', [
       { label: 'Open the app',         href: APP_URL, external: true },
       { label: 'Join the Slack group', href: SLACK_URL, external: true },
-      { label: 'Contact us',           href: 'mailto:grantotter42@gmail.com' },
+      { label: 'Contact us',           href: 'mailto:help@grantotter.com' },
     ]],
   ];
   return (
