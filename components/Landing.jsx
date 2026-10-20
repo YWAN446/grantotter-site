@@ -81,7 +81,7 @@ function Hero({ setRoute }) {
                 Watch the one-minute video
               </span>
             </div>
-            <div className="proof">Used by researchers at more than 50 institutions. Grant alerts are free; no credit card to start.</div>
+            <div className="proof">Grant alerts are free; no credit card to start.</div>
           </div>
         </div>
 
@@ -354,12 +354,14 @@ function Landing({ setRoute }) {
     <>
       <Announce />
       <Hero setRoute={setRoute} />
+      <TrustBand />
       <HowItWorks />
       <LaunchVideo />
       <WhatsIncluded setRoute={setRoute} />
       <Inbox setRoute={setRoute} />
       <InstitutionsStrip setRoute={setRoute} />
       <Trust />
+      <Quotes />
       <FaqSection setRoute={setRoute} />
       <FinalCTA setRoute={setRoute} />
     </>

@@ -260,6 +260,7 @@ function Footer({ setRoute }) {
     ['App', [
       { label: 'Open the app',         href: APP_URL, external: true },
       { label: 'Join the Slack group', href: SLACK_URL, external: true },
+      { label: 'Follow us on LinkedIn', href: 'https://www.linkedin.com/company/grantotter', external: true },
       { label: 'Contact us',           href: 'mailto:help@grantotter.com' },
     ]],
   ];
@@ -309,4 +310,91 @@ function SecHead({ kicker, title, children }) {
   );
 }
 
-Object.assign(window, { OtterMark, Nav, Ticker, Footer, RssSubscribeButton, ThemeToggle, SecHead, APP_URL, SLACK_URL });
+// Institutions where researchers use GrantOtter — derived from account data
+// (emails + saved profiles), 2026-10-19. Names only, never logos. Keep every
+// name defensible from the user table; the "50+" figure counts the full list,
+// this marquee shows the best-known two thirds.
+const TRUSTED_INSTITUTIONS = [
+  [
+    'Emory University', 'Stanford University', 'Johns Hopkins University', 'Yale University',
+    'Princeton University', 'Cornell University', 'Northwestern University', 'University of Michigan',
+    'New York University', 'Georgia Institute of Technology', 'University of Texas at Austin',
+    'Pennsylvania State University', 'University of Virginia', 'Boston University',
+    'Washington University in St. Louis', 'University of North Carolina at Chapel Hill',
+    'Texas A&M University', 'University of Minnesota',
+  ],
+  [
+    'University of Florida', 'University of Alabama at Birmingham', 'Michigan State University',
+    'North Carolina State University', 'Tufts University', 'Stony Brook University',
+    'Dartmouth College', 'University of California, Irvine', 'Virginia Commonwealth University',
+    'Temple University', 'University of Utah', 'Syracuse University', 'University of Miami',
+    'University of South Florida', 'Clemson University', 'University of Oregon',
+    'McMaster University', 'Université de Montréal',
+  ],
+];
+
+// Two counter-scrolling rows of institution names, with a stat row under them on
+// the full version. compact: rows only (institutions page). Second copy of each
+// row is aria-hidden and dropped under prefers-reduced-motion, where the first
+// copy wraps statically instead of scrolling.
+function TrustBand({ compact }) {
+  return (
+    <section className={`trustband${compact ? ' compact' : ''}`} aria-label="Institutions where researchers use GrantOtter">
+      <div className="label">Used by researchers at 50+ institutions, including</div>
+      {TRUSTED_INSTITUTIONS.map((row, i) => (
+        <div key={i} className={`marquee${i % 2 ? ' rev' : ''}`}>
+          <div className="track">
+            {row.map(n => <span key={n}>{n}</span>)}
+            {row.map(n => <span key={n + ' dup'} className="dup" aria-hidden="true">{n}</span>)}
+          </div>
+        </div>
+      ))}
+      {!compact && (
+        <div className="container">
+          <div className="statrow">
+            <div>
+              <div className="num">50+</div>
+              <div className="what">institutions where researchers use GrantOtter</div>
+            </div>
+            <div>
+              <div className="num">Thousands</div>
+              <div className="what">of live federal and foundation opportunities</div>
+            </div>
+            <div>
+              <div className="num">Monday</div>
+              <div className="what">when the data refreshes and the alerts go out</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+// Beta-user quotes. The section renders nothing while this list is empty — add
+// entries as the owner collects them: { text, name, title, institution }.
+const QUOTES = [];
+
+function Quotes() {
+  if (!QUOTES.length) return null;
+  return (
+    <section className="sec tint">
+      <div className="container">
+        <SecHead title="What researchers say." />
+        <div className="quotes">
+          {QUOTES.map(q => (
+            <figure key={q.name} className="quote">
+              <blockquote>“{q.text}”</blockquote>
+              <figcaption>
+                <strong>{q.name}</strong>
+                <span>{q.title}, {q.institution}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { OtterMark, Nav, Ticker, Footer, RssSubscribeButton, ThemeToggle, SecHead, TrustBand, Quotes, APP_URL, SLACK_URL });

@@ -101,6 +101,8 @@ function Institutions({ setRoute }) {
         </div>
       </section>
 
+      <TrustBand compact />
+
       <section className="sec tint">
         <div className="container">
           <div className="split">
@@ -191,7 +193,7 @@ function Institutions({ setRoute }) {
 
       <section className="sec tint" id="inst-includes">
         <div className="container">
-          <div className="split top wide-right" style={{gridTemplateColumns:'1.2fr 0.8fr'}}>
+          <div className="split top wide-left">
             <div>
               <SecHead title="What a subscription includes.">
                 The map is built once and everyone at the institution draws on it. Departments or schools can

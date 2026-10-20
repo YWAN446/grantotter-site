@@ -38,7 +38,10 @@ const PRICING_PLANS = [
     accent: 'var(--teal-deep)',
     features: [
       'Everything in Pro',
-      '5x Pro’s usage for $80 — 20% less than five Pro plans ($100)',
+      '5x Pro’s usage allowance',
+      '20% less than five Pro plans ($100)',
+      'Headroom for grant-heavy seasons: several projects, teams and document sets in flight at once',
+      'The same extra-usage top-ups past the Max allowance',
     ],
     cta: 'Open the app',
   },
@@ -54,6 +57,10 @@ const PRICING_TIMELINE = [
 // INSTITUTION_QUOTE_MAILTO and INSTITUTION_INCLUDES); Pricing keeps a summary.
 
 const PRICING_FAQ = [
+  {
+    q: 'How does $20 a month compare to the alternatives?',
+    a: 'A professional grant writer typically charges $5,000–$15,000 per proposal. Institution-licensed funding databases cost hundreds of dollars a month per seat, billed through your institution, and stop at discovery. GrantOtter Pro is $20 a month, self-serve, cancel anytime — and it goes from discovery through matching, team building and the application documents.',
+  },
   {
     q: 'When do I start paying?',
     a: 'Only when you choose a plan, and never before January 1, 2027. If you had an account before December 1, 2026, you have Pro free through December 31, 2026. New accounts from December 1 start on Free.',
@@ -103,6 +110,10 @@ function Pricing({ setRoute }) {
       {/* Plan cards */}
       <section style={{padding:'16px 0 72px'}}>
         <div className="container">
+          <p className="anchor-note">
+            For scale: a professional grant writer charges <em>$5,000–$15,000 per proposal</em>, and
+            institution-licensed funding databases run hundreds of dollars a month per seat.
+          </p>
           <div className="plans">
             {PRICING_PLANS.map(p => (
               <div key={p.name} className={`plan ${p.badge ? 'featured' : ''}`}>
@@ -166,7 +177,7 @@ function Pricing({ setRoute }) {
       {/* Institution subscription: summary; the full page is #institutions */}
       <section id="institution" className="sec tint" style={{padding:'72px 0'}}>
         <div className="container">
-          <div className="split top" style={{gridTemplateColumns:'minmax(0,1.2fr) minmax(0,0.8fr)'}}>
+          <div className="split top wide-left">
             <div>
               <div className="sec-head" style={{marginBottom:28}}>
                 <div className="kicker">Institution subscription</div>
