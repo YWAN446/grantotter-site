@@ -4,20 +4,20 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>GrantOtter — find grants, build the team, draft the application</title>
-<meta name="description" content="GrantOtter is a grant assistant for researchers. It matches funding to your work, finds collaborators, and drafts concepts, checklists, biosketches and budgets in one chat. Free grant alerts; plans from $20/month."/>
+<meta name="description" content="GrantOtter is a grant assistant for researchers. It matches funding to your work, finds collaborators, drafts concepts, checklists, biosketches and budgets in one chat, and lets your co-investigators comment and edit with you. Free grant alerts; plans from $20/month."/>
 <link rel="icon" href="logo.png?v=2" type="image/png">
 <link rel="alternate" type="application/rss+xml" title="GrantOtter Weekly Feed" href="feed.xml">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GrantOtter">
 <meta property="og:title" content="GrantOtter — find grants, build the team, draft the application">
-<meta property="og:description" content="GrantOtter is a grant assistant for researchers. It matches funding to your work, finds collaborators, and drafts concepts, checklists, biosketches and budgets in one chat. Free grant alerts; plans from $20/month.">
+<meta property="og:description" content="GrantOtter is a grant assistant for researchers. It matches funding to your work, finds collaborators, drafts concepts, checklists, biosketches and budgets in one chat, and lets your co-investigators comment and edit with you. Free grant alerts; plans from $20/month.">
 <meta property="og:url" content="https://grantotter.com/">
 <meta property="og:image" content="https://grantotter.com/og_image.png">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GrantOtter — find grants, build the team, draft the application">
-<meta name="twitter:description" content="GrantOtter is a grant assistant for researchers. It matches funding to your work, finds collaborators, and drafts concepts, checklists, biosketches and budgets in one chat. Free grant alerts; plans from $20/month.">
+<meta name="twitter:description" content="GrantOtter is a grant assistant for researchers. It matches funding to your work, finds collaborators, drafts concepts, checklists, biosketches and budgets in one chat, and lets your co-investigators comment and edit with you. Free grant alerts; plans from $20/month.">
 <meta name="twitter:image" content="https://grantotter.com/og_image.png">
 <link rel="canonical" href="https://grantotter.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -71,7 +71,12 @@
     {
       "@type": "Question",
       "name": "Is my CV or proposal used to train AI models?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Nothing you upload — CV, specific aims, proposal drafts — is ever used to train any AI model. Documents are processed through Anthropic's Claude API, which does not train on API data, and stored in your account where only you can access them. Delete them anytime." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Nothing you upload — CV, specific aims, proposal drafts — is ever used to train any AI model. Documents are processed through Anthropic's Claude API, which does not train on API data, and stored in your account, where only you and the people you share a project with can see them. Delete them anytime." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my co-investigators work on the application with me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Share a project by email and choose, for each person, whether they can edit or only view and comment. They see the whole project except your own chat: the details, notes, team, checklist and every document. Comments and edits carry their names, every version is kept, and you can hand any set of comments to GrantOtter to work through. Anyone can join with a free account; sharing a project, and a collaborator's own GrantOtter chat about it, are part of Pro and Max." }
     },
     {
       "@type": "Question",

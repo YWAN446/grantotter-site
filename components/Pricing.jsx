@@ -13,6 +13,7 @@ const PRICING_PLANS = [
       'Your Feed and the weekly news briefs',
       'Build your researcher profile with the assistant',
       'One interactive grant match',
+      'Join projects others share with you: read, comment and edit',
     ],
     cta: 'Start free',
   },
@@ -26,6 +27,7 @@ const PRICING_PLANS = [
       'Weekly grant alerts matched to your profile',
       'The full assistant, within a daily and weekly usage allowance',
       'Project and application management: deadlines, a submission checklist, your team and all the documents in one place',
+      'Share a project with your co-investigators, and let GrantOtter work through their comments',
       'Biosketch, data management plan and budget brief',
       'Research and save your collaborators’ profiles',
       'Extra usage when a deadline week needs it',
@@ -76,6 +78,10 @@ const PRICING_FAQ = [
   {
     q: 'Do you take non-US cards?',
     a: 'Not yet. For now, checkout is available to US billing addresses only. The Free plan needs no card at all.',
+  },
+  {
+    q: 'Do the people I share a project with need a paid plan?',
+    a: 'No. Anyone you invite can join with a free account and read, comment on and edit the project’s documents. Sharing a project is part of Pro and Max, and a collaborator who wants their own GrantOtter chat about the project, or to have GrantOtter resolve comments, needs Pro or Max of their own.',
   },
   {
     q: 'What is extra usage?',

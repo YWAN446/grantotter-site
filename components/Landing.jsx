@@ -4,6 +4,13 @@ const { useState: useStateL } = React;
 // always shows the top entry and links out (e.g. to the launch blog post).
 const UPDATES = [
   {
+    tag: 'New',
+    title: 'Write the application together.',
+    desc: 'Share a project with your co-investigators: comments with names, edits with version history, and GrantOtter to work through the comments.',
+    href: '#blog/work-together',
+    cta: 'Read the post',
+  },
+  {
     tag: 'Pricing',
     title: 'Plans start January 1, 2027.',
     desc: 'Grant alerts stay free, and everyone with an account before December 1 has Pro free through December 31.',
@@ -38,6 +45,7 @@ const CASES = [
   { key: 'announcement', who: 'Holding an announcement', what: 'Turn it into an application',        script: () => CLIP_ANNOUNCEMENT },
   { key: 'team',         who: 'Missing an expertise',    what: 'Find the right co-investigator',     script: () => CLIP_TEAM,
     note: <>Faculty search comes with an <span className="text-link" role="link" tabIndex={0} data-route="institutions">institution subscription</span>.</> },
+  { key: 'together',     who: 'Writing with co-authors', what: 'Share the draft, apply the comments', script: () => CLIP_TOGETHER },
 ];
 
 function Hero({ setRoute }) {
@@ -128,7 +136,7 @@ function HowItWorks() {
           </div>
           <div className="step">
             <h3>Work the application in one chat</h3>
-            <p>Every application is a project with its own conversation: the deadline, the team, a checklist from the announcement, proposal concepts, and draft application documents.</p>
+            <p>Every application is a project with its own conversation: the deadline, the team, a checklist from the announcement, proposal concepts, and draft application documents. Share it with your co-investigators when you want their comments and edits.</p>
           </div>
         </div>
       </div>
@@ -158,10 +166,10 @@ const TOOLS = [
     desc: 'Eligibility checked first, then ranked across federal and foundation funders, each match with a plain reason.' },
   { name: 'Projects',            plan: 'Pro and Max',
     desc: 'One conversation per application that keeps the deadline, team, checklist and documents, and remembers your decisions.' },
-  { name: 'Concept brainstorming', plan: 'Pro and Max',
-    desc: 'Two or three proposal concepts for a specific announcement, shaped by your team’s profiles, with budget estimates.' },
-  { name: 'Documents',           plan: 'Pro and Max',
-    desc: 'NIH biosketch, data management and sharing plan, and a budget brief with justification, as editable Word and Excel files.' },
+  { name: 'Concepts and documents', plan: 'Pro and Max',
+    desc: 'Proposal concepts shaped by your team’s profiles, then the NIH biosketch, data management plan and budget brief, written around the one you pick.' },
+  { name: 'Shared projects',     plan: 'Pro and Max to share. Collaborators join on any plan.',
+    desc: 'Invite co-investigators to comment or to edit. Comments and versions carry names, and GrantOtter works through the comments you pick.' },
   { name: 'Collaborator search', plan: 'Institution subscription',
     desc: 'Describe the expertise you need and find faculty who have it, with how you are connected to each of them.' },
 ];
@@ -267,7 +275,7 @@ function Trust() {
         <div className="trust">
           <div>
             <h3>Your documents never train a model</h3>
-            <p>Your CV, aims and drafts are processed through Anthropic’s Claude API, which does not train on API data. They stay in your account, and you can delete them at any time.</p>
+            <p>Your CV, aims and drafts are processed through Anthropic’s Claude API, which does not train on API data. They stay in your account, seen only by you and anyone you share a project with, and you can delete them at any time.</p>
           </div>
           <div>
             <h3>Nothing is invented</h3>
@@ -291,7 +299,11 @@ const HOME_FAQS = [
   },
   {
     q: 'Is my CV or proposal used to train AI models?',
-    a: 'No. Nothing you upload — CV, specific aims, proposal drafts — is ever used to train any AI model. Documents are processed through Anthropic\'s Claude API, which does not train on API data, and stored in your account where only you can access them. Delete them anytime.',
+    a: 'No. Nothing you upload — CV, specific aims, proposal drafts — is ever used to train any AI model. Documents are processed through Anthropic\'s Claude API, which does not train on API data, and stored in your account, where only you and the people you share a project with can see them. Delete them anytime.',
+  },
+  {
+    q: 'Can my co-investigators work on the application with me?',
+    a: 'Yes. Share a project by email and choose, for each person, whether they can edit or only view and comment. They see the whole project except your own chat: the details, notes, team, checklist and every document. Comments and edits carry their names, every version is kept, and you can hand any set of comments to GrantOtter to work through. Anyone can join with a free account; sharing a project, and a collaborator\'s own GrantOtter chat about it, are part of Pro and Max.',
   },
   {
     q: 'Where does the grant data come from?',

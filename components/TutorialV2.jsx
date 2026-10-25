@@ -106,7 +106,8 @@ function TutorialV2({ setRoute }) {
     ['Step 4: Collaborators',                   '#v2-step4', 'teal'],
     ['Step 5: Projects',                        '#v2-step5', 'teal'],
     ['Step 6: The Project Assistant',           '#v2-step6', 'teal'],
-    ['Step 7: Tell It What You Think',          '#v2-step7', 'teal'],
+    ['Step 7: Work With Co-authors',            '#v2-step7', 'teal'],
+    ['Step 8: Tell It What You Think',          '#v2-step8', 'teal'],
     ['⚡ Power User',                            '#v2-power-user', 'orange'],
   ];
 
@@ -167,7 +168,7 @@ function TutorialV2({ setRoute }) {
           <LiV2 n="→"><strong>Feed</strong> — your weekly grant recommendations, ranked by fit.</LiV2>
           <LiV2 n="→"><strong>Profile</strong> — your researcher card and your saved collaborators.</LiV2>
           <LiV2 n="→"><strong>Find Collaborators</strong> — browse the institution network directly.</LiV2>
-          <LiV2 n="→">Your <strong>account menu</strong> (avatar, bottom left) holds Profile, Settings (email preferences), Appearance, Support, Terms &amp; Privacy, and Sign out.</LiV2>
+          <LiV2 n="→">Your <strong>account menu</strong> (avatar, bottom left) holds Settings (your name and email preferences), Appearance, Support, Terms &amp; Privacy, and Sign out.</LiV2>
         </ULV2>
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, margin:'16px 0 0'}}>
           On a phone, the Dashboard panel doesn't sit beside the chat — a <strong style={{color:'var(--teal-deep)'}}>Dashboard</strong> button opens it as a sheet over the chat instead.
@@ -318,8 +319,47 @@ function TutorialV2({ setRoute }) {
         </p>
       </StepV2>
 
-      {/* Step 7: Tell it what you think */}
-      <StepV2 id="v2-step7" n="step 7" tag="Every reply">
+      {/* Step 7: Work with co-authors */}
+      <StepV2 id="v2-step7" n="step 7" tag="Shared projects">
+        <StepH2V2>Work With Co-authors</StepH2V2>
+        <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
+          Share a project and your co-investigators work in it with you: they read the drafts, comment in the margin, and, if you let them, edit the text. Your own chat with the assistant stays private.
+        </p>
+        <SplitV2 mediaWidth={420} media={
+          <div>
+            <AppPanel tabs={RES_TABS} tab={0}><VShare step={2} /></AppPanel>
+            <div style={{padding:'10px 4px 0', fontFamily:'JetBrains Mono,monospace', fontSize:11, color:'var(--muted)'}}>
+              Share, at the top of a project's details: invite by email, choose edit or view &amp; comment. (Example)
+            </div>
+          </div>
+        }>
+          <H3V2>Invite someone</H3V2>
+          <OLV2>
+            <LiV2 n="1.">Open the project in the <strong style={{color:'var(--teal-deep)'}}>Projects</strong> tab and click <strong style={{color:'var(--teal-deep)'}}>Share</strong>.</LiV2>
+            <LiV2 n="2.">Enter their email and choose <strong>Can edit</strong> or <strong>Can view &amp; comment</strong>.</LiV2>
+            <LiV2 n="3.">Click <strong style={{color:'var(--teal-deep)'}}>Send invite</strong>. They get an email; someone new gets an invitation to create a free account.</LiV2>
+          </OLV2>
+          <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, margin:'12px 0 0'}}>
+            The project shows up in their Projects tab under <strong style={{color:'var(--teal-deep)'}}>Shared with me</strong>. They see everything in it except your chat: details, notes, team, checklist, documents and memory.
+          </p>
+        </SplitV2>
+        <H3V2>Comment, edit, keep every version</H3V2>
+        <ULV2>
+          <LiV2 n="→"><strong>Comment</strong>: open a document, select any text and click Comment. Comments carry names, and anyone can reply.</LiV2>
+          <LiV2 n="→"><strong>Edit</strong>: click Edit and type; it saves as you go. Two people saving at once get their edits merged, or a choice of which to keep.</LiV2>
+          <LiV2 n="→"><strong>History</strong>: every version, with who made it and what changed in green and red. Restore any of them.</LiV2>
+          <LiV2 n="→"><strong>Resolve with GrantOtter</strong>: tick the comment threads you agree with and the assistant revises the document and resolves each one with a note.</LiV2>
+        </ULV2>
+        <MediaV2 narrow={480} src="media/v2_shared_document.png" alt="A shared Specific Aims document with highlighted passages, a collaborator's comments with names, the owner's reply, and a Resolve with GrantOtter button" isVideo={false}
+          caption="A shared document: comments with names, and Resolve with GrantOtter for the ones you tick." />
+        <TipV2>Each collaborator also gets their own GrantOtter chat about the project. Set the name others see on your comments and edits in <strong style={{color:'var(--orange-deep)'}}>Settings → Account → Name</strong>.</TipV2>
+        <p style={{fontSize:13, color:'var(--muted)', lineHeight:1.6, marginTop:16}}>
+          Type: open a project, click Share, and invite your co-investigator by email.
+        </p>
+      </StepV2>
+
+      {/* Step 8: Tell it what you think */}
+      <StepV2 id="v2-step8" n="step 8" tag="Every reply" bg="var(--paper)">
         <StepH2V2>Tell It What You Think</StepH2V2>
         <p style={{fontSize:14, color:'var(--ink-2)', lineHeight:1.7, marginBottom:16}}>
           Every reply from the assistant has a thumbs-up and thumbs-down underneath it — in the main chat and inside a project thread alike.
@@ -340,7 +380,7 @@ function TutorialV2({ setRoute }) {
       </StepV2>
 
       {/* Power User */}
-      <StepV2 id="v2-power-user" n="⚡ power user" tag="Shortcuts" tagColor="orange" bg="var(--paper)">
+      <StepV2 id="v2-power-user" n="⚡ power user" tag="Shortcuts" tagColor="orange">
         <StepH2V2>Move <em style={{color:'var(--orange-deep)'}}>Faster</em></StepH2V2>
         <SplitV2 mediaWidth={300} media={
           <MediaV2 flush src="media/v2_phone.png" alt="GrantOtter on a phone, with the arrow-send button and the Dashboard opened as a sheet" isVideo={false}

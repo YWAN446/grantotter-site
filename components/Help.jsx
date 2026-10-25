@@ -79,11 +79,31 @@ function Help({ setRoute }) {
     },
     {
       q: 'What are Projects?',
-      a: <p>A <strong>project</strong> is one grant application, tracked end to end. Each project has its own chat thread with the assistant, plus the grant it's linked to, status and deadline, your team (PI + co-investigators), an <strong>AI-generated submission checklist</strong> built from that opportunity's requirements, and every document drafted along the way — each one viewable and downloadable from the project's Documents list.</p>,
+      a: <p>A <strong>project</strong> is one grant application, tracked end to end. Each project has its own chat thread with the assistant, plus the grant it's linked to, status and deadline, your team (PI + co-investigators), an <strong>AI-generated submission checklist</strong> built from that opportunity's requirements, and every document drafted along the way — each one viewable, editable and downloadable from the project's Documents list. You can share a project with your co-investigators (see below).</p>,
     },
     {
       q: 'Can I use GrantOtter for team proposals?',
-      a: <p>Yes. Where your institution has faculty search — part of an institution subscription, and included for researchers at partner institutions — ask the assistant to find collaborators by expertise and it searches that faculty and explains each match. Anywhere, you can name a colleague and it will look them up, building a full researcher profile from the web if they aren't in the pool yet. Saved collaborators appear in your <strong>Profile</strong> tab and can be added to any project's team, and the assistant can draft a biosketch for any team member.</p>,
+      a: <p>Yes. Where your institution has faculty search — part of an institution subscription, and included for researchers at partner institutions — ask the assistant to find collaborators by expertise and it searches that faculty and explains each match. Anywhere, you can name a colleague and it will look them up, building a full researcher profile from the web if they aren't in the pool yet. Saved collaborators appear in your <strong>Profile</strong> tab and can be added to any project's team, and the assistant can draft a biosketch for any team member. To have your co-investigators work in the project with you, share it with them.</p>,
+    },
+    {
+      q: 'How do I share a project with my co-investigators?',
+      a: <p>Open the project in the <strong>Projects</strong> tab and click <strong>Share</strong> at the top of its details. Enter a colleague's email, choose <strong>Can edit</strong> or <strong>Can view &amp; comment</strong>, and click <strong>Send invite</strong>. They get an email from GrantOtter with your name and the project's title; someone without an account gets an invitation to create a free one. The same panel lists everyone on the project, where you can change a person's access, remove them, or revoke an invite that has not been accepted. Sharing a project is part of Pro and Max.</p>,
+    },
+    {
+      q: 'What can collaborators see and do?',
+      a: <p>Everything in the project except your own chat: the details and notes, the team and PI, the checklist, every document and the project's memory. Someone who <strong>can view &amp; comment</strong> reads the documents, comments on them and downloads them. Someone who <strong>can edit</strong> also changes the documents' text directly. The project's details, notes, team and checklist stay the owner's to change, and only the owner renames or deletes the project, renames or deletes documents, or clears a document's version history. A shared project appears in their Projects tab under <strong>Shared with me</strong>, and they can leave it at any time.</p>,
+    },
+    {
+      q: 'I was invited to a project. How do I join?',
+      a: <p>Click the link in the invitation email and sign in with the address it was sent to, or create a free account with that address if you do not have one. You can also join from the app: a bar above the chat lists the invitations waiting for you, with <strong>Join</strong> and <strong>Not now</strong>. Invitations expire after 14 days; ask the owner for a new one if yours has.</p>,
+    },
+    {
+      q: 'How do comments, edits and versions work?',
+      a: <p>Open a document from the project's Documents list. In <strong>Viewing</strong> mode, select any text and click <strong>Comment</strong>; comments sit beside the document with the author's name, and anyone on the project can reply. Click <strong>Edit</strong> to change the text: it saves as you type, and <strong>Done</strong> takes you back. If two people save the same document at once, the edits are merged, or you are asked which version to keep. <strong>History</strong> lists every version with who made it, shows what changed in green and red, and lets the owner and editors restore one. Your name on comments and edits comes from <strong>Settings → Account → Name</strong>.</p>,
+    },
+    {
+      q: 'Can collaborators use GrantOtter on a shared project?',
+      a: <p>Yes. Each person on a project has their own GrantOtter chat about it; nobody sees anyone else's, and the owner's stays private. A viewer's GrantOtter reads the project and answers questions. An editor's can also edit documents and resolve comments. The owner and editors can tick comment threads and click <strong>Resolve with GrantOtter</strong>: it revises the document and resolves each comment with a note. A collaborator's own chat uses their own Pro or Max plan. <strong>Clear chat</strong>, at the top of a project's chat, deletes your own messages there and starts it fresh; it changes nothing else in the project.</p>,
     },
     {
       q: 'What is the NIH biosketch output used for?',

@@ -44,7 +44,7 @@ function Privacy({ setRoute }) {
       border: 'var(--teal)',
       desc: <>All data is stored in <span style={{color:'var(--teal-deep)', fontWeight:600}}>Supabase</span> with strict per-user row-level security.</>,
       items: [
-        'Row-level security (RLS) — you can only access your own data',
+        'Row-level security (RLS) — you can only access your own data and the projects others share with you',
         'All credentials and passwords are fully encrypted',
         'Encryption at rest and in transit',
         'Uploaded documents stored in a private, access-controlled bucket',
@@ -58,7 +58,7 @@ function Privacy({ setRoute }) {
       desc: <>Your content is <span style={{color:'var(--orange-deep)', fontWeight:600}}>never used to train AI models</span> or sold — shared only with the service providers that run GrantOtter.</>,
       items: [
         'Your data is never used to train AI models or sold; it is shared only with the service providers that run GrantOtter (listed below), such as our AI provider and our payment processor',
-        'Grant concepts, biosketches, and documents are visible only to you',
+        'Grant concepts, biosketches, and documents are visible only to you and the collaborators you invite to a project',
         <>You can request deletion anytime at <a href="mailto:help@grantotter.com" style={{color:'var(--orange-deep)'}}>help@grantotter.com</a></>,
       ],
       listAccent: 'var(--orange-deep)',
@@ -66,12 +66,12 @@ function Privacy({ setRoute }) {
   ];
 
   const thirdParties = [
-    { name: 'Supabase',           color: 'var(--teal-deep)',   desc: 'Database and file storage with row-level security. Only you can access your own data.' },
+    { name: 'Supabase',           color: 'var(--teal-deep)',   desc: 'Database and file storage with row-level security. Only you, and the people you share a project with, can access your data.' },
     { name: 'Anthropic (Claude)', color: 'var(--orange-deep)', desc: "AI processing for profile generation, grant matching, brainstorming, and document generation. Anthropic does not train models on this data; its data processing agreement applies." },
     { name: 'Voyage AI',          color: 'var(--orange-deep)', desc: 'Powers the semantic collaborator search over partner-institution faculty profiles.' },
     { name: 'Stripe',             color: 'var(--orange-deep)', desc: 'Payment processor for paid plans and extra usage. Payment card details go directly to Stripe and never reach our servers.' },
     { name: 'Google Analytics',   color: 'var(--muted)',       desc: 'Anonymized website usage tracking.' },
-    { name: 'Resend',             color: 'var(--muted)',       desc: 'Email delivery: account emails, the weekly emails you subscribe to (grant alerts and news briefs), and results you request.' },
+    { name: 'Resend',             color: 'var(--muted)',       desc: 'Email delivery: account emails, the weekly emails you subscribe to (grant alerts and news briefs), project invitations you send, and results you request.' },
   ];
 
   return (
@@ -123,7 +123,8 @@ function Privacy({ setRoute }) {
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Account information</span> — your email address and encrypted password when you create an account, or your name and email received from Google when you sign in with Google (we never see your Google password).</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Researcher profiles</span> — AI-generated profiles based on your name, institution, and publicly available sources. CV uploads are used only to generate your profile.</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Assistant memory</span> — the application assistant can save short facts you share in chat (preferences, decisions about an application) to personalize its help. You can view and delete every memory in the app at any time — account-level memory under Settings, a project's memory in its Details panel; deleting a project deletes its memories.</>,
-                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Application data</span> — grant applications, draft concepts, biosketches, checklists, and documents you create or upload within the app.</>,
+                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Application data</span> — grant applications, draft concepts, biosketches, checklists, and documents you create or upload within the app, with their comments and saved versions.</>,
+                <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Project sharing</span> — if you share a project: the email addresses you invite, the access you give each person, and whether they joined. The people on a shared project see its details, notes, team profiles, documents, comments, versions and project memory — never anyone's own chat — and the name and email address of whoever wrote each comment or edit. An invitation email carries your name and the project's title. To decide which invitation email to send, we check whether the invited address already has a GrantOtter account; you are never shown the answer. Collaborators lose access as soon as you remove them or they leave.</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Partner faculty networks</span> — for partner institutions, GrantOtter maintains faculty profiles built from publicly available sources to power collaborator search. If a profile describes you, you can contact us anytime to correct or remove it.</>,
                 <><span style={{color:'var(--teal-deep)', fontWeight:600}}>Billing information</span> — if you buy a plan or extra usage: your billing country, Stripe customer and subscription identifiers, your plan, your purchase history, and the usage amounts measured against your plan's limits. Card details are entered with Stripe and never reach our servers.</>,
                 <><span style={{color:'var(--muted)', fontWeight:600}}>Usage analytics</span> — usage events linked to your account, recorded to operate and improve the product; website visits tracked via Google Analytics. This data is never sold or shared.</>,
@@ -135,6 +136,7 @@ function Privacy({ setRoute }) {
                 'To provide and operate the GrantOtter service.',
                 'To generate researcher profiles, match grants, and produce biosketches using AI.',
                 'To send the weekly emails you subscribe to — personalized grant alerts and the news briefs — plus results you request. Every email has a one-click unsubscribe, and preferences are per-channel.',
+                'To deliver the project invitations you send, and to show the people on a shared project who wrote each comment and edit.',
                 'To process payments, manage subscriptions, and apply plan limits.',
                 'To improve the product based on aggregated usage patterns.',
               ]} />

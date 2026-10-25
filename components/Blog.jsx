@@ -1,5 +1,14 @@
 const POSTS = [
   {
+    slug: 'work-together',
+    title: 'Write the Application Together: Shared Projects in GrantOtter',
+    date: 'October 24, 2026',
+    tag: 'NEW',
+    readTime: '5 min read',
+    excerpt: 'A grant application is written by a team, but until now a GrantOtter project had one person in it. Now you can share a project with your co-investigators: they comment in the margin and edit the drafts, every version keeps who changed what, and GrantOtter can work through the comments for you.',
+    content: () => <PostContent_008 />,
+  },
+  {
     slug: 'pricing',
     title: 'GrantOtter Pricing: Free Through December, Plans From January 1',
     date: 'October 1, 2026',
@@ -891,6 +900,120 @@ function PostContent_007() {
       <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center', display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
         <a href="#pricing" className="btn btn-ghost" style={{ display: 'inline-block' }}>
           See all plans
+        </a>
+        <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+          Open GrantOtter →
+        </a>
+      </div>
+    </>
+  );
+}
+
+function PostContent_008() {
+  const para = { fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' };
+  const h2 = { fontFamily: 'Instrument Serif, Georgia, serif', fontWeight: 400, fontStyle: 'italic', fontSize: 24, lineHeight: 1.2, color: 'var(--ink)', margin: '32px 0 16px', borderLeft: '3px solid var(--orange-deep)', paddingLeft: 16 };
+  const box = { background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' };
+  const boxLabel = { fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 };
+  const item = { display: 'flex', gap: 10, marginBottom: 10, fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)' };
+  const caption = { fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' };
+  const link = { color: 'var(--teal-deep)' };
+  const shot = (src, alt, text, maxWidth) => (
+    <div style={{ margin: '32px 0' }}>
+      <img src={src} alt={alt} loading="lazy"
+           style={{ width: '100%', maxWidth: maxWidth || 'none', display: 'block', margin: '0 auto', border: '1px solid var(--line-2)' }} />
+      <p style={caption}>"{text}"</p>
+    </div>
+  );
+  const list = (label, rows) => (
+    <div style={box}>
+      <div style={boxLabel}>{label}</div>
+      {rows.map(([title, desc]) => (
+        <div key={title} style={item}>
+          <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+          <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' }}>
+        A grant application is written by a team. The PI drafts the aims, a co-investigator rewrites the approach, someone checks the budget, and the comments arrive by email as attachments with "v7_final_JB" in the name. Until now a GrantOtter project had one person in it. Starting today you can share it.
+      </p>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        Invite your co-investigators by email. They see the whole project, comment beside the drafts and, if you let them, edit the text. Every comment and every version carries a name, and when the comments are in, GrantOtter can work through them for you.
+      </p>
+
+      <div style={{ margin: '32px 0' }}>
+        <AppClip script={CLIP_TOGETHER} />
+        <p style={caption}>"An example in the app's own layout. The people, the project and the text are invented."</p>
+      </div>
+
+      <h2 style={h2}>Share a project in one step</h2>
+      <p style={para}>
+        Open a project and click <strong>Share</strong> at the top of its details. Type a colleague's email, choose what they can do, and send the invite. They get an email with your name and the project's title; a colleague without a GrantOtter account gets an invitation to create a free one. Once they join, the project appears in their Projects tab under <strong>Shared with me</strong>, and in yours with the number of people it is shared with.
+      </p>
+      {list('Who can do what', [
+        ['Can view & comment', 'reads every document, comments and replies, and downloads the drafts.'],
+        ['Can edit', 'all of that, and changes the documents’ text directly.'],
+        ['You, the owner', 'everything, plus the project’s details, notes, team and checklist, and who has access. Change a person’s access or remove them at any time; they lose access at once.'],
+      ])}
+      <div style={{ margin: '32px auto', maxWidth: 520 }}>
+        <AppPanel tabs={RES_TABS} tab={0}><VShare step={2} /></AppPanel>
+        <p style={caption}>"Share sits at the top of the project. Collaborators see everything in it except your chat."</p>
+      </div>
+
+      <h2 style={h2}>Comments with names, beside the text</h2>
+      <p style={para}>
+        Select any passage in a document and click <strong>Comment</strong>. Comments sit beside the document in the order they appear in the text, the commented passage is highlighted, and anyone on the project can reply. Each comment shows who wrote it, taken from the name you set in <strong>Settings → Account → Name</strong>.
+      </p>
+      {shot('media/v2_shared_document.png', 'A shared Specific Aims document with two highlighted passages, a collaborator’s comments beside it, the owner’s reply, and a Resolve with GrantOtter button', 'A real shared project between two test accounts: comments with names, a reply, and both threads ticked for GrantOtter.', 480)}
+
+      <h2 style={h2}>Edit together, and keep every version</h2>
+      <p style={para}>
+        Click <strong>Edit</strong> and type; the document saves as you go, and a strip at the top always says whether you are viewing, editing or looking at history. If two people save the same document at the same time, GrantOtter merges the edits, or asks which version to keep when they collide.
+      </p>
+      <p style={para}>
+        Nothing is lost in between. <strong>History</strong> lists every version of a document with who made it: a sitting of manual edits, a revision by GrantOtter, a batch of applied comments. Pick one to see what changed since, in green and red, and restore it if you need to.
+      </p>
+      {shot('media/v2_version_history.png', 'The History of a shared document: a version applied by GrantOtter for the owner and a manual save by a collaborator, with the changes since the first shown in green', 'Every version with who made it: GrantOtter’s applied comments, then a co-author’s own edit.', 560)}
+
+      <h2 style={h2}>Hand the comments to GrantOtter</h2>
+      <p style={para}>
+        When the comments are in, tick the threads you agree with (or pick one person's with a click) and press <strong>Resolve with GrantOtter</strong>. The assistant reads the document and the threads, makes the edits, and resolves each comment with a note saying what it changed. The old text stays in the history. The owner and anyone who can edit can do this.
+      </p>
+      <p style={para}>
+        It will not make things up to close a comment. When we tried it on the comments above, it asked how many sensors each site has, and to confirm the three utilities named in the reply, before it changed a word.
+      </p>
+
+      <h2 style={h2}>Everyone has their own assistant</h2>
+      <p style={para}>
+        Each person on a project has their own GrantOtter chat about it, and nobody sees anyone else's: your own conversation with the assistant stays yours. A collaborator who can view and comment gets an assistant that reads the project and answers questions about it. One who can edit gets an assistant that can also revise the documents and resolve comments. And if a thread has run long, <strong>Clear chat</strong> at the top of the project's chat starts yours fresh without touching anything else in the project.
+      </p>
+
+      <h2 style={h2}>What it costs</h2>
+      {list('Plans', [
+        ['Sharing a project', 'part of Pro and Max, like projects themselves.'],
+        ['Joining a shared project', 'any account, Free included: read, comment, reply and, with edit access, change the text by hand.'],
+        ['A collaborator’s own GrantOtter chat', 'and Resolve with GrantOtter, on their own Pro or Max plan.'],
+      ])}
+      <p style={para}>
+        Plans start January 1, 2027, and everyone with an account before December 1 has Pro free through December 31, so you can try all of this on a real application now. The details are on the{' '}
+        <a href="#pricing" style={link}>pricing page</a>.
+      </p>
+
+      <h2 style={h2}>Try it</h2>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        Open a project, click <strong>Share</strong>, and invite one co-investigator to comment on the specific aims. The{' '}
+        <a href="#tutorial" style={link}>get started guide</a> walks through it step by step, and{' '}
+        <a href="#help" style={link}>Help</a> answers the common questions. Something missing? Tell us at{' '}
+        <a href="mailto:help@grantotter.com" style={link}>help@grantotter.com</a>.
+      </p>
+
+      <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center', display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <a href="#tutorial" className="btn btn-ghost" style={{ display: 'inline-block' }}>
+          Read the guide
         </a>
         <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
           Open GrantOtter →

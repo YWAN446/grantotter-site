@@ -239,6 +239,129 @@ function VUnit() {
   );
 }
 
+/* ── Views: a shared project (web/components/workspace/ShareDialog, DocumentViewer,
+      CommentMargin, VersionHistory) ─────────────────────────────────────────────────── */
+
+const SHARE_NOTE = 'Collaborators see everything in this project — details, notes, team profiles, documents and memory — except your chat.';
+
+// The project's Details with the Share panel open, Maya Okafor already an editor.
+// step 0: the empty invite row; 1: Daniel Cho's invite being sent; 2: his invite pending.
+function VShare({ step = 0 }) {
+  return (
+    <>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+        <span className="am-sub" style={{fontWeight:500, color:'var(--am-foreground)'}}>← Projects</span>
+        <AmBtn kind="out">Share</AmBtn>
+      </div>
+      <div className="am-share">
+        <div className="am-share-row">
+          <span className={`am-input grow ${step === 1 ? '' : 'ph'}`}>{step === 1 ? 'd.cho@example.edu' : 'colleague@university.edu'}</span>
+          <span className="am-select">{step === 1 ? 'Can view & comment ▾' : 'Can edit ▾'}</span>
+          <AmBtn press={step === 1}>Send invite</AmBtn>
+        </div>
+        {step === 2 && <div className="am-sub">Invite sent to d.cho@example.edu.</div>}
+        <div className="am-member">
+          <span className="nm">Maya Okafor<small>m.okafor@example.edu</small></span>
+          <span style={{display:'flex', gap:6, alignItems:'center'}}><span className="am-select">Can edit ▾</span><span className="am-sub">Remove</span></span>
+        </div>
+        {step === 2 && (
+          <div className="am-member" style={{animation:'amIn .3s ease-out both'}}>
+            <span className="nm" style={{color:'var(--am-muted-foreground)'}}>d.cho@example.edu</span>
+            <span className="am-sub">invited · viewer · Revoke</span>
+          </div>
+        )}
+        <div className="am-sub">{SHARE_NOTE}</div>
+      </div>
+      <div className="am-h lg">Sensor Networks and Data Science for Safe Drinking Water (R01)</div>
+      <div className="am-two">
+        <label className="am-field">Status<span className="am-input">In Progress</span></label>
+        <label className="am-field">Deadline<span className="am-input">02/05/2027</span></label>
+      </div>
+    </>
+  );
+}
+
+// An open document. stage 'open': two comment threads; 'pressing': Resolve with GrantOtter
+// being pressed; 'done': the text revised and no open comments left.
+function VDocView({ stage = 'open' }) {
+  const done = stage === 'done';
+  return (
+    <>
+      <div className="am-doc-head">
+        <span className="am-sub" style={{fontWeight:500, color:'var(--am-foreground)'}}>← Back</span>
+        <span style={{flex:1}} />
+        <AmBtn kind="out">Edit</AmBtn><AmBtn kind="out">History</AmBtn><AmBtn kind="out">Download Word</AmBtn>
+      </div>
+      <div className="am-h">Specific Aims</div>
+      <div className="am-mode"><span className="b">Viewing</span><span>Select any text to add a comment. Use Edit to change the text.</span></div>
+      <div className="am-doctext">
+        <p>
+          Small water systems serve one in eight Americans, yet most test their water only once a month. We will place{' '}
+          {done
+            ? <ins>24 low-cost sensors at each of three partner utilities: Hanover, Lake Ridge and Pinecrest</ins>
+            : <><mark>a dense sensor network</mark> at <mark>our partner utilities</mark></>}{' '}
+          and forecast contamination days before a sample would catch it.
+        </p>
+        <p><strong>Aim 1.</strong> Build a calibration that transfers between utilities, so a small system can trust a $300 sensor.</p>
+      </div>
+      <div className="am-comments">
+        <div className="hd"><strong>Comments</strong>{!done && <AmBtn press={stage === 'pressing'}>Resolve with GrantOtter (2)</AmBtn>}</div>
+        {done ? (
+          <>
+            <div className="am-sub">No open comments.</div>
+            <div className="am-sub" style={{textDecoration:'underline'}}>2 resolved</div>
+          </>
+        ) : (
+          <>
+            <div className="am-sub">From <i className="am-tick" /> Maya Okafor <i className="am-tick" /> Daniel Cho · Select all · Clear</div>
+            {/* In document order, as the app lists them. */}
+            <div className="am-comment">
+              <div className="q"><i className="am-tick" /> “a dense sensor network”</div>
+              <div><span className="am-by">Daniel Cho:</span> Say how many sensors per site.</div>
+            </div>
+            <div className="am-comment">
+              <div className="q"><i className="am-tick" /> “our partner utilities”</div>
+              <div><span className="am-by">Maya Okafor:</span> Name the three utilities. Reviewers will look for the sites.</div>
+              <div className="reply"><span className="am-by">Alex Rivera:</span> Agreed: Hanover, Lake Ridge and Pinecrest.</div>
+            </div>
+          </>
+        )}
+      </div>
+    </>
+  );
+}
+
+// History: every version with who made it, and what changed since the picked one.
+function VHistory() {
+  const versions = [
+    ['v3', 'Applied comments', 'Alex Rivera', 'Oct 24, 4:12 PM'],
+    ['v2', 'Manual save', 'Maya Okafor', 'Oct 23, 9:40 AM'],
+    ['v1', 'Assistant update', 'Alex Rivera', 'Oct 21, 2:05 PM'],
+  ];
+  return (
+    <>
+      <div className="am-doc-head">
+        <span className="am-sub" style={{fontWeight:500, color:'var(--am-foreground)'}}>← Back</span>
+        <span style={{flex:1}} />
+        <AmBtn kind="out">Edit</AmBtn><AmBtn kind="out">Close history</AmBtn><AmBtn kind="out">Download Word</AmBtn>
+      </div>
+      <div className="am-h">Specific Aims</div>
+      <div className="am-mode"><span className="b">History</span><span>Compare earlier versions with the current text, or restore one.</span></div>
+      {versions.map(([v, src, who, when], i) => (
+        <div key={v} className={`am-version ${i === 0 ? 'on' : ''}`}>
+          <strong>{v}</strong> <span>{src}</span> <span>by {who}</span> <small>{when}</small>
+        </div>
+      ))}
+      <div className="am-diffhead"><strong>v3 → current</strong><AmBtn kind="out">Restore v3</AmBtn></div>
+      <div className="am-diff">
+        We will place <del>a dense sensor network at our partner utilities</del>{' '}
+        <ins>24 low-cost sensors at each of three partner utilities: Hanover, Lake Ridge and Pinecrest</ins> and forecast
+        contamination days before a sample would catch it.
+      </div>
+    </>
+  );
+}
+
 /* ── Scripts ─────────────────────────────────────────────────────────────────────────── */
 
 const MAYA = { name: 'Maya Okafor, PhD', sub: 'Associate Professor · Epidemiology', line: 'Spatial models of waterborne disease and environmental exposure.', tags: [['spatial epidemiology', 4], ['waterborne disease', 1], ['GIS', 6]] };
@@ -349,6 +472,47 @@ const CLIP_TEAM = {
   ],
 };
 
+// "Resolve with GrantOtter" sends the ticked threads as one message (CommentMargin's
+// buildApplyMessage, ids left out here for reading).
+const APPLY_MESSAGE = 'Apply my 2 open comments on "Specific Aims":\n1. "our partner utilities" — Maya Okafor: Name the three utilities. Reviewers will look for the sites.\nReply from Alex Rivera: Agreed: Hanover, Lake Ridge and Pinecrest.\n2. "a dense sensor network" — Daniel Cho: Say how many sensors per site.';
+
+const CLIP_TOGETHER = {
+  label: 'A PI shares the application and works through co-authors’ comments',
+  tabs: RES_TABS, tab: 0, view: 's0', thread: PROJECT_THREAD,
+  placeholder: 'Ask GrantOtter about this project',
+  views: {
+    s0: <VShare />,
+    s1: <VShare step={1} />,
+    s2: <VShare step={2} />,
+    d0: <VDocView />,
+    d1: <VDocView stage="pressing" />,
+    d2: <VDocView stage="done" />,
+    h: <VHistory />,
+  },
+  steps: [
+    { t: 'caption', text: 'Share a project by email: each person can edit, or view and comment.' },
+    { t: 'say', text: 'Your **Specific Aims** draft is saved in Documents. When you want your co-investigators’ comments, share the project with them.', ms: 900 },
+    { t: 'panel', view: 's1', ms: 1100 },
+    { t: 'panel', view: 's2', ms: 400 },
+    { t: 'caption', text: 'They see the whole project: documents, notes, team and checklist. Your own chat stays private.' },
+    { t: 'wait', ms: 2200 },
+    { t: 'panel', view: 'd0', ms: 500 },
+    { t: 'caption', text: 'Co-authors comment in the margin, and every comment carries a name.' },
+    { t: 'wait', ms: 2600 },
+    { t: 'caption', text: 'Tick the comments to apply, and hand them to GrantOtter.' },
+    { t: 'panel', view: 'd1', ms: 800 },
+    { t: 'post', text: APPLY_MESSAGE, ms: 700 },
+    { t: 'tool', label: 'Reading saved document…', summary: 'Read document \'Specific Aims\'', ms: 1000 },
+    { t: 'tool', label: 'Editing the document…', summary: 'Applied 2 edit(s) to \'Specific Aims\'', ms: 1300 },
+    { t: 'tool', label: 'Resolving the comment…', summary: 'Resolved the comment — Named the three utilities', ms: 700 },
+    { t: 'tool', label: 'Resolving the comment…', summary: 'Resolved the comment — 24 sensors per site', ms: 700 },
+    { t: 'panel', view: 'd2', ms: 500 },
+    { t: 'say', text: 'Done. Aim 1 now names **Hanover, Lake Ridge and Pinecrest**, and the sensor network is **24 sensors per site**. Both threads are resolved with a note, so Maya and Daniel see what changed.', ms: 900 },
+    { t: 'caption', text: 'Every change is a version, with who made it. Compare or restore any of them.' },
+    { t: 'panel', view: 'h', ms: 2600 },
+  ],
+};
+
 const PURSUIT_GREETING = 'Pursuit opened for **Environmental Health Sciences Core Centers (P30)** (RFA-ES-26-002; P30; due in 96 days; multi-component).\n\nCoverage for Environmental Health: 4 of 6 capabilities covered, 1 with candidates to check, 3 with a funded lead.\n\nGaps: Community engagement core\n\nSeeded core-lead candidates: Elena Marsh, Tomás Ibarra, Grace Lindqvist, Samuel Adeyemi (outreach status: candidate).';
 
 const CLIP_PURSUIT = {
@@ -389,4 +553,4 @@ const CLIP_PURSUIT = {
   ],
 };
 
-Object.assign(window, { CLIP_PROFILE, CLIP_ANNOUNCEMENT, CLIP_TEAM, CLIP_PURSUIT, RES_TABS, ADM_TABS, VFeed, VProfile, VProject, VOpps, VPursuit, VUnit, VGettingStarted, ME, MAYA });
+Object.assign(window, { CLIP_PROFILE, CLIP_ANNOUNCEMENT, CLIP_TEAM, CLIP_TOGETHER, CLIP_PURSUIT, RES_TABS, ADM_TABS, VFeed, VProfile, VProject, VOpps, VPursuit, VUnit, VGettingStarted, VShare, VDocView, VHistory, ME, MAYA });

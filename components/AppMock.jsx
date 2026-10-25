@@ -311,6 +311,8 @@ function amApply(state, step) {
     case 'type':    return { ...state, composer: step.text };
     case 'attach':  return { ...state, attach: step.name };
     case 'send':    return { ...state, msgs: state.msgs.concat([{ role: 'user', text: state.composer, attach: state.attach }]), composer: '', attach: null };
+    // A message the app sends for you (e.g. "Resolve with GrantOtter"): appears at once, never typed.
+    case 'post':    return { ...state, msgs: state.msgs.concat([{ role: 'user', text: step.text }]) };
     case 'tool':    return amWithBot(state, parts => parts.push({ k: 'tool', label: step.label, summary: step.summary, done: true }));
     case 'say':     return amWithBot(state, parts => parts.push({ k: 'text', text: step.text }));
     case 'artifact':return amWithBot(state, parts => parts.push({ k: 'artifact', title: step.title, type: step.type, tone: step.tone, file: step.file }));

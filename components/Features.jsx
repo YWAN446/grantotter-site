@@ -74,7 +74,8 @@ function Features({ setRoute }) {
   const jump = (id) => (e) => { e.preventDefault(); document.getElementById(id).scrollIntoView(); };
   const sections = [
     ['f-profile', 'Profile'], ['f-match', 'Matching'], ['f-alerts', 'Weekly alerts'], ['f-projects', 'Projects'],
-    ['f-docs', 'Concepts and documents'], ['f-team', 'Collaborators'], ['f-leadership', 'Research leadership'],
+    ['f-docs', 'Concepts and documents'], ['f-together', 'Writing together'], ['f-team', 'Collaborators'],
+    ['f-leadership', 'Research leadership'],
   ];
   const link = (route, text) => (
     <span className="text-link" role="link" tabIndex={0} onClick={() => setRoute(route)} onKeyDown={(e) => { if (e.key === 'Enter') setRoute(route); }}>{text}</span>
@@ -124,7 +125,7 @@ function Features({ setRoute }) {
       <FeatureRow reverse id="f-projects" who="For a PI with a deadline"
         title="One project per application, and it keeps track for you."
         body="Link a grant by its number or drop in the announcement. The assistant reads it, proposes the next real due date, and builds a submission checklist from that announcement’s own requirements. Team, notes and every drafted document stay with the project."
-        gets={['Deadlines taken from the notice, including multi-cycle announcements', 'Upload your own files; download any draft as a Word document', 'It remembers your decisions between sessions']}
+        gets={['Deadlines taken from the notice, including multi-cycle announcements', 'Edit any draft in place, upload your own files, and download any document as Word', 'It remembers your decisions between sessions']}
         plan="Pro and Max.">
         <AppPanel tabs={RES_TABS} tab={0}><VProject deadline="02/05/2027" checklist={6} docs={[['Concept notes', 'concept', 4], ['Biosketch — Alex Rivera', 'biosketch', 1]]} team={['Maya Okafor']} /></AppPanel>
       </FeatureRow>
@@ -137,7 +138,15 @@ function Features({ setRoute }) {
         <AppChat thread={PROJECT_HEAD} messages={FX_DOCS_CHAT} />
       </FeatureRow>
 
-      <FeatureRow reverse id="f-team" who="For a PI who needs an expertise they do not have"
+      <FeatureRow reverse id="f-together" who="For a PI writing with co-investigators"
+        title="Write the application together."
+        body="Share a project by email, and choose for each person whether they can edit or only view and comment. They see the whole project except your own chat: the details, notes, team, checklist and every document. Comments sit in the margin with names, edits are saved as versions with who made them, and you can hand any set of comments to GrantOtter to work through."
+        gets={['Comment on any passage, reply in threads, and resolve with GrantOtter', 'Edit drafts directly; when two people save at once, the edits merge or you choose', 'Each collaborator has their own GrantOtter chat about the project']}
+        plan="Sharing a project is on Pro and Max. Collaborators join with any account, Free included, to read, comment and edit; their own GrantOtter chat about the project uses their own Pro or Max plan.">
+        <AppPanel tabs={RES_TABS} tab={0}><VDocView /></AppPanel>
+      </FeatureRow>
+
+      <FeatureRow id="f-team" who="For a PI who needs an expertise they do not have"
         title="The right colleague, and a way to reach them."
         body="Describe the expertise in plain words. GrantOtter searches your institution’s faculty by what they actually work on, then shows how you are connected: shared papers, shared grants, a colleague who knows you both. Ties are described as strong, solid or weak, with the evidence."
         gets={['Filter by school, department, career stage or active funding', 'Check whether a team covers every capability an announcement asks for', 'Build a profile for a collaborator outside your institution']}
@@ -145,7 +154,7 @@ function Features({ setRoute }) {
         <AppChat thread={PROJECT_HEAD} messages={FX_TEAM_CHAT} />
       </FeatureRow>
 
-      <FeatureRow id="f-leadership" who="For research offices, deans and chairs"
+      <FeatureRow reverse id="f-leadership" who="For research offices, deans and chairs"
         title="See which center grants your faculty can cover."
         body="Center-scale announcements are scored against a department, a school or the whole institution: which required capabilities are covered and by whom, which have candidates to check, and where the gaps are. Open a pursuit to assemble the team and draft the letter of intent."
         gets={['A research landscape for each unit: topics, funding mix, career mix, succession risk', 'Who already holds a similar award', 'A faculty directory anyone at the institution can search']}
