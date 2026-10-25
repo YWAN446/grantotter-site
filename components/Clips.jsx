@@ -472,9 +472,9 @@ const CLIP_TEAM = {
   ],
 };
 
-// "Resolve with GrantOtter" sends the ticked threads as one message (CommentMargin's
-// buildApplyMessage, ids left out here for reading).
-const APPLY_MESSAGE = 'Apply my 2 open comments on "Specific Aims":\n1. "our partner utilities" — Maya Okafor: Name the three utilities. Reviewers will look for the sites.\nReply from Alex Rivera: Agreed: Hanover, Lake Ridge and Pinecrest.\n2. "a dense sensor network" — Daniel Cho: Say how many sensors per site.';
+// "Resolve with GrantOtter" sends the ticked threads as one message, in document order
+// (CommentMargin's buildApplyMessage, ids left out here for reading).
+const APPLY_MESSAGE = 'Apply my 2 open comments on "Specific Aims":\n1. "a dense sensor network" — Daniel Cho: Say how many sensors per site.\n2. "our partner utilities" — Maya Okafor: Name the three utilities. Reviewers will look for the sites.\nReply from Alex Rivera: Agreed: Hanover, Lake Ridge and Pinecrest.';
 
 const CLIP_TOGETHER = {
   label: 'A PI shares the application and works through co-authors’ comments',
@@ -504,8 +504,8 @@ const CLIP_TOGETHER = {
     { t: 'post', text: APPLY_MESSAGE, ms: 700 },
     { t: 'tool', label: 'Reading saved document…', summary: 'Read document \'Specific Aims\'', ms: 1000 },
     { t: 'tool', label: 'Editing the document…', summary: 'Applied 2 edit(s) to \'Specific Aims\'', ms: 1300 },
-    { t: 'tool', label: 'Resolving the comment…', summary: 'Resolved the comment — Named the three utilities', ms: 700 },
     { t: 'tool', label: 'Resolving the comment…', summary: 'Resolved the comment — 24 sensors per site', ms: 700 },
+    { t: 'tool', label: 'Resolving the comment…', summary: 'Resolved the comment — Named the three utilities', ms: 700 },
     { t: 'panel', view: 'd2', ms: 500 },
     { t: 'say', text: 'Done. Aim 1 now names **Hanover, Lake Ridge and Pinecrest**, and the sensor network is **24 sensors per site**. Both threads are resolved with a note, so Maya and Daniel see what changed.', ms: 900 },
     { t: 'caption', text: 'Every change is a version, with who made it. Compare or restore any of them.' },
