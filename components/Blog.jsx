@@ -831,8 +831,8 @@ function PostContent_007() {
 
   const PLANS = [
     ['Free — $0', 'Monthly grant alerts matched to your profile; your Feed and the news briefs; building your researcher profile with the assistant; one interactive grant match.'],
-    ['Pro — $20 a month', 'Everything in Free, plus weekly grant alerts matched to your profile; the full assistant within a daily and weekly usage allowance; project and application management — deadlines, a submission checklist, your team and all the documents in one place; the biosketch, data management plan and budget brief; researching and saving your collaborators’ profiles; and extra usage when a deadline week needs it.'],
-    ['Max — $80 a month', 'Everything in Pro, with five times Pro’s usage — 20% less than five Pro plans, which would come to $100.'],
+    ['Pro — $25 a month', 'Everything in Free, plus weekly grant alerts matched to your profile; the full assistant within a daily and weekly usage allowance; project and application management — deadlines, a submission checklist with a step-by-step guide for each item, your team and all the documents in one place; drafting every part of the application, from the Specific Aims and Research Strategy to the biosketch, data management plan, budget brief, Facilities and Other Resources and References Cited, with tables and figures; a mock review panel for any draft; deep drafting, review and revision, charged to your extra usage credit by use; editing in place with comments, suggested edits and version history; sharing a project with your co-investigators; researching and saving your collaborators’ profiles; and extra usage when a deadline week needs it.'],
+    ['Max — $100 a month', 'Everything in Pro, with deep drafting, review and revision included, the whole-application review (a mock study section over every document), and five times Pro’s usage — 20% less than five Pro plans, which would come to $125.'],
   ];
 
   const DATES = [
@@ -844,7 +844,7 @@ function PostContent_007() {
   return (
     <>
       <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' }}>
-        GrantOtter is introducing plans. Grant alerts stay free (monthly on the Free plan), and so do your Feed and the news briefs. Weekly alerts and the full assistant — projects, documents and collaborator research — become part of two paid plans, Pro at $20 a month and Max at $80 a month. Nothing changes today: plans open on December 1, 2026, nobody is charged before January 1, 2027, and if you already have an account you have Pro free through December 31.
+        GrantOtter is introducing plans. Grant alerts stay free (monthly on the Free plan), and so do your Feed and the news briefs. Weekly alerts and the full assistant — projects, documents and collaborator research — become part of two paid plans, Pro at $25 a month and Max at $100 a month. Nothing changes today: plans open on December 1, 2026, nobody is charged before January 1, 2027, and if you already have an account you have Pro free through December 31.
       </p>
 
       <h2 style={h2}>Why plans, and why now</h2>

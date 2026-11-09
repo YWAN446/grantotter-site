@@ -18,7 +18,7 @@ const PRICING_PLANS = [
     cta: 'Start free',
   },
   {
-    n: '02', name: 'Pro', price: '$20', unit: 'per month',
+    n: '02', name: 'Pro', price: '$25', unit: 'per month',
     blurb: 'The full assistant, from first match to finished documents.',
     accent: 'var(--orange-deep)',
     badge: 'Full assistant',
@@ -26,22 +26,27 @@ const PRICING_PLANS = [
       'Everything in Free',
       'Weekly grant alerts matched to your profile',
       'The full assistant, within a daily and weekly usage allowance',
-      'Project and application management: deadlines, a submission checklist, your team and all the documents in one place',
-      'Share a project with your co-investigators, and let GrantOtter work through their comments',
-      'Biosketch, data management plan and budget brief',
+      'Project and application management: deadlines, a submission checklist with a step-by-step guide for each item, your team and all the documents in one place',
+      'Draft every part of the application: Specific Aims, Research Strategy, biosketch, data management plan, budget brief, Facilities and Other Resources and References Cited, with tables, figures and your own publication list',
+      'Review any draft with a mock panel: scores, critiques and a feasibility check',
+      'Deep draft, deep review and deep revise, charged to your extra usage credit by use',
+      'Edit documents in place with comments, suggested edits and version history; download in the NIH Word layout with a measured page count',
+      'Share a project with your co-investigators: comments, @mentions, email notices, and GrantOtter works through their feedback',
       'Research and save your collaborators’ profiles',
       'Extra usage when a deadline week needs it',
     ],
     cta: 'Open the app',
   },
   {
-    n: '03', name: 'Max', price: '$80', unit: 'per month',
+    n: '03', name: 'Max', price: '$100', unit: 'per month',
     blurb: 'For heavy writing seasons and several applications at once.',
     accent: 'var(--teal-deep)',
     features: [
       'Everything in Pro',
+      'Deep draft, deep review and deep revise included: in-depth writing, critique and revision with web-checked facts',
+      'Whole-application review: a mock study section over every document, with a chair’s verdict',
       '5x Pro’s usage allowance',
-      '20% less than five Pro plans ($100)',
+      '20% less than five Pro plans ($125)',
       'Headroom for grant-heavy seasons: several projects, teams and document sets in flight at once',
       'The same extra-usage top-ups past the Max allowance',
     ],
@@ -60,8 +65,8 @@ const PRICING_TIMELINE = [
 
 const PRICING_FAQ = [
   {
-    q: 'How does $20 a month compare to the alternatives?',
-    a: 'A professional grant writer typically charges $5,000–$15,000 per proposal. Institution-licensed funding databases cost hundreds of dollars a month per seat, billed through your institution, and stop at discovery. GrantOtter Pro is $20 a month, self-serve, cancel anytime — and it goes from discovery through matching, team building and the application documents.',
+    q: 'How does $25 a month compare to the alternatives?',
+    a: 'A professional grant writer typically charges $5,000–$15,000 per proposal. Institution-licensed funding databases cost hundreds of dollars a month per seat, billed through your institution, and stop at discovery. GrantOtter Pro is $25 a month, self-serve, cancel anytime — and it goes from discovery through matching, team building and the application documents.',
   },
   {
     q: 'When do I start paying?',
