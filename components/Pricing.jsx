@@ -34,7 +34,7 @@ const PRICING_PLANS = [
   },
   {
     n: '03', name: 'Max', price: '$100', unit: 'per month',
-    blurb: 'For heavy writing seasons and several applications at once.',
+    blurb: 'Deep drafting and review included, for heavy application seasons.',
     accent: 'var(--teal-deep)',
     features: [
       'Everything in Pro',
