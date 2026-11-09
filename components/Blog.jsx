@@ -831,8 +831,8 @@ function PostContent_007() {
 
   const PLANS = [
     ['Free — $0', 'Monthly grant alerts matched to your profile; your Feed and the news briefs; building your researcher profile with the assistant; one interactive grant match.'],
-    ['Pro — $25 a month', 'Everything in Free, plus weekly grant alerts matched to your profile; the full assistant within a daily and weekly usage allowance; project and application management — deadlines, a submission checklist with a step-by-step guide for each item, your team and all the documents in one place; drafting every part of the application, from the Specific Aims and Research Strategy to the biosketch, data management plan, budget brief, Facilities and Other Resources and References Cited, with tables and figures; a mock review panel for any draft; deep drafting, review and revision, charged to your extra usage credit by use; editing in place with comments, suggested edits and version history; sharing a project with your co-investigators; researching and saving your collaborators’ profiles; and extra usage when a deadline week needs it.'],
-    ['Max — $100 a month', 'Everything in Pro, with deep drafting, review and revision included, the whole-application review (a mock study section over every document), and five times Pro’s usage — 20% less than five Pro plans, which would come to $125.'],
+    ['Pro — $25 a month', 'Everything in Free, plus weekly grant alerts matched to your profile; the full assistant within a daily and weekly usage allowance; projects with deadlines, a guided checklist, your team and documents; drafting every document and reviewing it with a mock panel; editing, commenting and sharing with co-investigators, with Word downloads in NIH format; and deep drafting, review and revision, charged to your extra usage credit.'],
+    ['Max — $100 a month', 'Everything in Pro, with deep drafting, review and revision included, the whole-application review (a mock study section over every document), and five times Pro’s usage allowance — 20% less than five Pro plans, which would come to $125.'],
   ];
 
   const DATES = [
