@@ -168,6 +168,7 @@ function AmMessage({ msg, streaming }) {
                   {!p.done && <span className="am-spin" />}
                   <span className="t">{p.done ? (p.summary || p.label) : p.label}</span>
                 </span>
+                {!p.done && p.status && <span className="am-status" key={p.status}>{p.status}</span>}
               </span>
             );
           }
@@ -184,6 +185,24 @@ function AmMessage({ msg, streaming }) {
             );
           }
           if (p.k === 'link') return <div key={i} className="am-link">{p.text}</div>;
+          if (p.k === 'chips') {
+            return (
+              <div key={i} className="am-chips">
+                {p.items.map(c => <span key={c} className="am-chip">{c}</span>)}
+              </div>
+            );
+          }
+          if (p.k === 'email') {
+            return (
+              <div key={i} className="am-email">
+                <div className="hd"><span className="am-sub">Email draft</span></div>
+                <div className="ln"><span className="am-sub">To</span> {p.to}</div>
+                <div className="ln"><span className="am-sub">Subject</span> {p.subject}</div>
+                <div className="bd">{[].concat(p.body).map((l, j) => <p key={j}>{l}</p>)}</div>
+                <div className="am-btns"><AmBtn kind="out">Copy</AmBtn><AmBtn kind="out">Open in my mail app</AmBtn></div>
+              </div>
+            );
+          }
           return null;
         })}
         {streaming && <span className="am-caret" aria-hidden="true" />}
@@ -317,6 +336,8 @@ function amApply(state, step) {
     case 'say':     return amWithBot(state, parts => parts.push({ k: 'text', text: step.text }));
     case 'artifact':return amWithBot(state, parts => parts.push({ k: 'artifact', title: step.title, type: step.type, tone: step.tone, file: step.file }));
     case 'link':    return amWithBot(state, parts => parts.push({ k: 'link', text: step.text }));
+    case 'chips':   return amWithBot(state, parts => parts.push({ k: 'chips', items: step.items }));
+    case 'email':   return amWithBot(state, parts => parts.push({ k: 'email', to: step.to, subject: step.subject, body: step.body }));
     case 'panel':   return { ...state, tab: step.tab != null ? step.tab : state.tab, view: step.view };
     case 'thread':  return { ...state, thread: step.thread, msgs: [], composer: '', attach: null };
     default:        return state;
@@ -361,7 +382,14 @@ async function amPlay(script, set, ctl) {
         await amSleep(420, ctl);
       } else if (step.t === 'tool') {
         set(s => amWithBot(s, parts => parts.push({ k: 'tool', label: step.label, done: false })));
-        await amSleep(step.ms || 1100, ctl);
+        // A long run shows its latest step under the chip, as the app does.
+        const progress = step.progress || [];
+        const each = (step.ms || 1100) / Math.max(progress.length, 1);
+        if (progress.length === 0) await amSleep(step.ms || 1100, ctl);
+        for (const line of progress) {
+          set(s => amWithBot(s, parts => { parts[parts.length - 1] = { k: 'tool', label: step.label, status: line, done: false }; }));
+          await amSleep(each, ctl);
+        }
         set(s => amWithBot(s, parts => { parts[parts.length - 1] = { k: 'tool', label: step.label, summary: step.summary, done: true }; }));
         await amSleep(240, ctl);
       } else if (step.t === 'say') {

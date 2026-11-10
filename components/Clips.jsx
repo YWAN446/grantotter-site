@@ -553,4 +553,331 @@ const CLIP_PURSUIT = {
   ],
 };
 
-Object.assign(window, { CLIP_PROFILE, CLIP_ANNOUNCEMENT, CLIP_TEAM, CLIP_TOGETHER, CLIP_PURSUIT, RES_TABS, ADM_TABS, VFeed, VProfile, VProject, VOpps, VPursuit, VUnit, VGettingStarted, VShare, VDocView, VHistory, ME, MAYA });
+/* ── Views: checklist guides and the deep tools (posts of November 2026) ─────────────── */
+
+// The project's checklist with who-handles tags (web HandledByTag: You / RA / Inst / Letters …),
+// due dates and the ? that opens an item's guide under its row (GuideDrawer).
+const GUIDE_ROWS = [
+  ['you', 'You', 'Specific Aims (1 page)', '01/15/2027', 'aims'],
+  ['you', 'You', 'Research Strategy (12 pages)', '01/22/2027'],
+  ['ra', 'RA', 'eRA Commons account (PD/PI role)', '12/01/2026', 'era'],
+  ['you', 'You', 'Biosketches (PI + Co-I)', '01/08/2027'],
+  ['ra', 'RA', 'Budget and justification', '01/20/2027'],
+  ['let', 'Letters', 'Letters of support', '01/10/2027'],
+  ['inst', 'Inst', 'Institutional sign-off and routing', '01/29/2027'],
+];
+
+function GuideEra({ done }) {
+  return (
+    <div className="am-drawer">
+      <div className="t">eRA Commons account (PD/PI role)</div>
+      <div className="am-sub">Handled by your research administrator</div>
+      <h6>What this is</h6>
+      <div>The login NIH uses for applications and awards. A PD/PI needs one with the PI role, and only your institution can create it.</div>
+      <h6>Steps</h6>
+      <ol>
+        <li>Check whether you already have an account: a PD/PI keeps one for their whole career.</li>
+        <li>Find your institution’s signing official, usually in the sponsored programs office.</li>
+        <li>Ask your department’s research administrator to request it, with the PI role.</li>
+        <li>Watch your email for the new account notice, then set your password.</li>
+      </ol>
+      <h6>Official pages</h6>
+      <div className="src">Create and manage Commons accounts · era.nih.gov</div>
+      <h6>Common problems</h6>
+      <div>Two accounts for one person; a role without PI access.</div>
+      {done
+        ? <div className="am-sub">Recorded. Your next checklist will offer to check this off.</div>
+        : <div className="am-btns"><AmBtn kind="out">Walk me through it</AmBtn><AmBtn kind="out">Draft the email to my department research administrator</AmBtn><AmBtn kind="out">I already have one</AmBtn></div>}
+    </div>
+  );
+}
+
+function GuideAims() {
+  return (
+    <div className="am-drawer">
+      <div className="t">Specific Aims</div>
+      <div className="am-sub">Handled by you</div>
+      <h6>What this is</h6>
+      <div>The one-page opening of the application: the problem, the objective, the central hypothesis and two to four aims. Reviewers read it first.</div>
+      <div className="am-btns">
+        <AmBtn kind="out">Walk me through it</AmBtn><AmBtn kind="out">Draft it with GrantOtter</AmBtn><AmBtn kind="out">Review my draft</AmBtn>
+      </div>
+      <div className="am-btns" style={{justifyContent:'flex-end', marginTop:2}}>
+        <AmBtn kind="gold">Deep draft · 5 to 20 minutes</AmBtn><AmBtn kind="gold">Deep review · 2 to 4 minutes</AmBtn>
+      </div>
+    </div>
+  );
+}
+
+// open: null | 'era' | 'aims'; done: the eRA Commons item checked off and recorded.
+function VChecklistGuide({ open = null, done = false }) {
+  return (
+    <>
+      <div className="am-sub" style={{fontWeight:500, color:'var(--am-foreground)'}}>← Projects</div>
+      <div className="am-h lg">Sensor Networks and Data Science for Safe Drinking Water (R01)</div>
+      <div>
+        <div className="am-h">Checklist</div>
+        <div className="am-sub" style={{margin:'2px 0 6px'}}>Click ? on an item for a guide and ready-made prompts for GrantOtter.</div>
+        {GUIDE_ROWS.map(([h, short, label, due, key], i) => {
+          const checked = key === 'era' && done;
+          return (
+            <React.Fragment key={label}>
+              <div className={`am-crow ${checked ? 'done' : ''}`} style={{animationDelay: `${i * 70}ms`}}>
+                <i className={checked ? 'on' : ''} />
+                <span className={`am-htag ${h}`}>{short}</span>
+                <span className="lb">{label}</span>
+                <span className="dt">{due}</span>
+                <span className={`hp ${key && key === open ? 'on' : ''}`}>?</span>
+              </div>
+              {key === 'era' && open === 'era' && <GuideEra done={done} />}
+              {key === 'aims' && open === 'aims' && <GuideAims />}
+            </React.Fragment>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+function AmDocHead({ history }) {
+  return (
+    <div className="am-doc-head">
+      <span className="am-sub" style={{fontWeight:500, color:'var(--am-foreground)'}}>← Back</span>
+      <span style={{flex:1}} />
+      <AmBtn kind="out">Edit</AmBtn><AmBtn kind="out">{history ? 'Close history' : 'History'}</AmBtn><AmBtn kind="out">Download Word</AmBtn>
+    </div>
+  );
+}
+
+const VIEWING = <div className="am-mode"><span className="b">Viewing</span><span>Select any text to add a comment. Use Edit to change the text.</span></div>;
+
+// The saved deep review: the verdict and priorities first, then (among its sections) feasibility.
+function VDeepReview() {
+  const years = [
+    ['1', 'Install 24 sensors at each of the three utilities; collect calibration data (Aim 1)'],
+    ['2', 'Test the calibration at a site it was not trained on (Aim 1); build the forecasts (Aim 2)'],
+    ['3', 'Validate the forecasts against monthly samples (Aim 2)'],
+    ['4–5', 'Early-warning pilot with utility staff (Aim 3)'],
+  ];
+  return (
+    <>
+      <AmDocHead />
+      <div className="am-h">Deep review — Specific Aims</div>
+      {VIEWING}
+      <div className="am-doctext">
+        <p><strong>Verdict.</strong> The problem is clear and the sensor approach is credible. The page promises more than three utilities and five years can show.</p>
+        <div className="am-verdict">
+          <strong>Three things need work, in this order:</strong>
+          <ol>
+            <li>The forecast claim has no baseline to measure it against.</li>
+            <li>Say how the calibration is shown to work at a new utility.</li>
+            <li>Aim 3 does not fit the budget beside Aims 1 and 2: stage it.</li>
+          </ol>
+        </div>
+        <p style={{margin:'10px 0 6px'}}><strong>5. Feasibility within the award</strong></p>
+        <table className="am-table">
+          <thead><tr><th>Year</th><th>Work the page commits to</th></tr></thead>
+          <tbody>{years.map(([y, w]) => <tr key={y}><td>{y}</td><td>{w}</td></tr>)}</tbody>
+        </table>
+        <p style={{margin:'8px 0 6px'}}><strong>Verdict: stretched.</strong> Stage the pilot to Years 4 and 5 at the two utilities where the forecasts hold.</p>
+        <p className="am-sub">Sources: 7 linked pages · An AI rehearsal of review — not a prediction of the real panel.</p>
+      </div>
+    </>
+  );
+}
+
+// The draft with the review's findings as comments in the margin (GrantOtter, marked AI).
+function VReviewOnDraft() {
+  return (
+    <>
+      <AmDocHead />
+      <div className="am-h">Specific Aims</div>
+      {VIEWING}
+      <div className="am-doctext">
+        <p>Small water systems test their water about once a month. We will place 24 low-cost sensors at each of three partner utilities and <mark>forecast contamination days before a sample would catch it</mark>.</p>
+        <p><strong>Aim 1.</strong> <mark>Build a calibration that transfers between utilities</mark>, so a small system can trust a $300 sensor.</p>
+      </div>
+      <div className="am-comments">
+        <div className="hd"><strong>Comments</strong><AmBtn>Apply comments (3)</AmBtn></div>
+        <div className="am-comment">
+          <div className="q">On the whole page</div>
+          <div><span className="am-by">GrantOtter</span> <span className="am-ai">AI</span> The page runs about 80 words over one page. Aim 3 is the place to cut.</div>
+        </div>
+        <div className="am-comment">
+          <div className="q">“forecast contamination days before a sample would catch it”</div>
+          <div><span className="am-by">GrantOtter</span> <span className="am-ai">AI</span> State the baseline: how many days a monthly sample misses today.</div>
+          <div className="am-sugg">
+            <span className="am-sub">Suggested edit</span>
+            <span><del>days before a sample</del> <ins>a median of [PLACEHOLDER: days] before a monthly sample</ins></span>
+            <span style={{display:'flex', gap:6}}><AmBtn kind="out">Accept</AmBtn><AmBtn kind="ghost">Reject</AmBtn></span>
+          </div>
+        </div>
+        <div className="am-comment">
+          <div className="q">“Build a calibration that transfers between utilities”</div>
+          <div><span className="am-by">GrantOtter</span> <span className="am-ai">AI</span> Say how transfer is shown: train at two utilities, test at the third.</div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// History after a deep revision: the version saved before it, and the change since.
+function VDeepHistory() {
+  const versions = [
+    ['v4', 'Applied comments — before deep revision', 'Alex Rivera', 'Nov 12, 3:31 PM'],
+    ['v3', 'Applied comments', 'Alex Rivera', 'Nov 12, 2:58 PM'],
+    ['v2', 'Manual save', 'Alex Rivera', 'Nov 11, 9:40 AM'],
+  ];
+  return (
+    <>
+      <AmDocHead history />
+      <div className="am-h">Specific Aims</div>
+      <div className="am-mode"><span className="b">History</span><span>Compare earlier versions with the current text, or restore one.</span></div>
+      {versions.map(([v, src, who, when], i) => (
+        <div key={v} className={`am-version ${i === 0 ? 'on' : ''}`}>
+          <strong>{v}</strong> <span>{src}</span> <span>by {who}</span> <small>{when}</small>
+        </div>
+      ))}
+      <div className="am-diffhead"><strong>v4 → current</strong><AmBtn kind="out">Restore v4</AmBtn></div>
+      <div className="am-diff">
+        <strong>Aim 3.</strong> <del>Run an early-warning pilot with utility staff across the award.</del>{' '}
+        <ins>In Years 4 and 5, run an early-warning pilot with utility staff at the two utilities where the forecasts validate.</ins>
+      </div>
+    </>
+  );
+}
+
+// A grayscale study-flow diagram in the house style of the deep draft's figures.
+function StudyFlowSvg() {
+  const box = (x, y, a, b, fill) => (
+    <g key={a}>
+      <rect x={x} y={y} width="250" height="74" rx="10" fill={fill} stroke="#333333" strokeWidth="2" />
+      <text x={x + 125} y={y + 31} textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontSize="16" fontWeight="700" fill="#222222">{a}</text>
+      <text x={x + 125} y={y + 54} textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontSize="15" fill="#222222">{b}</text>
+    </g>
+  );
+  return (
+    <svg viewBox="0 0 600 236" role="img" aria-label="Study flow: sensors at three utilities feed Aim 1, Aim 1 feeds Aim 2, Aim 2 feeds Aim 3 in Years 4 and 5, with a dashed feedback line">
+      <defs>
+        <marker id="amFlowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#333333" />
+        </marker>
+      </defs>
+      {box(20, 18, 'Three utilities', '24 sensors at each', '#FFFFFF')}
+      {box(330, 18, 'Aim 1', 'Calibration that transfers', '#EEEEEE')}
+      {box(330, 144, 'Aim 2', 'Contamination forecasts', '#EEEEEE')}
+      {box(20, 144, 'Aim 3 · Years 4–5', 'Early-warning pilot', '#D9D9D9')}
+      <line x1="270" y1="55" x2="326" y2="55" stroke="#333333" strokeWidth="2.5" markerEnd="url(#amFlowArrow)" />
+      <line x1="455" y1="92" x2="455" y2="140" stroke="#333333" strokeWidth="2.5" markerEnd="url(#amFlowArrow)" />
+      <line x1="330" y1="181" x2="274" y2="181" stroke="#333333" strokeWidth="2.5" markerEnd="url(#amFlowArrow)" />
+      <line x1="145" y1="144" x2="145" y2="96" stroke="#333333" strokeWidth="2" strokeDasharray="7 6" markerEnd="url(#amFlowArrow)" />
+      <text x="156" y="124" fontFamily="Arial, Helvetica, sans-serif" fontSize="13" fill="#444444">feedback</text>
+    </svg>
+  );
+}
+
+// A deep-drafted Research Strategy: a drawn figure with its caption under it, a table with its
+// caption above it, and a placeholder where a number could not be verified.
+function VFigureDoc() {
+  const rows = [
+    ['Hanover', '24', 'Years 1–3'],
+    ['Lake Ridge', '24', 'Years 1–3'],
+    ['Pinecrest', '24', 'Years 2–3'],
+  ];
+  return (
+    <>
+      <AmDocHead />
+      <div className="am-h">Research Strategy</div>
+      {VIEWING}
+      <div className="am-doctext">
+        <p><strong>C.2 Approach.</strong> The three aims build on one another (Figure 1). Sensors at three partner utilities feed a calibration that must work at a site it was not trained on, and the calibrated data feed the forecasts.</p>
+      </div>
+      <div className="am-fig"><StudyFlowSvg /></div>
+      <div className="am-figcap">Figure 1. Study flow across the three aims.</div>
+      <div className="am-tcap">Table 1. Sensor deployment by utility.</div>
+      <table className="am-table">
+        <thead><tr><th>Utility</th><th>Sensors</th><th>Monitoring</th></tr></thead>
+        <tbody>{rows.map(r => <tr key={r[0]}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody>
+      </table>
+      <div className="am-doctext">
+        <p>Pilot data show the sensors detect turbidity events <span className="am-ph">[PLACEHOLDER: hours]</span> before the monthly sample.</p>
+      </div>
+    </>
+  );
+}
+
+/* ── Scripts: checklist guides and the deep tools ────────────────────────────────────── */
+
+const CLIP_GUIDE = {
+  label: 'A first-time PI gets an eRA Commons account in place, step by step',
+  tabs: RES_TABS, tab: 0, view: 'g0', thread: PROJECT_THREAD,
+  views: {
+    g0: <VChecklistGuide />,
+    g1: <VChecklistGuide open="era" />,
+    g2: <VChecklistGuide open="era" done />,
+  },
+  steps: [
+    { t: 'caption', text: 'Every checklist item says who handles it: you, your research administrator, your institution.' },
+    { t: 'wait', ms: 1800 },
+    { t: 'caption', text: 'Click ? for its guide: what it is, the steps, the official pages.' },
+    { t: 'panel', view: 'g1', ms: 2200 },
+    { t: 'post', text: 'Walk me through the checklist item "eRA Commons account (PD/PI role)" for this project' },
+    { t: 'tool', label: 'Reading the requirement guide…', summary: 'Read the guide: eRA Commons account (PD/PI role)', ms: 900 },
+    { t: 'say', text: '**Step 1 of 7.** Check whether you already have an eRA Commons account. A PD/PI keeps one account for their whole career, so a second one causes trouble later. Have you ever had one?', ms: 200 },
+    { t: 'chips', items: ['No, never', 'Yes, I have one', 'I’m stuck here'] },
+    { t: 'caption', text: 'One step at a time, in the chat. It keeps your place if you stop.' },
+    { t: 'type', text: 'No, never.' },
+    { t: 'send' },
+    { t: 'say', text: '**Step 2 of 7.** Only your institution can create the account. The usual route is your department’s research administrator, who asks the signing official for it with the PI role. Want me to draft that request?', ms: 200 },
+    { t: 'chips', items: ['Draft the email to my department research administrator', 'Done with this step', 'I’m stuck here'] },
+    { t: 'post', text: 'Draft the email to my department research administrator about eRA Commons account (PD/PI role)' },
+    { t: 'tool', label: 'Preparing the ask…', summary: 'Prepared the ask to the department research administrator', ms: 800 },
+    { t: 'email', to: 'Jordan Patel <j.patel@example.edu>', subject: 'eRA Commons account with the PI role',
+      body: ['Dear Jordan,', 'I am preparing an NIH R01 due February 5 and need an eRA Commons account with the PI role. Could you ask our signing official to create it? I have never had one.', 'Thank you,', 'Alex Rivera'] },
+    { t: 'caption', text: 'An email to the person who handles it. Copy it or open it in your mail app; GrantOtter never sends it.' },
+    { t: 'wait', ms: 2000 },
+    { t: 'type', text: 'Jordan set it up. I have my Commons ID now.' },
+    { t: 'send' },
+    { t: 'tool', label: 'Recording that as done…', summary: "Checked off 'eRA Commons account (PD/PI role)' — 1 of 7 done", ms: 800 },
+    { t: 'panel', view: 'g2', ms: 500 },
+    { t: 'say', text: 'Checked off. I’ll remember you have a Commons ID, so your next NIH checklist offers to check it off in one step.', ms: 300 },
+    { t: 'caption', text: 'Done once, remembered for your next NIH project.' },
+  ],
+};
+
+const CLIP_DEEP = {
+  label: 'A PI takes the Specific Aims through a deep review and a deep revision',
+  tabs: RES_TABS, tab: 0, view: 'd0', thread: PROJECT_THREAD,
+  views: {
+    d0: <VChecklistGuide open="aims" />,
+    d1: <VDeepReview />,
+    d2: <VReviewOnDraft />,
+    d3: <VDeepHistory />,
+  },
+  steps: [
+    { t: 'caption', text: 'Deep draft and deep review sit beside the quick options, in gold.' },
+    { t: 'wait', ms: 1800 },
+    { t: 'post', text: 'Deep review my Specific Aims draft' },
+    { t: 'tool', label: 'Deep review… (searching the web — takes 2 to 4 minutes)', ms: 3600, summary: "Saved 'Deep review — Specific Aims'",
+      progress: ['Reading the announcement and the writing guide…', 'Searching: low-cost sensor calibration across sites', 'Searching: small water system sampling frequency', 'Writing…'] },
+    { t: 'artifact', title: 'Deep review — Specific Aims', type: 'review', tone: 5 },
+    { t: 'panel', view: 'd1', ms: 400 },
+    { t: 'caption', text: 'A verdict and the priorities first, then the page, the science, the rules and feasibility, with sources.' },
+    { t: 'say', text: 'The problem and the sensor approach are strong. **Three things need work, in this order:** a baseline for the forecast claim, how the calibration is shown to transfer, and Aim 3, which does not fit the budget beside Aims 1 and 2.', ms: 200 },
+    { t: 'chips', items: ['Put the review’s comments on my draft', 'Revise my Specific Aims in depth'] },
+    { t: 'post', text: 'Put the review’s comments on my draft' },
+    { t: 'tool', label: 'Adding the review’s comments…', summary: "Added 3 comments to 'Specific Aims'", ms: 900 },
+    { t: 'panel', view: 'd2', ms: 600 },
+    { t: 'caption', text: 'The findings land on the draft as comments, many with a suggested edit.' },
+    { t: 'wait', ms: 1600 },
+    { t: 'type', text: 'Agreed on the first two. Keep Aim 3 but stage it to Years 4 and 5. Revise it in depth.' },
+    { t: 'send' },
+    { t: 'tool', label: 'Deep revision… (verifying, revising, checking the fit — takes 4 to 8 minutes)', ms: 3600, summary: "Revised 'Specific Aims' as a new version; fits in 1 page",
+      progress: ['Plan: 4 changes, in the review’s order', 'Verifying the facts and numbers…', 'Revising the text…', 'Checking the fit: 1 page'] },
+    { t: 'panel', view: 'd3', ms: 500 },
+    { t: 'say', text: 'Saved as a new version: Aim 3 now runs in Years 4 and 5. One number I could not verify is marked **[PLACEHOLDER: baseline detection delay]**. Fill it in from your pilot data.', ms: 300 },
+    { t: 'caption', text: 'A new version, with every change in History. What it can’t verify is marked, never guessed.' },
+  ],
+};
+
+Object.assign(window, { CLIP_GUIDE, CLIP_DEEP, VChecklistGuide, VDeepReview, VReviewOnDraft, VDeepHistory, VFigureDoc, CLIP_PROFILE, CLIP_ANNOUNCEMENT, CLIP_TEAM, CLIP_TOGETHER, CLIP_PURSUIT, RES_TABS, ADM_TABS, VFeed, VProfile, VProject, VOpps, VPursuit, VUnit, VGettingStarted, VShare, VDocView, VHistory, ME, MAYA });

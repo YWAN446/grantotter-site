@@ -5,6 +5,20 @@ const { useState: useStateL } = React;
 const UPDATES = [
   {
     tag: 'New',
+    title: 'Deep draft. Deep review. Deep revise.',
+    desc: 'The in-depth pass for your science documents: a whole draft with tables and figures, a review with sources, and a revision that checks every fact it keeps.',
+    href: '#blog/deep-draft-review-revise',
+    cta: 'Read the post',
+  },
+  {
+    tag: 'New',
+    title: 'Every checklist item, walked through.',
+    desc: 'A guide behind every item, who handles it, a step-by-step walkthrough and the email to the right person.',
+    href: '#blog/checklist-guides',
+    cta: 'Read the post',
+  },
+  {
+    tag: 'New',
     title: 'Write the application together.',
     desc: 'Share a project with your co-investigators: comments with names, edits with version history, and GrantOtter to work through the comments.',
     href: '#blog/work-together',

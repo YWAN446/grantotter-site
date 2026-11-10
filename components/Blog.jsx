@@ -1,5 +1,23 @@
 const POSTS = [
   {
+    slug: 'deep-draft-review-revise',
+    title: 'Deep Draft, Deep Review, Deep Revise: The In-Depth Pass for Your Science Documents',
+    date: 'November 9, 2026',
+    tag: 'NEW',
+    readTime: '6 min read',
+    excerpt: 'A one-minute draft and a quick panel rehearsal are a good start. For the documents that carry an application, GrantOtter now has three in-depth tools: a deep draft that writes the whole document with its tables and figures, a deep review that checks it against the announcement, the guide and the field with sources, and a deep revision that makes the changes you agreed on.',
+    content: () => <PostContent_010 />,
+  },
+  {
+    slug: 'checklist-guides',
+    title: 'The Guided Checklist: Every Step of Your Application, Walked Through',
+    date: 'November 9, 2026',
+    tag: 'NEW',
+    readTime: '5 min read',
+    excerpt: 'GrantOtter builds your submission checklist from the announcement. Now every item on it comes with help: who handles it, a guide written from the official pages, a step-by-step walkthrough in the chat, the email to the person who handles it, and a memory of what you have already done.',
+    content: () => <PostContent_009 />,
+  },
+  {
     slug: 'work-together',
     title: 'Write the Application Together: Shared Projects in GrantOtter',
     date: 'October 24, 2026',
@@ -905,6 +923,241 @@ function PostContent_007() {
           Open GrantOtter →
         </a>
       </div>
+    </>
+  );
+}
+
+function postStyles() {
+  const para = { fontSize: 15, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 20px' };
+  const lead = { fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' };
+  const h2 = { fontFamily: 'Instrument Serif, Georgia, serif', fontWeight: 400, fontStyle: 'italic', fontSize: 24, lineHeight: 1.2, color: 'var(--ink)', margin: '32px 0 16px', borderLeft: '3px solid var(--orange-deep)', paddingLeft: 16 };
+  const box = { background: 'var(--bg-2)', border: '1px solid var(--line-2)', padding: '20px 24px', margin: '0 0 28px' };
+  const boxLabel = { fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 16 };
+  const item = { display: 'flex', gap: 10, marginBottom: 10, fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)' };
+  const caption = { fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', margin: '8px 0 0' };
+  const link = { color: 'var(--teal-deep)' };
+  const list = (label, rows) => (
+    <div style={box}>
+      <div style={boxLabel}>{label}</div>
+      {rows.map(([title, desc]) => (
+        <div key={title} style={item}>
+          <span style={{ color: 'var(--teal-deep)', flexShrink: 0 }}>→</span>
+          <span><strong style={{ color: 'var(--ink)' }}>{title}</strong>: {desc}</span>
+        </div>
+      ))}
+    </div>
+  );
+  const panel = (view, text, maxWidth) => (
+    <div style={{ margin: '32px auto', maxWidth: maxWidth || 560 }}>
+      <AppPanel tabs={RES_TABS} tab={0}>{view}</AppPanel>
+      <p style={caption}>"{text}"</p>
+    </div>
+  );
+  const clip = (script) => (
+    <div style={{ margin: '32px 0' }}>
+      <AppClip script={script} />
+      <p style={caption}>"An example in the app’s own layout. The people, the project and the text are invented."</p>
+    </div>
+  );
+  const ending = (
+    <div style={{ borderTop: '1px solid var(--line)', paddingTop: 32, textAlign: 'center', display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+      <a href="#tutorial" className="btn btn-ghost" style={{ display: 'inline-block' }}>
+        Read the guide
+      </a>
+      <a href="https://app.grantotter.com" target="_blank" rel="noopener" className="btn btn-signal" style={{ display: 'inline-block' }}>
+        Open GrantOtter →
+      </a>
+    </div>
+  );
+  return { para, lead, h2, link, list, panel, clip, ending };
+}
+
+function PostContent_009() {
+  const { para, lead, h2, link, list, panel, clip, ending } = postStyles();
+  return (
+    <>
+      <p style={lead}>
+        A submission checklist tells you what is due. It doesn't tell you what an eRA Commons account with the PI role is, who at your institution creates one, or that it can take two weeks. On a first application, those are the items that turn into a last-minute scramble.
+      </p>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        GrantOtter already builds your checklist from the announcement's own requirements, with a due date for each item. Starting today, every item on it comes with help: who handles it, a guide written from the official pages, a walkthrough one step at a time in the chat, the email to the person who handles it, and a memory of what you have already done.
+      </p>
+
+      {clip(CLIP_GUIDE)}
+
+      <h2 style={h2}>Who handles each item</h2>
+      <p style={para}>
+        Every item carries a small tag that says whose job it is. You see at a glance which items are yours, and which ones you need to ask someone for early: an eRA Commons account waits on your institution, a letter of support waits on its writer.
+      </p>
+      {list('The tags', [
+        ['You', 'the documents you write, your ORCID iD, your training and disclosures.'],
+        ['RA', 'your research administrator: the eRA Commons account, the budget, subawards.'],
+        ['Inst', 'your institution: the SAM.gov registration, sign-off and routing, the submission itself.'],
+        ['Mentor, Collab, Letters', 'the statements and letters other people write for you.'],
+        ['IRB', 'the IRB or IACUC: human subjects and animal approvals.'],
+      ])}
+      <p style={para}>
+        The tags come with the guides. An item that no guide covers gets its tag once, when it is added to the checklist.
+      </p>
+
+      <h2 style={h2}>A guide behind every item</h2>
+      <p style={para}>
+        Click the <strong>?</strong> beside an item and its guide opens under the row: what the item is, the steps in order, the official pages, and the problems people commonly run into. There are 42 guides so far. They cover the registrations (eRA Commons, ORCID, SAM.gov, Research.gov, SciENcv), training and conflict-of-interest disclosures, IRB and IACUC approvals, letters of support and mentor statements, institutional sign-off, subawards, and every document GrantOtter drafts, from the Specific Aims to the budget justification.
+      </p>
+      <p style={para}>
+        The guides are a curated library written from the funders' and registries' own pages, not text the assistant makes up as it goes. Every Monday GrantOtter checks those pages, and when one changes, the guide says it may be out of date until we have checked it again. An item with no guide still gets help: GrantOtter reads what the announcement says about it, and tells you plainly that no guide covers it and that the announcement governs.
+      </p>
+      {panel(<VChecklistGuide open="era" />, 'The eRA Commons guide, opened from its row. The tag says your research administrator handles it.')}
+
+      <h2 style={h2}>Walk me through it</h2>
+      <p style={para}>
+        Press <strong>Walk me through it</strong> and the guide moves into your project's chat, one step per reply: what to do, what you should see, and buttons for your answer. A step that asks a question offers its answers; a step to do offers <strong>Done with this step</strong> and <strong>I'm stuck here</strong>. GrantOtter keeps your place, so if you stop halfway and come back next week, it picks up at the same step.
+      </p>
+      <p style={para}>
+        Stuck on a screen in eRA Commons, ORCID or your institution's own system? Take a screenshot and paste it into the chat. GrantOtter reads it and tells you what to press next, one screen at a time, and the screenshot isn't saved. If something may have changed since a guide was written, ask GrantOtter to check: it can search the web from a project's chat, and it says plainly when an answer comes from a search and not from the guide.
+      </p>
+
+      <h2 style={h2}>The email to the right person</h2>
+      <p style={para}>
+        Many items come down to asking someone. Your research administrator requests the eRA Commons account, the sponsored programs office confirms the SAM.gov registration, a colleague writes the letter of support. The guide's <strong>Draft the email</strong> button writes that request, addressed to the person who handles it, with <strong>Copy</strong> and <strong>Open in my mail app</strong> buttons. GrantOtter never sends it for you.
+      </p>
+      <p style={para}>
+        Tell GrantOtter once who your research administrator is, and it remembers them for every project. Your contacts are private: collaborators on a shared project never see them.
+      </p>
+
+      <h2 style={h2}>Done once, remembered</h2>
+      <p style={para}>
+        Check an item off from its guide (<strong>I've done this</strong>, <strong>I have it</strong> or <strong>I already have one</strong>), or just tell the chat: "I have my Commons ID now." Some things you only do once: an eRA Commons account, an ORCID iD, a Research.gov account, a SciENcv profile, your CITI training. For those, GrantOtter remembers that you have them, and your next checklist offers to check them off in one confirmation. Training that expires is kept with its completion date.
+      </p>
+      <p style={para}>
+        An item that the checklist marks <em>if applicable</em>, such as subaward documents, can be checked off as <strong>Not applicable</strong> instead.
+      </p>
+
+      <h2 style={h2}>Nothing slips</h2>
+      <p style={para}>
+        Some items take weeks: an eRA Commons account can take about two, an IRB approval about a month. GrantOtter knows each guide's usual lead time, and once the date to start has passed it says so in the chat and offers the walkthrough first. The Monday email counts each project's open items, such as 2 overdue and 1 due this week, so the week starts with what comes next.
+      </p>
+
+      <h2 style={h2}>The writing items too</h2>
+      <p style={para}>
+        A document on the checklist opens its writing guide, with <strong>Draft it with GrantOtter</strong> and <strong>Review my draft</strong>. The main science documents also offer two in-depth options, <strong>Deep draft</strong> and <strong>Deep review</strong>, which take longer and go much further.{' '}
+        <a href="#blog/deep-draft-review-revise" style={link}>More about those</a>.
+      </p>
+
+      <h2 style={h2}>On a shared project</h2>
+      <p style={para}>
+        Co-investigators on a shared project see the checklist with the same tags and can open every guide. The items you handle read <strong>Owner</strong> on their side, so nobody mistakes your job for theirs.
+      </p>
+
+      <h2 style={h2}>What it costs</h2>
+      {list('Plans', [
+        ['The checklist and its guides', 'part of Pro and Max, like projects themselves.'],
+        ['On a shared project', 'any collaborator, Free included, can read the checklist and its guides.'],
+      ])}
+      <p style={para}>
+        Plans start January 1, 2027, and everyone with an account before December 1 has Pro free through December 31. The details are on the{' '}
+        <a href="#pricing" style={link}>pricing page</a>.
+      </p>
+
+      <h2 style={h2}>Try it</h2>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        Open a project, link its announcement, and ask GrantOtter to build the checklist. Then press <strong>?</strong> beside the first item you are not sure about. Something missing from the guides? Tell us at{' '}
+        <a href="mailto:help@grantotter.com" style={link}>help@grantotter.com</a>.
+      </p>
+
+      {ending}
+    </>
+  );
+}
+
+function PostContent_010() {
+  const { para, lead, h2, link, list, panel, clip, ending } = postStyles();
+  return (
+    <>
+      <p style={lead}>
+        Some documents carry an application: the Specific Aims, the Research Strategy, a K award's Candidate Information. For those, a one-minute draft or a quick panel rehearsal is a good start, but not where you want to stop.
+      </p>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        GrantOtter now has three in-depth tools for them. A <strong>deep draft</strong> writes the whole document, with its tables and figures. A <strong>deep review</strong> checks a draft against the announcement, the writing guide and the field, with sources. A <strong>deep revision</strong> makes the changes you agreed on and checks every fact it keeps. Each one takes a few minutes, searches the web for current sources, and shows you what it is doing while it works.
+      </p>
+
+      {clip(CLIP_DEEP)}
+
+      <h2 style={h2}>Quick or in depth: you choose</h2>
+      <p style={para}>
+        Ask for a draft, a review or a revision without saying which, and GrantOtter asks first: quick, or in depth? The buttons say how long each one takes: a deep review 2 to 4 minutes, a deep revision 4 to 8, a deep draft 5 to 20. In a document's guide on the checklist, <strong>Deep draft</strong> and <strong>Deep review</strong> sit in gold beside the quick options.
+      </p>
+
+      <h2 style={h2}>Deep draft: the whole document, with its tables and figures</h2>
+      <p style={para}>
+        A deep draft starts from what the project already holds: the announcement, the writing guide for your mechanism, your aims and other drafts, your team's profiles, your notes and decisions, and any earlier review. A long document such as a Research Strategy is outlined first and then written section by section, and the line under the running step shows where it is: "Outline: 9 sections", then "Section 3 of 9".
+      </p>
+      {list('What a deep draft does', [
+        ['Tables and figures', 'tables where they help, and plain black-and-white diagrams drawn for the page: a study flow, a timeline, a conceptual framework. Ask for a change later, such as “redraw Figure 1 with the years as columns”, and it redraws that one figure.'],
+        ['References', 'it cites your own papers from your publication list, the references already in the project, and pages it found on the web, and adds the new ones to your References Cited, continuing its numbering. A claim it has no source for gets a placeholder, never an invented reference.'],
+        ['Placeholders, not guesses', 'a number or fact it cannot find in your materials, or verify, is written as [PLACEHOLDER: what is needed], so you can see exactly what to fill in.'],
+        ['The page limit', 'the draft is measured against the funder’s page limit, and the reply says how it fits. You can ask “How many pages is my Research Strategy?” at any time.'],
+        ['Your own draft is safe', 'deepening a draft saves a new version, and History keeps the old text. A Word file you uploaded stays untouched: the deep draft is saved beside it.'],
+      ])}
+      {panel(<VFigureDoc />, 'A deep-drafted Research Strategy: a drawn figure, a table, and a placeholder where a number could not be verified.')}
+      <p style={para}>
+        Download it as Word and the figures sit at page width with their captions, every table is a real Word table, and every placeholder is highlighted in yellow. A Specific Aims or Research Strategy downloads in NIH's format: Arial 11, half-inch margins. Deep draft works on the Specific Aims, the Research Strategy, the Project Summary and Narrative, a K award's Candidate Information, the Training Plan and Preliminary Data.
+      </p>
+
+      <h2 style={h2}>Deep review: a careful reviewer's read, with sources</h2>
+      <p style={para}>
+        The quick panel review is still there: three AI reviewers rehearse the study section on your draft in a minute or two. A deep review goes further. It reads one document with the announcement, the writing guide for your mechanism, your team's profiles, your notes and the previous review in front of it, and it searches the web for the current figures, standards and instructions your claims rest on.
+      </p>
+      {list('What a deep review covers', [
+        ['Priorities first', 'what is sound, then the things that need work, in order, one sentence each.'],
+        ['Length', 'the word count against the page limit, with a budget for each part of the page.'],
+        ['The science', 'each aim or section critiqued at the level of the methods, with the specific fix.'],
+        ['The rules', 'eligibility, the announcement’s dates and the program’s fit, checked against your own facts.'],
+        ['Feasibility within the award', 'a year-by-year table against the award’s limits and a verdict (feasible, stretched or over-promised) that names what to cut or stage.'],
+        ['Sources', 'every statement about the field or the rules carries a source, listed at the end. Nothing is invented.'],
+      ])}
+      <p style={para}>
+        It is a rehearsal of review, not a prediction of the real panel, and the report says so. It is saved as its own document beside the draft, and the chat shows the verdict and the priorities.
+      </p>
+
+      <h2 style={h2}>The findings on your draft, as comments</h2>
+      <p style={para}>
+        Say "Put the review's comments on my draft" and the findings land on the draft itself: each one on the passage it is about, marked AI with GrantOtter as the author, many with a suggested edit you can accept or reject. The general points, such as length, layout and what is missing, sit at the top. It never happens unless you ask, and the comments go with the document when you download it as Word.
+      </p>
+      {panel(<VReviewOnDraft />, 'The review’s findings as comments on the draft, one with a suggested edit.')}
+
+      <h2 style={h2}>Deep revise: the changes you agreed on</h2>
+      <p style={para}>
+        Talk the review over in the chat first: agree with some findings, push back on others, add your own constraints, such as keeping Aim 3 but staging it to Years 4 and 5. When you are ready, ask GrantOtter to revise it in depth. It plans the changes in the review's order, checks every fact and number it keeps or adds against your materials and the web, revises the whole document in your voice, and checks that it still fits the page.
+      </p>
+      <p style={para}>
+        It saves a new version of the same document, so History shows exactly what changed and Restore brings back the old text. Anything it could not verify is left as a placeholder, and the reply names each one: a revised document is never passed off as finished.
+      </p>
+      {panel(<VDeepHistory />, 'History after a deep revision: the version before it, and what changed.')}
+
+      <h2 style={h2}>Watching it work</h2>
+      <p style={para}>
+        These runs take minutes, so the chat shows the progress as it goes. Each web search appears as it happens, then the outline and the section being written, and the line under the running step keeps moving. Open the step to read its full log.
+      </p>
+
+      <h2 style={h2}>What it costs</h2>
+      {list('Plans', [
+        ['Max', 'deep draft, deep review and deep revise are included. They count toward your plan’s usage, and extra usage credit carries on if you run out.'],
+        ['Pro', 'all three, charged to your extra usage credit based on usage. The button says so before you start.'],
+        ['Free', 'not included.'],
+      ])}
+      <p style={para}>
+        Until plans open on December 1, every account can try all three. Plans start January 1, 2027; the details are on the{' '}
+        <a href="#pricing" style={link}>pricing page</a>.
+      </p>
+
+      <h2 style={h2}>Try it</h2>
+      <p style={{ ...para, margin: '0 0 32px' }}>
+        Open a project with a Specific Aims draft and ask for a deep review. Talk the findings over, then ask GrantOtter to revise it in depth. The{' '}
+        <a href="#blog/checklist-guides" style={link}>guided checklist</a> shows where each document sits among everything else the application needs.
+      </p>
+
+      {ending}
     </>
   );
 }
