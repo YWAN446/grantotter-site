@@ -1,6 +1,7 @@
 // Plans and prices. Owner decisions 2026-09: Free / Pro / Max, extra usage,
-// institution subscription; plans and checkout open December 1, 2026; existing
-// accounts get Pro free through December 31, 2026; charging starts January 1, 2027.
+// institution subscription; plans and checkout open January 1, 2027, and every account's
+// first Pro or Max subscription starts with a free month (card up front, once per person);
+// accounts created before then keep Pro free through January 7, 2027 (owner 2026-11-21).
 // Never state usage allowances in dollars.
 
 const PRICING_PLANS = [
@@ -23,6 +24,7 @@ const PRICING_PLANS = [
     accent: 'var(--orange-deep)',
     badge: 'Full assistant',
     features: [
+      'First month free',
       'Everything in Free, with weekly grant alerts',
       'The full assistant, within a daily and weekly allowance',
       'Projects with deadlines, a guided checklist, your team and documents',
@@ -37,6 +39,7 @@ const PRICING_PLANS = [
     blurb: 'Deep drafting and review included, for heavy application seasons.',
     accent: 'var(--teal-deep)',
     features: [
+      'First month free',
       'Everything in Pro',
       'Deep draft, review and revise included',
       'Whole-application review — a mock study section over every document',
@@ -48,9 +51,9 @@ const PRICING_PLANS = [
 ];
 
 const PRICING_TIMELINE = [
-  ['December 1, 2026', 'Plans and checkout open. New accounts from this date start on Free.'],
-  ['Through December 31, 2026', 'Everyone with a GrantOtter account before December 1 has Pro free. Nothing to do.'],
-  ['January 1, 2027', 'Charging starts. Anyone who has not subscribed moves to Free and keeps monthly grant alerts and the Feed.'],
+  ['January 1, 2027', 'Plans and checkout open. Your first Pro or Max subscription starts with a free month; new accounts start on Free.'],
+  ['January 1–7, 2027', 'Everyone with an account before January 1 keeps Pro free. Add a card by January 7 to keep it; your first month is free.'],
+  ['January 8, 2027', 'Accounts without a subscription move to Free and keep monthly grant alerts and the Feed.'],
 ];
 
 // The institution subscription lives on its own page (Institutions.jsx, which also owns
@@ -62,12 +65,12 @@ const PRICING_FAQ = [
     a: 'A professional grant writer typically charges $5,000–$15,000 per proposal. Institution-licensed funding databases cost hundreds of dollars a month per seat, billed through your institution, and stop at discovery. GrantOtter Pro is $25 a month, self-serve, cancel anytime — and it goes from discovery through matching, team building and the application documents.',
   },
   {
-    q: 'When do I start paying?',
-    a: 'Only when you choose a plan, and never before January 1, 2027. If you had an account before December 1, 2026, you have Pro free through December 31, 2026. New accounts from December 1 start on Free.',
+    q: 'Will I be charged?',
+    a: 'Only when you choose a plan, and never before January 1, 2027. Your first Pro or Max subscription starts with a free month: nothing is charged for 30 days (a card that has already had a free month is charged at sign-up), and you can cancel before then.',
   },
   {
-    q: 'What happens on January 1 if I don’t subscribe?',
-    a: 'Your account moves to Free. You keep monthly grant alerts and the Feed, and you can choose Pro or Max at any time.',
+    q: 'What happens on January 8 if I don’t subscribe?',
+    a: 'Your account moves to Free. You keep monthly grant alerts and the Feed, and your free month waits for whenever you first choose Pro or Max.',
   },
   {
     q: 'Can I cancel?',
@@ -105,8 +108,9 @@ function Pricing({ setRoute }) {
             Monthly on the Free plan. Weekly alerts and the full assistant are Pro or Max, from January 1, 2027.
           </p>
           <p style={{marginTop:14, maxWidth:680, color:'var(--ink-2)'}}>
-            Plans and checkout open December 1, 2026. If you have a GrantOtter account before then,
-            you have Pro free through December 31 — nothing to do. Prices are in US dollars.
+            Plans and checkout open January 1, 2027, and your first Pro or Max subscription starts
+            with a free month. If you have a GrantOtter account before then, you keep Pro free through
+            January 7. Prices are in US dollars.
           </p>
         </div>
       </section>

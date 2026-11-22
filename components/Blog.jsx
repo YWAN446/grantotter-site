@@ -861,6 +861,10 @@ function PostContent_007() {
 
   return (
     <>
+      <div style={box}>
+        <div style={boxLabel}>Update</div>
+        <p style={{ ...para, margin: 0 }}>Update, November 21, 2026: plans open January 1, 2027; your first Pro or Max subscription starts with a free month; accounts created before January 1 keep Pro through January 7.</p>
+      </div>
       <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: '0 0 24px' }}>
         GrantOtter is introducing plans. Grant alerts stay free (monthly on the Free plan), and so do your Feed and the news briefs. Weekly alerts and the full assistant — projects, documents and collaborator research — become part of two paid plans, Pro at $25 a month and Max at $100 a month. Nothing changes today: plans open on December 1, 2026, nobody is charged before January 1, 2027, and if you already have an account you have Pro free through December 31.
       </p>
@@ -1058,6 +1062,7 @@ function PostContent_009() {
         Plans start January 1, 2027, and everyone with an account before December 1 has Pro free through December 31. The details are on the{' '}
         <a href="#pricing" style={link}>pricing page</a>.
       </p>
+      <p style={{ ...para, fontStyle: 'italic', color: 'var(--muted)' }}>Update, November 21, 2026: plans open January 1, 2027; your first Pro or Max subscription starts with a free month; accounts created before January 1 keep Pro through January 7.</p>
 
       <h2 style={h2}>Try it</h2>
       <p style={{ ...para, margin: '0 0 32px' }}>
@@ -1150,6 +1155,7 @@ function PostContent_010() {
         Until plans open on December 1, every account can try all three. Plans start January 1, 2027; the details are on the{' '}
         <a href="#pricing" style={link}>pricing page</a>.
       </p>
+      <p style={{ ...para, fontStyle: 'italic', color: 'var(--muted)' }}>Update, November 21, 2026: plans open January 1, 2027; your first Pro or Max subscription starts with a free month; accounts created before January 1 keep Pro through January 7.</p>
 
       <h2 style={h2}>Try it</h2>
       <p style={{ ...para, margin: '0 0 32px' }}>
@@ -1255,6 +1261,7 @@ function PostContent_008() {
         Plans start January 1, 2027, and everyone with an account before December 1 has Pro free through December 31, so you can try all of this on a real application now. The details are on the{' '}
         <a href="#pricing" style={link}>pricing page</a>.
       </p>
+      <p style={{ ...para, fontStyle: 'italic', color: 'var(--muted)' }}>Update, November 21, 2026: plans open January 1, 2027; your first Pro or Max subscription starts with a free month; accounts created before January 1 keep Pro through January 7.</p>
 
       <h2 style={h2}>Try it</h2>
       <p style={{ ...para, margin: '0 0 32px' }}>

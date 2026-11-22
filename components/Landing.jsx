@@ -27,7 +27,7 @@ const UPDATES = [
   {
     tag: 'Pricing',
     title: 'Plans start January 1, 2027.',
-    desc: 'Grant alerts stay free, and everyone with an account before December 1 has Pro free through December 31.',
+    desc: 'Grant alerts stay free, your first month of Pro or Max is free, and everyone with an account before January 1 keeps Pro through January 7.',
     href: '#blog/pricing',
     cta: 'Read the announcement',
   },
@@ -309,7 +309,7 @@ function Trust() {
 const HOME_FAQS = [
   {
     q: 'What does GrantOtter cost?',
-    a: 'Grant alerts stay free (monthly on the Free plan), and so do your Feed, the news briefs and building your researcher profile — no credit card, no demo call. Weekly alerts, the full assistant, projects and documents are Pro at $25/month or Max at $100/month, from January 1, 2027. Plans open December 1, 2026, and everyone with an account before then has Pro free through December 31.',
+    a: 'Grant alerts stay free (monthly on the Free plan), and so do your Feed, the news briefs and building your researcher profile — no credit card, no demo call. Weekly alerts, the full assistant, projects and documents are Pro at $25/month or Max at $100/month. Plans open January 1, 2027, and your first Pro or Max subscription starts with a free month; everyone with an account before then keeps Pro free through January 7.',
   },
   {
     q: 'Is my CV or proposal used to train AI models?',
