@@ -20,6 +20,7 @@ const PRICING_PLANS = [
   },
   {
     n: '02', name: 'Pro', price: '$25', unit: 'per month',
+    yearly: '$250', yearlyNote: 'about $20.83 a month',
     blurb: 'The full assistant, from first match to finished documents.',
     accent: 'var(--orange-deep)',
     badge: 'Full assistant',
@@ -36,12 +37,13 @@ const PRICING_PLANS = [
   },
   {
     n: '03', name: 'Max', price: '$100', unit: 'per month',
-    blurb: 'Deep drafting and review included, for heavy application seasons.',
+    yearly: '$1,000', yearlyNote: 'about $83.33 a month',
+    blurb: 'Deep drafting and review included in your allowance, for heavy application seasons.',
     accent: 'var(--teal-deep)',
     features: [
       'First month free',
       'Everything in Pro',
-      'Deep draft, review and revise included',
+      'Deep draft, review and revise included in your allowance',
       'Whole-application review — a mock study section over every document',
       '5× Pro’s usage allowance',
       '20% less than five Pro plans ($125)',
@@ -73,6 +75,10 @@ const PRICING_FAQ = [
     a: 'Your account moves to Free. You keep monthly grant alerts and the Feed, and your free month waits for whenever you first choose Pro or Max.',
   },
   {
+    q: 'Is there a yearly plan?',
+    a: 'Yes. Pro is $250 a year and Max is $1,000 a year, two months free compared with paying monthly. Your first month is still free. A yearly plan renews each year until you cancel; we email a reminder before each renewal. Yearly payments are not refunded; if you cancel, you keep access to the end of the paid year.',
+  },
+  {
     q: 'Can I cancel?',
     a: 'Yes, anytime, from the billing page in the app. A cancelled plan runs to the end of the period you are in.',
   },
@@ -94,7 +100,37 @@ const PRICING_FAQ = [
   },
 ];
 
+// Monthly / Yearly choice for the plan cards (annual plan, owner 2026-11-21; default Monthly).
+// A roving-tabindex radiogroup: the arrow keys move and select.
+function PricingIntervalSwitch({ value, onChange }) {
+  const refs = React.useRef({});
+  const options = [['month', 'Monthly'], ['year', 'Yearly']];
+  const onKeyDown = (e) => {
+    if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
+    e.preventDefault();
+    const next = value === 'month' ? 'year' : 'month';
+    onChange(next);
+    if (refs.current[next]) refs.current[next].focus();
+  };
+  return (
+    <div role="radiogroup" aria-label="Billing interval" onKeyDown={onKeyDown}
+         style={{display:'inline-flex', gap:4, padding:3, border:'1px solid var(--line-2)', borderRadius:999, margin:'0 0 22px'}}>
+      {options.map(([v, label]) => (
+        <button key={v} type="button" role="radio" aria-checked={value === v} tabIndex={value === v ? 0 : -1}
+                aria-label={v === 'year' ? 'Yearly, 2 months free' : undefined}
+                ref={(el) => { refs.current[v] = el; }} onClick={() => onChange(v)}
+                style={{border:0, cursor:'pointer', borderRadius:999, padding:'7px 16px', fontSize:14, fontFamily:'inherit',
+                        background: value === v ? 'var(--teal-deep)' : 'transparent',
+                        color: value === v ? 'var(--bg)' : 'var(--ink-2)'}}>
+          {label}{v === 'year' && <span style={{marginLeft:8, fontSize:12, opacity:0.85}}>2 months free</span>}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function Pricing({ setRoute }) {
+  const [interval, setBillingInterval] = React.useState('month');
   const link = (route, text) => (
     <span className="text-link" role="link" tabIndex={0} onClick={() => setRoute(route)} onKeyDown={(e) => { if (e.key === 'Enter') setRoute(route); }}>{text}</span>
   );
@@ -122,6 +158,7 @@ function Pricing({ setRoute }) {
             For scale: a professional grant writer charges <em>$5,000–$15,000 per proposal</em>, and
             institution-licensed funding databases run hundreds of dollars a month per seat.
           </p>
+          <PricingIntervalSwitch value={interval} onChange={setBillingInterval} />
           <div className="plans">
             {PRICING_PLANS.map(p => (
               <div key={p.name} className={`plan ${p.badge ? 'featured' : ''}`}>
@@ -131,8 +168,8 @@ function Pricing({ setRoute }) {
                 </div>
                 <p className="blurb">{p.blurb}</p>
                 <div className="plan-price">
-                  <span className="amount">{p.price}</span>
-                  <span className="unit">{p.unit}</span>
+                  <span className="amount">{interval === 'year' && p.yearly ? p.yearly : p.price}</span>
+                  <span className="unit">{interval === 'year' && p.yearly ? `per year (${p.yearlyNote})` : p.unit}</span>
                 </div>
                 <ul className="gets">
                   {p.features.map(f => <li key={f}>{f}</li>)}
